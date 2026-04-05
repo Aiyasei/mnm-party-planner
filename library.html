@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monster and Memories — Spell Library</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="site-title">Monster <span>&amp;</span> Memories</div>
+    <nav>
+      <a href="https://monstersandmemories.com/" target="_blank" rel="noopener">Official Site</a>
+      <a href="https://monstersandmemories.miraheze.org/wiki/Main_Page" target="_blank" rel="noopener">Wiki</a>
+      <a href="index.html" class="nav-highlight">&#8592; Party Planner</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section>
+      <div class="section-label">Detailed Class Overview &amp; Spell Library</div>
+
+      <!-- FILTERS -->
+      <div class="library-controls">
+        <input type="text" id="search-input" placeholder="Search spell name or description..." />
+
+        <select id="filter-class">
+          <option value="">All Classes</option>
+          <option>Elementalist</option>
+          <option>Necromancer</option>
+          <option>Wizard</option>
+          <option>Archer</option>
+          <option>Ranger</option>
+          <option>Beastmaster</option>
+          <option>Monk</option>
+          <option>Rogue</option>
+          <option>Spellblade</option>
+          <option>Cleric</option>
+          <option>Druid</option>
+          <option>Shaman</option>
+          <option>Enchanter</option>
+          <option>Bard</option>
+          <option>Fighter</option>
+          <option>Inquisitor</option>
+          <option>Paladin</option>
+          <option>Shadow Knight</option>
+        </select>
+
+        <select id="filter-skill">
+          <option value="">All Skills</option>
+        </select>
+
+        <input type="text" id="filter-tag" placeholder="Filter by tag..." />
+
+        <select id="filter-level">
+          <option value="">All Levels</option>
+        </select>
+
+        <button id="clear-filters" class="class-btn">Clear Filters</button>
+      </div>
+
+      <!-- RESULT COUNT -->
+      <div id="result-count" style="color: var(--text-muted); font-size:0.85rem; margin-bottom:12px;"></div>
+
+      <!-- TABLE -->
+      <div id="spell-table-wrap">
+        <table id="spell-table">
+          <thead>
+            <tr>
+              <th data-col="Level">Lvl</th>
+              <th data-col="Class">Class</th>
+              <th data-col="Spell Name">Spell Name</th>
+              <th data-col="Skill">Skill</th>
+              <th data-col="Mana">Mana</th>
+              <th data-col="Tag">Tags</th>
+              <th data-col="Spell Description">Description</th>
+            </tr>
+          </thead>
+          <tbody id="spell-tbody">
+            <tr><td colspan="7" class="no-results">Loading spell data...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
