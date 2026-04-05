@@ -173,6 +173,7 @@ function initPartyPlanner(spells) {
   classButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       const cls = btn.getAttribute("data-class");
+      if (!cls) return;
       if (selectedClasses.has(cls)) {
         selectedClasses.delete(cls);
         btn.classList.remove("active");
@@ -200,6 +201,7 @@ function initPartyPlanner(spells) {
       return;
     }
     for (const cls of selectedClasses) {
+      if (!cls || !CLASS_IMAGE_MAP[cls]) continue;
       const member = document.createElement("div");
       member.className = "party-member";
       member.title = `Click to remove ${cls}`;
