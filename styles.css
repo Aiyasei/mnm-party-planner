@@ -113,12 +113,12 @@ nav a:hover {
 .nav-icon-link {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
 }
 
 .nav-icon {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   border-radius: 3px;
 }
@@ -306,12 +306,12 @@ section {
   margin-bottom: 12px;
 }
 
-.cat-cc      { color: #d4a800; }
-.cat-debuff  { color: #9966cc; }
-.cat-healing { color: #44bb66; }
-.cat-buff    { color: #4488cc; }
-.cat-pet     { color: var(--orange); }
-.cat-utility { color: #e0e0e0; }
+.category-title.cat-cc      { color: #d4a800 !important; }
+.category-title.cat-debuff  { color: #9966cc !important; }
+.category-title.cat-healing { color: #44bb66 !important; }
+.category-title.cat-buff    { color: #4488cc !important; }
+.category-title.cat-pet     { color: var(--orange) !important; }
+.category-title.cat-utility { color: #e0e0e0 !important; }
 
 .tags-grid {
   display: flex;
