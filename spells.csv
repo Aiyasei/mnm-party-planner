@@ -538,8 +538,8 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Bat Swarm Pet Tier 1,"Entreat the wild, calling forth a cloud of bats to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Bear Swarm Pet Tier 1,"Entreat the wild, calling forth a sleuth of bears to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Beetle Swarm Pet Tier 1,"Entreat the wild, calling forth a swarm of beetles to temporarily fight alongside you.",Con,3,Pet,Beastmaster
-1,Bestial Bond,"Appeal to the sense of a target beast, bonding it to your side.",,25,Pet Companion,Beastmaster
-1,Call Companion,"Beckon to your pet, calling it to your side.",,n/a,Pet Companion,Beastmaster
+1,Bestial Bond,"Appeal to the sense of a target beast, bonding it to your side.",,25,Pet,Beastmaster
+1,Call Companion,"Beckon to your pet, calling it to your side.",,n/a,Pet,Beastmaster
 1,Crocodile Swarm Pet Tier 1,"Entreat the wild, calling forth a bask of crocodiles to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Fear Beast,"Fear a target beast, causing them to flee for 18 seconds. Has a slight chance to be removed by damage.",Alt,20,Fear | (animals only),Beastmaster
 1,Invisibility versus Animals,"Shroud a target group member in a cloak of invisibility, rendering them unseen by beasts for 10 minutes. This spell has a slight chance to end early.",Div,10,Invisibility | (animals only),Beastmaster
@@ -547,7 +547,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Lull Beast,"Lull a target beast, reducing their Aggro Radius for 2 minutes. Has a very slight chance to end early.",Alt,10,Lull / Pacify | (animals only),Beastmaster
 1,Polar Align: North,"Magically align yourself, orienting you toward the North Pole.",Div,5,Misc. | (self only),Beastmaster
 1,Rat Swarm Pet Tier 1,"Entreat the wild, calling forth a swarm of rats to temporarily fight alongside you.",Con,3,Pet,Beastmaster
-1,Revive Companion,"Rally your pet, returning it to life and restoring 20% Health.",Alt,25,Pet Companion | Resurrection | (pet only),Beastmaster
+1,Revive Companion,"Rally your pet, returning it to life and restoring 20% Health.",Alt,25,Pet | Resurrection | (pet only),Beastmaster
 1,Shoot,Shoot an arrow at your target. Requires a bow and arrow.,Mar,Innate,Direct Damage | Physical,Beastmaster
 1,Snake Swarm Pet Tier 1,"Entreat the wild, calling forth a den of snakes to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Spider Swarm Pet Tier 1,"Entreat the wild, calling forth a cluster of spiders to temporarily fight alongside you.",Con,3,Pet,Beastmaster
@@ -563,11 +563,11 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 8,Disease Protection,"Ward your target against sickness, increasing their Disease Resistance by 5 for 1 hour.",Abj,10,Resist | Disease,Beastmaster
 8,Electricity Protection,"Ward your target against shock, increasing their Electricity Resistance by 5 for 1 hour.",Abj,10,Resist | Electricity,Beastmaster
 8,Minor Heal,"Gently heal your target, restoring 10 Health.",Alt,8,Direct Heal,Beastmaster
-8,Patch Companion,"Patch wounds of your pet, restoring 40 health.",Alt,25,Pet Companion | Direct Heal | (pet only),Beastmaster
+8,Patch Companion,"Patch wounds of your pet, restoring 40 health.",Alt,25,Pet | Direct Heal | (pet only),Beastmaster
 8,Savage Spirit,"Awaken a savage spirit within your pet, increasing their Attack Speed by 10% and granting them a chance to activate Rip of melee attacks for 1 hour. Rip: Rip the flesh of your target, dealing 10 Physical Damage every 6 seconds for 30 seconds.",Alt,10,Melee Haste | Physical | Damage Over Time | (pet only),Beastmaster
 8,Spirit Frost,"Rend your target with spiritual frost, dealing 3 (L1) to 5 (L4) Cold.",Evo,7,Direct Damage | Cold,Beastmaster
 8,Swarm Pet Tier 3,"Entreat the wild, calling forth a swarm of [Bat, Bear, Beetle, Crocodile, Jackal, Rat, Snake, Spider, Tarantula, Wasp, Wolf] to temporarily fight alongside you.",Con,15,Pet,Beastmaster
-10,Command: Kill,"Call your pet into action, commanding them to perform a devastating attack",Alt,0,Pet Companion | Direct Damage | Physical,Beastmaster
+10,Command: Kill,"Call your pet into action, commanding them to perform a devastating attack",Alt,0,Pet | Direct Damage | Physical,Beastmaster
 12,Exhaustion,"Exhaust the body of your target, decreasing their Attack Speed by 10% for 1 minute.",Alt,8,Slow,Beastmaster
 12,Invisibility,"Shroud a target group member in a cloak of invisibility, rendering them unseen by the living for 10 minutes. Has a slight chance to end early.",Div,20,Invisibility,Beastmaster
 12,Lesser Heal,"Lightly heal your target, restoring 25 Health.",Alt,20,Direct Heal,Beastmaster
@@ -583,11 +583,11 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 20,Minor Regeneration,"Gently regenerate your target, increasing their Health Regeneration by 2 for 20 minutes.",,,Health Regen,Beastmaster
 20,Speed of the Wild,"Infuse your target with bestial speed, increasing their Movement Speed by 40% (L8) to 60% (L60) for 1 hour.",Alt,20,Movement Speed,Beastmaster
 20,Swarm Pet Tier 6,"Entreat the wild, calling forth a swarm of [Bat, Bear, Beetle, Crocodile, Jackal, Rat, Snake, Spider, Tarantula, Wasp, Wolf] to temporarily fight alongside you.",Con,,Pet,Beastmaster
-21,Revive Companion II,"Rally your pet, returning it to life and restoring 40% Health.",Alt,,Pet Companion | Resurrection | (pet only),Beastmaster
+21,Revive Companion II,"Rally your pet, returning it to life and restoring 40% Health.",Alt,,Pet | Resurrection | (pet only),Beastmaster
 24,Chilling Essence,"Rend your target with spiritual frost, dealing 30 Cold Damage.",Evo,,Direct Damage | Cold,Beastmaster
 24,Feral Spirit,"Awaken a feral sprit within your pet, increasing their Attack Speed by 20%, Agility by 5, and granting them a chance to activate Rip on melee attacks for 1 hour. Rip: Rip the flesh of your target, dealing 10 Physical Damage every 6 seconds for 30 seconds. This spell is considered a Primary Haste.",,,+AGI | Melee Haste | Physical | Damage Over Time | (pet only),Beastmaster
-24,Rehabilitate Companion,"Rehabilitate the wounds of your pet, restoring 180 Health.",,,Pet Companion | Resurrection | (pet only),Beastmaster
-24,Resource Guarding,"PH: Guard yourself, reducing all damage received yby 25% for 12 seconds (NYI: Call your pet to protect you, reducing all damage receeived by 25% for 12 seconds, while transferring 50% of that damage to your pet. This effect is canceled autmatically if your pet falls below 25% health).",,,Damage Reduction | Pet Companion | (self only),Beastmaster
+24,Rehabilitate Companion,"Rehabilitate the wounds of your pet, restoring 180 Health.",,,Pet | Resurrection | (pet only),Beastmaster
+24,Resource Guarding,"PH: Guard yourself, reducing all damage received yby 25% for 12 seconds (NYI: Call your pet to protect you, reducing all damage receeived by 25% for 12 seconds, while transferring 50% of that damage to your pet. This effect is canceled autmatically if your pet falls below 25% health).",,,Damage Reduction | Pet | (self only),Beastmaster
 24,Swarm Pet Tier 7,"Entreat the wild, calling forth a swarm of [Bat, Bear, Beetle, Crocodile, Jackal, Rat, Snake, Spider, Tarantula, Wasp, Wolf] to temporarily fight alongside you.",Con,,Pet,Beastmaster
 28,Enduring Breath,"Imbue the lungs of your target, granting them the ability to breath under water for 30 minutes.",,,Misc.,Beastmaster
 28,Shrink,"Shrink a target group member, reducing their overall size by 20% for 1 hour. This spell stacks up to two times.",,,Misc.,Beastmaster
@@ -597,13 +597,13 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 32,Heal,"Moderately heal your target, restoring 70 Health.",Alt,40,Direct Heal,Beastmaster
 32,Lesser Regeneration,"Lightly regenerate your target, increasing their Health Regeneration by 5 for 30 minutes.",,,Health Regen,Beastmaster
 32,Swarm Pet Tier 9,"Entreat the wild, calling forth a swarm of [Bat, Bear, Beetle, Crocodile, Jackal, Rat, Snake, Spider, Tarantula, Wasp, Wolf] to temporarily fight alongside you.",Con,,Pet,Beastmaster
-36,Mend Companion,"Mend the wounds of your pet, restoring 420 Health.",,,Pet Companion | Resurrection | (pet only),Beastmaster
+36,Mend Companion,"Mend the wounds of your pet, restoring 420 Health.",,,Pet | Resurrection | (pet only),Beastmaster
 36,Rat Pack,"Shapeshift your group into a pack of rats, transforming their appearance for 1 hour. Can only be used outdoors.",Alt,,Shapeshift,Beastmaster
 36,Swarm Pet Tier 10,"Entreat the wild, calling forth a swarm of [Bat, Bear, Beetle, Crocodile, Jackal, Rat, Snake, Spider, Tarantula, Wasp, Wolf] to temporarily fight alongside you.",Con,,Pet,Beastmaster
 40,Ethereal Freeze,"Rend your target with spiritual frost, dealing 100 Cold Damage.",,,Direct Damage | Cold,Beastmaster
 40,Ferocious Spirit,"Awaken a ferocious spirit within your pet, incresing their Attack Speed by 30%, Agility by 10, and granting them a chance to activate Rip on melee attacks for 1 hour. Rip: Rip the flesh of your target, dealing 10 Physical Damage every 6 seconds for 30 seconds.",,,+AGI | Melee Haste | Physical | Damage Over Time | (pet only),Beastmaster
 40,Swarm Pet Tier 11,"Entreat the wild, calling forth a swarm of [Bat, Bear, Beetle, Crocodile, Jackal, Rat, Snake, Spider, Tarantula, Wasp, Wolf] to temporarily fight alongside you.",Con,,Pet,Beastmaster
-41,Revive Companion III,"Rally your pet, returning it to life and restoring 60% Health.",,,Pet Companion | Resurrection | (pet only),Beastmaster
+41,Revive Companion III,"Rally your pet, returning it to life and restoring 60% Health.",,,Pet | Resurrection | (pet only),Beastmaster
 44,Berserker Fury,"Make your target go berserk, increasing their Strength, Stamina, Dexterity, and Agility by 10 for 1 hour.",Alt,,+STR | +STA | +DEX | +AGI,Beastmaster
 44,Disease Resistance,"Greatly ward your target from sickness, increasing their Disease Resistance by 15 for 1 hour.",Abj,,Resist | Disease,Beastmaster
 44,Electricity Resistance,"Greatly ward your target against shock, increasing their Electricity Resistance by 15 for 1 hour.",Abj,,Resist | Electricity,Beastmaster
@@ -874,12 +874,12 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 28,Tangling Bonds,"Root nearby targets with tangling bonds, immobilizing them for 5 seconds.",Alt,,AoE | Root,Druid
 28,Touch of Life,"Touch a friendly target with a touch of life, healing them for 230 Health, and an additional 115 Health every 6 seconds for 12 seconds, for a total of 460 health.",Alt,200,Heal Over Time | Direct Heal,Druid
 28,Winged Swarm,"Engulf your target with a winged swarm, dealing 30 Poison Damage every 6 seconds for 60 seconds.",Con,,Damage Over Time | Poison,Druid
-32,Bear Pet Tier 1,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet Companion,Druid
+32,Bear Pet Tier 1,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet,Druid
 32,Moon Burn,"Channel Moon energy, inflicting burns for 250 points of Fire Damage.",Evo,,Direct Damage | Fire,Druid
 32,Pack Speed,"Bestows your group Speed of Wild, increasing their Movement Speed by 40% (L8) to 60% (L60) for 30 minutes.",Alt,,Movement Speed,Druid
 32,Regeneration,"Cause your target to regenerate, increasing their Health Regeneration by 7 for 40 minutes.",Alt,,Health Regen,Druid
 32,Steelskin,"Make the skin of your target as hard as steel, increasing their Armor Class by 15.",Abj,60,+AC,Druid
-36,Bear Pet Tier 2,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet Companion,Druid
+36,Bear Pet Tier 2,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet,Druid
 36,Blazing Embers,"Burns your target for 60 seconds, dealing 20 Fire Damage every 6 seconds and decreasing AC by 19. Max 3 stacks. This spell does not stack with itself or any others in the same line. Requires Fie Beetle Eye.",Evo,,Damage Over Time | Fire | Physical Damage Vulnerability,Druid
 36,Coax Beast,"Charm a target beast, forcing them to fight alongside you.",Alt,,Charm | (animals only),Druid
 36,Exceptional Heal,"Exceptionally heals the wounds of a friendly target, healing them for 600 Health.",Alt,230,Direct Heal,Druid
@@ -889,37 +889,37 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 36,Spikey Barrier,"Surrounds your target with a spiky barrier, providing a Damage Shield with 20 Damage Per Hit for 10 minutes.",Abj,,Damage Shield,Druid
 36,Wolf Pack,"Shapeshift your group into a pack of wolves, increasing their Movement Speed by 40% (L8) to 60% (L60).",Alt,,Movement Speed | Shapeshift,Druid
 40,Abolish Magic,Removes two harmful magical effects from your current target.,Alt,,Cure | Magic,Druid
-40,Bear Pet Tier 3,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet Companion,Druid
+40,Bear Pet Tier 3,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet,Druid
 40,Element Fracture,"Fractures your target's resistance to the elements, decreasing their Cold, Electricity, Fire and Magic resistance by 7 (L40) to 8 (L44). This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,,Lower Resistance | Cold | Electricity | Fire | Magic,Druid
 40,Fury of Eth-el,"Empower your target with the fury of Eth-el, increasing their Strength by 15 for 1 hour.",Alt,150,+STR,Druid
 40,Prowl of the Wolves,"Shapeshift your group into Wolves, increasing your Movement Speed by 75% for 8 seconds. After this effect expires, you are afflicted by Recently Exhausted, preventing the reapplication of it and certain other Buffs for 20 minutes.",Alt,,Movement Speed | Shapeshift,Druid
 40,Species Revivalism,"Revive a target beast corpse, restoring it to life.",Alt,,Resurrection | (animals only) | (pet only),Druid
 40,Touch of Harmony,"Touch a friendly target with a touch of harmony, healing them for 320 Health, and an additional 160 Health Every 6 seconds for 12 seconds, for a total of 640 Health.",Alt,245,Heal Over Time | Direct Heal,Druid
-44,Bear Pet Tier 4,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet Companion,Druid
+44,Bear Pet Tier 4,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet,Druid
 44,Diamondskin,"Solidifies the skin of a friendly target, increasing their Armor class by 20.",Abj,,+AC,Druid
 44,Ensnaring Vines,"Cripple nearby targets with ensnaring vines, decreasing their Movement Speed by 75% for 12 seconds.. This ability shares a cooldown with others in the same line.",Alt,,AoE | Snare,Druid
 44,Greater Regeneration,"Causes your target to regenerate, increasing their Health Regeneration by 11 for 50 minutes.",Alt,,Health Regen,Druid
 44,Infesting Swarm,"Engulf your target with an infesting swarm, dealing 70 Poison Damage every 6 seconds for 60 seconds.",Con,210,Damage Over Time | Poison,Druid
 44,Moon Blaze,"Channel moon energy, inflicting a blaze for 400 points of Fire Damage.",Evo,,Direct Damage | Fire,Druid
 44,Thorny Barrier,"Surrounds your target with a thorny barrier, providing a damage Shield with 25 Damage Per Hit for 10 minutes.",Abj,,Damage Shield,Druid
-48,Bear Pet Tier 5,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet Companion,Druid
+48,Bear Pet Tier 5,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet,Druid
 48,Ensnaring Bonds,"Root nearby targets with ensnaring bonds, immobilizing them for 6 seconds. This ability shares a cooldown with others in the same line.",Alt,,AoE | Root,Druid
 48,Persuade Beast,"Charm a target beast, forcing them to fight alongside you.",Alt,,Charm | (animals only),Druid
 48,Smoldering Embers,"Burns your target for 60 seconds, dealing 30 Fire Damage every 6 seconds and decreasing AC by 25. Max 3 Stacks. This spell does not stack with itself or any others in the same line. Requires Fire Beetle Eye.",Evo,,Damage Over Time | Fire | Physical Damage Vulnerability,Druid
 50,Moon Flare,"Channel moon energy, inflicting a flare for 600 points of Fire Damage.",Evo,,Direct Damage | Fire,Druid
-52,Bear Pet Tier 6,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet Companion,Druid
+52,Bear Pet Tier 6,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet,Druid
 52,Killer Swarm,"Engulf your target with a killer swarm, dealing 150 Poison Damage every 6 seconds for 60 seconds.",Con,,Damage Over Time | Poison,Druid
 52,Renewal of the Wild,"Renew a target beast corpse, restoring it to life.",Alt,,Resurrection | (animals only) | (pet only),Druid
 52,Touch of Creation,"Touch a friendly target with a touch of creation, healing them for 450 Health, and an additional 225 Health every 6 seconds for 12 seconds, for a total of 900 Health.",Alt,225,Heal Over Time | Direct Heal,Druid
 54,Flames of Eth-ehm,"Channel moon energy, unleasing the flames of Eth-ehm for 700 points of Fire Damage.",Evo,,Direct Damage | Fire,Druid
 55,Eth-ehm's Shroud,"Shroud a target group member in Eth-ehm's shadow, rendering them unseen by the living.",Div,,Invisibility,Druid
 55,Sanctuary,"Seek sanctuary with your group, relocating them to a safe location in the current zone.",Alt,,Teleport,Druid
-56,Bear Pet Tier 7,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet Companion,Druid
+56,Bear Pet Tier 7,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet,Druid
 56,Exceptional Regeneration,"Causes your target to regenerate, increasing their Health Regeneration by 16 for 60 minutes.",Alt,,Health Regen,Druid
 56,Jagged Barrier,"Surrounds your target with a jagged barrier, providing a Damage Shield with 30 Damage Per Hit for 10 minutes.",Abj,,Damage Shield,Druid
 56,Natureskin,"Solidifies the skin of a friendly target, increasing their Armor Class by 30 and health regen by 2 for 30 minutes.",Abj,,+AC | Health Regen,Druid
 58,Fires of Eth-ehm,"Channel moon energy, unleashing the fires of Eth-ehm for 850 points of Fire Damage.",Evo,,Direct Damage | Fire,Druid
-60,Bear Pet Tier 8,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet Companion,Druid
+60,Bear Pet Tier 8,"Beckon the wild, calling forth a bear companion to fight alongside you.",Con,,Pet,Druid
 60,Element Shatter,"Shatters your target's resistance to the elements, decreasing their Cold, Electricity, Fire and Magic Resistance by 10. This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,,Lower Resistance | Cold | Electricity | Fire | Magic,Druid
 60,Embers of Eth-ehm,"Channel moon energy, unleashing the embers of Eth-ehm for 1000 points of Fire Damage.",Evo,,Direct Damage | Fire,Druid
 60,Raging Embers,"Burns your target for 60 seconds, dealing 45 Fire Damage every 6 seconds and decreasing AC by 26. Max 3 stacks. This spell does not stack with itself or any others in the same line. Requires Fire Beetle Eye.",Evo,,Damage Over Time | Fire | Physical Damage Vulnerability,Druid
