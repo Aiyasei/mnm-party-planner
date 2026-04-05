@@ -427,6 +427,111 @@ section {
 }
 
 /* ============================================
+   LIBRARY PAGE - FILTER BLOCKS
+   ============================================ */
+
+.lib-filter-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.lib-filter-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange-dim);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.lib-class-toggles {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.lib-toggle-btn {
+  font-size: 0.8rem;
+  padding: 5px 14px;
+}
+
+.lib-role-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lib-filter-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.lib-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 180px;
+}
+
+.lib-filter-group input[type="text"],
+.lib-filter-group select {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 3px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.lib-filter-group input[type="text"]:focus,
+.lib-filter-group select:focus {
+  border-color: var(--orange);
+}
+
+.lib-filter-group select option,
+.lib-filter-group select optgroup {
+  background: var(--bg-card);
+}
+
+.level-range-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.level-range-row input[type="number"] {
+  width: 80px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  border-radius: 3px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.level-range-row input[type="number"]:focus {
+  border-color: var(--orange);
+}
+
+.level-range-sep {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ============================================
    LIBRARY PAGE
    ============================================ */
 
