@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monster and Memories — Party Planner</title>
+  <title>Monster and Memories Party Planner</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
-    <div class="site-title">Monster <span>&amp;</span> Memories</div>
+    <div class="site-title">Monster <span>&amp;</span> Memories <span class="title-sub">Party Planner</span></div>
     <nav>
-      <a href="https://monstersandmemories.com/" target="_blank" rel="noopener">Official Site</a>
-      <a href="https://monstersandmemories.miraheze.org/wiki/Main_Page" target="_blank" rel="noopener">Wiki</a>
+      <a href="https://monstersandmemories.com/" target="_blank" rel="noopener" class="nav-icon-link">
+        <img src="https://monstersandmemories.com/favicon.ico" alt="" class="nav-icon" onerror="this.style.display='none'" />
+        Official Site
+      </a>
+      <a href="https://monstersandmemories.miraheze.org/wiki/Main_Page" target="_blank" rel="noopener" class="nav-icon-link">
+        <img src="https://static.wikitide.net/monstersandmemorieswiki/8/8d/MAM_Web_Logo.png" alt="" class="nav-icon" />
+        Wiki
+      </a>
       <a href="library.html" class="nav-highlight">Detailed Class Overview &amp; Spell Lists</a>
     </nav>
   </header>
@@ -76,7 +82,7 @@
       <div id="tag-section">
 
         <div class="category-block">
-          <div class="category-title">Crowd Control</div>
+          <div class="category-title cat-cc">Crowd Control</div>
           <div class="tags-grid">
             <span class="tag-pill uncovered" data-tag="Fear">Fear</span>
             <span class="tag-pill uncovered" data-tag="Mez / Stun">Mez / Stun</span>
@@ -89,7 +95,7 @@
         </div>
 
         <div class="category-block">
-          <div class="category-title">Debuffs</div>
+          <div class="category-title cat-debuff">Debuffs</div>
           <div class="tags-grid">
             <span class="tag-pill uncovered" data-tag="Slow">Slow</span>
             <span class="tag-pill uncovered" data-tag="Stat Debuff / Steal">Stat Debuff / Steal</span>
@@ -102,7 +108,7 @@
         </div>
 
         <div class="category-block">
-          <div class="category-title">Healing</div>
+          <div class="category-title cat-healing">Healing</div>
           <div class="tags-grid">
             <span class="tag-pill uncovered" data-tag="Heal Over Time">Heal Over Time</span>
             <span class="tag-pill uncovered" data-tag="Direct Heal">Direct Heal</span>
@@ -111,7 +117,7 @@
         </div>
 
         <div class="category-block">
-          <div class="category-title">Buffs</div>
+          <div class="category-title cat-buff">Buffs</div>
           <div class="tags-grid">
             <span class="tag-pill uncovered" data-tag="+HP">+HP</span>
             <span class="tag-pill uncovered" data-tag="+AC">+AC</span>
@@ -136,14 +142,14 @@
         </div>
 
         <div class="category-block">
-          <div class="category-title">Pet</div>
+          <div class="category-title cat-pet">Pet</div>
           <div class="tags-grid">
             <span class="tag-pill uncovered" data-tag="Pet">Pet</span>
           </div>
         </div>
 
         <div class="category-block">
-          <div class="category-title">Utility</div>
+          <div class="category-title cat-utility">Utility</div>
           <div class="tags-grid">
             <span class="tag-pill uncovered" data-tag="Purge">Purge</span>
             <span class="tag-pill uncovered" data-tag="Cure">Cure</span>
