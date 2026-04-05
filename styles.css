@@ -26,6 +26,26 @@
   --redundant: #c8a030;
   --shadow: 0 4px 20px rgba(0,0,0,0.5);
   --shadow-orange: 0 0 15px rgba(232, 123, 30, 0.4);
+
+  /* Class colors */
+  --cls-elementalist: #e05c2a;
+  --cls-necromancer:  #8855cc;
+  --cls-wizard:       #cc3344;
+  --cls-archer:       #cc8822;
+  --cls-ranger:       #88aa33;
+  --cls-beastmaster:  #bb6622;
+  --cls-monk:         #dd9922;
+  --cls-rogue:        #cc4466;
+  --cls-spellblade:   #cc4422;
+  --cls-cleric:       #44bbaa;
+  --cls-druid:        #55aa55;
+  --cls-shaman:       #33aa77;
+  --cls-enchanter:    #4488dd;
+  --cls-bard:         #7755cc;
+  --cls-fighter:      #aa8833;
+  --cls-inquisitor:   #cc9944;
+  --cls-paladin:      #99aa44;
+  --cls-shadowknight: #7766aa;
 }
 
 * {
@@ -278,6 +298,105 @@ section {
   box-shadow: var(--shadow-orange);
   font-weight: 700;
 }
+
+/* ---- Per-class button colors (inactive border/text, active bg) ---- */
+.class-btn[data-class="Elementalist"]  { --cls-color: var(--cls-elementalist); }
+.class-btn[data-class="Necromancer"]   { --cls-color: var(--cls-necromancer); }
+.class-btn[data-class="Wizard"]        { --cls-color: var(--cls-wizard); }
+.class-btn[data-class="Archer"]        { --cls-color: var(--cls-archer); }
+.class-btn[data-class="Ranger"]        { --cls-color: var(--cls-ranger); }
+.class-btn[data-class="Beastmaster"]   { --cls-color: var(--cls-beastmaster); }
+.class-btn[data-class="Monk"]          { --cls-color: var(--cls-monk); }
+.class-btn[data-class="Rogue"]         { --cls-color: var(--cls-rogue); }
+.class-btn[data-class="Spellblade"]    { --cls-color: var(--cls-spellblade); }
+.class-btn[data-class="Cleric"]        { --cls-color: var(--cls-cleric); }
+.class-btn[data-class="Druid"]         { --cls-color: var(--cls-druid); }
+.class-btn[data-class="Shaman"]        { --cls-color: var(--cls-shaman); }
+.class-btn[data-class="Enchanter"]     { --cls-color: var(--cls-enchanter); }
+.class-btn[data-class="Bard"]          { --cls-color: var(--cls-bard); }
+.class-btn[data-class="Fighter"]       { --cls-color: var(--cls-fighter); }
+.class-btn[data-class="Inquisitor"]    { --cls-color: var(--cls-inquisitor); }
+.class-btn[data-class="Paladin"]       { --cls-color: var(--cls-paladin); }
+.class-btn[data-class="Shadow Knight"] { --cls-color: var(--cls-shadowknight); }
+
+/* Inactive state: colored border and text */
+.class-btn[data-class] {
+  border-color: color-mix(in srgb, var(--cls-color) 40%, var(--border));
+  color: color-mix(in srgb, var(--cls-color) 60%, var(--text-muted));
+}
+
+.class-btn[data-class]:hover {
+  border-color: var(--cls-color);
+  color: var(--cls-color);
+  background: color-mix(in srgb, var(--cls-color) 10%, var(--bg-card));
+}
+
+/* Active state: solid class color background */
+.class-btn[data-class].active {
+  background: var(--cls-color);
+  color: #111;
+  border-color: var(--cls-color);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--cls-color) 50%, transparent);
+}
+
+/* ---- Library table row tints ---- */
+tr.cls-elementalist { background: color-mix(in srgb, var(--cls-elementalist) 8%, transparent); }
+tr.cls-necromancer  { background: color-mix(in srgb, var(--cls-necromancer)  8%, transparent); }
+tr.cls-wizard       { background: color-mix(in srgb, var(--cls-wizard)       8%, transparent); }
+tr.cls-archer       { background: color-mix(in srgb, var(--cls-archer)       8%, transparent); }
+tr.cls-ranger       { background: color-mix(in srgb, var(--cls-ranger)       8%, transparent); }
+tr.cls-beastmaster  { background: color-mix(in srgb, var(--cls-beastmaster)  8%, transparent); }
+tr.cls-monk         { background: color-mix(in srgb, var(--cls-monk)         8%, transparent); }
+tr.cls-rogue        { background: color-mix(in srgb, var(--cls-rogue)        8%, transparent); }
+tr.cls-spellblade   { background: color-mix(in srgb, var(--cls-spellblade)   8%, transparent); }
+tr.cls-cleric       { background: color-mix(in srgb, var(--cls-cleric)       8%, transparent); }
+tr.cls-druid        { background: color-mix(in srgb, var(--cls-druid)        8%, transparent); }
+tr.cls-shaman       { background: color-mix(in srgb, var(--cls-shaman)       8%, transparent); }
+tr.cls-enchanter    { background: color-mix(in srgb, var(--cls-enchanter)    8%, transparent); }
+tr.cls-bard         { background: color-mix(in srgb, var(--cls-bard)         8%, transparent); }
+tr.cls-fighter      { background: color-mix(in srgb, var(--cls-fighter)      8%, transparent); }
+tr.cls-inquisitor   { background: color-mix(in srgb, var(--cls-inquisitor)   8%, transparent); }
+tr.cls-paladin      { background: color-mix(in srgb, var(--cls-paladin)      8%, transparent); }
+tr.cls-shadowknight { background: color-mix(in srgb, var(--cls-shadowknight) 8%, transparent); }
+
+tr.cls-elementalist:hover { background: color-mix(in srgb, var(--cls-elementalist) 16%, transparent); }
+tr.cls-necromancer:hover  { background: color-mix(in srgb, var(--cls-necromancer)  16%, transparent); }
+tr.cls-wizard:hover       { background: color-mix(in srgb, var(--cls-wizard)       16%, transparent); }
+tr.cls-archer:hover       { background: color-mix(in srgb, var(--cls-archer)       16%, transparent); }
+tr.cls-ranger:hover       { background: color-mix(in srgb, var(--cls-ranger)       16%, transparent); }
+tr.cls-beastmaster:hover  { background: color-mix(in srgb, var(--cls-beastmaster)  16%, transparent); }
+tr.cls-monk:hover         { background: color-mix(in srgb, var(--cls-monk)         16%, transparent); }
+tr.cls-rogue:hover        { background: color-mix(in srgb, var(--cls-rogue)        16%, transparent); }
+tr.cls-spellblade:hover   { background: color-mix(in srgb, var(--cls-spellblade)   16%, transparent); }
+tr.cls-cleric:hover       { background: color-mix(in srgb, var(--cls-cleric)       16%, transparent); }
+tr.cls-druid:hover        { background: color-mix(in srgb, var(--cls-druid)        16%, transparent); }
+tr.cls-shaman:hover       { background: color-mix(in srgb, var(--cls-shaman)       16%, transparent); }
+tr.cls-enchanter:hover    { background: color-mix(in srgb, var(--cls-enchanter)    16%, transparent); }
+tr.cls-bard:hover         { background: color-mix(in srgb, var(--cls-bard)         16%, transparent); }
+tr.cls-fighter:hover      { background: color-mix(in srgb, var(--cls-fighter)      16%, transparent); }
+tr.cls-inquisitor:hover   { background: color-mix(in srgb, var(--cls-inquisitor)   16%, transparent); }
+tr.cls-paladin:hover      { background: color-mix(in srgb, var(--cls-paladin)      16%, transparent); }
+tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknight) 16%, transparent); }
+
+/* ---- Class name colored text (table + redundancy) ---- */
+.cls-text-elementalist { color: var(--cls-elementalist) !important; }
+.cls-text-necromancer  { color: var(--cls-necromancer)  !important; }
+.cls-text-wizard       { color: var(--cls-wizard)       !important; }
+.cls-text-archer       { color: var(--cls-archer)       !important; }
+.cls-text-ranger       { color: var(--cls-ranger)       !important; }
+.cls-text-beastmaster  { color: var(--cls-beastmaster)  !important; }
+.cls-text-monk         { color: var(--cls-monk)         !important; }
+.cls-text-rogue        { color: var(--cls-rogue)        !important; }
+.cls-text-spellblade   { color: var(--cls-spellblade)   !important; }
+.cls-text-cleric       { color: var(--cls-cleric)       !important; }
+.cls-text-druid        { color: var(--cls-druid)        !important; }
+.cls-text-shaman       { color: var(--cls-shaman)       !important; }
+.cls-text-enchanter    { color: var(--cls-enchanter)    !important; }
+.cls-text-bard         { color: var(--cls-bard)         !important; }
+.cls-text-fighter      { color: var(--cls-fighter)      !important; }
+.cls-text-inquisitor   { color: var(--cls-inquisitor)   !important; }
+.cls-text-paladin      { color: var(--cls-paladin)      !important; }
+.cls-text-shadowknight { color: var(--cls-shadowknight) !important; }
 
 /* ============================================
    TAG CARDS / CATEGORIES
