@@ -450,6 +450,69 @@ function initLibrary(spells) {
 }
 
 // ============================================
+// DISCLAIMER NOTICE POPUP
+// Shows once per day, shared across both pages
+// via localStorage. Edit notice.json to update.
+// ============================================
+
+function initNotice() {
+  const overlay = document.getElementById("notice-overlay");
+  if (!overlay) return;
+
+  const STORAGE_KEY = "mnm_notice_seen_date";
+  const today = new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
+  const lastSeen = localStorage.getItem(STORAGE_KEY);
+
+  // Already seen today — don't show
+  if (lastSeen === today) return;
+
+  // Fetch notice.json from repo
+  fetch("notice.json")
+    .then(r => r.json())
+    .then(data => {
+      // Populate content
+      document.getElementById("notice-title").textContent = data.title || "Notice";
+
+      // Support \n line breaks in message
+      const bodyEl = document.getElementById("notice-body");
+      const paragraphs = (data.message || "").split("\n\n");
+      bodyEl.innerHTML = paragraphs
+        .map(p => `<p>${p.replace(/\n/g, "<br>")}</p>`)
+        .join("");
+
+      document.getElementById("notice-date").textContent = data.lastUpdated || "";
+
+      const linkEl = document.getElementById("notice-link");
+      if (data.linkText && data.linkUrl) {
+        linkEl.textContent = data.linkText;
+        linkEl.href = data.linkUrl;
+        linkEl.style.display = "inline-block";
+      } else {
+        linkEl.style.display = "none";
+      }
+
+      // Show overlay
+      overlay.style.display = "flex";
+    })
+    .catch(() => {
+      // If notice.json can't load, silently skip
+    });
+
+  // Close button
+  document.getElementById("notice-close").addEventListener("click", closeNotice);
+
+  // Click outside card to close
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeNotice();
+  });
+
+  function closeNotice() {
+    overlay.style.display = "none";
+    localStorage.setItem(STORAGE_KEY, today);
+  }
+}
+
+// ============================================
 // ROUTER — detect which page we're on
 // ============================================
 
@@ -459,6 +522,7 @@ function initLibrary(spells) {
   script.src = "https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js";
   script.onload = function() {
     loadCSV(function(spells) {
+      initNotice();
       if (document.getElementById("party-display")) {
         initPartyPlanner(spells);
       } else if (document.getElementById("spell-tbody")) {
