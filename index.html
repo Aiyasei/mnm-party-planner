@@ -1,554 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monsters & Memories – Raid Composition Planner</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    background: #0d0e14;
-    color: #c8c0a8;
-    min-height: 100vh;
-  }
-
-  /* HEADER */
-  .header {
-    background: linear-gradient(180deg, #1a1420 0%, #0d0e14 100%);
-    border-bottom: 1px solid #2a2030;
-    padding: 24px 28px 20px;
-    position: relative;
-    overflow: hidden;
-  }
-  .header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 20% 50%, rgba(100,60,140,0.15) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 50%, rgba(40,80,120,0.12) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .header-inner { position: relative; }
-  .header-eyebrow { font-size: 11px; letter-spacing: 4px; color: #6a5a7a; text-transform: uppercase; margin-bottom: 6px; }
-  .header h1 { font-size: 26px; font-weight: normal; color: #e8d8b0; letter-spacing: 1px; text-shadow: 0 0 20px rgba(180,140,60,0.3); }
-  .header p { margin-top: 6px; font-size: 13px; color: #7a7060; font-style: italic; }
-
-  /* MAIN */
-  .main { padding: 20px 28px; max-width: 1200px; margin: 0 auto; }
-
-  /* CLASS SELECTOR */
-  .section-label { font-size: 11px; letter-spacing: 3px; color: #6a5a7a; text-transform: uppercase; margin-bottom: 12px; }
-  .class-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
-  .class-btn {
-    padding: 7px 14px; border-radius: 3px; border: 1px solid #2a2535;
-    background: #14131a; color: #5a5568; font-size: 13px; cursor: pointer;
-    font-family: inherit; letter-spacing: 0.5px; transition: all 0.15s;
-  }
-  .class-btn:hover { border-color: #4a3a5a; color: #8a7a98; }
-  .class-btn.active { box-shadow: 0 0 8px var(--cls-color-alpha); }
-
-  .action-row { display: flex; gap: 8px; margin-top: 10px; margin-bottom: 24px; }
-  .btn-clear {
-    padding: 5px 12px; background: transparent; border: 1px solid #3a2a3a;
-    color: #7a6080; border-radius: 3px; cursor: pointer; font-size: 12px; font-family: inherit;
-  }
-  .btn-ai {
-    padding: 5px 14px; background: #3a2a5a; border: 1px solid #5a3a8a;
-    color: #c0a0e0; border-radius: 3px; cursor: pointer; font-size: 12px; font-family: inherit;
-    transition: opacity 0.15s;
-  }
-  .btn-ai:disabled { background: #1a1820; color: #4a3a5a; cursor: not-allowed; }
-
-  /* AI PANEL */
-  .ai-panel {
-    background: #181420; border: 1px solid #3a2a5a; border-radius: 4px;
-    padding: 16px 20px; margin-bottom: 20px; box-shadow: 0 0 20px rgba(100,60,180,0.1);
-  }
-  .ai-label { font-size: 11px; letter-spacing: 3px; color: #7a4aaa; text-transform: uppercase; margin-bottom: 8px; }
-  .ai-text { font-size: 14px; line-height: 1.7; color: #b8a8d0; }
-  .ai-loading { color: #5a4a7a; font-style: italic; font-size: 13px; }
-
-  /* CONTROLS ROW */
-  .controls-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
-  .filter-label { font-size: 11px; letter-spacing: 3px; color: #6a5a7a; text-transform: uppercase; margin-right: 4px; }
-  .filter-btn {
-    padding: 5px 12px; border-radius: 3px; font-family: inherit;
-    border: 1px solid #2a2535; background: transparent; color: #5a5568;
-    font-size: 12px; cursor: pointer; transition: all 0.15s;
-  }
-  .view-toggle { margin-left: auto; display: flex; gap: 6px; }
-  .view-btn {
-    padding: 5px 12px; border-radius: 3px; font-family: inherit;
-    border: 1px solid #2a2535; background: transparent; color: #5a5568;
-    font-size: 12px; cursor: pointer;
-  }
-  .view-btn.active { border-color: #6a5a7a; background: #2a2535; color: #c8c0a8; }
-
-  /* GROUP SECTION */
-  .group-section { margin-bottom: 28px; }
-  .group-title {
-    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-    margin-bottom: 12px; padding-bottom: 6px;
-  }
-  .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
-
-  /* SPELL CARD */
-  .spell-card {
-    background: #16141e; border: 1px solid #2a2535;
-    border-radius: 4px; padding: 10px 14px; transition: all 0.15s;
-  }
-  .spell-card:hover { background: #1e1a28; }
-  .spell-card.missing { background: #110e14; border-color: #2a1a2a; opacity: 0.4; }
-  .spell-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-  .spell-icon { font-size: 16px; }
-  .spell-name { font-size: 13px; color: #d0c8b0; }
-  .spell-name.missing-name { color: #4a4055; }
-  .overlap-badge {
-    margin-left: auto; font-size: 10px; padding: 2px 6px;
-    border-radius: 2px; letter-spacing: 1px;
-  }
-  .spell-desc { font-size: 11px; color: #5a5568; margin-bottom: 8px; font-style: italic; }
-  .class-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-  .class-tag {
-    font-size: 10px; padding: 2px 7px; border-radius: 2px;
-    border: 1px solid #2a2535; color: #3a3545; letter-spacing: 0.3px;
-  }
-  .class-tag.active { }
-
-  /* GAPS */
-  .gaps-section { margin-top: 8px; }
-  .gaps-title {
-    font-size: 11px; letter-spacing: 3px; color: #8a3a4a; text-transform: uppercase;
-    margin-bottom: 10px; border-bottom: 1px solid rgba(58,26,32,0.2); padding-bottom: 6px;
-  }
-  .gaps-list { font-size: 13px; color: #7a5060; line-height: 1.8; }
-  .gap-item { margin-right: 12px; display: inline-block; }
-
-  /* REDUNDANCY */
-  .redundancy-section { margin-top: 20px; }
-  .redundancy-title {
-    font-size: 11px; letter-spacing: 3px; color: #8a7a30; text-transform: uppercase;
-    margin-bottom: 10px; border-bottom: 1px solid rgba(138,122,48,0.2); padding-bottom: 6px;
-  }
-  .redundancy-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
-  .redundancy-item {
-    background: #1a1800; border: 1px solid #4a3a1055;
-    border-radius: 4px; padding: 8px 12px; font-size: 12px;
-  }
-  .redundancy-cat { color: #c8a840; margin-bottom: 5px; font-size: 12px; }
-  .redundancy-classes { display: flex; flex-wrap: wrap; gap: 4px; }
-
-  /* CLASS VIEW */
-  .class-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
-  .class-card { background: #16141e; border-radius: 4px; padding: 14px 16px; }
-  .class-card-title { font-size: 14px; font-weight: bold; letter-spacing: 1px; margin-bottom: 12px; }
-  .class-spell-group { margin-bottom: 10px; }
-  .class-spell-group-title { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; }
-  .class-spell-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-  .class-spell-tag {
-    font-size: 11px; padding: 3px 8px; border-radius: 2px; color: #a09088;
-  }
-
-  #app { }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monster and Memories — Party Planner</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<div id="app">
-  <div class="header">
-    <div class="header-inner">
-      <div class="header-eyebrow">Monsters &amp; Memories</div>
-      <h1>⚔ Raid Composition Planner</h1>
-      <p>Select classes to analyze spell coverage and overlaps</p>
-    </div>
-  </div>
-  <div class="main">
-    <div class="section-label" id="class-count-label">Select Classes (0 selected)</div>
-    <div class="class-buttons" id="class-buttons"></div>
-    <div class="action-row" id="action-row" style="display:none;">
-      <button class="btn-clear" onclick="clearAll()">Clear All</button>
-      <button class="btn-ai" id="btn-ai" onclick="getAiAnalysis()">✦ AI Analysis</button>
-    </div>
+  <!-- HEADER -->
+  <header>
+    <div class="site-title">Monster <span>&amp;</span> Memories</div>
+    <nav>
+      <a href="https://monstersandmemories.com/" target="_blank" rel="noopener">Official Site</a>
+      <a href="https://monstersandmemories.miraheze.org/wiki/Main_Page" target="_blank" rel="noopener">Wiki</a>
+      <a href="library.html" class="nav-highlight">Detailed Class Overview &amp; Spell Lists</a>
+    </nav>
+  </header>
 
-    <div class="ai-panel" id="ai-panel" style="display:none;">
-      <div class="ai-label">✦ Composition Analysis</div>
-      <div id="ai-content"></div>
-    </div>
+  <main>
 
-    <div class="controls-row">
-      <div class="filter-label">Filter:</div>
-      <div id="filter-buttons"></div>
-      <div class="view-toggle">
-        <button class="view-btn active" id="view-matrix" onclick="setView('matrix')">Coverage Matrix</button>
-        <button class="view-btn" id="view-class" onclick="setView('class')">By Class</button>
+    <!-- PARTY DISPLAY -->
+    <section>
+      <div class="section-label">Party Composition</div>
+      <div id="party-display">
+        <div class="empty-message">Select classes below to build your party</div>
       </div>
-    </div>
+    </section>
 
-    <div id="content-area"></div>
-  </div>
-</div>
+    <!-- CLASS SELECTION BUTTONS -->
+    <section>
+      <div class="section-label">Select Classes</div>
+      <div id="class-selection">
 
-<script>
-const CLASSES = [
-  "Archer","Bard","Beastmaster","Cleric","Druid","Elementalist",
-  "Enchanter","Fighter","Inquisitor","Monk","Necromancer","Paladin",
-  "Ranger","Rogue","Shadow Knight","Shaman","Spellblade","Wizard"
-];
+        <div class="role-group">
+          <span class="role-label dps">DPS</span>
+          <button class="class-btn" data-class="Elementalist">Elementalist</button>
+          <button class="class-btn" data-class="Necromancer">Necromancer</button>
+          <button class="class-btn" data-class="Wizard">Wizard</button>
+          <button class="class-btn" data-class="Archer">Archer</button>
+          <button class="class-btn" data-class="Ranger">Ranger</button>
+          <button class="class-btn" data-class="Beastmaster">Beastmaster</button>
+          <button class="class-btn" data-class="Monk">Monk</button>
+          <button class="class-btn" data-class="Rogue">Rogue</button>
+          <button class="class-btn" data-class="Spellblade">Spellblade</button>
+        </div>
 
-const CLASS_COLORS = {
-  "Archer":"#a3c96e","Bard":"#e8b84b","Beastmaster":"#c97a3a","Cleric":"#f0e6a0",
-  "Druid":"#6db87a","Elementalist":"#5bc4e0","Enchanter":"#b57fd4","Fighter":"#c0c0c0",
-  "Inquisitor":"#d4a96a","Monk":"#e08060","Necromancer":"#8888cc","Paladin":"#f0d080",
-  "Ranger":"#80bb80","Rogue":"#999977","Shadow Knight":"#8866bb","Shaman":"#55bbaa",
-  "Spellblade":"#7799cc","Wizard":"#cc6666"
-};
+        <div class="role-group">
+          <span class="role-label healer">Healer</span>
+          <button class="class-btn" data-class="Cleric">Cleric</button>
+          <button class="class-btn" data-class="Druid">Druid</button>
+          <button class="class-btn" data-class="Shaman">Shaman</button>
+        </div>
 
-const GROUPS = ["Healing","Buffs","Debuffs","CC","Damage","Utility"];
-const GROUP_COLORS = {
-  "Healing":"#4a9e6f","Buffs":"#7a6eb0","Debuffs":"#b05060",
-  "CC":"#b07830","Damage":"#a03030","Utility":"#4080a0"
-};
+        <div class="role-group">
+          <span class="role-label support">Support</span>
+          <button class="class-btn" data-class="Enchanter">Enchanter</button>
+          <button class="class-btn" data-class="Bard">Bard</button>
+        </div>
 
-const SPELL_DATA = {
-  // ── HEALING ────────────────────────────────────────────────────────────
-  "Direct Heal":{ desc:"Instant HP restoration on a single target", icon:"💚", group:"Healing", classes:["Cleric","Druid","Paladin","Shaman","Bard","Inquisitor","Beastmaster"] },
-  "Heal Over Time":{ desc:"Regeneration tick that restores HP over duration", icon:"🌿", group:"Healing", classes:["Cleric","Druid","Shaman","Paladin","Ranger","Beastmaster"] },
-  "Group Heal":{ desc:"Heals all nearby allies simultaneously", icon:"💗", group:"Healing", classes:["Cleric","Druid","Shaman"] },
-  "Resurrection":{ desc:"Revives a fallen ally, optionally restoring XP", icon:"✨", group:"Healing", classes:["Cleric","Paladin","Necromancer","Inquisitor"] },
-  "Lifetap":{ desc:"Damages target and transfers HP to caster", icon:"🩸", group:"Healing", classes:["Shadow Knight","Necromancer"] },
+        <div class="role-group">
+          <span class="role-label tank">Tank</span>
+          <button class="class-btn" data-class="Fighter">Fighter</button>
+          <button class="class-btn" data-class="Inquisitor">Inquisitor</button>
+          <button class="class-btn" data-class="Paladin">Paladin</button>
+          <button class="class-btn" data-class="Shadow Knight">Shadow Knight</button>
+        </div>
 
-  // ── BUFFS ──────────────────────────────────────────────────────────────
-  "Stat Buff (STR/STA)":{ desc:"Raises Strength and/or Stamina of target", icon:"💪", group:"Buffs", classes:["Shaman","Beastmaster","Cleric","Enchanter","Bard","Paladin","Elementalist"] },
-  "Melee Haste":{ desc:"Increases melee auto-attack speed", icon:"⚡", group:"Buffs", classes:["Bard","Enchanter","Shaman","Beastmaster","Elementalist"] },
-  "Spell Haste":{ desc:"Reduces casting time for spells", icon:"✨", group:"Buffs", classes:["Bard","Elementalist"] },
-  "AC / Armor Buff":{ desc:"Increases target's Armor Class", icon:"🛡️", group:"Buffs", classes:["Cleric","Paladin","Shadow Knight","Shaman","Druid","Enchanter","Bard"] },
-  "Damage Shield":{ desc:"Reflects melee damage back to attacker", icon:"🔥", group:"Buffs", classes:["Druid","Wizard","Enchanter","Necromancer","Elementalist"] },
-  "Movement Speed (SoW)":{ desc:"Greatly increases movement speed (outdoor only)", icon:"🐾", group:"Buffs", classes:["Druid","Shaman","Ranger","Beastmaster"] },
-  "Mana Regen":{ desc:"Increases rate of mana regeneration", icon:"💎", group:"Buffs", classes:["Bard","Enchanter","Cleric","Druid","Shaman","Elementalist"] },
-  "Enduring Breath":{ desc:"Allows target to breathe underwater", icon:"🫧", group:"Buffs", classes:["Druid","Shaman","Enchanter","Ranger","Beastmaster"] },
-  "Pet Haste / Feral Spirit":{ desc:"Increases pet attack speed or grants berserker buffs", icon:"🐺", group:"Buffs", classes:["Beastmaster","Shaman","Necromancer","Elementalist"] },
-  "Weapon Proc / Enchant":{ desc:"Imbues weapon with magical effects or procs", icon:"⚔️", group:"Buffs", classes:["Enchanter","Spellblade","Bard","Shaman","Paladin","Inquisitor"] },
-  "Invisibility":{ desc:"Renders target unseen by most creatures", icon:"👻", group:"Buffs", classes:["Enchanter","Wizard","Necromancer","Ranger","Rogue"] },
-  "Levitate":{ desc:"Allows target to float above hazards", icon:"🪶", group:"Buffs", classes:["Druid","Cleric","Enchanter","Necromancer","Wizard"] },
-  "Shapeshift":{ desc:"Transforms caster into an animal or elemental form", icon:"🐺", group:"Buffs", classes:["Druid","Beastmaster"] },
+      </div>
+    </section>
 
-  // ── DEBUFFS ────────────────────────────────────────────────────────────
-  "Slow":{ desc:"Reduces target's melee attack speed", icon:"🐌", group:"Debuffs", classes:["Shaman","Enchanter","Bard","Necromancer","Beastmaster"] },
-  "Snare":{ desc:"Reduces target's movement speed", icon:"🕸️", group:"Debuffs", classes:["Druid","Ranger","Shaman","Necromancer","Shadow Knight","Enchanter","Elementalist"] },
-  "Stat Debuff (STR/DEX)":{ desc:"Lowers enemy Strength, Dexterity, or other stats", icon:"📉", group:"Debuffs", classes:["Shaman","Necromancer","Enchanter","Shadow Knight","Inquisitor"] },
-  "Resist Debuff":{ desc:"Lowers target's magical resistances", icon:"🎯", group:"Debuffs", classes:["Druid","Shaman","Enchanter","Wizard","Necromancer","Bard"] },
-  "Aggro Reduction":{ desc:"Reduces or transfers enemy hatred to caster", icon:"🎭", group:"Debuffs", classes:["Enchanter","Necromancer","Rogue","Bard"] },
-  "Dispel Magic":{ desc:"Removes magical buffs from a target", icon:"❌", group:"Debuffs", classes:["Wizard","Enchanter","Cleric","Inquisitor"] },
+    <!-- TAG CATEGORIES -->
+    <section>
+      <div class="section-label">Party Capabilities</div>
+      <div id="tag-section">
 
-  // ── CROWD CONTROL ──────────────────────────────────────────────────────
-  "Root":{ desc:"Holds target in place; breaks on damage", icon:"🌳", group:"CC", classes:["Druid","Ranger","Wizard","Enchanter","Elementalist","Necromancer","Shaman"] },
-  "Mez / Stun":{ desc:"Temporarily incapacitates or stuns a target", icon:"😵", group:"CC", classes:["Enchanter","Bard","Paladin","Inquisitor","Wizard","Cleric","Elementalist"] },
-  "Fear":{ desc:"Causes target to flee in random directions", icon:"😱", group:"CC", classes:["Necromancer","Shadow Knight","Bard","Enchanter"] },
-  "Charm":{ desc:"Enthralls a creature to fight for the caster", icon:"💫", group:"CC", classes:["Enchanter","Bard","Druid","Necromancer","Elementalist"] },
-  "Lull / Pacify":{ desc:"Reduces creature aggro radius or calms it", icon:"😴", group:"CC", classes:["Enchanter","Bard","Druid","Cleric","Paladin","Ranger"] },
+        <div class="category-block">
+          <div class="category-title">Crowd Control</div>
+          <div class="tags-grid">
+            <span class="tag-pill uncovered" data-tag="Fear">Fear</span>
+            <span class="tag-pill uncovered" data-tag="Mez / Stun">Mez / Stun</span>
+            <span class="tag-pill uncovered" data-tag="Charm">Charm</span>
+            <span class="tag-pill uncovered" data-tag="Lull / Pacify">Lull / Pacify</span>
+            <span class="tag-pill uncovered" data-tag="Snare">Snare</span>
+            <span class="tag-pill uncovered" data-tag="Root">Root</span>
+            <span class="tag-pill uncovered" data-tag="Blind">Blind</span>
+          </div>
+        </div>
 
-  // ── DAMAGE ─────────────────────────────────────────────────────────────
-  "Direct Damage (Nuke)":{ desc:"Instant burst magical damage on single target", icon:"💥", group:"Damage", classes:["Wizard","Druid","Shaman","Cleric","Necromancer","Shadow Knight","Enchanter","Spellblade","Bard","Ranger","Elementalist","Paladin","Inquisitor"] },
-  "Damage Over Time":{ desc:"Applies a recurring damage effect over time", icon:"☠️", group:"Damage", classes:["Druid","Shaman","Necromancer","Shadow Knight","Ranger","Bard","Wizard","Enchanter"] },
-  "AoE Damage":{ desc:"Damages multiple targets in an area", icon:"💣", group:"Damage", classes:["Wizard","Druid","Elementalist","Necromancer","Enchanter","Bard"] },
-  "Pet / Undead Summon":{ desc:"Summons a combat pet or animated undead servant", icon:"🤖", group:"Damage", classes:["Necromancer","Elementalist","Beastmaster","Shadow Knight","Shaman"] },
+        <div class="category-block">
+          <div class="category-title">Debuffs</div>
+          <div class="tags-grid">
+            <span class="tag-pill uncovered" data-tag="Slow">Slow</span>
+            <span class="tag-pill uncovered" data-tag="Stat Debuff / Steal">Stat Debuff / Steal</span>
+            <span class="tag-pill uncovered" data-tag="Spell Damage Vulnerability">Spell Damage Vulnerability</span>
+            <span class="tag-pill uncovered" data-tag="Physical Damage Vulnerability">Physical Damage Vulnerability</span>
+            <span class="tag-pill uncovered" data-tag="Reduced Healing">Reduced Healing</span>
+            <span class="tag-pill uncovered" data-tag="Mana Burn">Mana Burn</span>
+            <span class="tag-pill uncovered" data-tag="Lower Resistance">Lower Resistance</span>
+          </div>
+        </div>
 
-  // ── UTILITY ────────────────────────────────────────────────────────────
-  "Teleport / Gate":{ desc:"Transports caster or party to another location", icon:"🌀", group:"Utility", classes:["Druid","Wizard","Enchanter","Necromancer"] },
-  "Bind Wound / HP Regen":{ desc:"Out-of-combat HP recovery ability or regen buff", icon:"🩹", group:"Utility", classes:["Fighter","Monk","Archer","Ranger","Rogue","Bard","Paladin","Cleric","Druid","Shaman","Inquisitor"] },
-  "Feign Death":{ desc:"Causes caster to appear dead, dropping aggro", icon:"💀", group:"Utility", classes:["Monk","Necromancer","Ranger"] },
-  "Tracking":{ desc:"Locates nearby creatures by name and distance", icon:"🧭", group:"Utility", classes:["Ranger","Druid","Bard"] },
-  "Sense / Track Undead":{ desc:"Detects undead or other creature types nearby", icon:"🔍", group:"Utility", classes:["Cleric","Paladin","Inquisitor","Ranger","Shadow Knight"] },
-  "Cure / Remove Ailment":{ desc:"Removes poison, disease, curse, or other debuffs", icon:"🧪", group:"Utility", classes:["Cleric","Druid","Shaman","Paladin","Ranger","Bard","Inquisitor"] },
-  "Taunt / Aggro Gen":{ desc:"Forces enemies to target the caster", icon:"😤", group:"Utility", classes:["Fighter","Paladin","Shadow Knight","Inquisitor","Monk"] },
-  "Stealth / Hide":{ desc:"Conceals the player from enemy detection without magic", icon:"🌑", group:"Utility", classes:["Rogue","Ranger","Monk"] },
-  "Conjure Food & Water":{ desc:"Summons food and water to feed and hydrate the group", icon:"🍞", group:"Utility", classes:["Elementalist","Wizard"] },
-  "Summon Lifestone":{ desc:"Creates a rechargeable HP/mana recovery stone tradeable to party members", icon:"💠", group:"Utility", classes:["Necromancer"] },
-};
+        <div class="category-block">
+          <div class="category-title">Healing</div>
+          <div class="tags-grid">
+            <span class="tag-pill uncovered" data-tag="Heal Over Time">Heal Over Time</span>
+            <span class="tag-pill uncovered" data-tag="Direct Heal">Direct Heal</span>
+            <span class="tag-pill uncovered" data-tag="Resurrection">Resurrection</span>
+          </div>
+        </div>
 
-// State
-let selectedClasses = [];
-let filterGroup = "All";
-let currentView = "matrix";
+        <div class="category-block">
+          <div class="category-title">Buffs</div>
+          <div class="tags-grid">
+            <span class="tag-pill uncovered" data-tag="+HP">+HP</span>
+            <span class="tag-pill uncovered" data-tag="+AC">+AC</span>
+            <span class="tag-pill uncovered" data-tag="+STR">+STR</span>
+            <span class="tag-pill uncovered" data-tag="+STA">+STA</span>
+            <span class="tag-pill uncovered" data-tag="+DEX">+DEX</span>
+            <span class="tag-pill uncovered" data-tag="+AGI">+AGI</span>
+            <span class="tag-pill uncovered" data-tag="+INT">+INT</span>
+            <span class="tag-pill uncovered" data-tag="+CHA">+CHA</span>
+            <span class="tag-pill uncovered" data-tag="+WIS">+WIS</span>
+            <span class="tag-pill uncovered" data-tag="Increase Physical Damage">Increase Physical Damage</span>
+            <span class="tag-pill uncovered" data-tag="Increase Spell Damage">Increase Spell Damage</span>
+            <span class="tag-pill uncovered" data-tag="Movement Speed">Movement Speed</span>
+            <span class="tag-pill uncovered" data-tag="Melee Haste">Melee Haste</span>
+            <span class="tag-pill uncovered" data-tag="Spell Haste">Spell Haste</span>
+            <span class="tag-pill uncovered" data-tag="Resist">Resist</span>
+            <span class="tag-pill uncovered" data-tag="Invisibility">Invisibility</span>
+            <span class="tag-pill uncovered" data-tag="Damage Shield">Damage Shield</span>
+            <span class="tag-pill uncovered" data-tag="Mana Regen">Mana Regen</span>
+            <span class="tag-pill uncovered" data-tag="Health Regen">Health Regen</span>
+          </div>
+        </div>
 
-// ── Init ──────────────────────────────────────────────────────────────────
+        <div class="category-block">
+          <div class="category-title">Pet</div>
+          <div class="tags-grid">
+            <span class="tag-pill uncovered" data-tag="Pet">Pet</span>
+          </div>
+        </div>
 
-function init() {
-  renderClassButtons();
-  renderFilterButtons();
-  render();
-}
+        <div class="category-block">
+          <div class="category-title">Utility</div>
+          <div class="tags-grid">
+            <span class="tag-pill uncovered" data-tag="Purge">Purge</span>
+            <span class="tag-pill uncovered" data-tag="Cure">Cure</span>
+            <span class="tag-pill uncovered" data-tag="Feign Death">Feign Death</span>
+            <span class="tag-pill uncovered" data-tag="Interrupt">Interrupt</span>
+            <span class="tag-pill uncovered" data-tag="Taunt / Aggro Gen">Taunt / Aggro Gen</span>
+            <span class="tag-pill uncovered" data-tag="Tracking">Tracking</span>
+            <span class="tag-pill uncovered" data-tag="Teleport">Teleport</span>
+            <span class="tag-pill uncovered" data-tag="Conjure Weapon">Conjure Weapon</span>
+            <span class="tag-pill uncovered" data-tag="Conjure Arrows">Conjure Arrows</span>
+            <span class="tag-pill uncovered" data-tag="Conjure Bandage">Conjure Bandage</span>
+            <span class="tag-pill uncovered" data-tag="Conjure Food &amp; Water">Conjure Food &amp; Water</span>
+            <span class="tag-pill uncovered" data-tag="Summon Manastone">Summon Manastone</span>
+            <span class="tag-pill uncovered" data-tag="Summon Lifestone">Summon Lifestone</span>
+          </div>
+        </div>
 
-function renderClassButtons() {
-  const container = document.getElementById('class-buttons');
-  container.innerHTML = '';
-  CLASSES.forEach(cls => {
-    const btn = document.createElement('button');
-    btn.className = 'class-btn' + (selectedClasses.includes(cls) ? ' active' : '');
-    btn.textContent = cls;
-    const color = CLASS_COLORS[cls];
-    if (selectedClasses.includes(cls)) {
-      btn.style.border = `1px solid ${color}`;
-      btn.style.background = `${color}22`;
-      btn.style.color = color;
-      btn.style.boxShadow = `0 0 8px ${color}33`;
-    }
-    btn.onclick = () => toggleClass(cls);
-    container.appendChild(btn);
-  });
-}
+      </div>
+    </section>
 
-function renderFilterButtons() {
-  const container = document.getElementById('filter-buttons');
-  container.innerHTML = '';
-  ["All", ...GROUPS].forEach(g => {
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn';
-    btn.textContent = g;
-    const gc = GROUP_COLORS[g] || "#6a5a7a";
-    if (filterGroup === g) {
-      btn.style.border = `1px solid ${gc}`;
-      btn.style.background = `${gc}22`;
-      btn.style.color = gc;
-    }
-    btn.onclick = () => { filterGroup = g; renderFilterButtons(); render(); };
-    container.appendChild(btn);
-  });
-}
+    <!-- MISSING & REDUNDANCY PANELS -->
+    <section>
+      <div id="bottom-panels">
 
-// ── Actions ───────────────────────────────────────────────────────────────
+        <div class="panel">
+          <div class="panel-title missing-title">&#9888; Missing Coverage</div>
+          <div id="missing-content">
+            <div class="missing-list" id="missing-list"></div>
+          </div>
+        </div>
 
-function toggleClass(cls) {
-  if (selectedClasses.includes(cls)) {
-    selectedClasses = selectedClasses.filter(c => c !== cls);
-  } else {
-    selectedClasses.push(cls);
-  }
-  document.getElementById('class-count-label').textContent = `Select Classes (${selectedClasses.length} selected)`;
-  document.getElementById('action-row').style.display = selectedClasses.length > 0 ? 'flex' : 'none';
-  document.getElementById('btn-ai').disabled = selectedClasses.length < 2;
-  document.getElementById('ai-panel').style.display = 'none';
-  renderClassButtons();
-  render();
-}
+        <div class="panel">
+          <div class="panel-title redundant-title">&#8635; Redundancies</div>
+          <div id="redundancy-content">
+            <div class="redundancy-list" id="redundancy-list"></div>
+          </div>
+        </div>
 
-function clearAll() {
-  selectedClasses = [];
-  document.getElementById('class-count-label').textContent = 'Select Classes (0 selected)';
-  document.getElementById('action-row').style.display = 'none';
-  document.getElementById('ai-panel').style.display = 'none';
-  renderClassButtons();
-  render();
-}
+      </div>
+    </section>
 
-function setView(v) {
-  currentView = v;
-  document.getElementById('view-matrix').className = 'view-btn' + (v === 'matrix' ? ' active' : '');
-  document.getElementById('view-class').className = 'view-btn' + (v === 'class' ? ' active' : '');
-  render();
-}
+  </main>
 
-// ── AI Analysis ───────────────────────────────────────────────────────────
-
-async function getAiAnalysis() {
-  if (selectedClasses.length < 2) return;
-  const panel = document.getElementById('ai-panel');
-  const content = document.getElementById('ai-content');
-  panel.style.display = 'block';
-  content.innerHTML = '<div class="ai-loading">Consulting the arcane oracle...</div>';
-
-  const overlaps = Object.entries(SPELL_DATA)
-    .filter(([, v]) => v.classes.filter(c => selectedClasses.includes(c)).length >= 2)
-    .map(([k, v]) => `${k} (${v.classes.filter(c => selectedClasses.includes(c)).join(", ")})`);
-
-  const unique = selectedClasses.map(cls => {
-    const uniqueCats = Object.entries(SPELL_DATA)
-      .filter(([, v]) => v.classes.includes(cls) && v.classes.filter(c => selectedClasses.includes(c)).length === 1)
-      .map(([k]) => k);
-    return `${cls}: ${uniqueCats.join(", ") || "nothing unique"}`;
-  });
-
-  const prompt = `You are an expert on the EverQuest-inspired MMORPG "Monsters and Memories".
-Analyze this group composition: ${selectedClasses.join(", ")}.
-
-Overlapping spell categories (covered by 2+ classes in this group):
-${overlaps.join("\n")}
-
-Each class's unique contributions:
-${unique.join("\n")}
-
-In 3-4 sentences, give sharp tactical advice about:
-1. What's redundant and could be replaced for better coverage
-2. What key utility (heals, CC, slow, etc.) is missing
-3. Whether this is a strong raid or group composition
-
-Be direct, specific, and use the actual category names. Keep it under 100 words.`;
-
-  try {
-    const response = await fetch("https://sparkling-union-d04d.psyrus233.workers.dev", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 1000,
-        messages: [{ role: "user", content: prompt }]
-      })
-    });
-    const data = await response.json();
-    const text = data.content?.map(i => i.text || "").join("") || "Unable to analyze.";
-    content.innerHTML = `<div class="ai-text">${text}</div>`;
-  } catch (e) {
-    content.innerHTML = '<div class="ai-text">Analysis unavailable — API error.</div>';
-  }
-}
-
-// ── Render ────────────────────────────────────────────────────────────────
-
-function render() {
-  if (currentView === 'matrix') renderMatrix();
-  else renderClassView();
-}
-
-function getFilteredCategories() {
-  return Object.entries(SPELL_DATA).filter(([, v]) =>
-    filterGroup === 'All' || v.group === filterGroup
-  );
-}
-
-function renderMatrix() {
-  const area = document.getElementById('content-area');
-  const filtered = getFilteredCategories();
-  const missing = selectedClasses.length > 0
-    ? filtered.filter(([cat]) => !SPELL_DATA[cat].classes.some(c => selectedClasses.includes(c)))
-    : [];
-
-  let html = '';
-
-  GROUPS.forEach(group => {
-    const cats = filtered.filter(([, v]) => v.group === group);
-    if (!cats.length) return;
-
-    const gc = GROUP_COLORS[group];
-    html += `<div class="group-section">`;
-    html += `<div class="group-title" style="color:${gc};border-bottom:1px solid ${gc}33;">${group}</div>`;
-    html += `<div class="cards-grid">`;
-
-    cats.forEach(([cat, data]) => {
-      const activeClasses = selectedClasses.length > 0
-        ? data.classes.filter(c => selectedClasses.includes(c))
-        : data.classes;
-      const count = activeClasses.length;
-      const isMissing = selectedClasses.length > 0 && count === 0;
-      const hasOverlap = count >= 2;
-
-      let cardBorder = isMissing ? '1px solid #2a1a2a' : (hasOverlap ? `1px solid ${gc}55` : '1px solid #2a2535');
-      let cardBg = isMissing ? '#110e14' : '#16141e';
-
-      html += `<div class="spell-card${isMissing ? ' missing' : ''}" style="border:${cardBorder};background:${cardBg};">`;
-      html += `<div class="spell-card-header">`;
-      html += `<span class="spell-icon">${data.icon}</span>`;
-      html += `<span class="spell-name${isMissing ? ' missing-name' : ''}" style="font-weight:${hasOverlap ? 'bold' : 'normal'}">${cat}</span>`;
-      if (hasOverlap) {
-        html += `<span class="overlap-badge" style="background:${gc}33;color:${gc};">×${count}</span>`;
-      }
-      html += `</div>`;
-      html += `<div class="spell-desc">${data.desc}</div>`;
-      html += `<div class="class-tags">`;
-      data.classes.forEach(cls => {
-        const inGroup = selectedClasses.length === 0 || selectedClasses.includes(cls);
-        const color = CLASS_COLORS[cls];
-        if (inGroup) {
-          html += `<span class="class-tag active" style="background:${color}20;border:1px solid ${color}60;color:${color};">${cls}</span>`;
-        } else {
-          html += `<span class="class-tag">${cls}</span>`;
-        }
-      });
-      html += `</div></div>`;
-    });
-
-    html += `</div></div>`;
-  });
-
-  if (missing.length > 0) {
-    html += `<div class="gaps-section">`;
-    html += `<div class="gaps-title">⚠ Gaps in Coverage</div>`;
-    html += `<div class="gaps-list">`;
-    missing.forEach(([cat, data]) => {
-      html += `<span class="gap-item">${data.icon} ${cat}</span>`;
-    });
-    html += `</div></div>`;
-  }
-
-  // Redundancy section — only when 2+ classes selected, skip Damage group
-  if (selectedClasses.length >= 2) {
-    const redundant = Object.entries(SPELL_DATA).filter(([, v]) => {
-      if (v.group === 'Damage') return false;
-      const covered = v.classes.filter(c => selectedClasses.includes(c));
-      return covered.length >= 2;
-    });
-
-    if (redundant.length > 0) {
-      html += `<div class="redundancy-section">`;
-      html += `<div class="redundancy-title">⚑ Redundant Coverage</div>`;
-      html += `<div class="redundancy-grid">`;
-      redundant.forEach(([cat, data]) => {
-        const overlap = data.classes.filter(c => selectedClasses.includes(c));
-        const gc = GROUP_COLORS[data.group];
-        html += `<div class="redundancy-item">`;
-        html += `<div class="redundancy-cat">${data.icon} ${cat} <span style="font-size:10px;color:#6a5a30;letter-spacing:1px;">${data.group.toUpperCase()}</span></div>`;
-        html += `<div class="redundancy-classes">`;
-        overlap.forEach(cls => {
-          const color = CLASS_COLORS[cls];
-          html += `<span class="class-tag active" style="background:${color}20;border:1px solid ${color}60;color:${color};">${cls}</span>`;
-        });
-        html += `</div></div>`;
-      });
-      html += `</div></div>`;
-    }
-  }
-
-  area.innerHTML = html;
-}
-
-function renderClassView() {
-  const area = document.getElementById('content-area');
-  const display = selectedClasses.length > 0 ? selectedClasses : CLASSES;
-  const filtered = getFilteredCategories();
-
-  let html = '<div class="class-cards-grid">';
-
-  display.forEach(cls => {
-    const color = CLASS_COLORS[cls];
-    const spells = filtered.filter(([, v]) => v.classes.includes(cls));
-
-    html += `<div class="class-card" style="border:1px solid ${color}33;box-shadow:0 0 10px ${color}11;">`;
-    html += `<div class="class-card-title" style="color:${color};">${cls}</div>`;
-
-    GROUPS.forEach(group => {
-      const gc = GROUP_COLORS[group];
-      const groupSpells = spells.filter(([, v]) => v.group === group);
-      if (!groupSpells.length) return;
-
-      html += `<div class="class-spell-group">`;
-      html += `<div class="class-spell-group-title" style="color:${gc};">${group}</div>`;
-      html += `<div class="class-spell-tags">`;
-      groupSpells.forEach(([cat, data]) => {
-        html += `<span class="class-spell-tag" title="${data.desc}" style="background:${gc}15;border:1px solid ${gc}40;">${data.icon} ${cat}</span>`;
-      });
-      html += `</div></div>`;
-    });
-
-    html += `</div>`;
-  });
-
-  html += '</div>';
-  area.innerHTML = html;
-}
-
-init();
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
