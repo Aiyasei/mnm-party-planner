@@ -344,14 +344,30 @@ section {
 }
 
 /* ============================================
-   MISSING & REDUNDANCY SECTIONS
+   TWO COLUMN CAPABILITIES LAYOUT
    ============================================ */
 
-#bottom-panels {
+#capabilities-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 380px;
   gap: 24px;
+  align-items: start;
 }
+
+#capabilities-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+#panels-col {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 80px;
+}
+
+/* MISSING & REDUNDANCY PANELS */
 
 .panel {
   background: var(--bg-secondary);
@@ -418,12 +434,46 @@ section {
 .redundancy-tag {
   color: var(--redundant);
   font-weight: 700;
-  min-width: 160px;
+  min-width: 140px;
 }
 
 .redundancy-classes {
   color: var(--text-muted);
   font-size: 0.8rem;
+}
+
+/* CAVEATS */
+
+#caveats-block {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.caveat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(232, 123, 30, 0.06);
+  border: 1px solid rgba(232, 123, 30, 0.2);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.caveat-icon {
+  color: var(--orange-dim);
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.caveat-label {
+  color: var(--orange-dim);
+  font-weight: 700;
 }
 
 /* ============================================
@@ -797,8 +847,12 @@ section {
     padding: 16px;
   }
 
-  #bottom-panels {
+  #capabilities-layout {
     grid-template-columns: 1fr;
+  }
+
+  #panels-col {
+    position: static;
   }
 
   .role-group {
