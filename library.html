@@ -3,63 +3,211 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monster and Memories — Spell Library</title>
+  <title>Monster and Memories Spell Lists</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
-    <div class="site-title">Monster <span>&amp;</span> Memories</div>
+    <div class="site-title">Monster <span>&amp;</span> Memories <span class="title-sub">Spell Lists</span></div>
     <nav>
-      <a href="https://monstersandmemories.com/" target="_blank" rel="noopener">Official Site</a>
-      <a href="https://monstersandmemories.miraheze.org/wiki/Main_Page" target="_blank" rel="noopener">Wiki</a>
+      <a href="https://monstersandmemories.com/" target="_blank" rel="noopener" class="nav-icon-link">
+        <img src="https://monstersandmemories.com/favicon.ico" alt="" class="nav-icon" onerror="this.style.display='none'" />
+        Official Site
+      </a>
+      <a href="https://monstersandmemories.miraheze.org/wiki/Main_Page" target="_blank" rel="noopener" class="nav-icon-link">
+        <img src="assets/wiki.jpg" alt="" class="nav-icon" />
+        Wiki
+      </a>
       <a href="index.html" class="nav-highlight">&#8592; Party Planner</a>
     </nav>
   </header>
 
   <main>
-
     <section>
       <div class="section-label">Detailed Class Overview &amp; Spell Library</div>
 
-      <!-- FILTERS -->
-      <div class="library-controls">
-        <input type="text" id="search-input" placeholder="Search spell name or description..." />
+      <!-- CLASS FILTER BUTTONS -->
+      <div class="lib-filter-block">
+        <div class="lib-filter-label">Filter by Class</div>
 
-        <select id="filter-class">
-          <option value="">All Classes</option>
-          <option>Elementalist</option>
-          <option>Necromancer</option>
-          <option>Wizard</option>
-          <option>Archer</option>
-          <option>Ranger</option>
-          <option>Beastmaster</option>
-          <option>Monk</option>
-          <option>Rogue</option>
-          <option>Spellblade</option>
-          <option>Cleric</option>
-          <option>Druid</option>
-          <option>Shaman</option>
-          <option>Enchanter</option>
-          <option>Bard</option>
-          <option>Fighter</option>
-          <option>Inquisitor</option>
-          <option>Paladin</option>
-          <option>Shadow Knight</option>
-        </select>
+        <div class="lib-class-toggles">
+          <button id="btn-select-all" class="class-btn lib-toggle-btn">Select All</button>
+          <button id="btn-clear-all" class="class-btn lib-toggle-btn">Clear All</button>
+        </div>
 
-        <select id="filter-skill">
-          <option value="">All Skills</option>
-        </select>
+        <div class="lib-role-groups">
 
-        <input type="text" id="filter-tag" placeholder="Filter by tag..." />
+          <div class="role-group">
+            <span class="role-label dps">DPS</span>
+            <button class="class-btn lib-class-btn active" data-class="Elementalist">Elementalist</button>
+            <button class="class-btn lib-class-btn active" data-class="Necromancer">Necromancer</button>
+            <button class="class-btn lib-class-btn active" data-class="Wizard">Wizard</button>
+            <button class="class-btn lib-class-btn active" data-class="Archer">Archer</button>
+            <button class="class-btn lib-class-btn active" data-class="Ranger">Ranger</button>
+            <button class="class-btn lib-class-btn active" data-class="Beastmaster">Beastmaster</button>
+            <button class="class-btn lib-class-btn active" data-class="Monk">Monk</button>
+            <button class="class-btn lib-class-btn active" data-class="Rogue">Rogue</button>
+            <button class="class-btn lib-class-btn active" data-class="Spellblade">Spellblade</button>
+          </div>
 
-        <select id="filter-level">
-          <option value="">All Levels</option>
-        </select>
+          <div class="role-group">
+            <span class="role-label healer">Healer</span>
+            <button class="class-btn lib-class-btn active" data-class="Cleric">Cleric</button>
+            <button class="class-btn lib-class-btn active" data-class="Druid">Druid</button>
+            <button class="class-btn lib-class-btn active" data-class="Shaman">Shaman</button>
+          </div>
 
-        <button id="clear-filters" class="class-btn">Clear Filters</button>
+          <div class="role-group">
+            <span class="role-label support">Support</span>
+            <button class="class-btn lib-class-btn active" data-class="Enchanter">Enchanter</button>
+            <button class="class-btn lib-class-btn active" data-class="Bard">Bard</button>
+          </div>
+
+          <div class="role-group">
+            <span class="role-label tank">Tank</span>
+            <button class="class-btn lib-class-btn active" data-class="Fighter">Fighter</button>
+            <button class="class-btn lib-class-btn active" data-class="Inquisitor">Inquisitor</button>
+            <button class="class-btn lib-class-btn active" data-class="Paladin">Paladin</button>
+            <button class="class-btn lib-class-btn active" data-class="Shadow Knight">Shadow Knight</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SEARCH + OTHER FILTERS -->
+      <div class="lib-filter-block">
+        <div class="lib-filter-row">
+
+          <div class="lib-filter-group">
+            <label class="lib-filter-label" for="search-input">Search Spell Name / Description</label>
+            <input type="text" id="search-input" placeholder="Search..." />
+            <button id="clear-filters" class="class-btn" style="margin-top:6px;">Clear All Filters</button>
+          </div>
+
+          <div class="lib-filter-group">
+            <label class="lib-filter-label" for="filter-tag">Filter by Tag</label>
+            <select id="filter-tag">
+              <option value="">All Tags</option>
+              <optgroup label="── DAMAGE ──">
+                <option>Direct Damage</option>
+                <option>Damage Over Time</option>
+              </optgroup>
+              <optgroup label="── CROWD CONTROL ──">
+                <option>Fear</option>
+                <option>Mez / Stun</option>
+                <option>Charm</option>
+                <option>Lull / Pacify</option>
+                <option>Snare</option>
+                <option>Root</option>
+                <option>Blind</option>
+              </optgroup>
+              <optgroup label="── DEBUFFS ──">
+                <option>Slow</option>
+                <option>Stat Debuff / Steal</option>
+                <option>Spell Damage Vulnerability</option>
+                <option>Physical Damage Vulnerability</option>
+                <option>Reduced Healing</option>
+                <option>Mana Burn</option>
+                <option>Lower Resistance</option>
+              </optgroup>
+              <optgroup label="── HEALING ──">
+                <option>Heal Over Time</option>
+                <option>Direct Heal</option>
+                <option>Lifesteal</option>
+                <option>Lifetap</option>
+                <option>Resurrection</option>
+              </optgroup>
+              <optgroup label="── BUFF ──">
+                <option>+HP</option>
+                <option>+AC</option>
+                <option>+STR</option>
+                <option>+STA</option>
+                <option>+DEX</option>
+                <option>+AGI</option>
+                <option>+INT</option>
+                <option>+CHA</option>
+                <option>+WIS</option>
+                <option>Increase Physical Damage</option>
+                <option>Increase Spell Damage</option>
+                <option>Movement Speed</option>
+                <option>Melee Haste</option>
+                <option>Spell Haste</option>
+                <option>Resist</option>
+                <option>Invisibility</option>
+                <option>Damage Shield</option>
+                <option>Absorb Damage Shield</option>
+                <option>Mana Regen</option>
+                <option>Health Regen</option>
+                <option>Transfer Health</option>
+                <option>Transfer Mana</option>
+                <option>Damage Reduction</option>
+              </optgroup>
+              <optgroup label="── PET ──">
+                <option>Pet</option>
+              </optgroup>
+              <optgroup label="── UTILITY ──">
+                <option>Purge</option>
+                <option>Cure</option>
+                <option>Feign Death</option>
+                <option>Interrupt</option>
+                <option>Taunt / Aggro Gen</option>
+                <option>Trap</option>
+                <option>Enduring Breath</option>
+                <option>Stealth / Hide</option>
+                <option>Aggro Reduction</option>
+                <option>Tracking</option>
+                <option>Bind</option>
+                <option>Teleport</option>
+                <option>Gate</option>
+                <option>Conjure Weapon</option>
+                <option>Conjure Arrows</option>
+                <option>Conjure Bandage</option>
+                <option>Conjure Food &amp; Water</option>
+                <option>Summon Manastone</option>
+                <option>Summon Lifestone</option>
+                <option>Shapeshift</option>
+                <option>Misc.</option>
+              </optgroup>
+              <optgroup label="── SITUATIONAL ──">
+                <option>AoE</option>
+                <option>AURA</option>
+                <option value="(pet only)">(pet only)</option>
+                <option value="(undead only)">(undead only)</option>
+                <option value="(elementals only)">(elementals only)</option>
+                <option value="(animals only)">(animals only)</option>
+                <option value="(self only)">(self only)</option>
+                <option>Physical</option>
+                <option>Fire</option>
+                <option>Cold</option>
+                <option>Electricity</option>
+                <option>Poison</option>
+                <option>Disease</option>
+                <option>Corruption</option>
+                <option>Magic</option>
+                <option>Holy</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="lib-filter-group">
+            <label class="lib-filter-label">Level Range</label>
+            <div class="level-range-row">
+              <input type="number" id="level-min" placeholder="Min" min="1" />
+              <span class="level-range-sep">—</span>
+              <input type="number" id="level-max" placeholder="Max" min="1" />
+            </div>
+          </div>
+
+          <div class="lib-filter-group">
+            <label class="lib-filter-label" for="filter-skill">Filter by Skill</label>
+            <select id="filter-skill">
+              <option value="">All Skills</option>
+            </select>
+          </div>
+
+        </div>
       </div>
 
       <!-- RESULT COUNT -->
@@ -71,12 +219,12 @@
           <thead>
             <tr>
               <th data-col="Level">Lvl</th>
-              <th data-col="Class">Class</th>
               <th data-col="Spell Name">Spell Name</th>
+              <th data-col="Spell Description">Description</th>
               <th data-col="Skill">Skill</th>
               <th data-col="Mana">Mana</th>
               <th data-col="Tag">Tags</th>
-              <th data-col="Spell Description">Description</th>
+              <th data-col="Class">Class</th>
             </tr>
           </thead>
           <tbody id="spell-tbody">
@@ -84,8 +232,8 @@
           </tbody>
         </table>
       </div>
-    </section>
 
+    </section>
   </main>
 
   <script src="script.js"></script>
