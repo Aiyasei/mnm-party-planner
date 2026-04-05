@@ -343,6 +343,33 @@ section {
   border-color: var(--border);
 }
 
+.capabilities-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.capabilities-header .section-label {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.toggle-self-btn {
+  font-size: 0.78rem;
+  padding: 5px 12px;
+  border-color: var(--orange-dim);
+  color: var(--orange-dim);
+}
+
+.toggle-self-btn.active {
+  background: rgba(232, 123, 30, 0.15);
+  color: var(--orange);
+  border-color: var(--orange);
+  box-shadow: none;
+}
+
 /* ============================================
    TWO COLUMN CAPABILITIES LAYOUT
    ============================================ */
