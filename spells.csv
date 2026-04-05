@@ -622,7 +622,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 56,Swarm Pet Tier 15,"Entreat the wild, calling forth a swarm of [Bat, Bear, Beetle, Crocodile, Jackal, Rat, Snake, Spider, Tarantula, Wasp, Wolf] to temporarily fight alongside you.",Con,,Pet,Beastmaster
 56,Untamed Spirit,"Awaken an untamed spirit within your pet, increasing their Attack Speed by 40%, Agility by 15, and granting them a chance to activate Rip on melee attacks for 1 hour. Rip: Rip the flesh of your target, dealing 10 Physical Damage every 6 seconds for 30 seconds.",,,+AGI | Melee Haste | Physical | Damage Over Time | (pet only),Beastmaster
 60,Swarm Pet Tier 16,"Entreat the wild, calling forth a swarm of [Bat, Bear, Beetle, Crocodile, Jackal, Rat, Snake, Spider, Tarantula, Wasp, Wolf] to temporarily fight alongside you.",Con,,Pet,Beastmaster
-1,Mend,"Mend your wounds, restoring 30% Health and increasing your Armor Class by 25% for 30 seconds.",Val,Innate,Heal Over Time | +AC,Monk
+1,Mend,"Mend your wounds, restoring 30% Health and increasing your Armor Class by 25% for 30 seconds.",Val,Innate,Direct Heal | +AC,Monk
 1,Taunt,"Taunt your target, causing them to focus their attacks on you. Triggers cooldown of Martial abilities.",Mar,Innate,Taunt / Aggro Gen,Monk
 1,Round Kick,"Round Kicks your target for 2 (L1) to 80 (L60) Melee Damage, with 150% (L1) to 350% (L60) Damage Variance. Triggers cooldown of Might abilities.",Mit,Innate,Direct Damage | Physical,Monk
 1,Throw,Throw a throwing weapon at your target. Requires throwing weapon.,Mar,Innate,Direct Damage | Physical,Monk
