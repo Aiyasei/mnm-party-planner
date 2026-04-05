@@ -110,21 +110,39 @@ function loadCSV(callback) {
 
 function initPartyPlanner(spells) {
 
-  // Build a map: className -> Set of front-page tags that class has
-  const classTagMap = {};
+  // Build TWO maps per class:
+  // classTagMap     — all spells (includes self-only)
+  // classTagMapParty — only spells that are NOT exclusively self-only
+  //
+  // A spell is "self only" if its tag string contains "(self only)"
+  // A tag is "party-relevant" for a class if at least ONE spell
+  // covering that tag does NOT have (self only).
+
+  const classTagMap = {};       // includes self-only spells
+  const classTagMapParty = {};  // excludes self-only spells
+
   for (const spell of spells) {
     const cls = (spell["Class"] || "").trim();
     if (!cls) continue;
     if (!classTagMap[cls]) classTagMap[cls] = new Set();
-    const tags = parseTags(spell["Tag"]);
+    if (!classTagMapParty[cls]) classTagMapParty[cls] = new Set();
+
+    const rawTag = spell["Tag"] || "";
+    const isSelfOnly = rawTag.includes("(self only)");
+    const tags = parseTags(rawTag);
     const matched = normalizeFrontPageTags(tags);
+
     for (const t of matched) {
       classTagMap[cls].add(t);
+      if (!isSelfOnly) {
+        classTagMapParty[cls].add(t);
+      }
     }
   }
 
-  // Selected classes state
+  // State
   const selectedClasses = new Set();
+  let hideSelfOnly = false;
 
   // DOM references
   const partyDisplay = document.getElementById("party-display");
@@ -132,6 +150,24 @@ function initPartyPlanner(spells) {
   const tagPills = document.querySelectorAll(".tag-pill");
   const missingList = document.getElementById("missing-list");
   const redundancyList = document.getElementById("redundancy-list");
+  const toggleSelfOnlyBtn = document.getElementById("toggle-self-only");
+
+  // ---- Self-only toggle button ----
+  if (toggleSelfOnlyBtn) {
+    toggleSelfOnlyBtn.addEventListener("click", () => {
+      hideSelfOnly = !hideSelfOnly;
+      toggleSelfOnlyBtn.textContent = hideSelfOnly
+        ? "Include Personal Abilities"
+        : "Hide Personal Abilities";
+      toggleSelfOnlyBtn.classList.toggle("active", hideSelfOnly);
+      updateUI();
+    });
+  }
+
+  // ---- Helper: get active tag map based on toggle ----
+  function getTagMap() {
+    return hideSelfOnly ? classTagMapParty : classTagMap;
+  }
 
   // ---- Button click handler ----
   classButtons.forEach(btn => {
@@ -185,10 +221,9 @@ function initPartyPlanner(spells) {
 
   // ---- Tag pills (covered / uncovered) ----
   function updateTagPills() {
-    // Gather all tags covered by selected classes
     const coveredTags = new Set();
     for (const cls of selectedClasses) {
-      const tags = classTagMap[cls] || new Set();
+      const tags = getTagMap()[cls] || new Set();
       for (const t of tags) coveredTags.add(t);
     }
 
@@ -208,7 +243,7 @@ function initPartyPlanner(spells) {
   function updateMissing() {
     const coveredTags = new Set();
     for (const cls of selectedClasses) {
-      const tags = classTagMap[cls] || new Set();
+      const tags = getTagMap()[cls] || new Set();
       for (const t of tags) coveredTags.add(t);
     }
 
@@ -237,12 +272,11 @@ function initPartyPlanner(spells) {
       return;
     }
 
-    // For each front page tag, find which selected classes cover it
     const tagCoverage = {};
     for (const tag of FRONT_PAGE_TAGS) {
       tagCoverage[tag] = [];
       for (const cls of selectedClasses) {
-        const tags = classTagMap[cls] || new Set();
+        const tags = getTagMap()[cls] || new Set();
         if (tags.has(tag)) tagCoverage[tag].push(cls);
       }
     }
