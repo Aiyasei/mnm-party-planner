@@ -146,7 +146,7 @@ function initPartyPlanner(spells) {
 
   // DOM references
   const partyDisplay = document.getElementById("party-display");
-  const classButtons = document.querySelectorAll(".class-btn");
+  const classButtons = document.querySelectorAll(".class-btn[data-class]");
   const tagPills = document.querySelectorAll(".tag-pill");
   const missingList = document.getElementById("missing-list");
   const redundancyList = document.getElementById("redundancy-list");
