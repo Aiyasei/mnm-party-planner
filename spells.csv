@@ -534,6 +534,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 59,Smoldering Embers,"Burns your target for 60 seconds, dealing 30 Fire Damage every 6 seconds and decreasing AC by 25. Max 3 Stacks. This spell does not stack with itself or any others in the same line. Requires Fire Beetle Eye.",Evo,,Damage Over Time | Fire | Physical Damage Vulnerability,Ranger
 60,Natureskin,"Solidifies the skin of a friendly target, increasing their Armor Class by 30 and health regen by 2 for 30 minutes.",Abj,,+AC | Health Regen,Ranger
 60,Pack Speed,"Bestows your group Speed of the Wild, increasing their Movement Speed by 40%(L8) to 60%(L60) for 30 minutes.",Alt,,Movement Speed,Ranger
+4,Tracking,,,,Tracking,Ranger
 1,Bat Swarm Pet Tier 1,"Entreat the wild, calling forth a cloud of bats to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Bear Swarm Pet Tier 1,"Entreat the wild, calling forth a sleuth of bears to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Beetle Swarm Pet Tier 1,"Entreat the wild, calling forth a swarm of beetles to temporarily fight alongside you.",Con,3,Pet,Beastmaster
@@ -922,6 +923,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 60,Element Shatter,"Shatters your target's resistance to the elements, decreasing their Cold, Electricity, Fire and Magic Resistance by 10. This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,,Lower Resistance | Cold | Electricity | Fire | Magic,Druid
 60,Embers of Eth-ehm,"Channel moon energy, unleashing the embers of Eth-ehm for 1000 points of Fire Damage.",Evo,,Direct Damage | Fire,Druid
 60,Raging Embers,"Burns your target for 60 seconds, dealing 45 Fire Damage every 6 seconds and decreasing AC by 26. Max 3 stacks. This spell does not stack with itself or any others in the same line. Requires Fire Beetle Eye.",Evo,,Damage Over Time | Fire | Physical Damage Vulnerability,Druid
+21,Tracking,Druids can learn this skill at level 21 from their class trainer.,,,Tracking,Druid
 1,Berserker Spirit,"Make your target go berserk, increasing their Strength, Stamina, Dexterity, and Agility by 2 for 1 hour.",Alt,5,+STR | +STA | +DEX | +AGI,Shaman
 1,Disease Protection,"Ward your target against sickness, increasing their Disease Resistance by 5 for 1 hour.",Abj,10,Resist | Disease,Shaman
 1,Electricity Protection,"Ward your target against shock, increasing their Electricity Resistance by 5 for 1 hour.",Abj,10,Resist | Electricity,Shaman
