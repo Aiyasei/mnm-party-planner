@@ -52,8 +52,12 @@ const FRONT_PAGE_TAGS = new Set([
   "Conjure Food & Water", "Summon Manastone", "Summon Lifestone"
 ]);
 
+// Convert class name to CSS slug for color classes
+function classSlug(cls) {
+  return cls.toLowerCase().replace(/\s+/g, "");
+}
+
 // ============================================
-// SHARED: PARSE TAGS FROM A RAW TAG STRING
 // Splits by pipe, trims whitespace, strips
 // parenthetical qualifiers like (self only)
 // ============================================
@@ -293,9 +297,12 @@ function initPartyPlanner(spells) {
     for (const [tag, classes] of redundant) {
       const item = document.createElement("div");
       item.className = "redundancy-item";
+      const classesHtml = classes
+        .map(c => `<span class="cls-text-${classSlug(c)}">${c}</span>`)
+        .join('<span style="color:var(--text-muted);">, </span>');
       item.innerHTML = `
         <span class="redundancy-tag">${tag}</span>
-        <span class="redundancy-classes">${classes.join(", ")}</span>
+        <span class="redundancy-classes">${classesHtml}</span>
       `;
       redundancyList.appendChild(item);
     }
@@ -448,6 +455,8 @@ function initLibrary(spells) {
 
     for (const spell of sorted) {
       const tr = document.createElement("tr");
+      const slug = classSlug(spell["Class"] || "");
+      tr.className = `cls-${slug}`;
       tr.innerHTML = `
         <td>${spell["Level"] || ""}</td>
         <td>${spell["Spell Name"] || ""}</td>
@@ -455,7 +464,7 @@ function initLibrary(spells) {
         <td>${spell["Skill"] || ""}</td>
         <td>${spell["Mana"] || ""}</td>
         <td class="spell-tags">${(spell["Tag"] || "").trim()}</td>
-        <td class="spell-class">${spell["Class"] || ""}</td>
+        <td class="spell-class cls-text-${slug}">${spell["Class"] || ""}</td>
       `;
       tbody.appendChild(tr);
     }
