@@ -76,115 +76,132 @@
       </div>
     </section>
 
-    <!-- TAG CATEGORIES -->
+    <!-- TWO COLUMN LAYOUT: Capabilities Left, Panels Right -->
     <section>
-      <div class="section-label">Party Capabilities</div>
-      <div id="tag-section">
+      <div id="capabilities-layout">
 
-        <div class="category-block">
-          <div class="category-title cat-cc">Crowd Control</div>
-          <div class="tags-grid">
-            <span class="tag-pill uncovered" data-tag="Fear">Fear</span>
-            <span class="tag-pill uncovered" data-tag="Mez / Stun">Mez / Stun</span>
-            <span class="tag-pill uncovered" data-tag="Charm">Charm</span>
-            <span class="tag-pill uncovered" data-tag="Lull / Pacify">Lull / Pacify</span>
-            <span class="tag-pill uncovered" data-tag="Snare">Snare</span>
-            <span class="tag-pill uncovered" data-tag="Root">Root</span>
-            <span class="tag-pill uncovered" data-tag="Blind">Blind</span>
+        <!-- LEFT: Party Capabilities -->
+        <div id="capabilities-col">
+          <div class="section-label">Party Capabilities</div>
+          <div id="tag-section">
+
+            <div class="category-block">
+              <div class="category-title cat-cc">Crowd Control</div>
+              <div class="tags-grid">
+                <span class="tag-pill uncovered" data-tag="Fear">Fear</span>
+                <span class="tag-pill uncovered" data-tag="Mez / Stun">Mez / Stun</span>
+                <span class="tag-pill uncovered" data-tag="Charm">Charm</span>
+                <span class="tag-pill uncovered" data-tag="Lull / Pacify">Lull / Pacify</span>
+                <span class="tag-pill uncovered" data-tag="Snare">Snare</span>
+                <span class="tag-pill uncovered" data-tag="Root">Root</span>
+                <span class="tag-pill uncovered" data-tag="Blind">Blind</span>
+              </div>
+            </div>
+
+            <div class="category-block">
+              <div class="category-title cat-debuff">Debuffs</div>
+              <div class="tags-grid">
+                <span class="tag-pill uncovered" data-tag="Slow">Slow</span>
+                <span class="tag-pill uncovered" data-tag="Stat Debuff / Steal">Stat Debuff / Steal</span>
+                <span class="tag-pill uncovered" data-tag="Spell Damage Vulnerability">Spell Damage Vulnerability</span>
+                <span class="tag-pill uncovered" data-tag="Physical Damage Vulnerability">Physical Damage Vulnerability</span>
+                <span class="tag-pill uncovered" data-tag="Reduced Healing">Reduced Healing</span>
+                <span class="tag-pill uncovered" data-tag="Mana Burn">Mana Burn</span>
+                <span class="tag-pill uncovered" data-tag="Lower Resistance">Lower Resistance</span>
+              </div>
+            </div>
+
+            <div class="category-block">
+              <div class="category-title cat-healing">Healing</div>
+              <div class="tags-grid">
+                <span class="tag-pill uncovered" data-tag="Heal Over Time">Heal Over Time</span>
+                <span class="tag-pill uncovered" data-tag="Direct Heal">Direct Heal</span>
+                <span class="tag-pill uncovered" data-tag="Resurrection">Resurrection</span>
+              </div>
+            </div>
+
+            <div class="category-block">
+              <div class="category-title cat-buff">Buffs</div>
+              <div class="tags-grid">
+                <span class="tag-pill uncovered" data-tag="+HP">+HP</span>
+                <span class="tag-pill uncovered" data-tag="+AC">+AC</span>
+                <span class="tag-pill uncovered" data-tag="+STR">+STR</span>
+                <span class="tag-pill uncovered" data-tag="+STA">+STA</span>
+                <span class="tag-pill uncovered" data-tag="+DEX">+DEX</span>
+                <span class="tag-pill uncovered" data-tag="+AGI">+AGI</span>
+                <span class="tag-pill uncovered" data-tag="+INT">+INT</span>
+                <span class="tag-pill uncovered" data-tag="+CHA">+CHA</span>
+                <span class="tag-pill uncovered" data-tag="+WIS">+WIS</span>
+                <span class="tag-pill uncovered" data-tag="Increase Physical Damage">Increase Physical Damage</span>
+                <span class="tag-pill uncovered" data-tag="Increase Spell Damage">Increase Spell Damage</span>
+                <span class="tag-pill uncovered" data-tag="Movement Speed">Movement Speed</span>
+                <span class="tag-pill uncovered" data-tag="Melee Haste">Melee Haste</span>
+                <span class="tag-pill uncovered" data-tag="Spell Haste">Spell Haste</span>
+                <span class="tag-pill uncovered" data-tag="Resist">Resist</span>
+                <span class="tag-pill uncovered" data-tag="Invisibility">Invisibility</span>
+                <span class="tag-pill uncovered" data-tag="Damage Shield">Damage Shield</span>
+                <span class="tag-pill uncovered" data-tag="Mana Regen">Mana Regen</span>
+                <span class="tag-pill uncovered" data-tag="Health Regen">Health Regen</span>
+              </div>
+            </div>
+
+            <div class="category-block">
+              <div class="category-title cat-pet">Pet</div>
+              <div class="tags-grid">
+                <span class="tag-pill uncovered" data-tag="Pet">Pet</span>
+              </div>
+            </div>
+
+            <div class="category-block">
+              <div class="category-title cat-utility">Utility</div>
+              <div class="tags-grid">
+                <span class="tag-pill uncovered" data-tag="Purge">Purge</span>
+                <span class="tag-pill uncovered" data-tag="Cure">Cure</span>
+                <span class="tag-pill uncovered" data-tag="Feign Death">Feign Death</span>
+                <span class="tag-pill uncovered" data-tag="Interrupt">Interrupt</span>
+                <span class="tag-pill uncovered" data-tag="Taunt / Aggro Gen">Taunt / Aggro Gen</span>
+                <span class="tag-pill uncovered" data-tag="Tracking">Tracking</span>
+                <span class="tag-pill uncovered" data-tag="Teleport">Teleport</span>
+                <span class="tag-pill uncovered" data-tag="Conjure Weapon">Conjure Weapon</span>
+                <span class="tag-pill uncovered" data-tag="Conjure Arrows">Conjure Arrows</span>
+                <span class="tag-pill uncovered" data-tag="Conjure Bandage">Conjure Bandage</span>
+                <span class="tag-pill uncovered" data-tag="Conjure Food &amp; Water">Conjure Food &amp; Water</span>
+                <span class="tag-pill uncovered" data-tag="Summon Manastone">Summon Manastone</span>
+                <span class="tag-pill uncovered" data-tag="Summon Lifestone">Summon Lifestone</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CAVEATS -->
+          <div id="caveats-block">
+            <div class="caveat-item">
+              <span class="caveat-icon">&#9888;</span>
+              <span><strong class="caveat-label">Self Only</strong> — Some tags are covered by spells that only benefit the caster, not the party. For example, Monk's Melee Haste applies to themselves only.</span>
+            </div>
+            <div class="caveat-item">
+              <span class="caveat-icon">&#9888;</span>
+              <span><strong class="caveat-label">Pet Only</strong> — Some tags apply to pets only, not players. For example, Druid's Resurrection only affects pets.</span>
+            </div>
           </div>
         </div>
 
-        <div class="category-block">
-          <div class="category-title cat-debuff">Debuffs</div>
-          <div class="tags-grid">
-            <span class="tag-pill uncovered" data-tag="Slow">Slow</span>
-            <span class="tag-pill uncovered" data-tag="Stat Debuff / Steal">Stat Debuff / Steal</span>
-            <span class="tag-pill uncovered" data-tag="Spell Damage Vulnerability">Spell Damage Vulnerability</span>
-            <span class="tag-pill uncovered" data-tag="Physical Damage Vulnerability">Physical Damage Vulnerability</span>
-            <span class="tag-pill uncovered" data-tag="Reduced Healing">Reduced Healing</span>
-            <span class="tag-pill uncovered" data-tag="Mana Burn">Mana Burn</span>
-            <span class="tag-pill uncovered" data-tag="Lower Resistance">Lower Resistance</span>
+        <!-- RIGHT: Missing + Redundancies stacked -->
+        <div id="panels-col">
+          <div class="section-label">&nbsp;</div>
+
+          <div class="panel">
+            <div class="panel-title missing-title">&#9888; Missing Coverage</div>
+            <div id="missing-content">
+              <div class="missing-list" id="missing-list"></div>
+            </div>
           </div>
-        </div>
 
-        <div class="category-block">
-          <div class="category-title cat-healing">Healing</div>
-          <div class="tags-grid">
-            <span class="tag-pill uncovered" data-tag="Heal Over Time">Heal Over Time</span>
-            <span class="tag-pill uncovered" data-tag="Direct Heal">Direct Heal</span>
-            <span class="tag-pill uncovered" data-tag="Resurrection">Resurrection</span>
-          </div>
-        </div>
-
-        <div class="category-block">
-          <div class="category-title cat-buff">Buffs</div>
-          <div class="tags-grid">
-            <span class="tag-pill uncovered" data-tag="+HP">+HP</span>
-            <span class="tag-pill uncovered" data-tag="+AC">+AC</span>
-            <span class="tag-pill uncovered" data-tag="+STR">+STR</span>
-            <span class="tag-pill uncovered" data-tag="+STA">+STA</span>
-            <span class="tag-pill uncovered" data-tag="+DEX">+DEX</span>
-            <span class="tag-pill uncovered" data-tag="+AGI">+AGI</span>
-            <span class="tag-pill uncovered" data-tag="+INT">+INT</span>
-            <span class="tag-pill uncovered" data-tag="+CHA">+CHA</span>
-            <span class="tag-pill uncovered" data-tag="+WIS">+WIS</span>
-            <span class="tag-pill uncovered" data-tag="Increase Physical Damage">Increase Physical Damage</span>
-            <span class="tag-pill uncovered" data-tag="Increase Spell Damage">Increase Spell Damage</span>
-            <span class="tag-pill uncovered" data-tag="Movement Speed">Movement Speed</span>
-            <span class="tag-pill uncovered" data-tag="Melee Haste">Melee Haste</span>
-            <span class="tag-pill uncovered" data-tag="Spell Haste">Spell Haste</span>
-            <span class="tag-pill uncovered" data-tag="Resist">Resist</span>
-            <span class="tag-pill uncovered" data-tag="Invisibility">Invisibility</span>
-            <span class="tag-pill uncovered" data-tag="Damage Shield">Damage Shield</span>
-            <span class="tag-pill uncovered" data-tag="Mana Regen">Mana Regen</span>
-            <span class="tag-pill uncovered" data-tag="Health Regen">Health Regen</span>
-          </div>
-        </div>
-
-        <div class="category-block">
-          <div class="category-title cat-pet">Pet</div>
-          <div class="tags-grid">
-            <span class="tag-pill uncovered" data-tag="Pet">Pet</span>
-          </div>
-        </div>
-
-        <div class="category-block">
-          <div class="category-title cat-utility">Utility</div>
-          <div class="tags-grid">
-            <span class="tag-pill uncovered" data-tag="Purge">Purge</span>
-            <span class="tag-pill uncovered" data-tag="Cure">Cure</span>
-            <span class="tag-pill uncovered" data-tag="Feign Death">Feign Death</span>
-            <span class="tag-pill uncovered" data-tag="Interrupt">Interrupt</span>
-            <span class="tag-pill uncovered" data-tag="Taunt / Aggro Gen">Taunt / Aggro Gen</span>
-            <span class="tag-pill uncovered" data-tag="Tracking">Tracking</span>
-            <span class="tag-pill uncovered" data-tag="Teleport">Teleport</span>
-            <span class="tag-pill uncovered" data-tag="Conjure Weapon">Conjure Weapon</span>
-            <span class="tag-pill uncovered" data-tag="Conjure Arrows">Conjure Arrows</span>
-            <span class="tag-pill uncovered" data-tag="Conjure Bandage">Conjure Bandage</span>
-            <span class="tag-pill uncovered" data-tag="Conjure Food &amp; Water">Conjure Food &amp; Water</span>
-            <span class="tag-pill uncovered" data-tag="Summon Manastone">Summon Manastone</span>
-            <span class="tag-pill uncovered" data-tag="Summon Lifestone">Summon Lifestone</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- MISSING & REDUNDANCY PANELS -->
-    <section>
-      <div id="bottom-panels">
-
-        <div class="panel">
-          <div class="panel-title missing-title">&#9888; Missing Coverage</div>
-          <div id="missing-content">
-            <div class="missing-list" id="missing-list"></div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="panel-title redundant-title">&#8635; Redundancies</div>
-          <div id="redundancy-content">
-            <div class="redundancy-list" id="redundancy-list"></div>
+          <div class="panel" style="margin-top: 20px;">
+            <div class="panel-title redundant-title">&#8635; Redundancies</div>
+            <div id="redundancy-content">
+              <div class="redundancy-list" id="redundancy-list"></div>
+            </div>
           </div>
         </div>
 
