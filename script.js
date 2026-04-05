@@ -276,28 +276,58 @@ function initPartyPlanner(spells) {
 function initLibrary(spells) {
   const tbody = document.getElementById("spell-tbody");
   const searchInput = document.getElementById("search-input");
-  const filterClass = document.getElementById("filter-class");
   const filterSkill = document.getElementById("filter-skill");
   const filterTag = document.getElementById("filter-tag");
-  const filterLevel = document.getElementById("filter-level");
+  const levelMin = document.getElementById("level-min");
+  const levelMax = document.getElementById("level-max");
   const clearBtn = document.getElementById("clear-filters");
   const resultCount = document.getElementById("result-count");
+  const selectAllBtn = document.getElementById("btn-select-all");
+  const clearAllBtn = document.getElementById("btn-clear-all");
+  const libClassBtns = document.querySelectorAll(".lib-class-btn");
 
-  // Populate dynamic filter dropdowns
+  // All classes selected by default
+  const selectedClasses = new Set(
+    [...libClassBtns].map(b => b.getAttribute("data-class"))
+  );
+
+  // Populate skill dropdown dynamically from CSV
   const skills = [...new Set(spells.map(s => (s["Skill"] || "").trim()).filter(Boolean))].sort();
-  const levels = [...new Set(spells.map(s => (s["Level"] || "").trim()).filter(Boolean))]
-    .map(Number).sort((a,b) => a-b);
-
   skills.forEach(sk => {
     const opt = document.createElement("option");
     opt.value = sk; opt.textContent = sk;
     filterSkill.appendChild(opt);
   });
 
-  levels.forEach(lv => {
-    const opt = document.createElement("option");
-    opt.value = lv; opt.textContent = `Level ${lv}`;
-    filterLevel.appendChild(opt);
+  // Class button toggles
+  libClassBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const cls = btn.getAttribute("data-class");
+      if (selectedClasses.has(cls)) {
+        selectedClasses.delete(cls);
+        btn.classList.remove("active");
+      } else {
+        selectedClasses.add(cls);
+        btn.classList.add("active");
+      }
+      renderTable();
+    });
+  });
+
+  selectAllBtn.addEventListener("click", () => {
+    libClassBtns.forEach(btn => {
+      selectedClasses.add(btn.getAttribute("data-class"));
+      btn.classList.add("active");
+    });
+    renderTable();
+  });
+
+  clearAllBtn.addEventListener("click", () => {
+    libClassBtns.forEach(btn => {
+      selectedClasses.delete(btn.getAttribute("data-class"));
+      btn.classList.remove("active");
+    });
+    renderTable();
   });
 
   // Sorting state
@@ -319,24 +349,38 @@ function initLibrary(spells) {
 
   function getFiltered() {
     const search = searchInput.value.toLowerCase().trim();
-    const cls = filterClass.value;
     const skill = filterSkill.value;
-    const tag = filterTag.value.toLowerCase().trim();
-    const level = filterLevel.value;
+    const tag = filterTag.value.trim();
+    const minLv = levelMin.value !== "" ? parseInt(levelMin.value) : null;
+    const maxLv = levelMax.value !== "" ? parseInt(levelMax.value) : null;
 
     return spells.filter(spell => {
-      if (cls && (spell["Class"] || "").trim() !== cls) return false;
+      // Class filter — must be in selected set
+      const cls = (spell["Class"] || "").trim();
+      if (!selectedClasses.has(cls)) return false;
+
+      // Skill filter
       if (skill && (spell["Skill"] || "").trim() !== skill) return false;
-      if (level && String((spell["Level"] || "").trim()) !== String(level)) return false;
+
+      // Level range filter
+      const spellLevel = parseInt((spell["Level"] || "").trim());
+      if (minLv !== null && spellLevel < minLv) return false;
+      if (maxLv !== null && spellLevel > maxLv) return false;
+
+      // Text search
       if (search) {
         const name = (spell["Spell Name"] || "").toLowerCase();
         const desc = (spell["Spell Description"] || "").toLowerCase();
         if (!name.includes(search) && !desc.includes(search)) return false;
       }
+
+      // Tag filter — exact match against parsed tags
       if (tag) {
-        const rawTag = (spell["Tag"] || "").toLowerCase();
-        if (!rawTag.includes(tag)) return false;
+        const spellTags = parseTags(spell["Tag"]);
+        const tagLower = tag.toLowerCase();
+        if (!spellTags.some(t => t.toLowerCase() === tagLower)) return false;
       }
+
       return true;
     });
   }
@@ -345,7 +389,6 @@ function initLibrary(spells) {
     return [...data].sort((a, b) => {
       let va = (a[sortCol] || "").toString().trim();
       let vb = (b[sortCol] || "").toString().trim();
-      // Numeric sort for Level and Mana
       if (sortCol === "Level" || sortCol === "Mana") {
         va = parseFloat(va) || 0;
         vb = parseFloat(vb) || 0;
@@ -371,12 +414,12 @@ function initLibrary(spells) {
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${spell["Level"] || ""}</td>
-        <td class="spell-class">${spell["Class"] || ""}</td>
         <td>${spell["Spell Name"] || ""}</td>
+        <td class="spell-desc">${spell["Spell Description"] || ""}</td>
         <td>${spell["Skill"] || ""}</td>
         <td>${spell["Mana"] || ""}</td>
         <td class="spell-tags">${(spell["Tag"] || "").trim()}</td>
-        <td class="spell-desc">${spell["Spell Description"] || ""}</td>
+        <td class="spell-class">${spell["Class"] || ""}</td>
       `;
       tbody.appendChild(tr);
     }
@@ -384,17 +427,22 @@ function initLibrary(spells) {
 
   // Event listeners
   searchInput.addEventListener("input", renderTable);
-  filterClass.addEventListener("change", renderTable);
   filterSkill.addEventListener("change", renderTable);
-  filterTag.addEventListener("input", renderTable);
-  filterLevel.addEventListener("change", renderTable);
+  filterTag.addEventListener("change", renderTable);
+  levelMin.addEventListener("input", renderTable);
+  levelMax.addEventListener("input", renderTable);
 
   clearBtn.addEventListener("click", () => {
     searchInput.value = "";
-    filterClass.value = "";
     filterSkill.value = "";
     filterTag.value = "";
-    filterLevel.value = "";
+    levelMin.value = "";
+    levelMax.value = "";
+    // Reset class buttons to all selected
+    libClassBtns.forEach(btn => {
+      selectedClasses.add(btn.getAttribute("data-class"));
+      btn.classList.add("active");
+    });
     renderTable();
   });
 
