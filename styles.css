@@ -435,59 +435,38 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 .tags-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
 .tag-pill {
-  padding: 8px;
-  border-radius: 4px;
+  padding: 5px 12px;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   border: 1px solid transparent;
   transition: all 0.25s;
   user-select: none;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  cursor: default;
-  width: 38px;
-  height: 38px;
+  gap: 6px;
 }
 
-/* Tooltip */
+/* Remove tooltip — not needed with text labels */
 .tag-pill::after {
-  content: attr(data-tag);
-  position: absolute;
-  bottom: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: #111;
-  color: var(--text-primary);
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 600;
-  white-space: nowrap;
-  padding: 4px 8px;
-  border-radius: 3px;
-  border: 1px solid var(--border);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s;
-  z-index: 50;
-}
-
-.tag-pill:hover::after {
-  opacity: 1;
+  display: none;
 }
 
 .tag-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
   transition: filter 0.25s;
 }
 
 .tag-pill.covered {
   background: var(--orange);
+  color: #111;
   border-color: var(--orange-bright);
   box-shadow: 0 0 8px rgba(232,123,30,0.3);
 }
@@ -498,11 +477,12 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 
 .tag-pill.uncovered {
   background: var(--tag-inactive);
+  color: var(--tag-inactive-text);
   border-color: var(--border);
 }
 
 .tag-pill.uncovered .tag-icon {
-  filter: brightness(0) invert(0.3);
+  filter: brightness(0) invert(0.35);
 }
 
 /* ---- Progress bars ---- */
