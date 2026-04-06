@@ -193,11 +193,108 @@ function initPartyPlanner(spells) {
   function updateUI() {
     updatePartyDisplay();
     updateTagPills();
-    updateMissing();
+    updateCoverage();
+    updateMetaWarnings();
     updateRedundancies();
   }
 
-  // ---- Party display (class images) ----
+  // Category definitions for progress bars
+  const CATEGORIES = [
+    { label: "Crowd Control", color: "#d4a800", tags: ["Fear","Mez / Stun","Charm","Lull / Pacify","Snare","Root","Blind"] },
+    { label: "Debuffs",       color: "#9966cc", tags: ["Slow","Stat Debuff / Steal","Spell Damage Vulnerability","Physical Damage Vulnerability","Reduced Healing","Mana Burn","Lower Resistance"] },
+    { label: "Healing",       color: "#44bb66", tags: ["Heal Over Time","Direct Heal","Resurrection"] },
+    { label: "Buffs",         color: "#4488cc", tags: ["+HP","+AC","+STR","+STA","+DEX","+AGI","+INT","+CHA","+WIS","Increase Physical Damage","Increase Spell Damage","Movement Speed","Melee Haste","Spell Haste","Resist","Invisibility","Damage Shield","Mana Regen","Health Regen"] },
+    { label: "Pet",           color: "#e87b1e", tags: ["Pet"] },
+    { label: "Utility",       color: "#e0e0e0", tags: ["Purge","Cure","Feign Death","Interrupt","Taunt / Aggro Gen","Tracking","Teleport","Conjure Weapon","Conjure Arrows","Conjure Bandage","Conjure Food & Water","Summon Manastone","Summon Lifestone"] },
+  ];
+
+  const coverageEl = document.getElementById("coverage-progress");
+
+  // ---- Coverage progress bars ----
+  function updateCoverage() {
+    const coveredTags = new Set();
+    for (const cls of selectedClasses) {
+      const tags = getTagMap()[cls] || new Set();
+      for (const t of tags) coveredTags.add(t);
+    }
+
+    coverageEl.innerHTML = "";
+
+    for (const cat of CATEGORIES) {
+      const total = cat.tags.length;
+      const covered = cat.tags.filter(t => coveredTags.has(t)).length;
+      const pct = total === 0 ? 0 : Math.round((covered / total) * 100);
+
+      const row = document.createElement("div");
+      row.className = "progress-row";
+      row.innerHTML = `
+        <div class="progress-label">
+          <span class="progress-cat-name" style="color:${cat.color}">${cat.label}</span>
+          <span class="progress-fraction">${covered}/${total}</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width:${pct}%; background:${cat.color};"></div>
+        </div>
+      `;
+      coverageEl.appendChild(row);
+    }
+  }
+
+  // Meta warning definitions
+  const DEDICATED_HEALERS = new Set(["Cleric", "Druid", "Shaman"]);
+  const metaWarningsPanel = document.getElementById("meta-warnings-panel");
+  const metaWarningsList = document.getElementById("meta-warnings-list");
+
+  // ---- Meta warnings ----
+  function updateMetaWarnings() {
+    if (selectedClasses.size === 0) {
+      metaWarningsPanel.style.display = "none";
+      return;
+    }
+
+    const coveredTags = new Set();
+    for (const cls of selectedClasses) {
+      const tags = getTagMap()[cls] || new Set();
+      for (const t of tags) coveredTags.add(t);
+    }
+
+    const warnings = [];
+
+    // No dedicated healer
+    const hasHealer = [...selectedClasses].some(c => DEDICATED_HEALERS.has(c));
+    if (!hasHealer) {
+      warnings.push("No dedicated healer in this party. Healing throughput from other classes will be significantly reduced.");
+    }
+
+    // No mana regen
+    if (!coveredTags.has("Mana Regen")) {
+      warnings.push("No Mana Regeneration in this party. Sustainability in long fights will be a concern.");
+    }
+
+    // No CC (both Mez/Stun AND Charm missing)
+    if (!coveredTags.has("Mez / Stun") && !coveredTags.has("Charm")) {
+      warnings.push("No Crowd Control in this party. Both Mez/Stun and Charm are unavailable.");
+    }
+
+    metaWarningsList.innerHTML = "";
+    if (warnings.length === 0) {
+      metaWarningsPanel.style.display = "none";
+      return;
+    }
+
+    metaWarningsPanel.style.display = "block";
+    for (const w of warnings) {
+      const el = document.createElement("div");
+      el.className = "meta-warning-item";
+      el.innerHTML = `<span class="meta-warning-icon">&#9888;</span><span>${w}</span>`;
+      metaWarningsList.appendChild(el);
+    }
+  }
+
+  // ---- Missing tags (kept for internal use, no longer rendered) ----
+  function updateMissing() {}
+
+
   function updatePartyDisplay() {
     partyDisplay.innerHTML = "";
     if (selectedClasses.size === 0) {

@@ -189,18 +189,24 @@
           </div>
         </div>
 
-        <!-- RIGHT: Missing + Redundancies stacked -->
+        <!-- RIGHT: Progress, Warnings, Redundancies -->
         <div id="panels-col">
           <div class="section-label">&nbsp;</div>
 
+          <!-- CATEGORY PROGRESS -->
           <div class="panel">
-            <div class="panel-title missing-title">&#9888; Missing Coverage</div>
-            <div id="missing-content">
-              <div class="missing-list" id="missing-list"></div>
-            </div>
+            <div class="panel-title" style="color: var(--orange-dim);">&#9632; Party Coverage</div>
+            <div id="coverage-progress"></div>
           </div>
 
-          <div class="panel" style="margin-top: 20px;">
+          <!-- META WARNINGS -->
+          <div class="panel" id="meta-warnings-panel" style="margin-top: 16px; display:none;">
+            <div class="panel-title" style="color: var(--missing);">&#9888; Party Warnings</div>
+            <div id="meta-warnings-list"></div>
+          </div>
+
+          <!-- REDUNDANCIES -->
+          <div class="panel" style="margin-top: 16px;">
             <div class="panel-title redundant-title">&#8635; Redundancies</div>
             <div id="redundancy-content">
               <div class="redundancy-list" id="redundancy-list"></div>

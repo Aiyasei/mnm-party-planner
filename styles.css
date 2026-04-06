@@ -435,50 +435,143 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 .tags-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .tag-pill {
-  padding: 5px 12px;
-  border-radius: 3px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  padding: 8px;
+  border-radius: 4px;
   border: 1px solid transparent;
   transition: all 0.25s;
   user-select: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  position: relative;
+  cursor: default;
+  width: 38px;
+  height: 38px;
+}
+
+/* Tooltip */
+.tag-pill::after {
+  content: attr(data-tag);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: var(--text-primary);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 4px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 50;
+}
+
+.tag-pill:hover::after {
+  opacity: 1;
 }
 
 .tag-icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
-  filter: brightness(0) invert(0.4);
   transition: filter 0.25s;
+}
+
+.tag-pill.covered {
+  background: var(--orange);
+  border-color: var(--orange-bright);
+  box-shadow: 0 0 8px rgba(232,123,30,0.3);
 }
 
 .tag-pill.covered .tag-icon {
   filter: brightness(0) invert(0.1);
 }
 
-.tag-pill.uncovered .tag-icon {
-  filter: brightness(0) invert(0.35);
-}
-
-.tag-pill.covered {
-  background: var(--orange);
-  color: #111;
-  border-color: var(--orange-bright);
-  box-shadow: 0 0 8px rgba(232,123,30,0.3);
-}
-
 .tag-pill.uncovered {
   background: var(--tag-inactive);
-  color: var(--tag-inactive-text);
   border-color: var(--border);
+}
+
+.tag-pill.uncovered .tag-icon {
+  filter: brightness(0) invert(0.3);
+}
+
+/* ---- Progress bars ---- */
+.progress-row {
+  margin-bottom: 12px;
+}
+
+.progress-row:last-child {
+  margin-bottom: 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.progress-cat-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.progress-fraction {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.progress-track {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.35s ease;
+  min-width: 0;
+}
+
+/* ---- Meta warnings ---- */
+.meta-warning-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #e06060;
+  line-height: 1.5;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(204,51,51,0.15);
+}
+
+.meta-warning-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.meta-warning-icon {
+  color: var(--missing);
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  margin-top: 2px;
 }
 
 .capabilities-header {
