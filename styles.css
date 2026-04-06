@@ -447,6 +447,25 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
   border: 1px solid transparent;
   transition: all 0.25s;
   user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: brightness(0) invert(0.4);
+  transition: filter 0.25s;
+}
+
+.tag-pill.covered .tag-icon {
+  filter: brightness(0) invert(0.1);
+}
+
+.tag-pill.uncovered .tag-icon {
+  filter: brightness(0) invert(0.35);
 }
 
 .tag-pill.covered {
