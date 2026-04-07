@@ -227,7 +227,7 @@ function initPartyPlanner(spells) {
       tags: ["+HP","+AC","+STR","+STA","+DEX","+AGI","+INT","+CHA","+WIS","Increase Spell Damage","Movement Speed","Melee Haste","Spell Haste","Resist","Invisibility","Damage Shield","Mana Regen","Health Regen"]
     },
     {
-      label: "Utility", color: "#ffffff", colorMuted: "rgba(255,255,255,0.15)",
+      label: "Utility", color: "#e0e0e0", colorMuted: "rgba(224,224,224,0.2)",
       tags: ["Pet","Purge","Cure","Feign Death","Taunt","Aggro Gen","Tracking","Teleport","Conjure Weapon","Conjure Arrows","Conjure Bandage","Conjure Food & Water","Summon Manastone","Summon Lifestone"]
     },
   ];
@@ -292,9 +292,11 @@ function initPartyPlanner(spells) {
     const scrollLink = document.getElementById("scroll-to-redundancies");
 
     if (selectedClasses.size === 0) {
-      metaWarningsPanel.style.display = "none";
-      if (warningsEmpty) warningsEmpty.style.display = "none";
-      if (scrollLink) scrollLink.style.display = "none";
+      metaWarningsPanel.style.visibility = "hidden";
+      metaWarningsPanel.style.opacity = "0";
+      metaWarningsPanel.style.display = "block";
+      if (warningsEmpty) { warningsEmpty.style.visibility = "hidden"; warningsEmpty.style.opacity = "0"; warningsEmpty.style.display = "flex"; }
+      if (scrollLink) { scrollLink.style.visibility = "hidden"; scrollLink.style.opacity = "0"; }
       return;
     }
 
@@ -325,11 +327,15 @@ function initPartyPlanner(spells) {
     metaWarningsList.innerHTML = "";
 
     if (warnings.length === 0) {
-      metaWarningsPanel.style.display = "none";
-      if (warningsEmpty) warningsEmpty.style.display = "flex";
-    } else {
+      metaWarningsPanel.style.visibility = "hidden";
+      metaWarningsPanel.style.opacity = "0";
       metaWarningsPanel.style.display = "block";
-      if (warningsEmpty) warningsEmpty.style.display = "none";
+      if (warningsEmpty) { warningsEmpty.style.visibility = "visible"; warningsEmpty.style.opacity = "1"; warningsEmpty.style.display = "flex"; }
+    } else {
+      metaWarningsPanel.style.visibility = "visible";
+      metaWarningsPanel.style.opacity = "1";
+      metaWarningsPanel.style.display = "block";
+      if (warningsEmpty) { warningsEmpty.style.visibility = "hidden"; warningsEmpty.style.opacity = "0"; warningsEmpty.style.display = "flex"; }
       for (const w of warnings) {
         const el = document.createElement("div");
         el.className = "meta-warning-item";
@@ -338,7 +344,7 @@ function initPartyPlanner(spells) {
       }
     }
 
-    if (scrollLink) scrollLink.style.display = selectedClasses.size >= 1 ? "inline-block" : "none";
+    if (scrollLink) { scrollLink.style.visibility = "visible"; scrollLink.style.opacity = "1"; }
   }
 
   // ---- Party display ----
