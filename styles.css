@@ -187,8 +187,8 @@ section {
 
 .section-label {
   font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 900;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--orange-dim);
