@@ -142,32 +142,16 @@ function initPartyPlanner(spells) {
   // State
   const MAX_PARTY_SIZE = 6;
   const selectedClasses = new Set();
-  let hideSelfOnly = true; // default: hide personal abilities
 
   // DOM references
   const partyDisplay = document.getElementById("party-display");
   const partyCounter = document.getElementById("party-counter");
   const classButtons = document.querySelectorAll(".class-btn[data-class]");
   const tagPills = document.querySelectorAll(".tag-pill");
-  const toggleSelfOnlyBtn = document.getElementById("toggle-self-only");
 
-  // ---- Self-only toggle button — starts active (hidden) ----
-  if (toggleSelfOnlyBtn) {
-    toggleSelfOnlyBtn.textContent = "Include Personal Abilities";
-    toggleSelfOnlyBtn.classList.add("active");
-    toggleSelfOnlyBtn.addEventListener("click", () => {
-      hideSelfOnly = !hideSelfOnly;
-      toggleSelfOnlyBtn.textContent = hideSelfOnly
-        ? "Include Personal Abilities"
-        : "Hide Personal Abilities";
-      toggleSelfOnlyBtn.classList.toggle("active", hideSelfOnly);
-      updateUI();
-    });
-  }
-
-  // ---- Helper: get active tag map based on toggle ----
+  // ---- Helper: always use party tag map (personal abilities excluded) ----
   function getTagMap() {
-    return hideSelfOnly ? classTagMapParty : classTagMap;
+    return classTagMapParty;
   }
 
   // ---- Button click handler with party size cap ----

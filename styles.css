@@ -162,6 +162,28 @@ nav a.nav-highlight:hover {
 }
 
 /* ============================================
+   PAGE-PLANNER OVERRIDES (index.html only)
+   ============================================ */
+
+/* Header scrolls away on the planner page */
+.page-planner header {
+  position: relative;
+  top: auto;
+}
+
+/* Freeze the top section (party + coverage) when scrolling */
+.page-planner .top-section-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--bg-primary);
+  padding-top: 24px;
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ============================================
    MAIN LAYOUT
    ============================================ */
 

@@ -26,7 +26,7 @@
   <link rel="preload" as="image" href="assets/Paladin.jpg" />
   <link rel="preload" as="image" href="assets/Shadow-Knight.jpg" />
 </head>
-<body>
+<body class="page-planner">
 
   <!-- HEADER -->
   <header>
@@ -46,7 +46,8 @@
 
   <main>
 
-    <!-- MAIN TOP LAYOUT: Left (party images + class selection) | Right (coverage + warnings) -->
+    <!-- STICKY TOP: Party composition + coverage freeze on scroll -->
+    <div class="top-section-sticky">
     <section>
       <div class="top-row">
 
@@ -126,13 +127,9 @@
 
       </div>
     </section>
-
-    <!-- ROW 3: Tag Categories (3 columns) -->
+    </div><!-- end top-section-sticky -->
     <section>
-      <div class="section-label-row">
-        <div class="section-label">Party Capabilities</div>
-        <button id="toggle-self-only" class="class-btn toggle-self-btn">Hide Personal Abilities</button>
-      </div>
+      <div class="section-label">Party Capabilities</div>
       <div id="tag-grid">
 
         <!-- COLUMN 1: Crowd Control + Debuffs -->
