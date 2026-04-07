@@ -1074,7 +1074,7 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 .spell-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
   align-items: center;
 }
 
@@ -1099,11 +1099,25 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 /* Colored optgroup labels in tag dropdown */
 #filter-tag optgroup[label*="DAMAGE"]       { color: #ff7755; }
 #filter-tag optgroup[label*="CROWD"]        { color: #d4a800; }
-#filter-tag optgroup[label*="DEBUFFS"]      { color: #bb88ff; }
+#filter-tag optgroup[label*="DEBUFFS"]      { color: #cc88ff; }
 #filter-tag optgroup[label*="HEALING"]      { color: #44bb66; }
 #filter-tag optgroup[label*="BUFF"]         { color: #66aaee; }
 #filter-tag optgroup[label*="UTILITY"]      { color: #cccccc; }
-#filter-tag optgroup[label*="SITUATIONAL"]  { color: #cc9944; }
+#filter-tag optgroup[label*="SITUATIONAL"]  { color: #ff88dd; }
+
+/* Category shortcut options in the dropdown */
+#filter-tag option.dropdown-cat-option {
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+#filter-tag option.cat-damage      { color: #ff7755; background: rgba(220,80,60,0.15); }
+#filter-tag option.cat-cc          { color: #d4a800; background: rgba(212,168,0,0.1); }
+#filter-tag option.cat-debuff      { color: #cc88ff; background: rgba(153,102,204,0.15); }
+#filter-tag option.cat-healing     { color: #44bb66; background: rgba(68,187,102,0.1); }
+#filter-tag option.cat-buff        { color: #66aaee; background: rgba(68,136,204,0.1); }
+#filter-tag option.cat-utility     { color: #cccccc; background: rgba(200,200,200,0.05); }
+#filter-tag option.cat-situational { color: #ff88dd; background: rgba(220,80,160,0.1); }
 
 #spell-table td.spell-class {
   font-weight: 700;

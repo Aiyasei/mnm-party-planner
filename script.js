@@ -421,42 +421,46 @@ function initPartyPlanner(spells) {
 // ============================================
 
 const TAG_COLOR_MAP = (() => {
-  // Category definitions: [bg, border, text]
+  // Category definitions
   const CC      = { bg: "rgba(212,168,0,0.2)",    border: "#d4a800", text: "#d4a800" };
-  const DEBUFF  = { bg: "rgba(153,102,204,0.2)",  border: "#9966cc", text: "#bb88ff" };
+  const DEBUFF  = { bg: "rgba(153,102,204,0.2)",  border: "#9966cc", text: "#cc88ff" };
   const HEAL    = { bg: "rgba(68,187,102,0.2)",   border: "#44bb66", text: "#44bb66" };
   const BUFF    = { bg: "rgba(68,136,204,0.2)",   border: "#4488cc", text: "#66aaee" };
   const UTILITY = { bg: "rgba(224,224,224,0.1)",  border: "#888",    text: "#cccccc" };
   const DAMAGE  = { bg: "rgba(220,80,60,0.2)",    border: "#cc4433", text: "#ff7755" };
-  const SIT     = { bg: "rgba(160,120,60,0.2)",   border: "#a07830", text: "#cc9944" };
+  const SIT     = { bg: "rgba(220,80,160,0.15)",  border: "#cc44aa", text: "#ff88dd" };
 
   const map = {};
 
-  // Damage
   for (const t of ["Direct Damage","Damage Over Time","Lifesteal","Lifetap"]) map[t] = DAMAGE;
-  // Crowd Control
   for (const t of ["Fear","Mez","Stun","Charm","Pacify","Snare","Root","Blind","Interrupt"]) map[t] = CC;
-  // Debuffs
   for (const t of ["Slow","Stat Debuff","Spell Damage Vulnerability","Physical Damage Vulnerability",
     "Reduced Healing","Mana Burn","Lower Resistance"]) map[t] = DEBUFF;
-  // Healing
   for (const t of ["Heal Over Time","Direct Heal","Resurrection","Transfer Health"]) map[t] = HEAL;
-  // Buffs
   for (const t of ["+HP","+AC","+STR","+STA","+DEX","+AGI","+INT","+CHA","+WIS",
     "Increase Physical Damage","Increase Spell Damage","Movement Speed","Melee Haste","Spell Haste",
     "Resist","Invisibility","Damage Shield","Absorb Damage Shield","Mana Regen","Health Regen",
     "Transfer Mana","Damage Reduction"]) map[t] = BUFF;
-  // Utility
   for (const t of ["Pet","Purge","Cure","Feign Death","Taunt","Aggro Gen","Trap","Enduring Breath",
     "Stealth / Hide","Aggro Reduction","Tracking","Bind","Teleport","Gate","Conjure Weapon",
     "Conjure Arrows","Conjure Bandage","Conjure Food & Water","Summon Manastone","Summon Lifestone",
     "Shapeshift","Misc."]) map[t] = UTILITY;
-  // Situational
   for (const t of ["AoE","AURA","(pet only)","(undead only)","(elementals only)","(animals only)",
     "(self only)","Physical","Fire","Cold","Electricity","Poison","Disease","Corruption","Magic","Holy"]) map[t] = SIT;
 
   return map;
 })();
+
+// Tags grouped by category — used for category-level filtering in the dropdown
+const CATEGORY_TAGS = {
+  "DAMAGE":        ["Direct Damage","Damage Over Time","Lifesteal","Lifetap"],
+  "CROWD CONTROL": ["Fear","Mez","Stun","Charm","Pacify","Snare","Root","Blind","Interrupt"],
+  "DEBUFFS":       ["Slow","Stat Debuff","Spell Damage Vulnerability","Physical Damage Vulnerability","Reduced Healing","Mana Burn","Lower Resistance"],
+  "HEALING":       ["Heal Over Time","Direct Heal","Resurrection","Transfer Health","Lifesteal","Lifetap"],
+  "BUFF":          ["+HP","+AC","+STR","+STA","+DEX","+AGI","+INT","+CHA","+WIS","Increase Physical Damage","Increase Spell Damage","Movement Speed","Melee Haste","Spell Haste","Resist","Invisibility","Damage Shield","Absorb Damage Shield","Mana Regen","Health Regen","Transfer Mana","Damage Reduction"],
+  "UTILITY":       ["Pet","Purge","Cure","Feign Death","Taunt","Aggro Gen","Trap","Enduring Breath","Stealth / Hide","Aggro Reduction","Tracking","Bind","Teleport","Gate","Conjure Weapon","Conjure Arrows","Conjure Bandage","Conjure Food & Water","Summon Manastone","Summon Lifestone","Shapeshift","Misc."],
+  "SITUATIONAL":   ["AoE","AURA","(pet only)","(undead only)","(elementals only)","(animals only)","(self only)","Physical","Fire","Cold","Electricity","Poison","Disease","Corruption","Magic","Holy"],
+};
 
 // ============================================
 // LIBRARY.HTML LOGIC
@@ -539,9 +543,20 @@ function initLibrary(spells) {
   function getFiltered() {
     const search = searchInput.value.toLowerCase().trim();
     const skill = filterSkill.value;
-    const tag = filterTag.value.trim();
+    const tagValue = filterTag.value.trim();
     const minLv = levelMin.value !== "" ? parseInt(levelMin.value) : null;
     const maxLv = levelMax.value !== "" ? parseInt(levelMax.value) : null;
+
+    // Determine if filtering by a whole category or a single tag
+    let filterTagSet = null;  // Set of tags to match (any) — used for category filter
+    let filterSingleTag = ""; // Exact single tag match
+
+    if (tagValue.startsWith("__cat__")) {
+      const catName = tagValue.replace("__cat__", "");
+      filterTagSet = new Set(CATEGORY_TAGS[catName] || []);
+    } else {
+      filterSingleTag = tagValue.toLowerCase();
+    }
 
     return spells.filter(spell => {
       const cls = (spell["Class"] || "").trim();
@@ -559,10 +574,12 @@ function initLibrary(spells) {
         if (!name.includes(search) && !desc.includes(search)) return false;
       }
 
-      if (tag) {
+      if (filterTagSet) {
         const spellTags = parseTags(spell["Tag"]);
-        const tagLower = tag.toLowerCase();
-        if (!spellTags.some(t => t.toLowerCase() === tagLower)) return false;
+        if (!spellTags.some(t => filterTagSet.has(t))) return false;
+      } else if (filterSingleTag) {
+        const spellTags = parseTags(spell["Tag"]);
+        if (!spellTags.some(t => t.toLowerCase() === filterSingleTag)) return false;
       }
 
       return true;
