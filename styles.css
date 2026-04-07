@@ -1077,7 +1077,7 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 .spell-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 5px 8px;
   padding-top: 1px;
 }
 
@@ -1087,7 +1087,7 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 
 .lib-tag-pill {
   display: inline-block;
-  padding: 2px 9px;
+  padding: 3px 10px;
   border-radius: 3px;
   border: 1px solid transparent;
   font-size: 0.74rem;
@@ -1095,7 +1095,6 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
   letter-spacing: 0.3px;
   white-space: nowrap;
   line-height: 1.55;
-  margin: 1px 0;
 }
 
 .lib-tag-pill-default {
