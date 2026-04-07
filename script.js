@@ -288,8 +288,13 @@ function initPartyPlanner(spells) {
 
   // ---- Meta warnings ----
   function updateMetaWarnings() {
+    const warningsEmpty = document.getElementById("warnings-empty");
+    const scrollLink = document.getElementById("scroll-to-redundancies");
+
     if (selectedClasses.size === 0) {
       metaWarningsPanel.style.display = "none";
+      if (warningsEmpty) warningsEmpty.style.display = "none";
+      if (scrollLink) scrollLink.style.display = "none";
       return;
     }
 
@@ -318,18 +323,22 @@ function initPartyPlanner(spells) {
     }
 
     metaWarningsList.innerHTML = "";
+
     if (warnings.length === 0) {
       metaWarningsPanel.style.display = "none";
-      return;
+      if (warningsEmpty) warningsEmpty.style.display = "flex";
+    } else {
+      metaWarningsPanel.style.display = "block";
+      if (warningsEmpty) warningsEmpty.style.display = "none";
+      for (const w of warnings) {
+        const el = document.createElement("div");
+        el.className = "meta-warning-item";
+        el.innerHTML = `<span class="meta-warning-icon">&#9888;</span><span>${w}</span>`;
+        metaWarningsList.appendChild(el);
+      }
     }
 
-    metaWarningsPanel.style.display = "block";
-    for (const w of warnings) {
-      const el = document.createElement("div");
-      el.className = "meta-warning-item";
-      el.innerHTML = `<span class="meta-warning-icon">&#9888;</span><span>${w}</span>`;
-      metaWarningsList.appendChild(el);
-    }
+    if (scrollLink) scrollLink.style.display = "inline-block";
   }
 
   // ---- Party display ----
