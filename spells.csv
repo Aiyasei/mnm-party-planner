@@ -30,7 +30,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 4,Lesser Creation: Earth,"Conjures an earthy being composed of pure elemental energy. (Aura) Earthen Toughness: grants 2(L1) to 30(L60) Stamina. (Earthen Skin, Elemental Root, Provoke) Requires: Malachite",Con,30,Pet | +STA | Root | AURA,Elementalist
 4,Lesser Creation: Fire,"Conjures an Fire Elemental composed of pure elemental energy. (Aura) +10% Spell Casting speed, Backlash of Fire: grants Damage Shield Damage Shield 1(L1) to 15(L60). (Elemental Backlash, Elemental Fire, Provoke) Requires: Malachite",Con,30,Pet | Spell Haste | Damage Shield | AURA,Elementalist
 4,Lesser Creation: Water,Conjures a watery being composed of pure elemental energy. (Aura) Fount of Mana: Mana Regeneration 1(L1) to 6(L60). Requires: Malachite,Con,30,Pet | Mana Regen | AURA,Elementalist
-4,Lull the Elements,"Placates an aggressive Elemental target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Lull / Pacify | (elementals only),Elementalist
+4,Lull the Elements,"Placates an aggressive Elemental target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Pacify | (elementals only),Elementalist
 4,See Invisibility,"Glaze the eyes of your target with a magical coating, granting them the ability to see invisible entities.",Div,20,Misc.,Elementalist
 4,Sense Magic,Grants your target the ability to see buff effect when you consider them.,Div,20,Misc.,Elementalist
 4,Soulbind,Binds your target's soul to their current location. (Not guaranteed to work everywhere),Alt,75,Bind,Elementalist
@@ -56,7 +56,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 12,Greater Creation: Fire,"Conjures an Fire Elemental composed of pure elemental energy. (Aura) +10% Spell Casting speed, Backlash of Fire: grants Damage Shield Damage Shield 1(L1) to 15(L60). (Elemental Backlash, Elemental Fire, Provoke) Requires: Malachite",Con,90,Pet | Spell Haste | Damage Shield | AURA,Elementalist
 12,Greater Creation: Water,Conjures a watery being composed of pure elemental energy. (Aura) Fount of Mana: Mana Regeneration 1(L1) to 6(L60). Requires: Malachite,Con,90,Pet | Mana Regen | AURA,Elementalist
 12,Master of Elements,"Submit yourself to the elements, granting you the form of a powerful elemental of a random element for 18 seconds. Additionally, while in elemental form, your next melee attack instantly casts a spell from the corresponding element.",Div,50,Shapeshift | Spell Haste | (self only),Elementalist
-12,Restrain the Elements,"Restrain a target elemental, incapacitating them for 30 seconds.",Con,,Stun | (elementals only),Elementalist
+12,Restrain the Elements,"Restrain a target elemental, incapacitating them for 30 seconds.",Con,,Mez | (elementals only),Elementalist
 12,Summon Heavy Cloth Bandage,"Summon 1 (L12) to 4 (L16) heavy cloth bandages, suitable for healing wounds.",Con,,Conjure Bandage,Elementalist
 16,Beset the Elements,Wards an elemental target with elemental energy for 90 points of Magic Damage.,Evo,50,Direct Damage | Magic | (elementals only),Elementalist
 16,Blast of Air II,"Blast your target with air, dealing 75 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,55,Direct Damage | Magic ,Elementalist
@@ -210,7 +210,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 4,Gate,Teleport yourself to your bind location.,Alt,55,Gate | (self only),Necromancer
 4,Ghoul Pet Tier 2,"Reanimates a corrupted being from the dead, creating a ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,30,Pet | Snare,Necromancer
 4,Life Draw,"Draws your target's life force, dealing 9 (L4) to 12 (L8) damage and healing you for the same amount.",Evo,15,Direct Damage | Corruption | Lifetap,Necromancer
-4,Lull the Dead,"Placates an aggressive undead target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,15,Lull / Pacify | (undead only),Necromancer
+4,Lull the Dead,"Placates an aggressive undead target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,15,Pacify | (undead only),Necromancer
 4,Mind Surge,"Fill your target's mind with a mind surge, granting them 8 Mana at the cost of 20 Mana.",Alt,20,Transfer Mana,Necromancer
 4,Reanimate Corpse,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of pet or master. Requires Bone Chips.",Con,30,Pet,Necromancer
 4,See Invisibility,"Glaze the eyes of your target with a magical coating, granting them the ability to see invisible entities.",Div,20,Misc.,Necromancer
@@ -239,7 +239,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 12,Fear the Dead,"Fears an undead target, causing them to run away in terror. Doing damage has a small chance to break this effect early.",Alt,20,Fear | (undead only),Necromancer
 12,Ghoul Pet Tier 4,"Reanimates a corrupted being from the dead, creating a ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,90,Pet | Snare,Necromancer
 12,Leech Lifeforce,"Leech the lifeforce of your target, dealing 10 Corruption Damage every 6 seconds and restoring your Health by the same amount for 1 minute.",Evo,75,Damage Over Time | Corruption | Lifetap,Necromancer
-12,Restrain the Dead,"Restrains a target undead, incapacitating them.",Con,15,Stun | (undead only),Necromancer
+12,Restrain the Dead,"Restrains a target undead, incapacitating them.",Con,15,Mez | (undead only),Necromancer
 12,Spirit Splinter,"Splinter the spiritual defenses of your target, decreasing their Corruption, Holy, and Magic Resistance by 3 (L12) to 4 (L16). This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,25,Lower Resistance | Corruption | Holy | Magic,Necromancer
 12,Surging Shadows,"Conjures surging shadows, slowing your targets movement speed by 40% and inflicting 5 Corruption Damage every 6 seconds for 36 seconds.",Alt,20,Damage Over Time | Corruption | Snare,Necromancer
 12,Summon Aberration,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of pet or master. Requires Bone Chips.",Con,90,Pet,Necromancer
@@ -396,7 +396,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 16,Spellshield,"A magical shield encircles you, increasing your HP by 50, AC by 15, and Magic Resistance by 15.",Abj,50,+HP | +AC | Resist | Magic | (self only),Wizard
 16,Shaded Dunes Gate,Teleport yourself to Shaded Dunes.,Alt,125,Teleport | (self only),Wizard
 20,Arcane Invocation,"Invoke the arcane, restoring 55 (L20) to 165 (L60) Mana as you channel every 2 seconds for 10 seconds.",Alt,0,Mana Regen | (self only),Wizard
-20,Electric Wave,"Zap your target with an electric wave, dealing 165 Electricity Damage and stunning them for 0.1 second.",Evo,90,Direct Damage | Electricity | Stun | Interrupt,Wizard
+20,Electric Wave,"Zap your target with an electric wave, dealing 165 Electricity Damage and stunning them for 0.1 second.",Evo,90,Direct Damage | Electricity | Stun,Wizard
 20,Greater Purge,"Purge an enemy and up to 5 additional nearby targets, dispelling a magical effect, as well as all songs and immunities.",Alt,150,AoE | Purge | Magic,Wizard
 20,Invert Gravity,"Blast your target with an anti-gravity wave, launching them into the air.",Evo,9999,Direct Damage | Misc.,Wizard
 24,Arcane Bonds,"Summon Arcane Bonds, that cling to the feet of your target and three other targets within 8 meters, applying a 50% Snare effect for 2 minutes.",Alt,70,AoE | Snare,Wizard
@@ -411,7 +411,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 24,Shaded Dunes Portal,Send your group through a portal to Shaded Dunes.,Alt,,Teleport,Wizard
 24,Vale of Zintar Gate,"Teleport yourself, relocating to Vale of Zintar.",Alt,125,Teleport | (self only),Wizard
 24,Evershade Weald Portal,Send your group through a portal to Evershade Weald.,Alt,,Teleport,Wizard
-28,Electric Current,"Zap your target with electric current, dealing 270 Electricity Damage and stunning them for 0.1 second.",Alt,,Direct Damage | Electricity | Stun | Interrupt,Wizard
+28,Electric Current,"Zap your target with electric current, dealing 270 Electricity Damage and stunning them for 0.1 second.",Alt,,Direct Damage | Electricity | Stun,Wizard
 32,Abolish Magic,Removes two magical effects from your current target.,Alt,,Cure | Purge | Magic,Wizard
 32,Blanket of Lava,Unleashes a blanket of lava hitting your target and up to 3 nearby targets for 225 points of Fire Damage.,Evo,,AoE | Direct Damage | Fire,Wizard
 32,Exceptional Spellshield,"A magical shield encircles you, increasing your HP by 100, AC by 25, and Magic Resistance by 25.",Abj,,+HP | +AC | Resist | Magic | (self only),Wizard
@@ -425,7 +425,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 36,Lesser Lure of Chilling,"Unleash hard to resist, icy magic upon your target for 205 points of Cold Damage.",Evo,,Direct Damage | Cold,Wizard
 36,Lesser Lure of Lava,"Unleash hard to resist, fiery magic upon your target for 205 points of Fire Damage.",Evo,,Direct Damage | Fire,Wizard
 40,Arch Spellshield,"A magical shield encircles you, increasing your HP by 150, AC by 30, and Magic Resistance by 30.",Abj,,+HP | +AC | Resist | Magic | (self only),Wizard
-40,Electric Jolt,"Zap your target with an electric jolt, dealing 450 Electricity Damage and stunning them for 0.1 second.",Evo,,Direct Damage | Electricity | Stun | Interrupt,Wizard
+40,Electric Jolt,"Zap your target with an electric jolt, dealing 450 Electricity Damage and stunning them for 0.1 second.",Evo,,Direct Damage | Electricity | Stun,Wizard
 40,Evacuation: Vale of Zintar,"Evacuate your group, relocating them to Vale of Zintar.",Alt,,Teleport,Wizard
 40,Evacuation: Glass Flats,"Evacuate your group, relocating them to Glass Flats.",Alt,,Teleport,Wizard
 48,Arcane Shackles,"Summon Arcane Shackles that cling to the feet of your target and three other targets within 8 meters, applying a 60% Snare effect for 4 minutes.",Alt,,AoE | Snare,Wizard
@@ -477,12 +477,12 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 8,Minor Heal,"Slightly heals the wounds of a friendly target, healing them for 10 Health.",Alt,8,Direct Heal,Ranger
 8,Shroud,"Camouflage yourself in nature's shroud, rendering you unseen by the living for 10 minutes.",Div,0,Invisibility,Ranger
 9,Twisting Roots,"Large roots emerge from the ground and cling to your target's feet, applying an immobilize effect for 30 seconds. This effect has a chance to be removed by Damage.",Alt,15,Root,Ranger
-10,Whistling Shot,"Fire a whistling shot at your target, dealing 90% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing Threat by 25 (L1) to 250 (L60).",Mit,Innate,Direct Damage | Physical | Taunt,Ranger
+10,Whistling Shot,"Fire a whistling shot at your target, dealing 90% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing Threat by 25 (L1) to 250 (L60).",Mit,Innate,Direct Damage | Physical | Aggro Gen,Ranger
 11,Fire Arrows,"Imbue your arrows with fire, increasing your Ranged Damage dealt by 1 (L1) to 7 (L60) Fire Damage. Additionally, each ranged attack grants you a chance to activate Fire Arrow Advantage reducing cast time of your next Flameburst or Burning Embers line by 100% for 10 seconds.",Alt,Innate,Fire | Spell Haste | (self only),Ranger
 11,Poison Protection,"Wards your target from toxins, increasing their Poison Resistance by 5.",Abj,10,Resist | Poison,Ranger
 12,Cold Protection,"Wards your target from frost, increasing their Cold Resistance by 5.",Abj,10,Resist | Cold,Ranger
 12,Lesser Heal,"Lightly heals the wounds of a friendly target, healing them for 25 Health.",Alt,20,Direct Heal,Ranger
-12,Lull Beast,"Placates an aggressive beast target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Lull / Pacify | (animals only),Ranger
+12,Lull Beast,"Placates an aggressive beast target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Pacify | (animals only),Ranger
 13,Sneak,"Begin to sneak, causing you to be hidden from enemies while behind them.",Sub,Innate,Stealth / Hide | (self only),Ranger
 14,Truestrike,"Make your attacks strike true, increasing your Archery and Offense by 10 and Physical Damage dealt by 100% for 30 seconds.",Alt,Innate,Increase Physical Damage | (self only),Ranger
 15,Camouflage,"Camouflage a target group member in nature's shroud, rendering them unseen by the living.",Div,20,Invisibility,Ranger
@@ -496,7 +496,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 20,Minor Regeneration,"Gently regenerate your target, increasing their Health Regeneration by 2 for 20 minutes.",Alt,20,Health Regen,Ranger
 20,See Invisibility,"Glaze the eyes of your target with a magical coating, granting them the ability to see invisible entities.",Div,20,Misc.,Ranger
 20,Speed of the Wild,"Bestows the Speed of the Wild, increasing the Movement Speed of a friendly target by 40% (L8) to 60% (L60) for 30 minutes.",Alt,20,Movement Speed,Ranger
-20,Unity,"Placates a target and any 3 nearby entities, reducing the range of their social and proximity aggro for 2 minutes.",Alt,30,Lull / Pacify,Ranger
+20,Unity,"Placates a target and any 3 nearby entities, reducing the range of their social and proximity aggro for 2 minutes.",Alt,30,Pacify,Ranger
 21,Bind Vision,"Bind Vision with your target, granting you the ability to see through their eyes.",Div,10,Misc. | (self only),Ranger
 21,Ice Arrows,"Imbue your arrows with ice, increasing your Ranged Damage dealt by 1 (L1) to 7 (L60) Cold Damage. Additionally, each ranged attack reduces the Attack Speed of your target by 1% for 30 seconds. Stacks up to 25 times.",Alt,Innate,Cold | Slow | (self only),Ranger
 22,Insect Swarm,"Engulf your target with an insect swarm, dealing 10 Poison Damage every 6 seconds for 60 seconds.",Con,,Damage Over Time | Poison,Ranger
@@ -544,7 +544,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Fear Beast,"Fear a target beast, causing them to flee for 18 seconds. Has a slight chance to be removed by damage.",Alt,20,Fear | (animals only),Beastmaster
 1,Invisibility versus Animals,"Shroud a target group member in a cloak of invisibility, rendering them unseen by beasts for 10 minutes. This spell has a slight chance to end early.",Div,10,Invisibility | (animals only),Beastmaster
 1,Jackal Swarm Pet Tier 1,"Entreat the wild, calling forth a pack of jackals to temporarily fight alongside you.",Con,3,Pet,Beastmaster
-1,Lull Beast,"Lull a target beast, reducing their Aggro Radius for 2 minutes. Has a very slight chance to end early.",Alt,10,Lull / Pacify | (animals only),Beastmaster
+1,Lull Beast,"Lull a target beast, reducing their Aggro Radius for 2 minutes. Has a very slight chance to end early.",Alt,10,Pacify | (animals only),Beastmaster
 1,Polar Align: North,"Magically align yourself, orienting you toward the North Pole.",Div,5,Misc. | (self only),Beastmaster
 1,Rat Swarm Pet Tier 1,"Entreat the wild, calling forth a swarm of rats to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Revive Companion,"Rally your pet, returning it to life and restoring 20% Health.",Alt,25,Pet | Resurrection | (pet only),Beastmaster
@@ -648,7 +648,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 5,Sprint,"Causes you to Sprint, increasing your Movement Speed by 75% for 10 seconds. Does not break Stealth on use.",Acr,Innate,Movement Speed | (self only),Rogue
 6,Avoidance,"Attempt to avoid Magical Attacks, reducing Magical Damage dealt to you by 20% for 3 seconds. Triggers cooldown of Acrobatics abilities.",Acr,Innate,Damage Reduction | (self only),Rogue
 7,Uppercut,"Uppercut your target, applying a Stun for 3 seconds.",Mit,Innate,Stun,Rogue
-8,Sap,"Incapacitates a target that is not already in combat for 30 seconds. Damage will break this effect. This effect can only be used on Humanoids, Beasts, Dragons, Demons, Elementals and Critters. Requires Stealth. Limit one. Turns off Auto Attack when used.",Sub,Innate,Stun,Rogue
+8,Sap,"Incapacitates a target that is not already in combat for 30 seconds. Damage will break this effect. This effect can only be used on Humanoids, Beasts, Dragons, Demons, Elementals and Critters. Requires Stealth. Limit one. Turns off Auto Attack when used.",Sub,Innate,Mez,Rogue
 9,Nimble Evasion,Increases your chance to Dodge by 100% for 12 seconds.,Acr,Innate,Damage Reduction | (self only),Rogue
 10,Ambush,"Stabs your target from behind, for 100% (L1) to 250% (L60) Weapon Damage, and an additional 5 (L1) to 70 (L60) Melee Damage. Requires Stealth. Must be used from behind target.",Sub,Innate,Direct Damage | Physical,Rogue
 11,Low Blow,"Perform an underhanded low blow, stunning an enemy target for 4 seconds. Requires Stealth.",Sub,Innate,Stun,Rogue
@@ -711,7 +711,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Holy Fortitude,"Bestow holy fortitude upon your target, increasing their maximum Health by 10 (L1) to 20 (L8) for 1 hour.",Abj,10,+HP,Cleric
 1,Invisibility versus Undead,"Shrouds a target group member in darkness, rendering them unseen by the undead for 10 minutes.",Div,10,Invisibility | (undead only),Cleric
 1,Minor Heal,"Gently heal your target, restoring 10 Health.",Alt,8,Direct Heal,Cleric
-1,Placate,"Placate your target, reducing their Aggro Radius for 2 minutes.",Alt,10,Lull / Pacify,Cleric
+1,Placate,"Placate your target, reducing their Aggro Radius for 2 minutes.",Alt,10,Pacify,Cleric
 1,Poison Protection,"Ward your target against toxins, increasing their Poison Resistance by 5 for 1 hour.",Abj,10,Resist | Poison,Cleric
 1,Shock,"Shock your target with divine energy, dealing 3 (L1) to 5 (L4) Holy Damage.",Evo,9,Direct Damage | Holy,Cleric
 1,Stun,"Shocks your target into a daze, stunning them for 4 seconds.",Evo,15,Stun,Cleric
@@ -728,7 +728,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 4,Soulbind,"Bind the soul of a target group member to their current location, causing them to respawn there upon death. Has no effect in certain areas.",Alt,75,Bind,Cleric
 4,Summon Food,"Summon a small amount of bread, providing you with sustenance.",Con,10,Conjure Food & Water,Cleric
 4,Ward the Dead,"Ward off a target undead with a blast of energy, dealing 30 Holy Damage.",Evo,25,Direct Damage | Holy | (undead only),Cleric
-8,Appease,"Appease your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,25,Lull / Pacify,Cleric
+8,Appease,"Appease your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,25,Pacify,Cleric
 8,Chastise,"Chastise your target with divine energy, dealing 67 (L12) to 70 (L15) Holy Damage.",Evo,55,Direct Damage | Holy,Cleric
 8,Dispel Magic,"Dispel magic from your target, removing one harmful effect.",Alt,50,Cure | Magic,Cleric
 8,Heal,"Moderately heal your target, restoring 60 Health.",Alt,40,Direct Heal,Cleric
@@ -749,7 +749,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 16,Reprisal,"Punish your target with divine energy, dealing 100 Holy Damage.",Evo,70,Direct Damage | Holy,Cleric
 20,Cleanse Diseases,"Cleanse your target, removing two Disease effects.",Alt,50,Cure | Disease,Cleric
 20,Cleanse Poisons,"Cleanse your target, removing two Poison effects.",Alt,50,Cure | Poison,Cleric
-20,Conciliate,"Conciliate your target, reducing their Aggro Radius for 4 minutes. This spell has a very slight chance to end early.",Alt,45,Lull / Pacify,Cleric
+20,Conciliate,"Conciliate your target, reducing their Aggro Radius for 4 minutes. This spell has a very slight chance to end early.",Alt,45,Pacify,Cleric
 20,Holy Valor,"Bestow holy valor upon your target, increasing their maximum Health by 125 for 30 minutes.",Abj,75,+HP,Cleric
 20,Impart Devotion,"Impart devotion on your target, healing them for 300 Health after 6 seconds.",Alt,115,Heal Over Time | Direct Heal,Cleric
 20,Inhibit Pain,"Inhibits the pain of a friendly target, reducing all damage received by 40% for 8 seconds.",Abj,30,Damage Reduction,Cleric
@@ -763,7 +763,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 24,Resuscitation,"Resuscitate a target corpse, restoring 35% Experience. Inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,200,Resurrection,Cleric
 28,Impart Faith,"Impart faith on your target, restoring 600 Health after 6 seconds.",Alt,195,Heal Over Time | Direct Heal,Cleric
 28,Rebuff the Dead,"Rebuff a target undead with a blast of energy, dealing 150 Holy Damage.",Evo,70,Direct Damage | Holy | (undead only),Cleric
-32,Atonement,"Submit your target to holy judgment, granting them a chance to forget past transgressions. This spell has a chance to critically fail.",Alt,50,Aggro Reduction | Taunt,Cleric
+32,Atonement,"Submit your target to holy judgment, granting them a chance to forget past transgressions. This spell has a chance to critically fail.",Alt,50,Aggro Reduction | Aggro Gen,Cleric
 32,Conjure Drink,"Conjure a large amount of water, providing you with sustenance.",Con,20,Conjure Food & Water,Cleric
 32,Conjure Food,"Conjure a large amount of bread, providing you with sustenance.",Con,20,Conjure Food & Water,Cleric
 32,Summon Hammer of the Virtuous,"Summon a Hammer of the Virtuous, granting you a chance to activate Holy Smite on melee hits while equipped.",Con,60,Direct Damage | Holy | (self only),Cleric
@@ -776,7 +776,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 40,Abolish Magic,"Dispel magic from your target, removing two harmful effects.",Alt,100,Cure | Magic,Cleric
 40,Beleaguer the Dead,"Beleaguer a target undead with a blast of energy, dealing 245 Holy Damage.",Evo,95,Direct Damage | Holy | (undead only),Cleric
 40,Impart Favor,"Impart favor on your target, restoring 1200 Health after 6 seconds.",Alt,330,Direct Heal,Cleric
-40,Propitiate,"Propitiate your target, reducing their Aggro Radius for 5 minutes. This spell has a very slight chance to end early.",Alt,90,Lull / Pacify,Cleric
+40,Propitiate,"Propitiate your target, reducing their Aggro Radius for 5 minutes. This spell has a very slight chance to end early.",Alt,90,Pacify,Cleric
 40,Smite,"Smite your target with divine energy, dealing 250 Holy Damage.",Evo,125,Direct Damage | Holy,Cleric
 40,Supplication III,"Cry out in prayer, increasing your Strength by 30 (L40) to 40 (L60) and Mana Regeneration by 3 for 1 minute.",Abj,9,+STR | Mana Regen,Cleric
 44,Holy Resolve,"Bestow holy resolve upon your target, increasing their maximum Health by 250 for 1 hour.",Abj,150,+HP,Cleric
@@ -811,14 +811,14 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 4,Element Break,"Breaks your target's resistance to the elements, decreasing their Cold, Electricity, Fire and Magic Resistance by 1 (L1) to 2 (L8). This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,10,Lower Resistance | Cold | Electricity | Fire | Magic,Druid
 4,Gate,Teleport yourself to your bind location.,Alt,55,Gate | (self only),Druid
 4,Lesser Heal,"Lightly heals the wounds of a friendly target, healing them for 25 Health.",Alt,20,Direct Heal,Druid
-4,Lull Beast,"Placates an aggressive beast, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Lull / Pacify | (animals only),Druid
+4,Lull Beast,"Placates an aggressive beast, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Pacify | (animals only),Druid
 4,Moon Fire,"Unleash moon fire upon your target, dealing 11 (L4) to 14 (L7) points of Fire Damage.",Evo,8,Direct Damage | Fire,Druid
 4,Poison Protection,"Wards your target from toxins, increasing their Poison Resistance by 5.",Abj,10,Resist | Poison,Druid
 4,Snare,"Several small roots emerge from the ground and cling to your target's feet, decreasing their Movement Speed by 35% for 30 seconds.",Alt,10,Snare,Druid
 4,Snaring Vines,Snaring Vines lower the movement speed of nearby enemies for 8 seconds. This ability shares a cooldown with other in the same line.,Alt,15,AoE | Snare,Druid
 4,Soulbind,Binds your target's soul to their current location. Not guaranteed to work everywhere.,Alt,75,Bind,Druid
 4,Touch of Nature,"Touch a friendly target with a touch of nature, healing them for 20 Health and an additional 10 Health per tick for 12 seconds, for a total of 40 Health.",Alt,20,Heal Over Time | Direct Heal,Druid
-4,Unity,"Placates a target and any 3 nearby entities, reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target.",Alt,30,Lull / Pacify,Druid
+4,Unity,"Placates a target and any 3 nearby entities, reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target.",Alt,30,Pacify,Druid
 8,Dispel Magic,Removes a harmful magical effect from your current target.,Alt,25,Cure | Magic,Druid
 8,Enduring Breath,Grants your target the ability to breath underwater.,Alt,30,Enduring Breath,Druid
 8,Eth'El's Strength,Increases the Strength of a friendly target by 5.,Alt,30,+STR,Druid
@@ -1032,7 +1032,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Invisibility,Shrouds your target with invisibility.,Div,20,Invisibility,Enchanter
 1,Invisibility versus Undead,Shrouds your target with invisibility versus undead.,Div,10,Invisibility | (undead only),Enchanter
 1,Magic Protection,"Wards your target from the arcane, increasing their Magic Resistance by 5.",Abj,10,Resist | Magic,Enchanter
-1,Mesmerize,"Mesmerizes your target, putting them to Sleep for 30 seconds. There is a very small chance that the enemy target will forget about your aggression. This effect is removed by melee or spell damage.",Con,15,Stun | Aggro Reduction | (self only),Enchanter
+1,Mesmerize,"Mesmerizes your target, putting them to Sleep for 30 seconds. There is a very small chance that the enemy target will forget about your aggression. This effect is removed by melee or spell damage.",Con,15,Mez | Aggro Reduction | (self only),Enchanter
 1,Minor Charisma,Increase Charisma by 2.,Alt,5,+CHA,Enchanter
 1,Minor Illusion,Veil yourself in the guise of an object.,Alt,?,Shapeshift | (self only),Enchanter
 1,Minor Intelligence,Increase Intelligence of a friendly target by 2.,Alt,5,+INT,Enchanter
@@ -1052,7 +1052,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 4,Incinerate Mana,Burns 20 Mana from your target at the cost of 8.,Alt,8,Mana Burn,Enchanter
 4,Magic Break,"Breaks your target's resistance to the arcane, decreasing their Magic Resistance by 1 (L1) to 4 (L8). This spell is unresistable if the target is not immune to magic or it can otherwise by landed normally.",Alt,10,Lower Resistance | Magic,Enchanter
 4,Mind Surge,"Fill your target's mind with a mind surge, granting them 8 Mana at the cost of 20 Mana.",Alt,20,Transfer Mana,Enchanter
-4,Placate,"Placates an aggressive target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has the slight chance of ending early. Limit one target.",Alt,10,Lull / Pacify,Enchanter
+4,Placate,"Placates an aggressive target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has the slight chance of ending early. Limit one target.",Alt,10,Pacify,Enchanter
 4,Scintillating Shock,"Shocks nearby enemies with bright lights, stunning them for 4 seconds. This ability shares a cooldown with other abilities in the same line.",Div,15,AoE | Stun,Enchanter
 4,See Invisibility,"Glaze the eyes of your target with a magical coating, granting them the ability to see invisible entities.",Div,20,Misc.,Enchanter
 4,Sense Magic,See buffs when considering Target,Div,20,Misc.,Enchanter
@@ -1067,24 +1067,24 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 8,Lesser Spellshield,"Self Only HP, MR, and AC Buff",Abj,25,+HP | +AC | Resist | Magic | (self only),Enchanter
 8,Mana Surge,"Fill your target's mind with a mana surge, granting them 25 Mana at the cost of 40 Mana.",Alt,40,Transfer Mana,Enchanter
 8,Memory Fog,"Manipulate the mind of your target, giving a chance to forget past wrongdoings.",Alt,25,Aggro Reduction,Enchanter
-8,Placate the Masses,"Placate your target, reducing their Body Aggro Radius for 2 minutes.",Alt,,Lull / Pacify,Enchanter
+8,Placate the Masses,"Placate your target, reducing their Body Aggro Radius for 2 minutes.",Alt,,Pacify,Enchanter
 8,Root,"Roots emerge from the ground and cling to your target's feet, applying an Immobilize effect for 30 seconds. This effect has a chance to be removed by Damage or end early.",Alt,15,Root,Enchanter
 8,Runeskin,"Imbue your skin with runic magic, absorbing 25 Damage.",Abj,20,Absorb Damage Shield | (self only),Enchanter
 8,Shadowkin Defender Pet Tier 3,Calls on a friendly Shadowkin from the mirror realm to defend you. Persists until death of pet or master. Requires Ethereal Dagger.,Conj,60,Pet,Enchanter
 8,Tranquility,"Bestows Tranquility, increasing Mana Regeneration by 2",Alt,10,Mana Regen,Enchanter
-12,Appease,"Appease your target, reducing their Aggro Radius for 3 minutes.",Alt,,Lull / Pacify,Enchanter
+12,Appease,"Appease your target, reducing their Aggro Radius for 3 minutes.",Alt,,Pacify,Enchanter
 12,Captivate,"Captivates your target, putting them to Sleep for 60 seconds. There is a very small chance that the enemy target will forget about your aggression. This effect is removed by melee or spell damage.",Con,40,Stun | Aggro Reduction | (self only),Enchanter
 12,Enchant Bronze,Transmutes one Bronze bar to enchanted Bronze bar.,Alt,15,Misc.,Enchanter
 12,Enduring Breath,Grants your target the ability to breath underwater.,Alt,30,Enduring Breath,Enchanter
 12,Enfeeblement,"Enfeeble your target, decreasing their Strength, Dexterity, and Agility by 6 for 2 minutes.",Alt,,Stat Debuff | +STR | +DEX | +AGI,Enchanter
 12,Enthrall,"Charm your target, forcing them to fight alongside you for 5 (L1) to 20 (L60) minutes.",Alt,60,Charm,Enchanter
-12,Fascinate,"Fascinates your target and those nearby, putting them to Sleep for 30 seconds. This effect is removed by melee or spell damage. Radius 5 meters; Hits up to 4 targets",Alt,75,Stun,Enchanter
+12,Fascinate,"Fascinates your target and those nearby, putting them to Sleep for 30 seconds. This effect is removed by melee or spell damage. Radius 5 meters; Hits up to 4 targets",Alt,75,Mez,Enchanter
 12,Illusion: Gnome,Self Only Morph to Gnome,Div,10,Shapeshift | (self only),Enchanter
 12,Magic Splinter,"Splinters your target's resistance to the arcane, decreasing their Magic Resistance by 5 (L12) to 8 (L16). This spell is unresistable if the target is not immune to magic or it can otherwise by landed normally.",Alt,10,Lower Resistance | Magic,Enchanter
 12,Shadowkin Defender Pet Tier 4,Calls on a friendly Shadowkin from the mirror realm to defend you. Persists until death of pet or master. Requires Ethereal Dagger.,Con,90,Pet,Enchanter
 12,Torture,"Tortures your target's mental state, causing 60 of Magic Damage and decreasing their Intelligence, Wisdom, Charisma, and Mana Regeneration by 5.",Alt,85,Direct Damage | Magic | Stat Debuff,Enchanter
 16,Adrenaline,"Haste your target, increasing their Melee and ranged Attack Speed by 20% (L16) to 25% (L32).",Alt,75,Melee Haste,Enchanter
-16,Appease the Masses,"Appeases your target, reducing their Body Aggro Radius for 3 minutes.",Alt,,Lull / Pacify,Enchanter
+16,Appease the Masses,"Appeases your target, reducing their Body Aggro Radius for 3 minutes.",Alt,,Pacify,Enchanter
 16,Enchant Silver,Transmutes one Silver bar to enchanted Silver bar.,Alt,20,Misc.,Enchanter
 16,Enervation,"Enervate your target, slowing their Melee and Ranged Attack Speed by 20% for 2 minutes.",Alt,30,Slow,Enchanter
 16,Fell Mana,"Fell the mind of your target, depleting 180 Mana.",Evo,,Mana Burn,Enchanter
@@ -1106,7 +1106,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 20,Shadowkin Defender Pet Tier 6,Calls on a friendly Shadowkin from the mirror realm to defend you. Persists until death of pet or master. Requires Ethereal Dagger.,Conj,170,Pet,Enchanter
 20,Shrink,Shrinks your group member's size by 70%,Alt,40,Misc.,Enchanter
 24,Beguile,"Charm your target, forcing them to fight alongside you for up to 20 minutes.",Con,,Charm,Enchanter
-24,Conciliate,"Conciliate your target, reducing their Aggro Radius for 2 minutes.",Alt,,Lull / Pacify,Enchanter
+24,Conciliate,"Conciliate your target, reducing their Aggro Radius for 2 minutes.",Alt,,Pacify,Enchanter
 24,Enchant Gold,Transmutes one gold bar to enchanted gold bar.,Alt,,Misc.,Enchanter
 24,Greater Spellshield,"A magical shield encircles you, increasing your HP by 75, AC by 20 and Magic Resistance by 20.",Abj,,+HP | +AC | Resist | Magic | (self only),Enchanter
 24,Illusion: Wood Elf,Self Only Morph to Wood Elf,Div,10,Shapeshift | (self only),Enchanter
@@ -1118,13 +1118,13 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 24,Shadowkin Defender Pet Tier 7,Calls on a friendly Shadowkin from the mirror realm to defend you. Persists until death of pet or master. Requires Ethereal Dagger.,Conj,,Pet,Enchanter
 24,Traumatize,"Traumatizes your target's mental state, causing 150 points of Magic Damage and decreasing their Intelligence, Wisdom, Charisma, and Mana Regeneration by 10.",Alt,,Direct Damage | Magic | Stat Debuff,Enchanter
 28,Arcane Surge,"Fill your target's mind with an arcane surge, granting them 90 Mana at the cost of 130 Mana.",Alt,130,Transfer Mana,Enchanter
-28,Conciliate the Masses,"Conciliate your target, reducing their Body Aggro Radius for 4 minutes.",Alt,,Lull / Pacify,Enchanter
+28,Conciliate the Masses,"Conciliate your target, reducing their Body Aggro Radius for 4 minutes.",Alt,,Pacify,Enchanter
 28,Enchant Steel,Transmutes one steel bar to enchanted steel bar.,Alt,,Misc.,Enchanter
 28,Illusion: Dwarf,turns you into a Dwarf.,Alt,,Shapeshift | (self only),Enchanter
 28,Mana Drain II,"Siphon the mind of your target, draining 15 Mana every second and restoring yours by the same amount over 5 seconds.",Alt,,Mana Burn | Mana Regen | (self only),Enchanter
 28,Runeskin III,"Imbue your skin with runic magic, absorbing 250 Damage.",Abj,,Absorb Damage Shield | (self only),Enchanter
 28,Shadowkin Defender Pet Tier 8,Calls on a friendly Shadowkin from the mirror realm to defend you. Persists until death of pet or master. Requires Ethereal Dagger.,Con,,Pet,Enchanter
-28,Hypnotize,"Hypnotizes your target, putting them to Sleep for 1 minute and 30 seconds. There is a very small chance that the enemy target will forget about your aggression. This effect is removed by melee or spell damage.",Con,90,Stun | Aggro Reduction | (self only),Enchanter
+28,Hypnotize,"Hypnotizes your target, putting them to Sleep for 1 minute and 30 seconds. There is a very small chance that the enemy target will forget about your aggression. This effect is removed by melee or spell damage.",Con,90,Mez | Aggro Reduction | (self only),Enchanter
 32,Abolish Magic,Removes two harmful magical effects from your current target.,Alt,,Cure | Magic,Enchanter
 32,Brilliance,"Bestows brilliance, increasing Mana Regeneration by 6",Alt,,Mana Regen,Enchanter
 32,Charisma,Increases the Charisma of a friendly target by 10.,Alt,,+CHA,Enchanter
@@ -1155,7 +1155,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 44,Greater Strength,Increases the Strength of a friendly target by 15.,Alt,,+STR,Enchanter
 44,Greater Wisdom,Increases the Wisdom of a friendly target by 15.,Alt,,+WIS,Enchanter
 44,Mana Drain IV,"Siphon the mind of your target, draining 30 Mana every second and restoring yours by the same amount over 5 seconds.",Alt,,Mana Burn | Mana Regen | (self only),Enchanter
-44,Propitiate,"Propitiate your target, reducing their Aggro Radius for 5 minutes.",Alt,,Lull / Pacify,Enchanter
+44,Propitiate,"Propitiate your target, reducing their Aggro Radius for 5 minutes.",Alt,,Pacify,Enchanter
 44,Scintillation,"Shock nearby enemies with bright lights, stunning them for 6 seconds. This ability shares a cooldown with other abilities in the same line.",Div,,AoE | Stun,Enchanter
 44,Shadowkin Defender Pet Tier 12,Calls on a friendly Shadowkin from the mirror realm to defend you. Persists until death of pet or master. Requires Ethereal Dagger.,Con,,Pet,Enchanter
 44,Zeal,"Haste your target, increasing their Melee and Ranged Attack Speedy by 40% (L44) to 45% (L50).",Alt,,Melee Haste,Enchanter
@@ -1164,7 +1164,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 48,Dread,"Causes dread to your target's mental state, causing 420 points of Magic Damage and decreasing their Intelligence, Wisdom, Charisma, and Mana Regeneration by 20.",Alt,,Direct Damage | Magic | Stat Debuff,Enchanter
 48,Enlightenment,"Bless your target with arcane enlightenment, increasing their Mana Regeneration by 12.",Alt,,Mana Regen,Enchanter
 48,Persuade,"Charm your target, forcing them to fight alongside you for up to 20 minutes.",Alt,,Charm,Enchanter
-48,Propitiate the Masses,"Propitiate your target, reducing their Body Aggro Radius for 5 minutes.",Alt,,Lull / Pacify,Enchanter
+48,Propitiate the Masses,"Propitiate your target, reducing their Body Aggro Radius for 5 minutes.",Alt,,Pacify,Enchanter
 48,Psionic Hemorrhage IV,"Hemorrhage the mind of your target, dealing 90 Magic Damage every second and decreasing their Movement Speed by 50% over 5 seconds. Additionally, if the target is afflicted by any spell in the Torment line, this spell gains a 50% damage bonus.",Con,,Damage Over Time | Magic | Snare,Enchanter
 48,Shadowkin Defender Pet Tier 13,Calls on a friendly Shadowkin from the mirror realm to defend you. Persists until death of pet or master. Requires Ethereal Dagger.,Con,,Pet,Enchanter
 48,Torpify,"Torpify your target, decreasing their Strength, Dexterity, and Agility by 12 for 5 minutes.",Alt,,Stat Debuff | +STR | +DEX | +AGI,Enchanter
@@ -1199,7 +1199,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 7,Repel,"Shriek at your target and those around it, decreasing your Threat against them by 75 (L1) to 750 (L60). Costs Mana and Shares a cooldown with other shouts.",Singing,3,Aggro Reduction,Bard
 8,Aria de Lento,"Oppress nearby targets with an echoing aria, decreasing their Movement Speed by 20% and Attack Speed by 10% for 18 seconds. This ability is considered a Secondary Slow.",Singing,0,Snare | Slow,Bard
 8,Disruptive Riffs,"Overwhelm your target with unnerving riffs, dealing 4 (L8) to 20 (L60) Magic Damage every 6 seconds for 18 seconds.",Brass,0,Damage Over Time | Magic,Bard
-9,Languid Lullaby,"Soothe your target with a languid lullaby, reducing their Aggro Radius for 2 minutes. Has a very slight chance to end early.",Singing,0,Lull / Pacify,Bard
+9,Languid Lullaby,"Soothe your target with a languid lullaby, reducing their Aggro Radius for 2 minutes. Has a very slight chance to end early.",Singing,0,Pacify,Bard
 10,Dissonant Vocalization,"Release a dissonant shout at your target, dealing 15 Magic Damage plus 150% (L1) to 350% (L60) damage variance. Costs Mana. Shares a cooldown with other Shout abilities.",Singing,10,Direct Damage | Magic,Bard
 11,Unifying Anthem,"Captivate your target with a unifying anthem, increasing your faction standing with them by 10000 (L1) to 20000 (L60) for 18 seconds. This ability is currently disabled (as of 3/11/2026).",Wind,9999,Misc.,Bard
 12,Allegro con Brio,"Inspire your group with an energetic allegro, increasing their Casting Speed by 10% for 18 seconds.",String,0,Spell Haste,Bard
@@ -1207,7 +1207,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 12,Allegro Lento,"Inspire your group with an energetic allegro, increasing their Attack Speed by 10% (L12) to 15% (L16) for 18 seconds.",String,0,Melee Haste,Bard
 13,Frightful Screech,"Release a frightful screech at your target, cauing them to flee for 6 seconds. This ability shares a cooldown with other Shout abilities.",Singing,20,Fear,Bard
 14,Selstie's Aeolian Aria,"Immerse your group in an ethereal aria, granting them the ability to breathe underwater for 18 seconds.",Wind,0,Enduring Breath,Bard
-15,Languid Lament,"Soothe your target with a languid lament, reducing their Proximity Aggro for 2 minutes.",Singing,0,Lull / Pacify,Bard
+15,Languid Lament,"Soothe your target with a languid lament, reducing their Proximity Aggro for 2 minutes.",Singing,0,Pacify,Bard
 16,Mesmerizing Whisper,"Utter a mesmerizing whisper at your target, incapacitating them for 2 seconds. This ability shares a cooldown with other Shout abilities.",Singing,,Stun,Bard
 16,Chant of Magic Resistance,"Immerse your group in a rhythmic chant, increasing their Magic Resistance by 15 for 18 seconds.",Singing,0,Resist | Magic,Bard
 16,Discordant Riffs,"Overwhelm your target with unnerving riffs, dealing 8 (L16) to 20 (L60) Magic Damage every 6 seconds for 18 seconds.",String,0,Damage Over Time | Magic,Bard
@@ -1248,7 +1248,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 8,Intimidation,"Intimidates ten of your point blank enemies within 10 meters, causing them to run away in fear for 10 seconds.",Mar,Innate,AoE | Fear,Fighter
 9,Defense,"Take up a defensive posture, reducing melee damage dealt to you by 40% for 30 seconds.",Mar,Innate,Damage Reduction | (self only),Fighter
 10,Frenzy,"Eviscerate your target with a frenzy of attacks, dealing 20% (L1) to 40% (L60) Weapon Damage plus 1 (L1) to 25 (L60) Physical Damage four times and increasing attack speed by 10% for 1 minute. Rend has a 20% chance to reset the cooldown of this ability.",Mit,Innate,Direct Damage | Physical | Melee Haste | (self only),Fighter
-10,Shield Bash,"Bashes your target with your Shield for 1 (L1) to 50 (L60) Physical Damage, and also increasing your threat with the target by 50 (L1) to 500 (L60). Rend has a 10% chance to reset the cooldown of this ability.",Mit,Innate,Direct Damage | Physical | Taunt,Fighter
+10,Shield Bash,"Bashes your target with your Shield for 1 (L1) to 50 (L60) Physical Damage, and also increasing your threat with the target by 50 (L1) to 500 (L60). Rend has a 10% chance to reset the cooldown of this ability.",Mit,Innate,Direct Damage | Physical | Aggro Gen,Fighter
 11,Final Stand,"Take up a final stand, increasing your max health by 25% for 30 seconds.",Mar,Innate,+HP | (self only),Fighter
 12,Rallying Shout,"Let out a rallying shout, increasing the max health of your group by 10% for 30 seconds. After this effect expires, you are afflicted by Recently Exhausted, preventing the reapplication of it and certain other Buffs for 20 minutes.",Mar,Innate,AoE | +HP,Fighter
 13,Merciless Assault,"Unleash a merciless assault, increasing your Physical Damage dealt by 50% and causing your melee attacks to always land Critical Hits for 12 seconds. If you are Berserk while this ability is active, your melee attacks always land Crippling Blows.",Mar,Innate,Increase Physical Damage | (self only),Fighter
@@ -1257,7 +1257,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Mind Exhaustion,"Exhaust your target, slowing their Casting Speed by 10% for 1 minute.",Alt,8,Slow,Inquisitor
 1,Polar Align: North,Magically faces caster North.,Div,5,Misc. | (self only),Inquisitor
 1,Shoot,Shoots your target with a bow. (requires bow & arrows),Mar,Innate,Direct Damage | Physical,Inquisitor
-1,Slam,"Forcefully slam your target, dealing 100% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing your Threat by 20 (L1) to 200 (L60). Has a chance to stun from behind the target.",Mar,Innate,Direct Damage | Physical | Stun | Taunt,Inquisitor
+1,Slam,"Forcefully slam your target, dealing 100% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing your Threat by 20 (L1) to 200 (L60). Has a chance to stun from behind the target.",Mar,Innate,Direct Damage | Physical | Aggro Gen | Stun,Inquisitor
 1,Taunt,"Taunt your target, causing them to focus their attacks on you. Triggers cooldown of Martial abilities.",Mar,Innate,Taunt,Inquisitor
 1,Torment,"Torments your target's mental state, causing 3 (L1) to 5 (L4) points of Magic Damage and decreasing their Intelligence, Wisdom, Charisma, and Mana Regeneration by 2.",Alt,7,Direct Damage | Magic | Stat Debuff,Inquisitor
 2,Magic Break,"Breaks your target's resistance to the arcane, decreasing their Magic Resistance by 1 (L1) to 4 (L8). This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,10,Lower Resistance | Magic,Inquisitor
@@ -1265,7 +1265,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 4,Kick,"Kicks your target, interrupting their casting, locking them out of that school of magic for 4 seconds.",Acr,Innate,Interrupt,Inquisitor
 4,Spell Ward,"Shield your target with a spell ward, absorbing 25 Spell Damage received for 15 seconds.",Abj,20,Absorb Damage Shield,Inquisitor
 4,Weapon Shield,"Shield yourself with a weapon, reducing your Physical Damage received by 5%.",Val,Innate,Damage Reduction | (self only),Inquisitor
-5,Mesmerize,"Mesmerizes your target, putting them to Sleep for 30 seconds. There is a very small chance that the enemy target will forget about your aggression. This effect is removed by melee or spell damage.",Con,15,Stun | Aggro Reduction | (self only),Inquisitor
+5,Mesmerize,"Mesmerizes your target, putting them to Sleep for 30 seconds. There is a very small chance that the enemy target will forget about your aggression. This effect is removed by melee or spell damage.",Con,15,Mez | Aggro Reduction | (self only),Inquisitor
 6,Silence,"Silences your target, preventing them from spellcasting for 6 seconds.",Alt,15,Interrupt,Inquisitor
 7,Focused Concentration,"Greatly sharpen your concentration, granting you a 100% chance to continue casting through incoming melee attacks for 15 seconds.",Abj,Innate,Misc. | (self only),Inquisitor
 7,Holy Protection,"Wards your target against the divine, increasing their Holy Resistance by 5 for 1 hour.",Abj,10,Resist | Holy,Inquisitor
@@ -1309,7 +1309,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 36,Mana Burn III,"Burns up to 165 Mana from your target, dealing damage equal to 75% of the amount of mana drained.",Abj,,Direct Damage | Mana Burn,Inquisitor
 36,Mind Lethargy,"Lethargize your target, slowing their Casting Speed by 40% for 1 minute.",Alt,,Slow,Inquisitor
 40,Magic Crack,"Cracks your target's resistance to the arcane, decreasing their Magic Resistance by 9 (L24) to 12 (L28). This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,,Lower Resistance | Magic,Inquisitor
-42,Hypnotize,"Hypnotizes your target, putting them to Sleep for 1 minutes and 30 seconds. There is a low chance that the enemy target will forget about your aggression.",Con,90,Stun,Inquisitor
+42,Hypnotize,"Hypnotizes your target, putting them to Sleep for 1 minutes and 30 seconds. There is a low chance that the enemy target will forget about your aggression.",Con,90,Mez,Inquisitor
 44,Anxiety,"Causes anxiety to your target's mental state, causing 225 points of Magic Damage and decreasing their Intelligence, Wisdom, Charisma, and Mana Regeneration by 15",Alt,,Direct Damage | Magic | Stat Debuff,Inquisitor
 44,Explode Mana,"Explode the mind of your target, depleting 360 Mana.",Abj,,Mana Burn,Inquisitor
 44,Holy Resistance,"Greatly wards your target from the arcane, increasing their Holy Resistance by 15",Abj,,Resist | Holy,Inquisitor
@@ -1331,14 +1331,14 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Poison Protection,"Wards your target from toxins, increasing their Poison Resistance by 5",Abj,10,Resist | Poison,Paladin
 1,Taunt,"Taunt your target, causing them to focus their attacks on you. Triggers cooldown of Martial abilities.",Mar,Innate,Taunt,Paladin
 1,Shoot,Shoot your target with a bow. (requires bow & arrows),Mar,Innate,Direct Damage | Physical,Paladin
-1,Slam,"Forcefully slam your target, dealing 100% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing your Threat by 20 (L1) to 200 (L60). Has a chance to stun from behind the target.",Mit,Innate,Direct Damage | Physical | Stun | Taunt,Paladin
+1,Slam,"Forcefully slam your target, dealing 100% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing your Threat by 20 (L1) to 200 (L60). Has a chance to stun from behind the target.",Mit,Innate,Direct Damage | Physical | Aggro Gen | Stun,Paladin
 1,Weak Heal,"Weakly heals the wounds of a friendly target, healing them for 6 Health.",Alt,7,Direct Heal,Paladin
 2,Supplication,"Cry out in prayer, increasing your Strength by 2 (L1) to 10 (L20) and Mana Regeneration by 1 for 1 minute.",Abj,3,+STR | Mana Regen,Paladin
 3,Cure Disease,Cures target of disease effects,Alt,10,Cure | Disease,Paladin
 4,Kick,"Interrupting target cast, locking them out of that school of magic for 4 seconds.",Acr,Innate,Interrupt,Paladin
 4,Minor Heal,"Slightly heals the wounds of a friendly target, healing them for 10 Health.",Alt,8,Direct Heal,Paladin
 4,Weapon Shield,"Activate to use your weapon to help shield attacks, reducing damage against you by 5%.",Val,Innate,Damage Reduction | (self only),Paladin
-5,Placate,"Placates an aggressive target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Lull / Pacify,Paladin
+5,Placate,"Placates an aggressive target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Pacify,Paladin
 6,Invisibility versus Undead,Shrouds your target with invisibility versus undead.,Div,10,Invisibility | (undead only),Paladin
 7,Focused Concentration,"Greatly shapen your concentration, granting you a 100% chance to continue casting through incoming melee attacks for 15 seconds.",Mit,Innate,Misc. | (self only),Paladin
 7,Shield Toss,"Tosses a holy shield at an enemy, interrupting their spellcasting and 2 other nearby targets as the shield ricochets within 8 meters. Requires a Shield in your inventory or equipped.",Mit,Innate,AoE | Interrupt,Paladin
@@ -1351,7 +1351,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 10,Restorative Smite,"Your weapon unleashes holy energy, dealing 150% Weapon Damage plus 1 (L1) to 20 (L60) Holy Damage and 1 (L1) to 20 (L60) Physical Damage. Additionally, if this ability lands a killing blow, restore 1 (L1) to 40 (L60) Health to your group. This ability has a chance to trigger again if the target is afflicted with Slam Stun.",Mit,Innate,Direct Damage | Physical | Holy | Stun | Direct Heal | AoE,Paladin
 11,Disease Protection,"Wards your target from sickness, increasing their Disease Resistance by 5.",Abj,10,Resist | Disease,Paladin
 12,Ancient Guardian,"Summons a holy, ancient guardian to assist you in battle. The ancient guardian heals you and other friendly targets. Persists for 30 seconds, or until death of pet or master.",Alt,,Heal Over Time,Paladin
-12,Placate the Masses,"Placates your target, reducing their Body Aggro Radius for 2 minutes.",Alt,,Lull / Pacify,Paladin
+12,Placate the Masses,"Placates your target, reducing their Body Aggro Radius for 2 minutes.",Alt,,Pacify,Paladin
 12,Ward the Dead,Wards an undead target with holy energy for 30 points of Holy Damage.,Evo,25,Direct Damage | Holy | (undead only),Paladin
 13,Corruption Protection,"Wards your target from subversion, increasing their Corruption Resistance by 5.",Abj,10,Resist | Corruption,Paladin
 14,Snare the Dead,"Holy energy erupts from the ground and cling to your target's feet, decreasing their Movement Speed by 35% for 30 seconds.",Alt,10,Snare,Paladin
@@ -1360,8 +1360,8 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 16,Mark of the Crusader,"Apply a Mark of the Crusader on an enemy target, which has a high chance of healing friendly targets who attack the marked target for 1 (L1) to 6 (L60) Health, and removing the enemy target's Damage Shield. Lasts 30 seconds. Only Primary Hand and Ranged Attacks can proc the Mark of the Crusader healing.",Abj,10,Lifesteal | Purge | Magic,Paladin
 17,Deflect,"Deflect magical attacks, reducing incoming Magic Damage dealt to you by 40% for 30 seconds.",Mar,Innate,Damage Reduction | Magic | (self only),Paladin
 18,Root,"Roots emerge from the ground and cling to your target's feet, applying an Immobilize effect for 30 seconds. This effect has a chance to be removed by Damage or end early.",Alt,15,Root,Paladin
-19,Appease,"Appease your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,15,Lull / Pacify,Paladin
-20,Appease the Masses,"Appeases your target, reducing their Body Aggro Radius for 3 minutes.",Alt,,Lull / Pacify,Paladin
+19,Appease,"Appease your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,15,Pacify,Paladin
+20,Appease the Masses,"Appeases your target, reducing their Body Aggro Radius for 3 minutes.",Alt,,Pacify,Paladin
 20,Cleanse Diseases,Cures target of two disease effects,Alt,50,Cure | Disease,Paladin
 20,Cleanse Poisons,Cures target of two poison effects,Alt,50,Cure | Poison,Paladin
 20,Divine Aegis,"Surrounds the caster with an impenetrable divine aegis, making them invulnerable to all attacks for 15 seconds. Also grants Exhausted Soul, preventing you from receiving another immunity buff for 1 minute. Can by used while Stunned, Mesmerized, and Feared.",Abj,60,Damage Reduction | Absorb Damage Shield | (self only),Paladin
@@ -1372,8 +1372,8 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 28,Holy Valor,Increases the maximum health of a friendly target by 125 for 30 minutes.,Abj,75,+HP,Paladin
 29,Greater Heal,"Greatly heals the wounds of a friendly target, healing them for 325 Health.",Alt,150,Direct Heal,Paladin
 30,Supplication II,"Cry out in prayer, increasing your Strength by 15 (L20) to 25 (L40) and Mana Regeneration by 2 for 1 minute.",Abj,6,+STR | Mana Regen,Paladin
-32,Conciliate,"Conciliate your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,15,Lull / Pacify,Paladin
-36,Conciliate the Masses,"Conciliate your target, reducing their Body Aggro Radius for 4 minutes.",Alt,,Lull / Pacify,Paladin
+32,Conciliate,"Conciliate your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,15,Pacify,Paladin
+36,Conciliate the Masses,"Conciliate your target, reducing their Body Aggro Radius for 4 minutes.",Alt,,Pacify,Paladin
 36,Rebuff the Dead,Wards an undead target with holy energy for 150 points of Holy Damage.,Evo,,Direct Damage | Holy | (undead only),Paladin
 40,Holy Resilience,Increases the maximum Health of a friendly target by 175 for 30 minutes.,Abj,100,+HP,Paladin
 44,Resuscitation,"Resuscitate a target corpse, restoring 35% experience. This spell inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,,Resurrection,Paladin
@@ -1383,10 +1383,10 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 48,Beleaguer the Dead,Wards an undead target with holy energy for 245 points of Holy Damage.,Evo,,Direct Damage | Holy | (undead only),Paladin
 50,Exceptional Heal,"Exceptionally heals the wounds of a friendly target, healing them for 600 Health.",Alt,230,Direct Heal,Paladin
 50,Supplication III,"Cry out in prayer, increasing your Strength by 30 (L40) to 40 (L60) and Mana Regeneration by 3 for 1 minute.",Abj,,+STR | Mana Regen,Paladin
-51,Propitiate,"Propitiate your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,15,Lull / Pacify,Paladin
+51,Propitiate,"Propitiate your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,15,Pacify,Paladin
 52,Holy Resolve,Increases the maximum Health of a friendly target by 500 for 30 minutes.,Abj,150,+HP,Paladin
 55,Abolish Magic,Removes two harmful magical effects from your current target.,Alt,100,Cure | Magic,Paladin
-56,Propitiate the Masses,"Propitiate your target, reducing their Body Aggro Radius for 5 minutes.",Alt,,Lull / Pacify,Paladin
+56,Propitiate the Masses,"Propitiate your target, reducing their Body Aggro Radius for 5 minutes.",Alt,,Pacify,Paladin
 56,Reawaken,"Reawaken a target corpse, restoring 50% experience. This spell inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,,Resurrection,Paladin
 60,Assail the Dead,Wards an undead target with holy energy for 525 points of Holy Damage.,Evo,,Direct Damage | Holy | (undead only),Paladin
 60,Divine Spark,"Grants Divine Spark to your target, increasing their maximum Health by 250 for 30 minutes.",Abj,,+HP,Paladin
@@ -1396,7 +1396,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Locate Corpse,Locates a target player's nearest corpse.,Div,5,Misc.,Shadow Knight
 1,Polar Align: North,Magically faces caster North.,Div,5,Misc. | (self only),Shadow Knight
 1,Shoot,Shoots your target with a bow.(requires bow & arrows),Mar,Innate,Direct Damage | Physical,Shadow Knight
-1,Slam,"Forcefully slam your target, dealing 100% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing your Threat by 20 (L1) to 200 (L60). Has a chance to stun from behind the target.",Mit,Innate,Direct Damage | Physical | Stun | Taunt,Shadow Knight
+1,Slam,"Forcefully slam your target, dealing 100% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing your Threat by 20 (L1) to 200 (L60). Has a chance to stun from behind the target.",Mit,Innate,Direct Damage | Physical | Aggro Gen | Stun,Shadow Knight
 1,Taunt,"Taunt your target, causing them to focus their attacks on you. Triggers cooldown of Martial abilities.",Mar,Innate,Taunt,Shadow Knight
 2,Life Drain,"Drains your target's life force, dealing 3 (L1) to 5 (L4) damage and healing you for the same amount.",Evo,8,Direct Damage | Corruption | Lifetap,Shadow Knight
 2,Spirit Break,"Breaks your target's resistance to the spirits, decreasing their Corruption, Holy, and Magic Resistance by 1 (L1) to 2 (L8). This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,10,Lower Resistance | Corruption | Holy | Magic,Shadow Knight
@@ -1404,7 +1404,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 4,Kick,"Kicks your target, interrupting their casting, locking them out of that school of magic for 4 seconds.",Acr,Innate,Interrupt,Shadow Knight
 4,Weapon Shield,"Activate to use your weapon to help shield attacks, reducing damage against you by 5%.",Val,Innate,Damage Reduction | (self only),Shadow Knight
 5,Invisibility versus Undead,Shrouds your target with invisibility versus undead.,Div,10,Invisibility | (undead only),Shadow Knight
-5,Lull the Dead,"Placates an aggressive undead target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Lull / Pacify | (undead only),Shadow Knight
+5,Lull the Dead,"Placates an aggressive undead target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Pacify | (undead only),Shadow Knight
 6,Grip of Shadow,"Reach into the shadows and grip your target, pulling them toward you, drawing their attention, and interrupting their casting.",Alt,Innate,Interrupt | Taunt,Shadow Knight
 7,Cold Protection,"Wards your target from frost, increasing their Cold Resistance by 5.",Abj,10,Resist | Cold,Shadow Knight
 7,Focused Concentration,"Greatly sharpen your concentration, granting you a 100% chance to continue casting through incoming melee attacks for 15 seconds.",Alt,Innate,Misc. | (self only),Shadow Knight
