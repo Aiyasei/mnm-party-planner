@@ -278,6 +278,9 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
 /* Party counter — always holds its space so no layout shift */
