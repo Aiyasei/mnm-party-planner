@@ -210,7 +210,7 @@ section {
 
 .top-row {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 340px;
   gap: 24px;
   align-items: start;
 }
@@ -251,8 +251,11 @@ section {
 
 /* Fixed-height coverage panel so it never resizes */
 .coverage-panel-fixed {
-  height: 168px;
+  min-height: 210px;
+  max-height: 210px;
+  height: 210px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Party counter — sits below the image box */
@@ -272,10 +275,10 @@ section {
    ============================================ */
 
 #party-display {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 16px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   min-height: 122px;
   display: flex;
   align-items: center;
