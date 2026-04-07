@@ -705,6 +705,27 @@ function initNotice() {
 }
 
 // ============================================
+// SCROLL TO TOP BUTTON
+// ============================================
+
+function initScrollTopBtn() {
+  const btn = document.getElementById("scroll-top-btn");
+  if (!btn) return;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btn.classList.add("visible");
+    } else {
+      btn.classList.remove("visible");
+    }
+  }, { passive: true });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+// ============================================
 // ROUTER — detect which page we're on
 // ============================================
 
@@ -714,6 +735,7 @@ function initNotice() {
   script.onload = function() {
     loadCSV(function(spells) {
       initNotice();
+      initScrollTopBtn();
       if (document.getElementById("party-display")) {
         initPartyPlanner(spells);
       } else if (document.getElementById("spell-tbody")) {
