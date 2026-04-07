@@ -795,15 +795,15 @@ section {
 
 .redundancy-row {
   display: flex;
-  align-items: baseline;
-  gap: 5px;
+  flex-direction: column;
+  gap: 3px;
   padding: 7px 0;
-  font-size: 0.83rem;
-  flex-wrap: wrap;
 }
 
 .redundancy-tag-left {
-  display: contents;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .redundancy-icon {
@@ -812,7 +812,6 @@ section {
   flex-shrink: 0;
   filter: brightness(0) invert(1);
   opacity: 0.75;
-  align-self: center;
 }
 
 .redundancy-tag-name {
@@ -822,18 +821,17 @@ section {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--text-primary);
-  flex-shrink: 0;
 }
 
 .redundancy-bracket {
-  color: var(--text-muted);
-  font-size: 0.82rem;
-  flex-shrink: 0;
+  display: none;
 }
 
 .redundancy-class-list {
   font-size: 0.79rem;
   color: var(--text-muted);
+  padding-left: 20px;
+  flex-wrap: wrap;
 }
 
 .redundancy-sep {

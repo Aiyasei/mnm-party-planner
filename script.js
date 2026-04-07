@@ -333,9 +333,11 @@ function initPartyPlanner(spells) {
           .join('<span class="redundancy-dot"> · </span>');
 
         row.innerHTML = `
-          <img class="redundancy-icon" src="${tagIconPath(tag)}" alt="" onerror="this.style.display='none'">
-          <span class="redundancy-tag-name">${tag}</span>
-          <span class="redundancy-bracket">[</span><span class="redundancy-class-list">${classesHtml}</span><span class="redundancy-bracket">]</span>
+          <div class="redundancy-tag-left">
+            <img class="redundancy-icon" src="${tagIconPath(tag)}" alt="" onerror="this.style.display='none'">
+            <span class="redundancy-tag-name">${tag}</span>
+          </div>
+          <div class="redundancy-class-list">${classesHtml}</div>
         `;
 
         rows.appendChild(row);
