@@ -165,22 +165,27 @@ nav a.nav-highlight:hover {
    PAGE-PLANNER OVERRIDES (index.html only)
    ============================================ */
 
-/* Header scrolls away on the planner page */
+/* Header on planner page is inside the sticky block, not sticky itself */
 .page-planner header {
   position: relative;
   top: auto;
 }
 
-/* Freeze the top section (party + coverage) when scrolling */
-.page-planner .top-section-sticky {
+/* The sticky frozen block: header + party/coverage together */
+.page-planner-sticky {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   background-color: var(--bg-primary);
-  padding-top: 24px;
-  padding-bottom: 16px;
-  margin-bottom: 8px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--orange);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+}
+
+/* Inner content area matches main padding */
+.top-section-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 32px;
 }
 
 /* ============================================

@@ -28,6 +28,9 @@
 </head>
 <body class="page-planner">
 
+  <!-- STICKY FROZEN TOP: Header + Party/Coverage freeze together on scroll -->
+  <div class="page-planner-sticky">
+
   <!-- HEADER -->
   <header>
     <div class="site-title">Monster <span>&amp;</span> Memories <span class="title-sub">Party Planner</span></div>
@@ -44,12 +47,9 @@
     </nav>
   </header>
 
-  <main>
-
-    <!-- STICKY TOP: Party composition + coverage freeze on scroll -->
-    <div class="top-section-sticky">
-    <section>
-      <div class="top-row">
+  <!-- TOP: Party composition + class selection + coverage -->
+  <div class="top-section-inner">
+    <div class="top-row">
 
         <!-- LEFT: Party Composition + Class Selection stacked -->
         <div class="top-row-left">
@@ -126,8 +126,11 @@
         </div>
 
       </div>
-    </section>
-    </div><!-- end top-section-sticky -->
+    </div>
+  </div><!-- end top-section-inner -->
+  </div><!-- end page-planner-sticky -->
+
+  <main>
     <section>
       <div class="section-label">Party Capabilities</div>
       <div id="tag-grid">
