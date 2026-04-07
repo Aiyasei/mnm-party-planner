@@ -29,7 +29,7 @@
   --cat-debuff:  #9966cc;
   --cat-healing: #44bb66;
   --cat-buff:    #4488cc;
-  --cat-utility: #ffffff;
+  --cat-utility: #e0e0e0;
 
   /* Class colors */
   --cls-elementalist: #e05c2a;
@@ -205,12 +205,12 @@ section {
 }
 
 /* ============================================
-   ROW 1: PARTY DISPLAY + WARNINGS + COVERAGE
+   ROW 1: PARTY DISPLAY + RIGHT COLUMN (COVERAGE + WARNINGS)
    ============================================ */
 
 .top-row {
   display: grid;
-  grid-template-columns: auto 1fr 280px;
+  grid-template-columns: auto 1fr;
   gap: 20px;
   align-items: start;
 }
@@ -219,6 +219,12 @@ section {
   display: flex;
   flex-direction: column;
   width: fit-content;
+}
+
+.top-row-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .top-row-warnings {
@@ -248,10 +254,10 @@ section {
    ============================================ */
 
 #party-display {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
   min-height: 122px;
   display: flex;
   align-items: center;
@@ -313,10 +319,15 @@ section {
 }
 
 .role-group {
-  display: flex;
+  display: grid;
+  grid-template-columns: 80px 1fr;
   align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  gap: 0 8px;
+}
+
+/* DPS group: label aligns to top since it spans 3 sub-rows */
+.role-group-dps {
+  align-items: start;
 }
 
 .role-label {
@@ -326,13 +337,41 @@ section {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--text-muted);
-  min-width: 72px;
+  /* fixed width col handled by grid now */
 }
 
-.role-label.dps    { color: #cc4444; }
+.role-label.dps    { color: #cc4444; padding-top: 8px; }
 .role-label.healer { color: #44aa66; }
 .role-label.support{ color: #6688cc; }
 .role-label.tank   { color: #aa8844; }
+
+/* DPS sub-rows container */
+.role-subrows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.role-subrow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Non-DPS buttons sit directly in the grid's second column — wrap them */
+.role-group > .class-btn {
+  /* stays in flow, grid places them in col 2 */
+}
+
+/* For non-DPS groups, buttons flow into col 2 but need to wrap among themselves.
+   Achieved by wrapping col 2 content in a flex container via the :not selector trick — 
+   instead we use a shared .role-btn-group wrapper added in HTML for healer/support/tank */
+.role-btn-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
 .class-btn {
   background: var(--bg-card);
