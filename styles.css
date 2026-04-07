@@ -1065,24 +1065,17 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
   vertical-align: middle;
 }
 
-#spell-table td.spell-tags {
+#spell-table td.spell-tags-cell {
   font-size: 0.82rem;
+  padding: 6px 16px;
 }
 
-#spell-table td.spell-tags {
-  display: table-cell; /* keep td behavior */
-}
-
-/* Tag pills in the library table */
+/* Tag pills wrapper — flex div inside the td */
 .spell-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px 8px;
-  padding-top: 1px;
-}
-
-.lib-tag-pill {
-  margin: 1px 0;
+  gap: 6px;
+  align-items: center;
 }
 
 .lib-tag-pill {

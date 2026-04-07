@@ -620,7 +620,7 @@ function initLibrary(spells) {
         <td class="spell-desc">${spell["Spell Description"] || ""}</td>
         <td>${spell["Skill"] || ""}</td>
         <td>${spell["Mana"] || ""}</td>
-        <td class="spell-tags">${tagPillsHtml}</td>
+        <td class="spell-tags-cell"><div class="spell-tags">${tagPillsHtml}</div></td>
         <td class="spell-class cls-text-${slug}">${spell["Class"] || ""}</td>
       `;
       tbody.appendChild(tr);
