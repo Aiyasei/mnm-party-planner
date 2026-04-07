@@ -178,7 +178,7 @@ nav a.nav-highlight:hover {
 main {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 24px 32px;
+  padding: 20px 32px 24px 32px;
 }
 
 section {
@@ -231,7 +231,6 @@ section {
   flex-direction: column;
   gap: 20px;
   min-width: 0;
-  overflow: hidden;
 }
 
 .top-row-party {
@@ -260,6 +259,13 @@ section {
 .top-row-coverage {
   display: flex;
   flex-direction: column;
+}
+
+/* Coverage panel has no background box */
+.top-row-coverage .panel {
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 /* Fixed-height coverage panel so it never resizes */
@@ -366,6 +372,7 @@ section {
   grid-template-columns: 80px 1fr;
   align-items: center;
   gap: 0 8px;
+  min-width: 0;
 }
 
 /* DPS group: label aligns to top since it spans 3 sub-rows */
@@ -380,7 +387,8 @@ section {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--text-muted);
-  /* fixed width col handled by grid now */
+  width: 80px;
+  flex-shrink: 0;
 }
 
 .role-label.dps    { color: #cc4444; }
