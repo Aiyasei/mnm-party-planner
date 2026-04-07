@@ -166,7 +166,8 @@ nav a.nav-highlight:hover {
    ============================================ */
 
 /* Header is not sticky on the planner page — scrolls away normally */
-.page-planner header {
+.page-planner header,
+.page-library header {
   position: relative;
   top: auto;
 }

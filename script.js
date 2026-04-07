@@ -705,10 +705,10 @@ function initNotice() {
 }
 
 // ============================================
-// SCROLL TO TOP BUTTON
+// SCROLL TO TOP BUTTON — runs immediately on DOM ready
 // ============================================
 
-function initScrollTopBtn() {
+(function initScrollTopBtn() {
   const btn = document.getElementById("scroll-top-btn");
   if (!btn) return;
 
@@ -723,7 +723,7 @@ function initScrollTopBtn() {
   btn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-}
+})();
 
 // ============================================
 // ROUTER — detect which page we're on
@@ -735,7 +735,6 @@ function initScrollTopBtn() {
   script.onload = function() {
     loadCSV(function(spells) {
       initNotice();
-      initScrollTopBtn();
       if (document.getElementById("party-display")) {
         initPartyPlanner(spells);
       } else if (document.getElementById("spell-tbody")) {
