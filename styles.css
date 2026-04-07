@@ -795,11 +795,11 @@ section {
 
 .redundancy-row {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: baseline;
+  gap: 6px;
   padding: 7px 0;
   font-size: 0.83rem;
-  overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .redundancy-tag-left {
@@ -832,11 +832,6 @@ section {
 .redundancy-class-list {
   font-size: 0.79rem;
   color: var(--text-muted);
-  flex-shrink: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .redundancy-sep {
