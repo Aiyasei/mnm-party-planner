@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monster and Memories Party Planner</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- IMAGE PRELOADS -->
+  <link rel="preload" as="image" href="assets/Elementalist.jpg" />
+  <link rel="preload" as="image" href="assets/Necromancer.jpg" />
+  <link rel="preload" as="image" href="assets/Wizard.jpg" />
+  <link rel="preload" as="image" href="assets/Archer.jpg" />
+  <link rel="preload" as="image" href="assets/Ranger.jpg" />
+  <link rel="preload" as="image" href="assets/Beastmaster.jpg" />
+  <link rel="preload" as="image" href="assets/Monk.jpg" />
+  <link rel="preload" as="image" href="assets/Rogue.jpg" />
+  <link rel="preload" as="image" href="assets/Spellblade.jpg" />
+  <link rel="preload" as="image" href="assets/Cleric.jpg" />
+  <link rel="preload" as="image" href="assets/Druid.jpg" />
+  <link rel="preload" as="image" href="assets/Shaman.jpg" />
+  <link rel="preload" as="image" href="assets/Enchanter.jpg" />
+  <link rel="preload" as="image" href="assets/Bard.jpg" />
+  <link rel="preload" as="image" href="assets/Fighter.jpg" />
+  <link rel="preload" as="image" href="assets/Inquisitor.jpg" />
+  <link rel="preload" as="image" href="assets/Paladin.jpg" />
+  <link rel="preload" as="image" href="assets/Shadow-Knight.jpg" />
 </head>
 <body>
 
@@ -26,194 +46,231 @@
 
   <main>
 
-    <!-- PARTY DISPLAY -->
+    <!-- ROW 1: Party Display + Party Coverage -->
     <section>
-      <div class="section-label">Party Composition</div>
-      <div id="party-display">
-        <div class="empty-message">Select classes below to build your party</div>
-      </div>
-    </section>
+      <div class="top-row">
 
-    <!-- CLASS SELECTION BUTTONS -->
-    <section>
-      <div class="section-label">Select Classes</div>
-      <div id="class-selection">
-
-        <div class="role-group">
-          <span class="role-label dps">DPS</span>
-          <button class="class-btn" data-class="Elementalist">Elementalist</button>
-          <button class="class-btn" data-class="Necromancer">Necromancer</button>
-          <button class="class-btn" data-class="Wizard">Wizard</button>
-          <button class="class-btn" data-class="Archer">Archer</button>
-          <button class="class-btn" data-class="Ranger">Ranger</button>
-          <button class="class-btn" data-class="Beastmaster">Beastmaster</button>
-          <button class="class-btn" data-class="Monk">Monk</button>
-          <button class="class-btn" data-class="Rogue">Rogue</button>
-          <button class="class-btn" data-class="Spellblade">Spellblade</button>
-        </div>
-
-        <div class="role-group">
-          <span class="role-label healer">Healer</span>
-          <button class="class-btn" data-class="Cleric">Cleric</button>
-          <button class="class-btn" data-class="Druid">Druid</button>
-          <button class="class-btn" data-class="Shaman">Shaman</button>
-        </div>
-
-        <div class="role-group">
-          <span class="role-label support">Support</span>
-          <button class="class-btn" data-class="Enchanter">Enchanter</button>
-          <button class="class-btn" data-class="Bard">Bard</button>
-        </div>
-
-        <div class="role-group">
-          <span class="role-label tank">Tank</span>
-          <button class="class-btn" data-class="Fighter">Fighter</button>
-          <button class="class-btn" data-class="Inquisitor">Inquisitor</button>
-          <button class="class-btn" data-class="Paladin">Paladin</button>
-          <button class="class-btn" data-class="Shadow Knight">Shadow Knight</button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TWO COLUMN LAYOUT: Capabilities Left, Panels Right -->
-    <section>
-      <div id="capabilities-layout">
-
-        <!-- LEFT: Party Capabilities -->
-        <div id="capabilities-col">
-          <div class="capabilities-header">
-            <div class="section-label">Party Capabilities</div>
-            <button id="toggle-self-only" class="class-btn toggle-self-btn">Hide Personal Abilities</button>
+        <!-- Party Display -->
+        <div class="top-row-party">
+          <div class="section-label-row">
+            <div class="section-label">Party Composition</div>
+            <span id="party-counter" class="party-counter"></span>
           </div>
-          <div id="tag-section">
-
-            <div class="category-block">
-              <div class="category-title cat-cc">Crowd Control</div>
-              <div class="tags-grid">
-                <span class="tag-pill uncovered" data-tag="Fear"><img class="tag-icon" src="assets/icons/fear.svg" alt="">Fear</span>
-                <span class="tag-pill uncovered" data-tag="Mez / Stun"><img class="tag-icon" src="assets/icons/mez-stun.svg" alt="">Mez / Stun</span>
-                <span class="tag-pill uncovered" data-tag="Charm"><img class="tag-icon" src="assets/icons/charm.svg" alt="">Charm</span>
-                <span class="tag-pill uncovered" data-tag="Lull / Pacify"><img class="tag-icon" src="assets/icons/lull-pacify.svg" alt="">Lull / Pacify</span>
-                <span class="tag-pill uncovered" data-tag="Snare"><img class="tag-icon" src="assets/icons/snare.svg" alt="">Snare</span>
-                <span class="tag-pill uncovered" data-tag="Root"><img class="tag-icon" src="assets/icons/root.svg" alt="">Root</span>
-                <span class="tag-pill uncovered" data-tag="Blind"><img class="tag-icon" src="assets/icons/blind.svg" alt="">Blind</span>
-              </div>
-            </div>
-
-            <div class="category-block">
-              <div class="category-title cat-debuff">Debuffs</div>
-              <div class="tags-grid">
-                <span class="tag-pill uncovered" data-tag="Slow"><img class="tag-icon" src="assets/icons/slow.svg" alt="">Slow</span>
-                <span class="tag-pill uncovered" data-tag="Stat Debuff / Steal"><img class="tag-icon" src="assets/icons/stat-debuff-steal.svg" alt="">Stat Debuff / Steal</span>
-                <span class="tag-pill uncovered" data-tag="Spell Damage Vulnerability"><img class="tag-icon" src="assets/icons/spell-damage-vulnerability.svg" alt="">Spell Damage Vulnerability</span>
-                <span class="tag-pill uncovered" data-tag="Physical Damage Vulnerability"><img class="tag-icon" src="assets/icons/physical-damage-vulnerability.svg" alt="">Physical Damage Vulnerability</span>
-                <span class="tag-pill uncovered" data-tag="Reduced Healing"><img class="tag-icon" src="assets/icons/reduced-healing.svg" alt="">Reduced Healing</span>
-                <span class="tag-pill uncovered" data-tag="Mana Burn"><img class="tag-icon" src="assets/icons/mana-burn.svg" alt="">Mana Burn</span>
-                <span class="tag-pill uncovered" data-tag="Lower Resistance"><img class="tag-icon" src="assets/icons/lower-resistance.svg" alt="">Lower Resistance</span>
-              </div>
-            </div>
-
-            <div class="category-block">
-              <div class="category-title cat-healing">Healing</div>
-              <div class="tags-grid">
-                <span class="tag-pill uncovered" data-tag="Heal Over Time"><img class="tag-icon" src="assets/icons/heal-over-time.svg" alt="">Heal Over Time</span>
-                <span class="tag-pill uncovered" data-tag="Direct Heal"><img class="tag-icon" src="assets/icons/direct-heal.svg" alt="">Direct Heal</span>
-                <span class="tag-pill uncovered" data-tag="Resurrection"><img class="tag-icon" src="assets/icons/resurrection.svg" alt="">Resurrection</span>
-              </div>
-            </div>
-
-            <div class="category-block">
-              <div class="category-title cat-buff">Buffs</div>
-              <div class="tags-grid">
-                <span class="tag-pill uncovered" data-tag="+HP"><img class="tag-icon" src="assets/icons/stat-hp.svg" alt="">+HP</span>
-                <span class="tag-pill uncovered" data-tag="+AC"><img class="tag-icon" src="assets/icons/stat-ac.svg" alt="">+AC</span>
-                <span class="tag-pill uncovered" data-tag="+STR"><img class="tag-icon" src="assets/icons/stat-str.svg" alt="">+STR</span>
-                <span class="tag-pill uncovered" data-tag="+STA"><img class="tag-icon" src="assets/icons/stat-sta.svg" alt="">+STA</span>
-                <span class="tag-pill uncovered" data-tag="+DEX"><img class="tag-icon" src="assets/icons/stat-dex.svg" alt="">+DEX</span>
-                <span class="tag-pill uncovered" data-tag="+AGI"><img class="tag-icon" src="assets/icons/stat-agi.svg" alt="">+AGI</span>
-                <span class="tag-pill uncovered" data-tag="+INT"><img class="tag-icon" src="assets/icons/stat-int.svg" alt="">+INT</span>
-                <span class="tag-pill uncovered" data-tag="+CHA"><img class="tag-icon" src="assets/icons/stat-cha.svg" alt="">+CHA</span>
-                <span class="tag-pill uncovered" data-tag="+WIS"><img class="tag-icon" src="assets/icons/stat-wis.svg" alt="">+WIS</span>
-                <span class="tag-pill uncovered" data-tag="Increase Physical Damage"><img class="tag-icon" src="assets/icons/increase-physical-damage.svg" alt="">Increase Physical Damage</span>
-                <span class="tag-pill uncovered" data-tag="Increase Spell Damage"><img class="tag-icon" src="assets/icons/increase-spell-damage.svg" alt="">Increase Spell Damage</span>
-                <span class="tag-pill uncovered" data-tag="Movement Speed"><img class="tag-icon" src="assets/icons/movement-speed.svg" alt="">Movement Speed</span>
-                <span class="tag-pill uncovered" data-tag="Melee Haste"><img class="tag-icon" src="assets/icons/melee-haste.svg" alt="">Melee Haste</span>
-                <span class="tag-pill uncovered" data-tag="Spell Haste"><img class="tag-icon" src="assets/icons/spell-haste.svg" alt="">Spell Haste</span>
-                <span class="tag-pill uncovered" data-tag="Resist"><img class="tag-icon" src="assets/icons/resist.svg" alt="">Resist</span>
-                <span class="tag-pill uncovered" data-tag="Invisibility"><img class="tag-icon" src="assets/icons/invisibility.svg" alt="">Invisibility</span>
-                <span class="tag-pill uncovered" data-tag="Damage Shield"><img class="tag-icon" src="assets/icons/damage-shield.svg" alt="">Damage Shield</span>
-                <span class="tag-pill uncovered" data-tag="Mana Regen"><img class="tag-icon" src="assets/icons/mana-regen.svg" alt="">Mana Regen</span>
-                <span class="tag-pill uncovered" data-tag="Health Regen"><img class="tag-icon" src="assets/icons/health-regen.svg" alt="">Health Regen</span>
-              </div>
-            </div>
-
-            <div class="category-block">
-              <div class="category-title cat-pet">Pet</div>
-              <div class="tags-grid">
-                <span class="tag-pill uncovered" data-tag="Pet"><img class="tag-icon" src="assets/icons/pet.svg" alt="">Pet</span>
-              </div>
-            </div>
-
-            <div class="category-block">
-              <div class="category-title cat-utility">Utility</div>
-              <div class="tags-grid">
-                <span class="tag-pill uncovered" data-tag="Purge"><img class="tag-icon" src="assets/icons/purge.svg" alt="">Purge</span>
-                <span class="tag-pill uncovered" data-tag="Cure"><img class="tag-icon" src="assets/icons/cure.svg" alt="">Cure</span>
-                <span class="tag-pill uncovered" data-tag="Feign Death"><img class="tag-icon" src="assets/icons/feign-death.svg" alt="">Feign Death</span>
-                <span class="tag-pill uncovered" data-tag="Interrupt"><img class="tag-icon" src="assets/icons/interrupt.svg" alt="">Interrupt</span>
-                <span class="tag-pill uncovered" data-tag="Taunt / Aggro Gen"><img class="tag-icon" src="assets/icons/taunt-aggro-gen.svg" alt="">Taunt / Aggro Gen</span>
-                <span class="tag-pill uncovered" data-tag="Tracking"><img class="tag-icon" src="assets/icons/tracking.svg" alt="">Tracking</span>
-                <span class="tag-pill uncovered" data-tag="Teleport"><img class="tag-icon" src="assets/icons/teleport.svg" alt="">Teleport</span>
-                <span class="tag-pill uncovered" data-tag="Conjure Weapon"><img class="tag-icon" src="assets/icons/conjure-weapon.svg" alt="">Conjure Weapon</span>
-                <span class="tag-pill uncovered" data-tag="Conjure Arrows"><img class="tag-icon" src="assets/icons/conjure-arrows.svg" alt="">Conjure Arrows</span>
-                <span class="tag-pill uncovered" data-tag="Conjure Bandage"><img class="tag-icon" src="assets/icons/conjure-bandage.svg" alt="">Conjure Bandage</span>
-                <span class="tag-pill uncovered" data-tag="Conjure Food &amp; Water"><img class="tag-icon" src="assets/icons/conjure-food-water.svg" alt="">Conjure Food &amp; Water</span>
-                <span class="tag-pill uncovered" data-tag="Summon Manastone"><img class="tag-icon" src="assets/icons/summon-manastone.svg" alt="">Summon Manastone</span>
-                <span class="tag-pill uncovered" data-tag="Summon Lifestone"><img class="tag-icon" src="assets/icons/summon-lifestone.svg" alt="">Summon Lifestone</span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- CAVEATS -->
-          <div id="caveats-block">
-            <div class="caveat-item">
-              <span class="caveat-icon">&#9888;</span>
-              <span><strong class="caveat-label">Self Only</strong> — Some tags are covered by spells that only benefit the caster, not the party. For example, Monk's Melee Haste applies to themselves only.</span>
-            </div>
-            <div class="caveat-item">
-              <span class="caveat-icon">&#9888;</span>
-              <span><strong class="caveat-label">Pet Only</strong> — Some tags apply to pets only, not players. For example, Druid's Resurrection only affects pets.</span>
-            </div>
+          <div id="party-display">
+            <div class="empty-message">Select classes below to build your party</div>
           </div>
         </div>
 
-        <!-- RIGHT: Progress, Warnings, Redundancies -->
-        <div id="panels-col">
-          <div class="section-label">&nbsp;</div>
-
-          <!-- CATEGORY PROGRESS -->
-          <div class="panel">
-            <div class="panel-title" style="color: var(--orange-dim);">&#9632; Party Coverage</div>
+        <!-- Party Coverage -->
+        <div class="top-row-coverage">
+          <div class="section-label">Party Coverage</div>
+          <div class="panel panel-flush">
             <div id="coverage-progress"></div>
           </div>
+        </div>
 
-          <!-- META WARNINGS -->
-          <div class="panel" id="meta-warnings-panel" style="margin-top: 16px; display:none;">
-            <div class="panel-title" style="color: var(--missing);">&#9888; Party Warnings</div>
-            <div id="meta-warnings-list"></div>
+      </div>
+    </section>
+
+    <!-- ROW 2: Class Selection + Party Warnings -->
+    <section>
+      <div class="mid-row">
+
+        <!-- Class Selection -->
+        <div class="mid-row-classes">
+          <div class="section-label-row">
+            <div class="section-label">Select Classes</div>
+            <button id="toggle-self-only" class="class-btn toggle-self-btn">Hide Personal Abilities</button>
           </div>
+          <div id="class-selection">
 
-          <!-- REDUNDANCIES -->
-          <div class="panel" style="margin-top: 16px;">
-            <div class="panel-title redundant-title">&#8635; Redundancies</div>
-            <div id="redundancy-content">
-              <div class="redundancy-list" id="redundancy-list"></div>
+            <div class="role-group">
+              <span class="role-label dps">DPS</span>
+              <button class="class-btn" data-class="Elementalist">Elementalist</button>
+              <button class="class-btn" data-class="Necromancer">Necromancer</button>
+              <button class="class-btn" data-class="Wizard">Wizard</button>
+              <button class="class-btn" data-class="Archer">Archer</button>
+              <button class="class-btn" data-class="Ranger">Ranger</button>
+              <button class="class-btn" data-class="Beastmaster">Beastmaster</button>
+              <button class="class-btn" data-class="Monk">Monk</button>
+              <button class="class-btn" data-class="Rogue">Rogue</button>
+              <button class="class-btn" data-class="Spellblade">Spellblade</button>
             </div>
+
+            <div class="role-group">
+              <span class="role-label healer">Healer</span>
+              <button class="class-btn" data-class="Cleric">Cleric</button>
+              <button class="class-btn" data-class="Druid">Druid</button>
+              <button class="class-btn" data-class="Shaman">Shaman</button>
+            </div>
+
+            <div class="role-group">
+              <span class="role-label support">Support</span>
+              <button class="class-btn" data-class="Enchanter">Enchanter</button>
+              <button class="class-btn" data-class="Bard">Bard</button>
+            </div>
+
+            <div class="role-group">
+              <span class="role-label tank">Tank</span>
+              <button class="class-btn" data-class="Fighter">Fighter</button>
+              <button class="class-btn" data-class="Inquisitor">Inquisitor</button>
+              <button class="class-btn" data-class="Paladin">Paladin</button>
+              <button class="class-btn" data-class="Shadow Knight">Shadow Knight</button>
+            </div>
+
           </div>
         </div>
 
+        <!-- Party Warnings -->
+        <div class="mid-row-warnings">
+          <div class="section-label">Party Warnings</div>
+          <div class="panel panel-flush" id="meta-warnings-panel" style="display:none;">
+            <div id="meta-warnings-list"></div>
+            <a href="#redundancies-anchor" id="scroll-to-redundancies" class="redundancies-link">View Redundancies &#8594;</a>
+          </div>
+          <div class="panel panel-flush panel-empty-state" id="warnings-empty" style="display:block;">
+            <span class="panel-empty">No warnings for current party.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ROW 3: Tag Categories (3 columns) -->
+    <section>
+      <div class="section-label">Party Capabilities</div>
+      <div id="tag-grid">
+
+        <!-- COLUMN 1: Crowd Control + Debuffs -->
+        <div class="tag-col">
+
+          <div class="category-block">
+            <div class="category-title cat-cc">Crowd Control</div>
+            <div class="tags-grid">
+              <!-- Group 1: Mez, Charm -->
+              <span class="tag-pill uncovered" data-tag="Mez"><img class="tag-icon" src="assets/icons/mez.svg" alt="">Mez</span>
+              <span class="tag-pill uncovered" data-tag="Charm"><img class="tag-icon" src="assets/icons/charm.svg" alt="">Charm</span>
+              <!-- Group 2: Snare, Root -->
+              <span class="tag-pill uncovered tag-gap-left" data-tag="Snare"><img class="tag-icon" src="assets/icons/snare.svg" alt="">Snare</span>
+              <span class="tag-pill uncovered" data-tag="Root"><img class="tag-icon" src="assets/icons/root.svg" alt="">Root</span>
+              <!-- Group 3: Pacify (standalone) -->
+              <span class="tag-pill uncovered tag-gap-left" data-tag="Pacify"><img class="tag-icon" src="assets/icons/pacify.svg" alt="">Pacify</span>
+
+              <!-- Row break -->
+              <div class="tag-row-break"></div>
+
+              <!-- Group 4: Fear, Blind -->
+              <span class="tag-pill uncovered" data-tag="Fear"><img class="tag-icon" src="assets/icons/fear.svg" alt="">Fear</span>
+              <span class="tag-pill uncovered" data-tag="Blind"><img class="tag-icon" src="assets/icons/blind.svg" alt="">Blind</span>
+              <!-- Group 5: Stun, Interrupt -->
+              <span class="tag-pill uncovered tag-gap-left" data-tag="Stun"><img class="tag-icon" src="assets/icons/stun.svg" alt="">Stun</span>
+              <span class="tag-pill uncovered" data-tag="Interrupt"><img class="tag-icon" src="assets/icons/interrupt.svg" alt="">Interrupt</span>
+            </div>
+          </div>
+
+          <div class="category-block">
+            <div class="category-title cat-debuff">Debuffs</div>
+            <div class="tags-grid">
+              <!-- Left column: Stat Debuff, Slow, Lower Resistance, Mana Burn, Reduced Healing -->
+              <span class="tag-pill uncovered" data-tag="Stat Debuff"><img class="tag-icon" src="assets/icons/stat-debuff.svg" alt="">Stat Debuff</span>
+              <span class="tag-pill uncovered" data-tag="Slow"><img class="tag-icon" src="assets/icons/slow.svg" alt="">Slow</span>
+              <span class="tag-pill uncovered" data-tag="Lower Resistance"><img class="tag-icon" src="assets/icons/lower-resistance.svg" alt="">Lower Resistance</span>
+              <span class="tag-pill uncovered" data-tag="Mana Burn"><img class="tag-icon" src="assets/icons/mana-burn.svg" alt="">Mana Burn</span>
+              <span class="tag-pill uncovered" data-tag="Reduced Healing"><img class="tag-icon" src="assets/icons/reduced-healing.svg" alt="">Reduced Healing</span>
+              <!-- Right column: Spell Damage Vulnerability, Physical Damage Vulnerability -->
+              <span class="tag-pill uncovered tag-gap-left" data-tag="Spell Damage Vulnerability"><img class="tag-icon" src="assets/icons/spell-damage-vulnerability.svg" alt="">Spell Damage Vulnerability</span>
+              <span class="tag-pill uncovered" data-tag="Physical Damage Vulnerability"><img class="tag-icon" src="assets/icons/physical-damage-vulnerability.svg" alt="">Physical Damage Vulnerability</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUMN 2: Healing + Buffs -->
+        <div class="tag-col">
+
+          <div class="category-block">
+            <div class="category-title cat-healing">Healing</div>
+            <div class="tags-grid">
+              <span class="tag-pill uncovered" data-tag="Direct Heal"><img class="tag-icon" src="assets/icons/direct-heal.svg" alt="">Direct Heal</span>
+              <span class="tag-pill uncovered" data-tag="Heal Over Time"><img class="tag-icon" src="assets/icons/heal-over-time.svg" alt="">Heal Over Time</span>
+              <span class="tag-pill uncovered" data-tag="Resurrection"><img class="tag-icon" src="assets/icons/resurrection.svg" alt="">Resurrection</span>
+            </div>
+          </div>
+
+          <div class="category-block">
+            <div class="category-title cat-buff">Buffs</div>
+            <div class="tags-grid">
+              <!-- Left: stats -->
+              <span class="tag-pill uncovered" data-tag="+STR"><img class="tag-icon" src="assets/icons/stat-str.svg" alt="">+STR</span>
+              <span class="tag-pill uncovered" data-tag="+STA"><img class="tag-icon" src="assets/icons/stat-sta.svg" alt="">+STA</span>
+              <span class="tag-pill uncovered" data-tag="+DEX"><img class="tag-icon" src="assets/icons/stat-dex.svg" alt="">+DEX</span>
+              <span class="tag-pill uncovered" data-tag="+AGI"><img class="tag-icon" src="assets/icons/stat-agi.svg" alt="">+AGI</span>
+              <span class="tag-pill uncovered" data-tag="+INT"><img class="tag-icon" src="assets/icons/stat-int.svg" alt="">+INT</span>
+              <span class="tag-pill uncovered" data-tag="+CHA"><img class="tag-icon" src="assets/icons/stat-cha.svg" alt="">+CHA</span>
+              <span class="tag-pill uncovered" data-tag="+WIS"><img class="tag-icon" src="assets/icons/stat-wis.svg" alt="">+WIS</span>
+              <span class="tag-pill uncovered" data-tag="+HP"><img class="tag-icon" src="assets/icons/stat-hp.svg" alt="">+HP</span>
+              <span class="tag-pill uncovered" data-tag="+AC"><img class="tag-icon" src="assets/icons/stat-ac.svg" alt="">+AC</span>
+              <!-- Right: utility buffs -->
+              <span class="tag-pill uncovered tag-gap-left" data-tag="Increase Spell Damage"><img class="tag-icon" src="assets/icons/increase-spell-damage.svg" alt="">Increase Spell Damage</span>
+              <span class="tag-pill uncovered" data-tag="Melee Haste"><img class="tag-icon" src="assets/icons/melee-haste.svg" alt="">Melee Haste</span>
+              <span class="tag-pill uncovered" data-tag="Spell Haste"><img class="tag-icon" src="assets/icons/spell-haste.svg" alt="">Spell Haste</span>
+              <span class="tag-pill uncovered" data-tag="Resist"><img class="tag-icon" src="assets/icons/resist.svg" alt="">Resist</span>
+              <span class="tag-pill uncovered" data-tag="Damage Shield"><img class="tag-icon" src="assets/icons/damage-shield.svg" alt="">Damage Shield</span>
+              <span class="tag-pill uncovered" data-tag="Movement Speed"><img class="tag-icon" src="assets/icons/movement-speed.svg" alt="">Movement Speed</span>
+              <span class="tag-pill uncovered" data-tag="Invisibility"><img class="tag-icon" src="assets/icons/invisibility.svg" alt="">Invisibility</span>
+              <span class="tag-pill uncovered" data-tag="Mana Regen"><img class="tag-icon" src="assets/icons/mana-regen.svg" alt="">Mana Regen</span>
+              <span class="tag-pill uncovered" data-tag="Health Regen"><img class="tag-icon" src="assets/icons/health-regen.svg" alt="">Health Regen</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUMN 3: Utility (includes Pet) -->
+        <div class="tag-col">
+
+          <div class="category-block">
+            <div class="category-title cat-utility">Utility</div>
+            <div class="tags-grid">
+              <!-- Group 1: Taunt, Aggro Gen, Feign Death, Purge, Cure -->
+              <span class="tag-pill uncovered" data-tag="Taunt"><img class="tag-icon" src="assets/icons/taunt.svg" alt="">Taunt</span>
+              <span class="tag-pill uncovered" data-tag="Aggro Gen"><img class="tag-icon" src="assets/icons/aggro-gen.svg" alt="">Aggro Gen</span>
+              <span class="tag-pill uncovered" data-tag="Feign Death"><img class="tag-icon" src="assets/icons/feign-death.svg" alt="">Feign Death</span>
+              <span class="tag-pill uncovered" data-tag="Purge"><img class="tag-icon" src="assets/icons/purge.svg" alt="">Purge</span>
+              <span class="tag-pill uncovered" data-tag="Cure"><img class="tag-icon" src="assets/icons/cure.svg" alt="">Cure</span>
+
+              <!-- Group 2: Tracking, Teleport -->
+              <div class="tag-row-break"></div>
+              <span class="tag-pill uncovered" data-tag="Tracking"><img class="tag-icon" src="assets/icons/tracking.svg" alt="">Tracking</span>
+              <span class="tag-pill uncovered" data-tag="Teleport"><img class="tag-icon" src="assets/icons/teleport.svg" alt="">Teleport</span>
+
+              <!-- Group 3: Summon Manastone, Summon Lifestone -->
+              <div class="tag-row-break"></div>
+              <span class="tag-pill uncovered" data-tag="Summon Manastone"><img class="tag-icon" src="assets/icons/summon-manastone.svg" alt="">Summon Manastone</span>
+              <span class="tag-pill uncovered" data-tag="Summon Lifestone"><img class="tag-icon" src="assets/icons/summon-lifestone.svg" alt="">Summon Lifestone</span>
+
+              <!-- Group 4: Conjure items -->
+              <div class="tag-row-break"></div>
+              <span class="tag-pill uncovered" data-tag="Conjure Weapon"><img class="tag-icon" src="assets/icons/conjure-weapon.svg" alt="">Conjure Weapon</span>
+              <span class="tag-pill uncovered" data-tag="Conjure Arrows"><img class="tag-icon" src="assets/icons/conjure-arrows.svg" alt="">Conjure Arrows</span>
+              <span class="tag-pill uncovered" data-tag="Conjure Bandage"><img class="tag-icon" src="assets/icons/conjure-bandage.svg" alt="">Conjure Bandage</span>
+              <span class="tag-pill uncovered" data-tag="Conjure Food &amp; Water"><img class="tag-icon" src="assets/icons/conjure-food-water.svg" alt="">Conjure Food &amp; Water</span>
+
+              <!-- Pet (folded into Utility) -->
+              <div class="tag-row-break"></div>
+              <span class="tag-pill uncovered" data-tag="Pet"><img class="tag-icon" src="assets/icons/pet.svg" alt="">Pet</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ROW 4: Redundancies (full width) -->
+    <section id="redundancies-anchor">
+      <div class="section-label">&#8635; Redundancies</div>
+      <div class="panel">
+        <div class="redundancy-list" id="redundancy-list"></div>
       </div>
     </section>
 

@@ -33,21 +33,19 @@ const CLASS_IMAGE_MAP = {
 // Approved front page tags only — all others are ignored on index.html
 const FRONT_PAGE_TAGS = new Set([
   // Crowd Control
-  "Fear", "Mez / Stun", "Charm", "Lull / Pacify", "Snare", "Root", "Blind",
+  "Fear", "Mez", "Stun", "Charm", "Pacify", "Snare", "Root", "Blind", "Interrupt",
   // Debuffs
-  "Slow", "Stat Debuff / Steal", "Spell Damage Vulnerability",
+  "Slow", "Stat Debuff", "Spell Damage Vulnerability",
   "Physical Damage Vulnerability", "Reduced Healing", "Mana Burn", "Lower Resistance",
   // Healing
   "Heal Over Time", "Direct Heal", "Resurrection",
   // Buffs
   "+HP", "+AC", "+STR", "+STA", "+DEX", "+AGI", "+INT", "+CHA", "+WIS",
-  "Increase Physical Damage", "Increase Spell Damage", "Movement Speed",
+  "Increase Spell Damage", "Movement Speed",
   "Melee Haste", "Spell Haste", "Resist", "Invisibility", "Damage Shield",
   "Mana Regen", "Health Regen",
-  // Pet
-  "Pet",
-  // Utility
-  "Purge", "Cure", "Feign Death", "Interrupt", "Taunt / Aggro Gen",
+  // Utility (Pet folded in)
+  "Pet", "Purge", "Cure", "Feign Death", "Taunt", "Aggro Gen",
   "Tracking", "Teleport", "Conjure Weapon", "Conjure Arrows", "Conjure Bandage",
   "Conjure Food & Water", "Summon Manastone", "Summon Lifestone"
 ]);
@@ -71,9 +69,6 @@ function parseTags(rawTag) {
 
 // ============================================
 // SHARED: NORMALIZE A TAG FOR MATCHING
-// Handles "Resist | Cold" -> "Resist"
-// The first meaningful token is used for
-// front page matching when needed
 // ============================================
 function normalizeFrontPageTags(tags) {
   const matched = new Set();
@@ -115,7 +110,7 @@ function loadCSV(callback) {
 function initPartyPlanner(spells) {
 
   // Build TWO maps per class:
-  // classTagMap     — all spells (includes self-only)
+  // classTagMap      — all spells (includes self-only)
   // classTagMapParty — only spells that are NOT exclusively self-only
   //
   // A spell is "self only" if its tag string contains "(self only)"
@@ -145,19 +140,32 @@ function initPartyPlanner(spells) {
   }
 
   // State
+  const MAX_PARTY_SIZE = 6;
   const selectedClasses = new Set();
-  let hideSelfOnly = false;
+  let hideSelfOnly = true; // default: hide personal abilities
 
   // DOM references
   const partyDisplay = document.getElementById("party-display");
+  const partyCounter = document.getElementById("party-counter");
   const classButtons = document.querySelectorAll(".class-btn[data-class]");
   const tagPills = document.querySelectorAll(".tag-pill");
-  const missingList = document.getElementById("missing-list");
   const redundancyList = document.getElementById("redundancy-list");
   const toggleSelfOnlyBtn = document.getElementById("toggle-self-only");
+  const redundanciesAnchor = document.getElementById("redundancies-anchor");
+  const scrollToRedundancies = document.getElementById("scroll-to-redundancies");
 
-  // ---- Self-only toggle button ----
+  // ---- Scroll to redundancies link ----
+  if (scrollToRedundancies && redundanciesAnchor) {
+    scrollToRedundancies.addEventListener("click", (e) => {
+      e.preventDefault();
+      redundanciesAnchor.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  // ---- Self-only toggle button — starts active (hidden) ----
   if (toggleSelfOnlyBtn) {
+    toggleSelfOnlyBtn.textContent = "Include Personal Abilities";
+    toggleSelfOnlyBtn.classList.add("active");
     toggleSelfOnlyBtn.addEventListener("click", () => {
       hideSelfOnly = !hideSelfOnly;
       toggleSelfOnlyBtn.textContent = hideSelfOnly
@@ -173,7 +181,7 @@ function initPartyPlanner(spells) {
     return hideSelfOnly ? classTagMapParty : classTagMap;
   }
 
-  // ---- Button click handler ----
+  // ---- Button click handler with party size cap ----
   classButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       const cls = btn.getAttribute("data-class");
@@ -182,6 +190,8 @@ function initPartyPlanner(spells) {
         selectedClasses.delete(cls);
         btn.classList.remove("active");
       } else {
+        // Silently ignore if party is full
+        if (selectedClasses.size >= MAX_PARTY_SIZE) return;
         selectedClasses.add(cls);
         btn.classList.add("active");
       }
@@ -198,17 +208,48 @@ function initPartyPlanner(spells) {
     updateRedundancies();
   }
 
-  // Category definitions for progress bars
+  // Category definitions for progress bars and pill colors
   const CATEGORIES = [
-    { label: "Crowd Control", color: "#d4a800", tags: ["Fear","Mez / Stun","Charm","Lull / Pacify","Snare","Root","Blind"] },
-    { label: "Debuffs",       color: "#9966cc", tags: ["Slow","Stat Debuff / Steal","Spell Damage Vulnerability","Physical Damage Vulnerability","Reduced Healing","Mana Burn","Lower Resistance"] },
-    { label: "Healing",       color: "#44bb66", tags: ["Heal Over Time","Direct Heal","Resurrection"] },
-    { label: "Buffs",         color: "#4488cc", tags: ["+HP","+AC","+STR","+STA","+DEX","+AGI","+INT","+CHA","+WIS","Increase Physical Damage","Increase Spell Damage","Movement Speed","Melee Haste","Spell Haste","Resist","Invisibility","Damage Shield","Mana Regen","Health Regen"] },
-    { label: "Pet",           color: "#e87b1e", tags: ["Pet"] },
-    { label: "Utility",       color: "#e0e0e0", tags: ["Purge","Cure","Feign Death","Interrupt","Taunt / Aggro Gen","Tracking","Teleport","Conjure Weapon","Conjure Arrows","Conjure Bandage","Conjure Food & Water","Summon Manastone","Summon Lifestone"] },
+    {
+      label: "Crowd Control", color: "#d4a800", colorMuted: "rgba(212,168,0,0.25)",
+      tags: ["Fear","Mez","Stun","Charm","Pacify","Snare","Root","Blind","Interrupt"]
+    },
+    {
+      label: "Debuffs", color: "#9966cc", colorMuted: "rgba(153,102,204,0.25)",
+      tags: ["Slow","Stat Debuff","Spell Damage Vulnerability","Physical Damage Vulnerability","Reduced Healing","Mana Burn","Lower Resistance"]
+    },
+    {
+      label: "Healing", color: "#44bb66", colorMuted: "rgba(68,187,102,0.25)",
+      tags: ["Heal Over Time","Direct Heal","Resurrection"]
+    },
+    {
+      label: "Buffs", color: "#4488cc", colorMuted: "rgba(68,136,204,0.25)",
+      tags: ["+HP","+AC","+STR","+STA","+DEX","+AGI","+INT","+CHA","+WIS","Increase Spell Damage","Movement Speed","Melee Haste","Spell Haste","Resist","Invisibility","Damage Shield","Mana Regen","Health Regen"]
+    },
+    {
+      label: "Utility", color: "#e0e0e0", colorMuted: "rgba(224,224,224,0.2)",
+      tags: ["Pet","Purge","Cure","Feign Death","Taunt","Aggro Gen","Tracking","Teleport","Conjure Weapon","Conjure Arrows","Conjure Bandage","Conjure Food & Water","Summon Manastone","Summon Lifestone"]
+    },
   ];
 
+  // Build a tag -> category lookup for pill coloring
+  const TAG_CATEGORY = {};
+  for (const cat of CATEGORIES) {
+    for (const tag of cat.tags) {
+      TAG_CATEGORY[tag] = cat;
+    }
+  }
+
   const coverageEl = document.getElementById("coverage-progress");
+
+  // ---- Party counter ----
+  function updatePartyCounter() {
+    if (partyCounter) {
+      partyCounter.textContent = selectedClasses.size > 0
+        ? `Party: ${selectedClasses.size} / ${MAX_PARTY_SIZE}`
+        : "";
+    }
+  }
 
   // ---- Coverage progress bars ----
   function updateCoverage() {
@@ -271,9 +312,9 @@ function initPartyPlanner(spells) {
       warnings.push("No Mana Regeneration in this party. Sustainability in long fights will be a concern.");
     }
 
-    // No CC (both Mez/Stun AND Charm missing)
-    if (!coveredTags.has("Mez / Stun") && !coveredTags.has("Charm")) {
-      warnings.push("No Crowd Control in this party. Both Mez/Stun and Charm are unavailable.");
+    // No CC (Mez, Stun, AND Charm all missing)
+    if (!coveredTags.has("Mez") && !coveredTags.has("Stun") && !coveredTags.has("Charm")) {
+      warnings.push("No Crowd Control in this party. Mez, Stun, and Charm are all unavailable.");
     }
 
     metaWarningsList.innerHTML = "";
@@ -291,11 +332,9 @@ function initPartyPlanner(spells) {
     }
   }
 
-  // ---- Missing tags (kept for internal use, no longer rendered) ----
-  function updateMissing() {}
-
-
+  // ---- Party display ----
   function updatePartyDisplay() {
+    updatePartyCounter();
     partyDisplay.innerHTML = "";
     if (selectedClasses.size === 0) {
       partyDisplay.innerHTML = '<div class="empty-message">Select classes below to build your party</div>';
@@ -312,7 +351,6 @@ function initPartyPlanner(spells) {
       `;
       member.addEventListener("click", () => {
         selectedClasses.delete(cls);
-        // Un-toggle corresponding button
         classButtons.forEach(btn => {
           if (btn.getAttribute("data-class") === cls) btn.classList.remove("active");
         });
@@ -322,7 +360,7 @@ function initPartyPlanner(spells) {
     }
   }
 
-  // ---- Tag pills (covered / uncovered) ----
+  // ---- Tag pills (covered / uncovered with category colors) ----
   function updateTagPills() {
     const coveredTags = new Set();
     for (const cls of selectedClasses) {
@@ -332,38 +370,25 @@ function initPartyPlanner(spells) {
 
     tagPills.forEach(pill => {
       const tag = pill.getAttribute("data-tag");
+      const cat = TAG_CATEGORY[tag];
       if (coveredTags.has(tag)) {
         pill.classList.add("covered");
         pill.classList.remove("uncovered");
+        if (cat) {
+          pill.style.background = cat.color;
+          pill.style.borderColor = cat.color;
+          pill.style.color = "#111";
+        }
       } else {
         pill.classList.add("uncovered");
         pill.classList.remove("covered");
+        if (cat) {
+          pill.style.background = cat.colorMuted;
+          pill.style.borderColor = cat.color;
+          pill.style.color = cat.color;
+        }
       }
     });
-  }
-
-  // ---- Missing tags ----
-  function updateMissing() {
-    const coveredTags = new Set();
-    for (const cls of selectedClasses) {
-      const tags = getTagMap()[cls] || new Set();
-      for (const t of tags) coveredTags.add(t);
-    }
-
-    missingList.innerHTML = "";
-    const missing = [...FRONT_PAGE_TAGS].filter(t => !coveredTags.has(t));
-
-    if (missing.length === 0) {
-      missingList.innerHTML = '<span class="panel-empty">All tags covered!</span>';
-      return;
-    }
-
-    for (const tag of missing) {
-      const el = document.createElement("span");
-      el.className = "missing-tag";
-      el.textContent = tag;
-      missingList.appendChild(el);
-    }
   }
 
   // ---- Redundancies ----
@@ -405,7 +430,7 @@ function initPartyPlanner(spells) {
     }
   }
 
-  // Initialize with empty state
+  // Initialize with default state
   updateUI();
 }
 
@@ -495,26 +520,21 @@ function initLibrary(spells) {
     const maxLv = levelMax.value !== "" ? parseInt(levelMax.value) : null;
 
     return spells.filter(spell => {
-      // Class filter — must be in selected set
       const cls = (spell["Class"] || "").trim();
       if (!selectedClasses.has(cls)) return false;
 
-      // Skill filter
       if (skill && (spell["Skill"] || "").trim() !== skill) return false;
 
-      // Level range filter
       const spellLevel = parseInt((spell["Level"] || "").trim());
       if (minLv !== null && spellLevel < minLv) return false;
       if (maxLv !== null && spellLevel > maxLv) return false;
 
-      // Text search
       if (search) {
         const name = (spell["Spell Name"] || "").toLowerCase();
         const desc = (spell["Spell Description"] || "").toLowerCase();
         if (!name.includes(search) && !desc.includes(search)) return false;
       }
 
-      // Tag filter — exact match against parsed tags
       if (tag) {
         const spellTags = parseTags(spell["Tag"]);
         const tagLower = tag.toLowerCase();
@@ -580,7 +600,6 @@ function initLibrary(spells) {
     filterTag.value = "";
     levelMin.value = "";
     levelMax.value = "";
-    // Reset class buttons to all selected
     libClassBtns.forEach(btn => {
       selectedClasses.add(btn.getAttribute("data-class"));
       btn.classList.add("active");
@@ -602,20 +621,16 @@ function initNotice() {
   if (!overlay) return;
 
   const STORAGE_KEY = "mnm_notice_seen_date";
-  const today = new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
+  const today = new Date().toISOString().slice(0, 10);
   const lastSeen = localStorage.getItem(STORAGE_KEY);
 
-  // Already seen today — don't show
   if (lastSeen === today) return;
 
-  // Fetch notice.json from repo
   fetch("notice.json")
     .then(r => r.json())
     .then(data => {
-      // Populate content
       document.getElementById("notice-title").textContent = data.title || "Notice";
 
-      // Support \n line breaks in message
       const bodyEl = document.getElementById("notice-body");
       const paragraphs = (data.message || "").split("\n\n");
       bodyEl.innerHTML = paragraphs
@@ -633,17 +648,12 @@ function initNotice() {
         linkEl.style.display = "none";
       }
 
-      // Show overlay
       overlay.style.display = "flex";
     })
-    .catch(() => {
-      // If notice.json can't load, silently skip
-    });
+    .catch(() => {});
 
-  // Close button
   document.getElementById("notice-close").addEventListener("click", closeNotice);
 
-  // Click outside card to close
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) closeNotice();
   });
@@ -658,7 +668,6 @@ function initNotice() {
 // ROUTER — detect which page we're on
 // ============================================
 
-// Load PapaParse from CDN then kick off
 (function loadPapaParse() {
   const script = document.createElement("script");
   script.src = "https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js";

@@ -19,13 +19,17 @@
   --text-orange: #e87b1e;
   --border: #3a3a3a;
   --border-orange: #e87b1e;
-  --tag-active: #e87b1e;
-  --tag-inactive: #2a2a2a;
-  --tag-inactive-text: #555555;
   --missing: #cc3333;
   --redundant: #c8a030;
   --shadow: 0 4px 20px rgba(0,0,0,0.5);
   --shadow-orange: 0 0 15px rgba(232, 123, 30, 0.4);
+
+  /* Category colors */
+  --cat-cc:      #d4a800;
+  --cat-debuff:  #9966cc;
+  --cat-healing: #44bb66;
+  --cat-buff:    #4488cc;
+  --cat-utility: #e0e0e0;
 
   /* Class colors */
   --cls-elementalist: #e05c2a;
@@ -168,7 +172,7 @@ main {
 }
 
 section {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .section-label {
@@ -183,6 +187,56 @@ section {
   border-bottom: 1px solid var(--border);
 }
 
+/* Section label inline row (label + counter or toggle side by side) */
+.section-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.section-label-row .section-label {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  flex: 1;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+
+/* ============================================
+   ROW 1: PARTY DISPLAY + COVERAGE
+   ============================================ */
+
+.top-row {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  align-items: start;
+}
+
+.top-row-party {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-row-coverage {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Party counter */
+.party-counter {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding-left: 12px;
+}
+
 /* ============================================
    PARTY DISPLAY (class images)
    ============================================ */
@@ -191,11 +245,11 @@ section {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: 6px;
-  padding: 20px;
-  min-height: 140px;
+  padding: 16px;
+  min-height: 130px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -222,8 +276,8 @@ section {
 }
 
 .party-member img {
-  width: 108px;
-  height: 108px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   border-radius: 4px;
   border: 2px solid var(--orange);
@@ -231,11 +285,32 @@ section {
 }
 
 .party-member .member-name {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--orange);
+}
+
+/* ============================================
+   ROW 2: CLASS BUTTONS + WARNINGS
+   ============================================ */
+
+.mid-row {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  align-items: start;
+}
+
+.mid-row-classes {
+  display: flex;
+  flex-direction: column;
+}
+
+.mid-row-warnings {
+  display: flex;
+  flex-direction: column;
 }
 
 /* ============================================
@@ -245,24 +320,24 @@ section {
 #class-selection {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .role-group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 .role-label {
   font-family: 'Cinzel', serif;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--text-muted);
-  min-width: 80px;
+  min-width: 72px;
 }
 
 .role-label.dps    { color: #cc4444; }
@@ -274,11 +349,11 @@ section {
   background: var(--bg-card);
   color: var(--text-muted);
   border: 1px solid var(--border);
-  padding: 7px 14px;
+  padding: 6px 12px;
   border-radius: 3px;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
@@ -299,7 +374,7 @@ section {
   font-weight: 700;
 }
 
-/* ---- Per-class button colors (inactive border/text, active bg) ---- */
+/* ---- Per-class button colors ---- */
 .class-btn[data-class="Elementalist"]  { --cls-color: var(--cls-elementalist); }
 .class-btn[data-class="Necromancer"]   { --cls-color: var(--cls-necromancer); }
 .class-btn[data-class="Wizard"]        { --cls-color: var(--cls-wizard); }
@@ -319,7 +394,6 @@ section {
 .class-btn[data-class="Paladin"]       { --cls-color: var(--cls-paladin); }
 .class-btn[data-class="Shadow Knight"] { --cls-color: var(--cls-shadowknight); }
 
-/* Inactive state: colored border and text */
 .class-btn[data-class] {
   border-color: color-mix(in srgb, var(--cls-color) 40%, var(--border));
   color: color-mix(in srgb, var(--cls-color) 60%, var(--text-muted));
@@ -331,7 +405,6 @@ section {
   background: color-mix(in srgb, var(--cls-color) 10%, var(--bg-card));
 }
 
-/* Active state: solid class color background */
 .class-btn[data-class].active {
   background: var(--cls-color);
   color: #111;
@@ -339,7 +412,275 @@ section {
   box-shadow: 0 0 12px color-mix(in srgb, var(--cls-color) 50%, transparent);
 }
 
-/* ---- Library table row tints ---- */
+/* Toggle self-only button */
+.toggle-self-btn {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-color: var(--orange-dim);
+  color: var(--orange-dim);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.toggle-self-btn.active {
+  background: rgba(232, 123, 30, 0.15);
+  color: var(--orange);
+  border-color: var(--orange);
+  box-shadow: none;
+}
+
+/* ============================================
+   PANELS (shared)
+   ============================================ */
+
+.panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+  min-height: 80px;
+}
+
+/* Panel with no min-height (for coverage bars) */
+.panel-flush {
+  min-height: 0;
+}
+
+.panel-empty-state {
+  display: flex;
+  align-items: center;
+}
+
+.panel-empty {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ============================================
+   WARNINGS PANEL
+   ============================================ */
+
+.meta-warning-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #e06060;
+  line-height: 1.5;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(204,51,51,0.15);
+}
+
+.meta-warning-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.meta-warning-icon {
+  color: var(--missing);
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+/* Scroll-to-redundancies link */
+.redundancies-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--redundant);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.redundancies-link:hover {
+  color: var(--orange);
+}
+
+/* ============================================
+   COVERAGE PROGRESS BARS
+   ============================================ */
+
+.progress-row {
+  margin-bottom: 10px;
+}
+
+.progress-row:last-child {
+  margin-bottom: 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.progress-cat-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.progress-fraction {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.progress-track {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  height: 7px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.35s ease;
+  min-width: 0;
+}
+
+/* ============================================
+   ROW 3: TAG GRID (3 columns)
+   ============================================ */
+
+#tag-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.tag-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+
+.category-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange-dim);
+  margin-bottom: 10px;
+}
+
+.category-title.cat-cc      { color: var(--cat-cc)      !important; }
+.category-title.cat-debuff  { color: var(--cat-debuff)  !important; }
+.category-title.cat-healing { color: var(--cat-healing) !important; }
+.category-title.cat-buff    { color: var(--cat-buff)    !important; }
+.category-title.cat-utility { color: var(--cat-utility) !important; }
+
+/* Tags grid — flex wrap with gap grouping */
+.tags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+/* Full-width invisible row break for grouping within a category */
+.tag-row-break {
+  width: 100%;
+  height: 6px;
+  flex-shrink: 0;
+}
+
+/* Left-gap spacer for same-row column grouping */
+.tag-gap-left {
+  margin-left: 8px;
+}
+
+/* ============================================
+   TAG PILLS
+   ============================================ */
+
+.tag-pill {
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid transparent;
+  transition: background 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tag-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  transition: filter 0.25s;
+}
+
+/* Covered: full bright category color — set via JS inline styles */
+.tag-pill.covered .tag-icon {
+  filter: brightness(0) invert(0.1);
+}
+
+/* Uncovered: muted category color — set via JS inline styles */
+.tag-pill.uncovered .tag-icon {
+  filter: brightness(0) invert(0.35);
+}
+
+/* ============================================
+   ROW 4: REDUNDANCIES (full width)
+   ============================================ */
+
+#redundancies-anchor {
+  scroll-margin-top: 80px;
+}
+
+.redundancy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.redundancy-item {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.redundancy-tag {
+  color: var(--redundant);
+  font-weight: 700;
+  min-width: 180px;
+}
+
+.redundancy-classes {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+/* ============================================
+   LIBRARY TABLE ROW TINTS
+   ============================================ */
+
 tr.cls-elementalist { background: color-mix(in srgb, var(--cls-elementalist) 8%, transparent); }
 tr.cls-necromancer  { background: color-mix(in srgb, var(--cls-necromancer)  8%, transparent); }
 tr.cls-wizard       { background: color-mix(in srgb, var(--cls-wizard)       8%, transparent); }
@@ -397,322 +738,6 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 .cls-text-inquisitor   { color: var(--cls-inquisitor)   !important; }
 .cls-text-paladin      { color: var(--cls-paladin)      !important; }
 .cls-text-shadowknight { color: var(--cls-shadowknight) !important; }
-
-/* ============================================
-   TAG CARDS / CATEGORIES
-   ============================================ */
-
-#tag-section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.category-block {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 16px 20px;
-}
-
-.category-title {
-  font-family: 'Cinzel', serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--orange-dim);
-  margin-bottom: 12px;
-}
-
-.category-title.cat-cc      { color: #d4a800 !important; }
-.category-title.cat-debuff  { color: #9966cc !important; }
-.category-title.cat-healing { color: #44bb66 !important; }
-.category-title.cat-buff    { color: #4488cc !important; }
-.category-title.cat-pet     { color: var(--orange) !important; }
-.category-title.cat-utility { color: #e0e0e0 !important; }
-
-.tags-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tag-pill {
-  padding: 5px 12px;
-  border-radius: 3px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border: 1px solid transparent;
-  transition: all 0.25s;
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Remove tooltip — not needed with text labels */
-.tag-pill::after {
-  display: none;
-}
-
-.tag-icon {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-  transition: filter 0.25s;
-}
-
-.tag-pill.covered {
-  background: var(--orange);
-  color: #111;
-  border-color: var(--orange-bright);
-  box-shadow: 0 0 8px rgba(232,123,30,0.3);
-}
-
-.tag-pill.covered .tag-icon {
-  filter: brightness(0) invert(0.1);
-}
-
-.tag-pill.uncovered {
-  background: var(--tag-inactive);
-  color: var(--tag-inactive-text);
-  border-color: var(--border);
-}
-
-.tag-pill.uncovered .tag-icon {
-  filter: brightness(0) invert(0.35);
-}
-
-/* ---- Progress bars ---- */
-.progress-row {
-  margin-bottom: 12px;
-}
-
-.progress-row:last-child {
-  margin-bottom: 0;
-}
-
-.progress-label {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 4px;
-}
-
-.progress-cat-name {
-  font-family: 'Cinzel', serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.progress-fraction {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  font-weight: 600;
-}
-
-.progress-track {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  height: 8px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 0.35s ease;
-  min-width: 0;
-}
-
-/* ---- Meta warnings ---- */
-.meta-warning-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 0.85rem;
-  color: #e06060;
-  line-height: 1.5;
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(204,51,51,0.15);
-}
-
-.meta-warning-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.meta-warning-icon {
-  color: var(--missing);
-  flex-shrink: 0;
-  font-size: 0.9rem;
-  margin-top: 2px;
-}
-
-.capabilities-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-.capabilities-header .section-label {
-  margin-bottom: 0;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.toggle-self-btn {
-  font-size: 0.78rem;
-  padding: 5px 12px;
-  border-color: var(--orange-dim);
-  color: var(--orange-dim);
-}
-
-.toggle-self-btn.active {
-  background: rgba(232, 123, 30, 0.15);
-  color: var(--orange);
-  border-color: var(--orange);
-  box-shadow: none;
-}
-
-/* ============================================
-   TWO COLUMN CAPABILITIES LAYOUT
-   ============================================ */
-
-#capabilities-layout {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 24px;
-  align-items: start;
-}
-
-#capabilities-col {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-#panels-col {
-  display: flex;
-  flex-direction: column;
-  position: sticky;
-  top: 80px;
-}
-
-/* MISSING & REDUNDANCY PANELS */
-
-.panel {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 20px;
-  min-height: 120px;
-}
-
-.panel-title {
-  font-family: 'Cinzel', serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border);
-}
-
-.panel-title.missing-title {
-  color: var(--missing);
-}
-
-.panel-title.redundant-title {
-  color: var(--redundant);
-}
-
-.panel-empty {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
-.missing-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.missing-tag {
-  background: rgba(204, 51, 51, 0.15);
-  color: #e06060;
-  border: 1px solid rgba(204,51,51,0.3);
-  padding: 4px 10px;
-  border-radius: 3px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.redundancy-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.redundancy-item {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  font-size: 0.85rem;
-}
-
-.redundancy-tag {
-  color: var(--redundant);
-  font-weight: 700;
-  min-width: 140px;
-}
-
-.redundancy-classes {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-}
-
-/* CAVEATS */
-
-#caveats-block {
-  margin-top: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.caveat-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: rgba(232, 123, 30, 0.06);
-  border: 1px solid rgba(232, 123, 30, 0.2);
-  border-radius: 4px;
-  padding: 10px 14px;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-.caveat-icon {
-  color: var(--orange-dim);
-  font-size: 1rem;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.caveat-label {
-  color: var(--orange-dim);
-  font-weight: 700;
-}
 
 /* ============================================
    LIBRARY PAGE - FILTER BLOCKS
@@ -820,42 +845,8 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 }
 
 /* ============================================
-   LIBRARY PAGE
+   LIBRARY PAGE - SPELL TABLE
    ============================================ */
-
-.library-controls {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.library-controls input,
-.library-controls select {
-  background: var(--bg-card);
-  color: var(--text-primary);
-  border: 1px solid var(--border);
-  padding: 8px 14px;
-  border-radius: 3px;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 0.9rem;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.library-controls input:focus,
-.library-controls select:focus {
-  border-color: var(--orange);
-}
-
-.library-controls input {
-  min-width: 240px;
-}
-
-.library-controls select option {
-  background: var(--bg-card);
-}
 
 #spell-table-wrap {
   overflow-x: auto;
@@ -1064,6 +1055,12 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
    RESPONSIVE
    ============================================ */
 
+@media (max-width: 900px) {
+  #tag-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -1085,12 +1082,13 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
     padding: 16px;
   }
 
-  #capabilities-layout {
+  .top-row,
+  .mid-row {
     grid-template-columns: 1fr;
   }
 
-  #panels-col {
-    position: static;
+  #tag-grid {
+    grid-template-columns: 1fr;
   }
 
   .role-group {
@@ -1099,6 +1097,6 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 
   .class-btn {
     font-size: 0.75rem;
-    padding: 6px 10px;
+    padding: 5px 9px;
   }
 }
