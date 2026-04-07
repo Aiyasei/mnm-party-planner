@@ -328,19 +328,25 @@ function initPartyPlanner(spells) {
         const row = document.createElement("div");
         row.className = "redundancy-row";
 
-        // Left: icon + tag name
+        // Icon + tag name on left
         const left = document.createElement("div");
         left.className = "redundancy-tag-left";
         left.innerHTML = `<img class="redundancy-icon" src="${tagIconPath(tag)}" alt="" onerror="this.style.display='none'"><span class="redundancy-tag-name">${tag}</span>`;
 
-        // Right: class names in their colors
-        const right = document.createElement("div");
+        // Separator
+        const sep = document.createElement("span");
+        sep.className = "redundancy-sep";
+        sep.textContent = "—";
+
+        // Class names
+        const right = document.createElement("span");
         right.className = "redundancy-class-list";
         right.innerHTML = classes
           .map(c => `<span class="cls-text-${classSlug(c)}">${c}</span>`)
           .join('<span class="redundancy-dot"> · </span>');
 
         row.appendChild(left);
+        row.appendChild(sep);
         row.appendChild(right);
         rows.appendChild(row);
       });
