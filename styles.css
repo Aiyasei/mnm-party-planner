@@ -789,7 +789,7 @@ section {
 
 .redundancy-divider {
   height: 1px;
-  background: var(--border);
+  background: #444;
   margin: 0;
 }
 
@@ -810,10 +810,11 @@ section {
 }
 
 .redundancy-icon {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
-  filter: brightness(0) invert(0.55);
+  filter: brightness(0) invert(1);
+  opacity: 0.75;
 }
 
 .redundancy-tag-name {
@@ -830,7 +831,7 @@ section {
 }
 
 .redundancy-dot {
-  color: var(--border);
+  color: var(--text-muted);
 }
 /* ============================================
    LIBRARY TABLE ROW TINTS
