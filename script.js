@@ -177,6 +177,7 @@ function initPartyPlanner(spells) {
     updatePartyDisplay();
     updateTagPills();
     updateCoverage();
+    updateRedundancies();
   }
 
   // Category definitions for progress bars and pill colors
@@ -249,6 +250,89 @@ function initPartyPlanner(spells) {
         </div>
       `;
       coverageEl.appendChild(row);
+    }
+  }
+
+  // ---- Redundancies (category-grouped) ----
+  function updateRedundancies() {
+    const grid = document.getElementById("redundancy-grid");
+    const emptyMsg = document.getElementById("redundancy-empty");
+    if (!grid) return;
+
+    // Remove all category blocks (keep the empty message node)
+    [...grid.querySelectorAll(".redundancy-cat-block")].forEach(el => el.remove());
+
+    if (selectedClasses.size < 2) {
+      if (emptyMsg) emptyMsg.style.display = "inline";
+      return;
+    }
+    if (emptyMsg) emptyMsg.style.display = "none";
+
+    const catCssMap = {
+      "Crowd Control": "cat-cc",
+      "Debuffs":       "cat-debuff",
+      "Healing":       "cat-healing",
+      "Buffs":         "cat-buff",
+      "Utility":       "cat-utility",
+    };
+
+    let anyRedundancy = false;
+
+    for (const cat of CATEGORIES) {
+      const redundantRows = [];
+
+      for (const tag of cat.tags) {
+        const overlapping = [];
+        for (const cls of selectedClasses) {
+          const tags = getTagMap()[cls] || new Set();
+          if (tags.has(tag)) overlapping.push(cls);
+        }
+        if (overlapping.length > 1) {
+          redundantRows.push({ tag, classes: overlapping });
+        }
+      }
+
+      if (redundantRows.length === 0) continue;
+      anyRedundancy = true;
+
+      const block = document.createElement("div");
+      block.className = "redundancy-cat-block";
+
+      const title = document.createElement("div");
+      title.className = `redundancy-cat-title ${catCssMap[cat.label] || ""}`;
+      title.textContent = cat.label;
+      block.appendChild(title);
+
+      const rows = document.createElement("div");
+      rows.className = "redundancy-rows";
+
+      for (const { tag, classes } of redundantRows) {
+        const row = document.createElement("div");
+        row.className = "redundancy-row";
+
+        const tagSpan = document.createElement("span");
+        tagSpan.className = "redundancy-tag-name";
+        tagSpan.style.color = cat.color;
+        tagSpan.textContent = tag;
+
+        const classSpan = document.createElement("span");
+        classSpan.className = "redundancy-class-list";
+        classSpan.innerHTML = classes
+          .map(c => `<span class="cls-text-${classSlug(c)}">${c}</span>`)
+          .join('<span style="color:var(--text-muted);"> · </span>');
+
+        row.appendChild(tagSpan);
+        row.appendChild(classSpan);
+        rows.appendChild(row);
+      }
+
+      block.appendChild(rows);
+      grid.appendChild(block);
+    }
+
+    if (!anyRedundancy && emptyMsg) {
+      emptyMsg.textContent = "No overlapping capabilities in current party.";
+      emptyMsg.style.display = "inline";
     }
   }
 

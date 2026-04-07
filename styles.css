@@ -749,6 +749,65 @@ section {
 }
 
 /* ============================================
+   REDUNDANCY GRID (category-grouped)
+   ============================================ */
+
+.redundancy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.redundancy-cat-block {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+
+.redundancy-cat-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.redundancy-cat-title.cat-cc      { color: var(--cat-cc); }
+.redundancy-cat-title.cat-debuff  { color: var(--cat-debuff); }
+.redundancy-cat-title.cat-healing { color: var(--cat-healing); }
+.redundancy-cat-title.cat-buff    { color: var(--cat-buff); }
+.redundancy-cat-title.cat-utility { color: var(--cat-utility); }
+
+.redundancy-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.redundancy-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.83rem;
+  flex-wrap: wrap;
+}
+
+.redundancy-tag-name {
+  font-weight: 700;
+  min-width: 150px;
+  flex-shrink: 0;
+}
+
+.redundancy-class-list {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ============================================
    LIBRARY TABLE ROW TINTS
    ============================================ */
 
