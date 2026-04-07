@@ -1118,6 +1118,7 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 #filter-tag option.cat-buff        { color: #66aaee; background: rgba(68,136,204,0.1); }
 #filter-tag option.cat-utility     { color: #cccccc; background: rgba(200,200,200,0.05); }
 #filter-tag option.cat-situational { color: #ff88dd; background: rgba(220,80,160,0.1); }
+#filter-tag option.opt-debuff      { color: #cc88ff; }
 
 #spell-table td.spell-class {
   font-weight: 700;

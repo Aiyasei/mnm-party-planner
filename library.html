@@ -98,111 +98,97 @@
             <label class="lib-filter-label" for="filter-tag">Filter by Tag</label>
             <select id="filter-tag">
               <option value="">All Tags</option>
-              <option value="__cat__DAMAGE" class="dropdown-cat-option cat-damage">▶ DAMAGE (all)</option>
-              <optgroup label="── DAMAGE ──">
-                <option>Direct Damage</option>
-                <option>Damage Over Time</option>
-              </optgroup>
-              <option value="__cat__CROWD CONTROL" class="dropdown-cat-option cat-cc">▶ CROWD CONTROL (all)</option>
-              <optgroup label="── CROWD CONTROL ──">
-                <option>Fear</option>
-                <option>Mez</option>
-                <option>Stun</option>
-                <option>Charm</option>
-                <option>Pacify</option>
-                <option>Snare</option>
-                <option>Root</option>
-                <option>Blind</option>
-                <option>Interrupt</option>
-              </optgroup>
-              <option value="__cat__DEBUFFS" class="dropdown-cat-option cat-debuff">▶ DEBUFFS (all)</option>
-              <optgroup label="── DEBUFFS ──">
-                <option>Slow</option>
-                <option>Stat Debuff</option>
-                <option>Spell Damage Vulnerability</option>
-                <option>Physical Damage Vulnerability</option>
-                <option>Reduced Healing</option>
-                <option>Mana Burn</option>
-                <option>Lower Resistance</option>
-              </optgroup>
-              <option value="__cat__HEALING" class="dropdown-cat-option cat-healing">▶ HEALING (all)</option>
-              <optgroup label="── HEALING ──">
-                <option>Heal Over Time</option>
-                <option>Direct Heal</option>
-                <option>Lifesteal</option>
-                <option>Lifetap</option>
-                <option>Resurrection</option>
-              </optgroup>
-              <option value="__cat__BUFF" class="dropdown-cat-option cat-buff">▶ BUFF (all)</option>
-              <optgroup label="── BUFF ──">
-                <option>+HP</option>
-                <option>+AC</option>
-                <option>+STR</option>
-                <option>+STA</option>
-                <option>+DEX</option>
-                <option>+AGI</option>
-                <option>+INT</option>
-                <option>+CHA</option>
-                <option>+WIS</option>
-                <option>Increase Physical Damage</option>
-                <option>Increase Spell Damage</option>
-                <option>Movement Speed</option>
-                <option>Melee Haste</option>
-                <option>Spell Haste</option>
-                <option>Resist</option>
-                <option>Invisibility</option>
-                <option>Damage Shield</option>
-                <option>Absorb Damage Shield</option>
-                <option>Mana Regen</option>
-                <option>Health Regen</option>
-                <option>Transfer Health</option>
-                <option>Transfer Mana</option>
-                <option>Damage Reduction</option>
-              </optgroup>
-              <option value="__cat__UTILITY" class="dropdown-cat-option cat-utility">▶ UTILITY (all)</option>
-              <optgroup label="── UTILITY ──">
-                <option>Pet</option>
-                <option>Purge</option>
-                <option>Cure</option>
-                <option>Feign Death</option>
-                <option>Taunt</option>
-                <option>Aggro Gen</option>
-                <option>Trap</option>
-                <option>Enduring Breath</option>
-                <option>Stealth / Hide</option>
-                <option>Aggro Reduction</option>
-                <option>Tracking</option>
-                <option>Bind</option>
-                <option>Teleport</option>
-                <option>Gate</option>
-                <option>Conjure Weapon</option>
-                <option>Conjure Arrows</option>
-                <option>Conjure Bandage</option>
-                <option>Conjure Food &amp; Water</option>
-                <option>Summon Manastone</option>
-                <option>Summon Lifestone</option>
-                <option>Shapeshift</option>
-                <option>Misc.</option>
-              </optgroup>
-              <option value="__cat__SITUATIONAL" class="dropdown-cat-option cat-situational">▶ SITUATIONAL (all)</option>
-              <optgroup label="── SITUATIONAL ──">
-                <option>AoE</option>
-                <option>AURA</option>
-                <option value="(pet only)">(pet only)</option>
-                <option value="(undead only)">(undead only)</option>
-                <option value="(elementals only)">(elementals only)</option>
-                <option value="(animals only)">(animals only)</option>
-                <option value="(self only)">(self only)</option>
-                <option>Physical</option>
-                <option>Fire</option>
-                <option>Cold</option>
-                <option>Electricity</option>
-                <option>Poison</option>
-                <option>Disease</option>
-                <option>Corruption</option>
-                <option>Magic</option>
-                <option>Holy</option>
-              </optgroup>
+              <option value="__cat__DAMAGE" class="dropdown-cat-option cat-damage">▶ DAMAGE</option>
+              <option>Direct Damage</option>
+              <option>Damage Over Time</option>
+              <option value="__cat__CROWD CONTROL" class="dropdown-cat-option cat-cc">▶ CROWD CONTROL</option>
+              <option>Fear</option>
+              <option>Mez</option>
+              <option>Stun</option>
+              <option>Charm</option>
+              <option>Pacify</option>
+              <option>Snare</option>
+              <option>Root</option>
+              <option>Blind</option>
+              <option>Interrupt</option>
+              <option value="__cat__DEBUFFS" class="dropdown-cat-option cat-debuff">▶ DEBUFFS</option>
+              <option class="opt-debuff">Slow</option>
+              <option class="opt-debuff">Stat Debuff</option>
+              <option class="opt-debuff">Spell Damage Vulnerability</option>
+              <option class="opt-debuff">Physical Damage Vulnerability</option>
+              <option class="opt-debuff">Reduced Healing</option>
+              <option class="opt-debuff">Mana Burn</option>
+              <option class="opt-debuff">Lower Resistance</option>
+              <option value="__cat__HEALING" class="dropdown-cat-option cat-healing">▶ HEALING</option>
+              <option>Heal Over Time</option>
+              <option>Direct Heal</option>
+              <option>Lifesteal</option>
+              <option>Lifetap</option>
+              <option>Resurrection</option>
+              <option value="__cat__BUFF" class="dropdown-cat-option cat-buff">▶ BUFF</option>
+              <option>+HP</option>
+              <option>+AC</option>
+              <option>+STR</option>
+              <option>+STA</option>
+              <option>+DEX</option>
+              <option>+AGI</option>
+              <option>+INT</option>
+              <option>+CHA</option>
+              <option>+WIS</option>
+              <option>Increase Physical Damage</option>
+              <option>Increase Spell Damage</option>
+              <option>Movement Speed</option>
+              <option>Melee Haste</option>
+              <option>Spell Haste</option>
+              <option>Resist</option>
+              <option>Invisibility</option>
+              <option>Damage Shield</option>
+              <option>Absorb Damage Shield</option>
+              <option>Mana Regen</option>
+              <option>Health Regen</option>
+              <option>Transfer Health</option>
+              <option>Transfer Mana</option>
+              <option>Damage Reduction</option>
+              <option value="__cat__UTILITY" class="dropdown-cat-option cat-utility">▶ UTILITY</option>
+              <option>Pet</option>
+              <option>Purge</option>
+              <option>Cure</option>
+              <option>Feign Death</option>
+              <option>Taunt</option>
+              <option>Aggro Gen</option>
+              <option>Trap</option>
+              <option>Enduring Breath</option>
+              <option>Stealth / Hide</option>
+              <option>Aggro Reduction</option>
+              <option>Tracking</option>
+              <option>Bind</option>
+              <option>Teleport</option>
+              <option>Gate</option>
+              <option>Conjure Weapon</option>
+              <option>Conjure Arrows</option>
+              <option>Conjure Bandage</option>
+              <option>Conjure Food &amp; Water</option>
+              <option>Summon Manastone</option>
+              <option>Summon Lifestone</option>
+              <option>Shapeshift</option>
+              <option>Misc.</option>
+              <option value="__cat__SITUATIONAL" class="dropdown-cat-option cat-situational">▶ SITUATIONAL</option>
+              <option>AoE</option>
+              <option>AURA</option>
+              <option value="(pet only)">(pet only)</option>
+              <option value="(undead only)">(undead only)</option>
+              <option value="(elementals only)">(elementals only)</option>
+              <option value="(animals only)">(animals only)</option>
+              <option value="(self only)">(self only)</option>
+              <option>Physical</option>
+              <option>Fire</option>
+              <option>Cold</option>
+              <option>Electricity</option>
+              <option>Poison</option>
+              <option>Disease</option>
+              <option>Corruption</option>
+              <option>Magic</option>
+              <option>Holy</option>
             </select>
           </div>
 
