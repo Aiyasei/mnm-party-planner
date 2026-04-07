@@ -1119,6 +1119,12 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 #filter-tag option.cat-utility     { color: #cccccc; background: rgba(200,200,200,0.05); }
 #filter-tag option.cat-situational { color: #ff88dd; background: rgba(220,80,160,0.1); }
 #filter-tag option.opt-debuff      { color: #cc88ff; }
+#filter-tag option.opt-damage      { color: #ff7755; }
+#filter-tag option.opt-cc          { color: #d4a800; }
+#filter-tag option.opt-healing     { color: #44bb66; }
+#filter-tag option.opt-buff        { color: #66aaee; }
+#filter-tag option.opt-utility     { color: #cccccc; }
+#filter-tag option.opt-situational { color: #ff88dd; }
 
 #spell-table td.spell-class {
   font-weight: 700;
