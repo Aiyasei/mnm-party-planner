@@ -657,10 +657,6 @@ function initLibrary(spells) {
     filterTag.value = "";
     levelMin.value = "";
     levelMax.value = "";
-    libClassBtns.forEach(btn => {
-      selectedClasses.add(btn.getAttribute("data-class"));
-      btn.classList.add("active");
-    });
     renderTable();
   });
 
