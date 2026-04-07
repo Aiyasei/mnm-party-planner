@@ -252,14 +252,17 @@ section {
 
 /* Fixed-height coverage panel so it never resizes */
 .coverage-panel-fixed {
-  min-height: 248px;
-  max-height: 248px;
-  height: 248px;
+  min-height: 220px;
+  max-height: 220px;
+  height: 220px;
   overflow: hidden;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Party counter — sits below the image box */
+/* Party counter — always holds its space so no layout shift */
 .party-counter {
   font-family: 'Cinzel', serif;
   font-size: 0.72rem;
@@ -268,7 +271,9 @@ section {
   text-transform: uppercase;
   color: var(--text-muted);
   margin-top: 6px;
-  min-height: 1em;
+  height: 1.2em;
+  line-height: 1.2em;
+  overflow: hidden;
 }
 
 /* ============================================
@@ -280,7 +285,7 @@ section {
   border: none;
   border-radius: 0;
   padding: 0;
-  min-height: 122px;
+  min-height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -311,8 +316,8 @@ section {
 }
 
 .party-member img {
-  width: 90px;
-  height: 90px;
+  width: 117px;
+  height: 117px;
   object-fit: cover;
   border-radius: 4px;
   border: 2px solid var(--orange);
