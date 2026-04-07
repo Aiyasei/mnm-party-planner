@@ -371,23 +371,12 @@ section {
   /* fixed width col handled by grid now */
 }
 
-.role-label.dps    { color: #cc4444; padding-top: 8px; }
+.role-label.dps    { color: #cc4444; }
 .role-label.healer { color: #44aa66; }
 .role-label.support{ color: #6688cc; }
 .role-label.tank   { color: #aa8844; }
 
-/* DPS sub-rows container */
-.role-subrows {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.role-subrow {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
+/* DPS sub-rows container — removed, DPS is now single row */
 
 /* Non-DPS buttons sit directly in the grid's second column — wrap them */
 .role-group > .class-btn {
