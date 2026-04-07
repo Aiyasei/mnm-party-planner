@@ -785,28 +785,53 @@ section {
 .redundancy-rows {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+}
+
+.redundancy-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
 }
 
 .redundancy-row {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
   font-size: 0.83rem;
-  flex-wrap: wrap;
+}
+
+.redundancy-tag-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.redundancy-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  filter: brightness(0) invert(0.55);
 }
 
 .redundancy-tag-name {
   font-weight: 700;
-  min-width: 150px;
-  flex-shrink: 0;
+  color: var(--text-primary);
+  white-space: nowrap;
 }
 
 .redundancy-class-list {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-size: 0.79rem;
+  text-align: right;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
+.redundancy-dot {
+  color: var(--border);
+}
 /* ============================================
    LIBRARY TABLE ROW TINTS
    ============================================ */

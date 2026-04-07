@@ -254,12 +254,24 @@ function initPartyPlanner(spells) {
   }
 
   // ---- Redundancies (category-grouped) ----
+
+  // Derive icon path from tag name: lowercase, spaces→hyphens, special chars stripped
+  function tagIconPath(tag) {
+    const overrides = {
+      "+STR": "stat-str", "+STA": "stat-sta", "+DEX": "stat-dex",
+      "+AGI": "stat-agi", "+INT": "stat-int", "+CHA": "stat-cha",
+      "+WIS": "stat-wis", "+HP": "stat-hp", "+AC": "stat-ac",
+      "Conjure Food & Water": "conjure-food-water",
+    };
+    const slug = overrides[tag] || tag.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+    return `assets/icons/${slug}.svg`;
+  }
+
   function updateRedundancies() {
     const grid = document.getElementById("redundancy-grid");
     const emptyMsg = document.getElementById("redundancy-empty");
     if (!grid) return;
 
-    // Remove all category blocks (keep the empty message node)
     [...grid.querySelectorAll(".redundancy-cat-block")].forEach(el => el.remove());
 
     if (selectedClasses.size < 2) {
@@ -306,25 +318,32 @@ function initPartyPlanner(spells) {
       const rows = document.createElement("div");
       rows.className = "redundancy-rows";
 
-      for (const { tag, classes } of redundantRows) {
+      redundantRows.forEach(({ tag, classes }, i) => {
+        if (i > 0) {
+          const divider = document.createElement("div");
+          divider.className = "redundancy-divider";
+          rows.appendChild(divider);
+        }
+
         const row = document.createElement("div");
         row.className = "redundancy-row";
 
-        const tagSpan = document.createElement("span");
-        tagSpan.className = "redundancy-tag-name";
-        tagSpan.style.color = cat.color;
-        tagSpan.textContent = tag;
+        // Left: icon + tag name
+        const left = document.createElement("div");
+        left.className = "redundancy-tag-left";
+        left.innerHTML = `<img class="redundancy-icon" src="${tagIconPath(tag)}" alt="" onerror="this.style.display='none'"><span class="redundancy-tag-name">${tag}</span>`;
 
-        const classSpan = document.createElement("span");
-        classSpan.className = "redundancy-class-list";
-        classSpan.innerHTML = classes
+        // Right: class names in their colors
+        const right = document.createElement("div");
+        right.className = "redundancy-class-list";
+        right.innerHTML = classes
           .map(c => `<span class="cls-text-${classSlug(c)}">${c}</span>`)
-          .join('<span style="color:var(--text-muted);"> · </span>');
+          .join('<span class="redundancy-dot"> · </span>');
 
-        row.appendChild(tagSpan);
-        row.appendChild(classSpan);
+        row.appendChild(left);
+        row.appendChild(right);
         rows.appendChild(row);
-      }
+      });
 
       block.appendChild(rows);
       grid.appendChild(block);
