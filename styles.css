@@ -1065,9 +1065,47 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 }
 
 #spell-table td.spell-tags {
-  color: var(--orange-dim);
   font-size: 0.82rem;
 }
+
+#spell-table td.spell-tags {
+  display: table-cell; /* keep td behavior */
+}
+
+/* Tag pills in the library table */
+.spell-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding-top: 1px;
+}
+
+.lib-tag-pill {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  line-height: 1.55;
+}
+
+.lib-tag-pill-default {
+  background: rgba(255,255,255,0.05);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+/* Colored optgroup labels in tag dropdown */
+#filter-tag optgroup[label*="DAMAGE"]       { color: #ff7755; }
+#filter-tag optgroup[label*="CROWD"]        { color: #d4a800; }
+#filter-tag optgroup[label*="DEBUFFS"]      { color: #bb88ff; }
+#filter-tag optgroup[label*="HEALING"]      { color: #44bb66; }
+#filter-tag optgroup[label*="BUFF"]         { color: #66aaee; }
+#filter-tag optgroup[label*="UTILITY"]      { color: #cccccc; }
+#filter-tag optgroup[label*="SITUATIONAL"]  { color: #cc9944; }
 
 #spell-table td.spell-class {
   font-weight: 700;

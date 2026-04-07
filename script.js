@@ -417,6 +417,48 @@ function initPartyPlanner(spells) {
 }
 
 // ============================================
+// TAG COLOR MAP — used in library table pills
+// ============================================
+
+const TAG_COLOR_MAP = (() => {
+  // Category definitions: [bg, border, text]
+  const CC      = { bg: "rgba(212,168,0,0.2)",    border: "#d4a800", text: "#d4a800" };
+  const DEBUFF  = { bg: "rgba(153,102,204,0.2)",  border: "#9966cc", text: "#bb88ff" };
+  const HEAL    = { bg: "rgba(68,187,102,0.2)",   border: "#44bb66", text: "#44bb66" };
+  const BUFF    = { bg: "rgba(68,136,204,0.2)",   border: "#4488cc", text: "#66aaee" };
+  const UTILITY = { bg: "rgba(224,224,224,0.1)",  border: "#888",    text: "#cccccc" };
+  const DAMAGE  = { bg: "rgba(220,80,60,0.2)",    border: "#cc4433", text: "#ff7755" };
+  const SIT     = { bg: "rgba(160,120,60,0.2)",   border: "#a07830", text: "#cc9944" };
+
+  const map = {};
+
+  // Damage
+  for (const t of ["Direct Damage","Damage Over Time","Lifesteal","Lifetap"]) map[t] = DAMAGE;
+  // Crowd Control
+  for (const t of ["Fear","Mez","Stun","Charm","Pacify","Snare","Root","Blind","Interrupt"]) map[t] = CC;
+  // Debuffs
+  for (const t of ["Slow","Stat Debuff","Spell Damage Vulnerability","Physical Damage Vulnerability",
+    "Reduced Healing","Mana Burn","Lower Resistance"]) map[t] = DEBUFF;
+  // Healing
+  for (const t of ["Heal Over Time","Direct Heal","Resurrection","Transfer Health"]) map[t] = HEAL;
+  // Buffs
+  for (const t of ["+HP","+AC","+STR","+STA","+DEX","+AGI","+INT","+CHA","+WIS",
+    "Increase Physical Damage","Increase Spell Damage","Movement Speed","Melee Haste","Spell Haste",
+    "Resist","Invisibility","Damage Shield","Absorb Damage Shield","Mana Regen","Health Regen",
+    "Transfer Mana","Damage Reduction"]) map[t] = BUFF;
+  // Utility
+  for (const t of ["Pet","Purge","Cure","Feign Death","Taunt","Aggro Gen","Trap","Enduring Breath",
+    "Stealth / Hide","Aggro Reduction","Tracking","Bind","Teleport","Gate","Conjure Weapon",
+    "Conjure Arrows","Conjure Bandage","Conjure Food & Water","Summon Manastone","Summon Lifestone",
+    "Shapeshift","Misc."]) map[t] = UTILITY;
+  // Situational
+  for (const t of ["AoE","AURA","(pet only)","(undead only)","(elementals only)","(animals only)",
+    "(self only)","Physical","Fire","Cold","Electricity","Poison","Disease","Corruption","Magic","Holy"]) map[t] = SIT;
+
+  return map;
+})();
+
+// ============================================
 // LIBRARY.HTML LOGIC
 // ============================================
 
@@ -556,13 +598,29 @@ function initLibrary(spells) {
       const tr = document.createElement("tr");
       const slug = classSlug(spell["Class"] || "");
       tr.className = `cls-${slug}`;
+
+      // Build colored tag pills
+      const rawTags = (spell["Tag"] || "").trim();
+      const tagPillsHtml = rawTags
+        ? rawTags.split("|").map(t => {
+            const trimmed = t.trim();
+            // Strip parentheticals to look up the base tag color, keep original text
+            const baseTag = trimmed.replace(/\(.*?\)/g, "").trim();
+            const color = TAG_COLOR_MAP[trimmed] || TAG_COLOR_MAP[baseTag] || null;
+            if (color) {
+              return `<span class="lib-tag-pill" style="background:${color.bg};border-color:${color.border};color:${color.text}">${trimmed}</span>`;
+            }
+            return `<span class="lib-tag-pill lib-tag-pill-default">${trimmed}</span>`;
+          }).join("")
+        : "";
+
       tr.innerHTML = `
         <td>${spell["Level"] || ""}</td>
         <td>${spell["Spell Name"] || ""}</td>
         <td class="spell-desc">${spell["Spell Description"] || ""}</td>
         <td>${spell["Skill"] || ""}</td>
         <td>${spell["Mana"] || ""}</td>
-        <td class="spell-tags">${(spell["Tag"] || "").trim()}</td>
+        <td class="spell-tags">${tagPillsHtml}</td>
         <td class="spell-class cls-text-${slug}">${spell["Class"] || ""}</td>
       `;
       tbody.appendChild(tr);
