@@ -205,22 +205,34 @@ section {
 }
 
 /* ============================================
-   ROW 1: PARTY DISPLAY + RIGHT COLUMN (COVERAGE + WARNINGS)
+   MAIN TOP LAYOUT: Left (party + classes) | Right (coverage + warnings)
    ============================================ */
 
 .top-row {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
   align-items: start;
+}
+
+/* Left column: party images stacked above class selection */
+.top-row-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .top-row-party {
   display: flex;
   flex-direction: column;
-  width: fit-content;
 }
 
+.top-row-classes {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Right column: coverage fixed on top, warnings below */
 .top-row-right {
   display: flex;
   flex-direction: column;
@@ -235,6 +247,12 @@ section {
 .top-row-coverage {
   display: flex;
   flex-direction: column;
+}
+
+/* Fixed-height coverage panel so it never resizes */
+.coverage-panel-fixed {
+  height: 168px;
+  overflow: hidden;
 }
 
 /* Party counter — sits below the image box */
@@ -1114,7 +1132,7 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
     grid-template-columns: 1fr;
   }
 
-  .top-row-party {
+  .top-row-left {
     width: 100%;
   }
 

@@ -46,31 +46,88 @@
 
   <main>
 
-    <!-- ROW 1: Party Display + Party Warnings + Party Coverage -->
+    <!-- MAIN TOP LAYOUT: Left (party images + class selection) | Right (coverage + warnings) -->
     <section>
       <div class="top-row">
 
-        <!-- Party Display (shrinks to fit content) -->
-        <div class="top-row-party">
-          <div class="section-label">Party Composition</div>
-          <div id="party-display">
-            <div class="empty-message">Select classes below to build your party</div>
+        <!-- LEFT: Party Composition + Class Selection stacked -->
+        <div class="top-row-left">
+
+          <div class="top-row-party">
+            <div class="section-label">Party Composition</div>
+            <div id="party-display">
+              <div class="empty-message">Select classes below to build your party</div>
+            </div>
+            <div id="party-counter" class="party-counter"></div>
           </div>
-          <div id="party-counter" class="party-counter"></div>
+
+          <div class="top-row-classes">
+            <div class="section-label">Select Classes</div>
+            <div id="class-selection">
+
+              <div class="role-group role-group-dps">
+                <span class="role-label dps">DPS</span>
+                <div class="role-subrows">
+                  <div class="role-subrow">
+                    <button class="class-btn" data-class="Elementalist">Elementalist</button>
+                    <button class="class-btn" data-class="Necromancer">Necromancer</button>
+                    <button class="class-btn" data-class="Wizard">Wizard</button>
+                  </div>
+                  <div class="role-subrow">
+                    <button class="class-btn" data-class="Archer">Archer</button>
+                    <button class="class-btn" data-class="Ranger">Ranger</button>
+                    <button class="class-btn" data-class="Beastmaster">Beastmaster</button>
+                  </div>
+                  <div class="role-subrow">
+                    <button class="class-btn" data-class="Monk">Monk</button>
+                    <button class="class-btn" data-class="Rogue">Rogue</button>
+                    <button class="class-btn" data-class="Spellblade">Spellblade</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="role-group">
+                <span class="role-label healer">Healer</span>
+                <div class="role-btn-group">
+                  <button class="class-btn" data-class="Cleric">Cleric</button>
+                  <button class="class-btn" data-class="Druid">Druid</button>
+                  <button class="class-btn" data-class="Shaman">Shaman</button>
+                </div>
+              </div>
+
+              <div class="role-group">
+                <span class="role-label support">Support</span>
+                <div class="role-btn-group">
+                  <button class="class-btn" data-class="Enchanter">Enchanter</button>
+                  <button class="class-btn" data-class="Bard">Bard</button>
+                </div>
+              </div>
+
+              <div class="role-group">
+                <span class="role-label tank">Tank</span>
+                <div class="role-btn-group">
+                  <button class="class-btn" data-class="Fighter">Fighter</button>
+                  <button class="class-btn" data-class="Inquisitor">Inquisitor</button>
+                  <button class="class-btn" data-class="Paladin">Paladin</button>
+                  <button class="class-btn" data-class="Shadow Knight">Shadow Knight</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
-        <!-- Right column: Coverage on top, Warnings below -->
+        <!-- RIGHT: Coverage on top, Warnings below -->
         <div class="top-row-right">
 
-          <!-- Party Coverage -->
           <div class="top-row-coverage">
             <div class="section-label">Party Coverage</div>
-            <div class="panel panel-flush">
+            <div class="panel panel-flush coverage-panel-fixed">
               <div id="coverage-progress"></div>
             </div>
           </div>
 
-          <!-- Party Warnings -->
           <div class="top-row-warnings">
             <div class="section-label">Party Warnings</div>
             <div class="panel panel-flush" id="meta-warnings-panel" style="display:none;">
@@ -82,62 +139,6 @@
             <a href="#redundancies-anchor" id="scroll-to-redundancies" class="redundancies-link" style="display:none;">View Redundancies &#8594;</a>
           </div>
 
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ROW 2: Class Selection only -->
-    <section>
-      <div class="section-label">Select Classes</div>
-      <div id="class-selection">
-
-        <div class="role-group role-group-dps">
-          <span class="role-label dps">DPS</span>
-          <div class="role-subrows">
-            <div class="role-subrow">
-              <button class="class-btn" data-class="Elementalist">Elementalist</button>
-              <button class="class-btn" data-class="Necromancer">Necromancer</button>
-              <button class="class-btn" data-class="Wizard">Wizard</button>
-            </div>
-            <div class="role-subrow">
-              <button class="class-btn" data-class="Archer">Archer</button>
-              <button class="class-btn" data-class="Ranger">Ranger</button>
-              <button class="class-btn" data-class="Beastmaster">Beastmaster</button>
-            </div>
-            <div class="role-subrow">
-              <button class="class-btn" data-class="Monk">Monk</button>
-              <button class="class-btn" data-class="Rogue">Rogue</button>
-              <button class="class-btn" data-class="Spellblade">Spellblade</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="role-group">
-          <span class="role-label healer">Healer</span>
-          <div class="role-btn-group">
-            <button class="class-btn" data-class="Cleric">Cleric</button>
-            <button class="class-btn" data-class="Druid">Druid</button>
-            <button class="class-btn" data-class="Shaman">Shaman</button>
-          </div>
-        </div>
-
-        <div class="role-group">
-          <span class="role-label support">Support</span>
-          <div class="role-btn-group">
-            <button class="class-btn" data-class="Enchanter">Enchanter</button>
-            <button class="class-btn" data-class="Bard">Bard</button>
-          </div>
-        </div>
-
-        <div class="role-group">
-          <span class="role-label tank">Tank</span>
-          <div class="role-btn-group">
-            <button class="class-btn" data-class="Fighter">Fighter</button>
-            <button class="class-btn" data-class="Inquisitor">Inquisitor</button>
-            <button class="class-btn" data-class="Paladin">Paladin</button>
-            <button class="class-btn" data-class="Shadow Knight">Shadow Knight</button>
-          </div>
         </div>
 
       </div>
