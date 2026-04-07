@@ -29,7 +29,7 @@
   --cat-debuff:  #9966cc;
   --cat-healing: #44bb66;
   --cat-buff:    #4488cc;
-  --cat-utility: #e0e0e0;
+  --cat-utility: #ffffff;
 
   /* Class colors */
   --cls-elementalist: #e05c2a;
@@ -248,10 +248,10 @@ section {
    ============================================ */
 
 #party-display {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 16px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   min-height: 122px;
   display: flex;
   align-items: center;

@@ -227,7 +227,7 @@ function initPartyPlanner(spells) {
       tags: ["+HP","+AC","+STR","+STA","+DEX","+AGI","+INT","+CHA","+WIS","Increase Spell Damage","Movement Speed","Melee Haste","Spell Haste","Resist","Invisibility","Damage Shield","Mana Regen","Health Regen"]
     },
     {
-      label: "Utility", color: "#e0e0e0", colorMuted: "rgba(224,224,224,0.2)",
+      label: "Utility", color: "#ffffff", colorMuted: "rgba(255,255,255,0.15)",
       tags: ["Pet","Purge","Cure","Feign Death","Taunt","Aggro Gen","Tracking","Teleport","Conjure Weapon","Conjure Arrows","Conjure Bandage","Conjure Food & Water","Summon Manastone","Summon Lifestone"]
     },
   ];
@@ -338,7 +338,7 @@ function initPartyPlanner(spells) {
       }
     }
 
-    if (scrollLink) scrollLink.style.display = "inline-block";
+    if (scrollLink) scrollLink.style.display = selectedClasses.size >= 1 ? "inline-block" : "none";
   }
 
   // ---- Party display ----
