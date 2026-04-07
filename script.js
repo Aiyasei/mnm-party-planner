@@ -149,18 +149,7 @@ function initPartyPlanner(spells) {
   const partyCounter = document.getElementById("party-counter");
   const classButtons = document.querySelectorAll(".class-btn[data-class]");
   const tagPills = document.querySelectorAll(".tag-pill");
-  const redundancyList = document.getElementById("redundancy-list");
   const toggleSelfOnlyBtn = document.getElementById("toggle-self-only");
-  const redundanciesAnchor = document.getElementById("redundancies-anchor");
-  const scrollToRedundancies = document.getElementById("scroll-to-redundancies");
-
-  // ---- Scroll to redundancies link ----
-  if (scrollToRedundancies && redundanciesAnchor) {
-    scrollToRedundancies.addEventListener("click", (e) => {
-      e.preventDefault();
-      redundanciesAnchor.scrollIntoView({ behavior: "smooth" });
-    });
-  }
 
   // ---- Self-only toggle button — starts active (hidden) ----
   if (toggleSelfOnlyBtn) {
@@ -204,8 +193,6 @@ function initPartyPlanner(spells) {
     updatePartyDisplay();
     updateTagPills();
     updateCoverage();
-    updateMetaWarnings();
-    updateRedundancies();
   }
 
   // Category definitions for progress bars and pill colors
@@ -281,72 +268,6 @@ function initPartyPlanner(spells) {
     }
   }
 
-  // Meta warning definitions
-  const DEDICATED_HEALERS = new Set(["Cleric", "Druid", "Shaman"]);
-  const metaWarningsPanel = document.getElementById("meta-warnings-panel");
-  const metaWarningsList = document.getElementById("meta-warnings-list");
-
-  // ---- Meta warnings ----
-  function updateMetaWarnings() {
-    const warningsEmpty = document.getElementById("warnings-empty");
-    const scrollLink = document.getElementById("scroll-to-redundancies");
-
-    if (selectedClasses.size === 0) {
-      metaWarningsPanel.style.visibility = "hidden";
-      metaWarningsPanel.style.opacity = "0";
-      metaWarningsPanel.style.display = "block";
-      if (warningsEmpty) { warningsEmpty.style.visibility = "hidden"; warningsEmpty.style.opacity = "0"; warningsEmpty.style.display = "flex"; }
-      if (scrollLink) { scrollLink.style.visibility = "hidden"; scrollLink.style.opacity = "0"; }
-      return;
-    }
-
-    const coveredTags = new Set();
-    for (const cls of selectedClasses) {
-      const tags = getTagMap()[cls] || new Set();
-      for (const t of tags) coveredTags.add(t);
-    }
-
-    const warnings = [];
-
-    // No dedicated healer
-    const hasHealer = [...selectedClasses].some(c => DEDICATED_HEALERS.has(c));
-    if (!hasHealer) {
-      warnings.push("No dedicated healer in this party. Healing throughput from other classes will be significantly reduced.");
-    }
-
-    // No mana regen
-    if (!coveredTags.has("Mana Regen")) {
-      warnings.push("No Mana Regeneration in this party. Sustainability in long fights will be a concern.");
-    }
-
-    // No CC (Mez, Stun, AND Charm all missing)
-    if (!coveredTags.has("Mez") && !coveredTags.has("Stun") && !coveredTags.has("Charm")) {
-      warnings.push("No Crowd Control in this party. Mez, Stun, and Charm are all unavailable.");
-    }
-
-    metaWarningsList.innerHTML = "";
-
-    if (warnings.length === 0) {
-      metaWarningsPanel.style.visibility = "hidden";
-      metaWarningsPanel.style.opacity = "0";
-      metaWarningsPanel.style.display = "block";
-      if (warningsEmpty) { warningsEmpty.style.visibility = "visible"; warningsEmpty.style.opacity = "1"; warningsEmpty.style.display = "flex"; }
-    } else {
-      metaWarningsPanel.style.visibility = "visible";
-      metaWarningsPanel.style.opacity = "1";
-      metaWarningsPanel.style.display = "block";
-      if (warningsEmpty) { warningsEmpty.style.visibility = "hidden"; warningsEmpty.style.opacity = "0"; warningsEmpty.style.display = "flex"; }
-      for (const w of warnings) {
-        const el = document.createElement("div");
-        el.className = "meta-warning-item";
-        el.innerHTML = `<span class="meta-warning-icon">&#9888;</span><span>${w}</span>`;
-        metaWarningsList.appendChild(el);
-      }
-    }
-
-    if (scrollLink) { scrollLink.style.visibility = "visible"; scrollLink.style.opacity = "1"; }
-  }
-
   // ---- Party display ----
   function updatePartyDisplay() {
     updatePartyCounter();
@@ -404,45 +325,6 @@ function initPartyPlanner(spells) {
         }
       }
     });
-  }
-
-  // ---- Redundancies ----
-  function updateRedundancies() {
-    redundancyList.innerHTML = "";
-
-    if (selectedClasses.size < 2) {
-      redundancyList.innerHTML = '<span class="panel-empty">Select two or more classes to see overlaps.</span>';
-      return;
-    }
-
-    const tagCoverage = {};
-    for (const tag of FRONT_PAGE_TAGS) {
-      tagCoverage[tag] = [];
-      for (const cls of selectedClasses) {
-        const tags = getTagMap()[cls] || new Set();
-        if (tags.has(tag)) tagCoverage[tag].push(cls);
-      }
-    }
-
-    const redundant = Object.entries(tagCoverage).filter(([, classes]) => classes.length > 1);
-
-    if (redundant.length === 0) {
-      redundancyList.innerHTML = '<span class="panel-empty">No overlapping tags in current party.</span>';
-      return;
-    }
-
-    for (const [tag, classes] of redundant) {
-      const item = document.createElement("div");
-      item.className = "redundancy-item";
-      const classesHtml = classes
-        .map(c => `<span class="cls-text-${classSlug(c)}">${c}</span>`)
-        .join('<span style="color:var(--text-muted);">, </span>');
-      item.innerHTML = `
-        <span class="redundancy-tag">${tag}</span>
-        <span class="redundancy-classes">${classesHtml}</span>
-      `;
-      redundancyList.appendChild(item);
-    }
   }
 
   // Initialize with default state
