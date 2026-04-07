@@ -1060,9 +1060,9 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 }
 
 #spell-table td {
-  padding: 10px 16px;
+  padding: 7px 16px;
   color: var(--text-primary);
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 #spell-table td.spell-tags {
