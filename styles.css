@@ -1375,13 +1375,13 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 
 .footnote-warning {
   color: var(--missing);
-  font-size: 0.78rem;
+  font-size: 0.94rem;
   line-height: 1.55;
 }
 
 .footnote-muted {
   color: var(--text-muted);
-  font-size: 0.76rem;
+  font-size: 0.91rem;
   line-height: 1.5;
 }
 
