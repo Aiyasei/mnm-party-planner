@@ -253,6 +253,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-self: stretch;
 }
 
 .top-row-warnings {
@@ -1370,6 +1371,7 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex: 1;
 }
 
 .footnote-warning {
@@ -1385,7 +1387,7 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 }
 
 .footnote-muted:first-of-type {
-  margin-top: 14px;
+  margin-top: auto;
 }
 
 @media (max-width: 900px) {
