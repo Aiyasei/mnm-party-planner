@@ -1386,7 +1386,7 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
 }
 
 .footnote-muted-first {
-  margin-top: 90px;
+  margin-top: 20px;
 }
 
 @media (max-width: 900px) {
