@@ -1371,7 +1371,7 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding-top: 40px;
+  margin-top: 60px;
 }
 
 .footnote-warning {
