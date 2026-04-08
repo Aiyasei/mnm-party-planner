@@ -59,11 +59,11 @@ function classSlug(cls) {
 // Splits by pipe, trims whitespace, strips
 // parenthetical qualifiers like (self only)
 // ============================================
-function parseTags(rawTag) {
+function parseTags(rawTag, keepParens = false) {
   if (!rawTag) return [];
   return rawTag
     .split("|")
-    .map(t => t.replace(/\(.*?\)/g, "").trim())
+    .map(t => keepParens ? t.trim() : t.replace(/\(.*?\)/g, "").trim())
     .filter(t => t.length > 0);
 }
 
@@ -575,10 +575,10 @@ function initLibrary(spells) {
       }
 
       if (filterTagSet) {
-        const spellTags = parseTags(spell["Tag"]);
+        const spellTags = parseTags(spell["Tag"], true);
         if (!spellTags.some(t => filterTagSet.has(t))) return false;
       } else if (filterSingleTag) {
-        const spellTags = parseTags(spell["Tag"]);
+        const spellTags = parseTags(spell["Tag"], true);
         if (!spellTags.some(t => t.toLowerCase() === filterSingleTag)) return false;
       }
 

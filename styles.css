@@ -1086,6 +1086,15 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
   color: var(--orange-bright);
 }
 
+#spell-table th.no-sort {
+  cursor: default;
+  color: var(--orange-dim);
+}
+
+#spell-table th.no-sort:hover {
+  color: var(--orange-dim);
+}
+
 #spell-table tbody tr {
   border-bottom: 1px solid var(--border);
   transition: background 0.15s;
