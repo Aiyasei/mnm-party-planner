@@ -227,7 +227,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 24px;
-  align-items: stretch;
+  align-items: start;
 }
 
 /* Left column: party images stacked above class selection */
@@ -1371,7 +1371,7 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
   display: flex;
   flex-direction: column;
   gap: 6px;
-  flex: 1;
+  padding-top: 40px;
 }
 
 .footnote-warning {
@@ -1384,10 +1384,6 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
   color: var(--text-muted);
   font-size: 0.76rem;
   line-height: 1.5;
-}
-
-.footnote-muted:first-of-type {
-  margin-top: auto;
 }
 
 @media (max-width: 900px) {
