@@ -1362,6 +1362,28 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
    RESPONSIVE
    ============================================ */
 
+/* ============================================
+   PARTY FOOTNOTE (right column, below coverage)
+   ============================================ */
+
+.party-footnote {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footnote-warning {
+  color: var(--missing);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.footnote-muted {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 900px) {
   #tag-grid {
     grid-template-columns: 1fr 1fr;
