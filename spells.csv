@@ -1,6 +1,6 @@
 Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
-1,Blast of Air,"Blast your target with air, dealing 2 (L1) to 5 (L4) Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,5,Direct Damage | Magic ,Elementalist
-1,Blast of Earth,"Blast your target with earth, dealing 2 (L1) to 5 (L4) Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,5,Direct Damage | Magic ,Elementalist
+1,Blast of Air,"Blast your target with air, dealing 2 (L1) to 5 (L4) Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,5,Direct Damage | Magic,Elementalist
+1,Blast of Earth,"Blast your target with earth, dealing 2 (L1) to 5 (L4) Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,5,Direct Damage | Magic,Elementalist
 1,Blast of Fire,"Blast your target with fire, dealing 2 (L1) to 5 (L4) Fire Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,5,Direct Damage | Fire,Elementalist
 1,Blast of Water,"Blast your target with water, dealing 2 (L1) to 5 (L4) Cold Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,5,Direct Damage | Cold,Elementalist
 1,Cold Protection,"Wards your target from frost, increasing their Cold Resistance by 5.",Abj,10,Resist | Cold,Elementalist
@@ -59,8 +59,8 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 12,Restrain the Elements,"Restrain a target elemental, incapacitating them for 30 seconds.",Con,,Mez | (elementals only),Elementalist
 12,Summon Heavy Cloth Bandage,"Summon 1 (L12) to 4 (L16) heavy cloth bandages, suitable for healing wounds.",Con,,Conjure Bandage,Elementalist
 16,Beset the Elements,Wards an elemental target with elemental energy for 90 points of Magic Damage.,Evo,50,Direct Damage | Magic | (elementals only),Elementalist
-16,Blast of Air II,"Blast your target with air, dealing 75 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,55,Direct Damage | Magic ,Elementalist
-16,Blast of Earth II,"Blast your target with earth, dealing 75 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,55,Direct Damage | Magic ,Elementalist
+16,Blast of Air II,"Blast your target with air, dealing 75 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,55,Direct Damage | Magic,Elementalist
+16,Blast of Earth II,"Blast your target with earth, dealing 75 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,55,Direct Damage | Magic,Elementalist
 16,Blast of Fire II,"Blast your target with fire, dealing 75 Fire Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,55,Direct Damage | Fire,Elementalist
 16,Blast of Water II,"Blast your target with water, dealing 75 Cold Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,55,Direct Damage | Cold,Elementalist
 16,Exceptional Creation: Air,"Conjures an Air Elemental composed of pure elemental energy. (Aura) Rush of Air: 10% chance of add. Prime or Offhand Melee swing (Staggering Winds, Strike, Provoke) Requires: Malachite",Con,130,Pet | Melee Haste | AURA,Elementalist
@@ -83,8 +83,8 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 20,Minor Synthesis: Water,Conjures a watery being composed of pure elemental energy. (Aura) Fount of Mana: Mana Regeneration 1(L1) to 6(L60). Requires: Malachite,Con,170,Pet | Mana Regen | AURA,Elementalist
 24,Air Pet Tier 7,"Conjures an Air Elemental composed of pure elemental energy. (Aura) Rush of Air: 10% chance of add. Prime or Offhand Melee swing (Staggering Winds, Strike, Provoke) Requires: Malachite",Con,,Pet | Melee Haste | AURA,Elementalist
 24,Beguile Elemental,"Charm a target elemental, forcing them to fight alongside you for up to 20 minutes.",Alt,,Charm | (elementals only),Elementalist
-24,Blast of Air III,"Blast your target with air, dealing 100 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic ,Elementalist
-24,Blast of Earth III,"Blast your target with earth, dealing 100 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic ,Elementalist
+24,Blast of Air III,"Blast your target with air, dealing 100 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic,Elementalist
+24,Blast of Earth III,"Blast your target with earth, dealing 100 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic,Elementalist
 24,Blast of Fire III,"Blast your target with fire, dealing 100 Fire Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Fire,Elementalist
 24,Blast of Water III,"Blast your target with water, dealing 100 Cold Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Cold,Elementalist
 24,Cold Resistance,"Greatly wards your target from frost, increasing their Cold Resistance by 15.",Abj,,Resist | Cold,Elementalist
@@ -118,8 +118,8 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 32,Summon Wind Blade,"Summon a wind blade, suitable for combat in a pinch.",Con,,Conjure Weapon,Elementalist
 32,Water Pet Tier 9,Conjures a watery being composed of pure elemental energy. (Aura) Fount of Mana: Mana Regeneration 1(L1) to 6(L60). Requires: Malachite,Con,,Pet | Mana Regen | AURA,Elementalist
 36,Air Pet Tier 10,"Conjures an Air Elemental composed of pure elemental energy. (Aura) Rush of Air: 10% chance of add. Prime or Offhand Melee swing (Staggering Winds, Strike, Provoke) Requires: Malachite",Con,,Pet | Melee Haste | AURA,Elementalist
-36,Blast of Air IV,"Blast your target with air, dealing 150 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic ,Elementalist
-36,Blast of Earth IV,"Blast your target with earth, dealing 150 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic ,Elementalist
+36,Blast of Air IV,"Blast your target with air, dealing 150 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic,Elementalist
+36,Blast of Earth IV,"Blast your target with earth, dealing 150 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic,Elementalist
 36,Blast of Fire IV,"Blast your target with fire, dealing 150 Fire Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Fire,Elementalist
 36,Blast of Water IV,"Blast your target with water, dealing 150 Cold Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Cold,Elementalist
 36,Coax Elemental,"Charm a target elemental, forcing them to fight alongside you for up to 20 minutes.",Alt,,Charm | (elementals only),Elementalist
@@ -146,8 +146,8 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 44,Summon Heavy Cotton Bandage,"Summon 1 (L44) to 4 (L48) heavy cotton bandages, suitable for healing wounds.",Con,,Conjure Bandage,Elementalist
 44,Water Pet Tier 12,Conjures a watery being composed of pure elemental energy. (Aura) Fount of Mana: Mana Regeneration 1(L1) to 6(L60). Requires: Malachite,Con,,Pet | Mana Regen | AURA,Elementalist
 48,Air Pet Tier 13,"Conjures an Air Elemental composed of pure elemental energy. (Aura) Rush of Air: 10% chance of add. Prime or Offhand Melee swing (Staggering Winds, Strike, Provoke) Requires: Malachite",Con,,Pet | Melee Haste | AURA,Elementalist
-48,Blast of Air V,"Blast your target with air, dealing 225 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic ,Elementalist
-48,Blast of Earth V,"Blast your target with earth, dealing 225 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic ,Elementalist
+48,Blast of Air V,"Blast your target with air, dealing 225 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic,Elementalist
+48,Blast of Earth V,"Blast your target with earth, dealing 225 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic,Elementalist
 48,Blast of Fire V,"Blast your target with fire, dealing 225 Fire Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Fire,Elementalist
 48,Blast of Water V,"Blast your target with water, dealing 225 Cold Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Cold,Elementalist
 48,Earth Pet Tier 13,"Conjures an earthy being composed of pure elemental energy. (Aura) Earthen Toughness: grants 2(L1) to 30(L60) Stamina. (Earthen Skin, Elemental Root, Provoke) Requires: Malachite",Con,,Pet | +STA | Root | AURA,Elementalist
@@ -175,8 +175,8 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 56,Water Pet Tier 15,Conjures a watery being composed of pure elemental energy. (Aura) Fount of Mana: Mana Regeneration 1(L1) to 6(L60). Requires: Malachite,Con,,Pet | Mana Regen | AURA,Elementalist
 58,Flames of Eth,Engulfs your target with Flames of Eth for 1400 points of Fire Damage.,Evo,,Direct Damage | Fire,Elementalist
 60,Air Pet Tier 16,"Conjures an Air Elemental composed of pure elemental energy. (Aura) Rush of Air: 10% chance of add. Prime or Offhand Melee swing (Staggering Winds, Strike, Provoke) Requires: Malachite",Con,,Pet | Melee Haste | AURA,Elementalist
-60,Blast of Air VI,"Blast your target with air, dealing 300 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic ,Elementalist
-60,Blast of Earth VI,"Blast your target with earth, dealing 300 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic ,Elementalist
+60,Blast of Air VI,"Blast your target with air, dealing 300 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic,Elementalist
+60,Blast of Earth VI,"Blast your target with earth, dealing 300 Magic Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Magic,Elementalist
 60,Blast of Fire VI,"Blast your target with fire, dealing 300 Fire Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Fire,Elementalist
 60,Blast of Water VI,"Blast your target with water, dealing 300 Cold Damage. This spell reacts to elemental effects inflicted on the target by your pet.",Evo,,Direct Damage | Cold,Elementalist
 60,Devastate the Elements,Wards an elemental target with elemental energy for 900 points of Magic Damage.,Evo,,Direct Damage | Magic | (elementals only),Elementalist
@@ -517,7 +517,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 40,Death's Demise,"Invoke your innate ability to resist corruption, completely absorbing a single death touch and harnessing its power to increase all damage dealt by 100% for 15 seconds.",,Innate,Absorb Damage Shield | Corruption | (self only),Ranger
 40,Greater Shroud,"Camouflage yourself in nature's shroud, rendering you unseen by the living for 10 minutes.",Div,,Invisibility,Ranger
 40,Steelskin,"Solidifies the skin of a friendly target, increasing their Armor Class by 15 for 30 minutes.",Abj,,+AC,Ranger
-31,Lightning Arrows,"Imbue your arrows with lightning, increasing your Ranged Damage dealt by 1 (L1) to 7 (L60) Electricity Damage. Additionally, each ranged attack grants you a chance to stun your target for 0.5 seconds.",Alt,Innate,Electricity | Stun | Interrupt | (self only),Ranger
+41,Lightning Arrows,"Imbue your arrows with lightning, increasing your Ranged Damage dealt by 1 (L1) to 7 (L60) Electricity Damage. Additionally, each ranged attack grants you a chance to stun your target for 0.5 seconds.",Alt,Innate,Electricity | Stun | Interrupt | (self only),Ranger
 44,Cold Resistance,"Greatly wards your target from frost, increasing their Cold Resistance by 15.",Abj,,Resist | Cold,Ranger
 44,Fire Resistance,"Greatly wards your target from heat, increasing their Fire Resistance by 15.",Abj,,Resist | Fire,Ranger
 44,Poison Resistance,"Greatly wards your target from toxins, increasing their Poison Resistance by 15.",Abj,,Resist | Poison,Ranger
@@ -534,12 +534,11 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 59,Smoldering Embers,"Burns your target for 60 seconds, dealing 30 Fire Damage every 6 seconds and decreasing AC by 25. Max 3 Stacks. This spell does not stack with itself or any others in the same line. Requires Fire Beetle Eye.",Evo,,Damage Over Time | Fire | Physical Damage Vulnerability,Ranger
 60,Natureskin,"Solidifies the skin of a friendly target, increasing their Armor Class by 30 and health regen by 2 for 30 minutes.",Abj,,+AC | Health Regen,Ranger
 60,Pack Speed,"Bestows your group Speed of the Wild, increasing their Movement Speed by 40%(L8) to 60%(L60) for 30 minutes.",Alt,,Movement Speed,Ranger
-4,Tracking,,,,Tracking,Ranger
 1,Bat Swarm Pet Tier 1,"Entreat the wild, calling forth a cloud of bats to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Bear Swarm Pet Tier 1,"Entreat the wild, calling forth a sleuth of bears to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Beetle Swarm Pet Tier 1,"Entreat the wild, calling forth a swarm of beetles to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Bestial Bond,"Appeal to the sense of a target beast, bonding it to your side.",,25,Pet,Beastmaster
-1,Call Companion,"Beckon to your pet, calling it to your side.",,n/a,Pet,Beastmaster
+1,Call Companion,"Beckon to your pet, calling it to your side.",,,Pet,Beastmaster
 1,Crocodile Swarm Pet Tier 1,"Entreat the wild, calling forth a bask of crocodiles to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Fear Beast,"Fear a target beast, causing them to flee for 18 seconds. Has a slight chance to be removed by damage.",Alt,20,Fear | (animals only),Beastmaster
 1,Invisibility versus Animals,"Shroud a target group member in a cloak of invisibility, rendering them unseen by beasts for 10 minutes. This spell has a slight chance to end early.",Div,10,Invisibility | (animals only),Beastmaster
@@ -558,7 +557,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Weak Heal,"Weakly heal your target, restoring 6 Health.",Alt,7,Direct Heal,Beastmaster
 1,Wolf Swarm Pet Tier 1,"Entreat the wild, calling forth a pack of wolves to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 2,Pack of the Predator,"Awaken the hunter's instinct in your group, increasing their Offense by 5 and Agility by 1 (L1) to 15 (L60)",Alt,Innate,+AGI,Beastmaster
-4,Kick,"Swiftly kick your target, interrupting their casting and preventing them from casting spells from the same school of magic for 4 seconds.",Acr,n/a,Interrupt,Beastmaster
+4,Kick,"Swiftly kick your target, interrupting their casting and preventing them from casting spells from the same school of magic for 4 seconds.",Acr,,Interrupt,Beastmaster
 4,Swarm Pet Tier 2,"Entreat the wild, calling forth a swarm of [Bat, Bear, Beetle, Crocodile, Jackal, Rat, Snake, Spider, Tarantula, Wasp, Wolf] to temporarily fight alongside you.",Con,8,Pet,Beastmaster
 8,Disease Protection,"Ward your target against sickness, increasing their Disease Resistance by 5 for 1 hour.",Abj,10,Resist | Disease,Beastmaster
 8,Electricity Protection,"Ward your target against shock, increasing their Electricity Resistance by 5 for 1 hour.",Abj,10,Resist | Electricity,Beastmaster
@@ -655,6 +654,8 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 12,Vial of Smoke,Drop all aggro and enter stealth,Sub,Innate,Aggro Reduction | Stealth / Hide | (self only),Rogue
 13,Pick Pocket,"Steal from your target, granting you a chance to obtain one of their items.",Sub,Innate,Misc.,Rogue
 14,Fury of the Assassin,"Unleash the assassin's fury within, increasing your Physical Damage by 100% for 12 seconds.",Mar,Innate,Increase Physical Damage | (self only),Rogue
+15,Blinding Powder,"Throw blinding powder at your target, incapacitating them for 10 seconds.",Sub,Innate,Stun,Rogue
+16,Distract,"Throw something at the ground, distracting nearby enemies.",Sub,Innate,Misc.,Rogue
 1,Aura of the Arcane,Increases the Intelligence for your group by 1 (L1) to 15 (L60) & +10% Spell Damage,Alt,Innate,+INT | Increase Spell Damage | AURA,Spellblade
 1,Infuse Weapon: Spark,"Infuse your weapon with fire, giving a chance each hit to proc Spark.",Alt,5,Direct Damage | Fire,Spellblade
 1,Polar Align: North,Magically faces caster North.,Div,5,Misc. | (self only),Spellblade
@@ -781,6 +782,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 40,Supplication III,"Cry out in prayer, increasing your Strength by 30 (L40) to 40 (L60) and Mana Regeneration by 3 for 1 minute.",Abj,9,+STR | Mana Regen,Cleric
 44,Holy Resolve,"Bestow holy resolve upon your target, increasing their maximum Health by 250 for 1 hour.",Abj,150,+HP,Cleric
 48,Healing Brilliance,"Shine a brilliant light on targets in a frontal cone, restoring 600 Health.",Alt,780,AoE | Direct Heal,Cleric
+48,Summon Hammer of the Divine,"Summon a Hammer of the Divine, granting you a chance to activate Holy Smite on melee hits while equipped.",Con,125,Direct Damage | Holy | (self only),Cleric
 48,Reckoning,"Condemn your target with divine energy, dealing 325 Holy Damage.",Evo,150,Direct Damage | Holy,Cleric
 48,Revival,"Revive a target corpse, restoring 75% Experience. Inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,350,Resurrection,Cleric
 48,Sacred Barrier,"Call forth a sacred barrier to shield your target, absorbing 800 damage received for 15 seconds.",Abj,255,Absorb Damage Shield,Cleric
@@ -923,7 +925,6 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 60,Element Shatter,"Shatters your target's resistance to the elements, decreasing their Cold, Electricity, Fire and Magic Resistance by 10. This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,,Lower Resistance | Cold | Electricity | Fire | Magic,Druid
 60,Embers of Eth-ehm,"Channel moon energy, unleashing the embers of Eth-ehm for 1000 points of Fire Damage.",Evo,,Direct Damage | Fire,Druid
 60,Raging Embers,"Burns your target for 60 seconds, dealing 45 Fire Damage every 6 seconds and decreasing AC by 26. Max 3 stacks. This spell does not stack with itself or any others in the same line. Requires Fire Beetle Eye.",Evo,,Damage Over Time | Fire | Physical Damage Vulnerability,Druid
-21,Tracking,Druids can learn this skill at level 21 from their class trainer.,,,Tracking,Druid
 1,Berserker Spirit,"Make your target go berserk, increasing their Strength, Stamina, Dexterity, and Agility by 2 for 1 hour.",Alt,5,+STR | +STA | +DEX | +AGI,Shaman
 1,Disease Protection,"Ward your target against sickness, increasing their Disease Resistance by 5 for 1 hour.",Abj,10,Resist | Disease,Shaman
 1,Electricity Protection,"Ward your target against shock, increasing their Electricity Resistance by 5 for 1 hour.",Abj,10,Resist | Electricity,Shaman
@@ -932,7 +933,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Flameburst,"Unleash a burst of flame upon your target, dealing 5 (L1) to 7 (L4) Fire Damage.",Evo,7,Direct Damage | Fire,Shaman
 1,Invisibility versus Animals,"Shroud a target group member in a cloak of invisibility, rendering them unseen by beasts for 10 minutes.",Div,20,Invisibility | (animals only),Shaman
 1,Minor Heal,"Gently heal your target, restoring 10 Health.",Alt,8,Direct Heal,Shaman
-1,Polar Alignment: North,"Magically align yourself, orienting you toward the North Pole.",Div,5,Misc. | (self only),Shaman
+1,Polar Align: North,"Magically align yourself, orienting you toward the North Pole.",Div,5,Misc. | (self only),Shaman
 1,Spirit Frost,"Rend your target with spiritual frost, dealing 3(L1) to 5 (L4) Cold Damage",Evo,7,Direct Damage | Cold,Shaman
 4,Blind,"Shroud the vision of your target, blinding them for 12 seconds.",Alt,15,Blind,Shaman
 4,Cure Blindness,Cures Blindness.,Alt,10,Cure | Blind,Shaman
@@ -960,7 +961,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 8,Spore Discharge,"Envelop your group in healing spores, healing them for 10 Health (L4) to 225 health (L52) every 6 seconds, for 24 seconds. Stacks with the Healing Spores line of spells.",Alt,20,Heal Over Time,Shaman
 8,Summon Drink,"Summon a small amount of water, providing you with sustenance.",Con,10,Conjure Food & Water,Shaman
 8,Summon Food,"Summon a small amount of bread, providing you with sustenance.",Con,10,Conjure Food & Water,Shaman
-12,Consume,"Consume your own flesh, restoring 11 Mana at the cost of 25 Health.",Con,0,Mana Regen | (self only),Shaman
+12,Consume,"Consume your own flesh, restoring 48 Mana at the cost of 100 Health.",Con,0,Mana Regen | (self only),Shaman
 12,Enduring Breath,"Fill the lungs of your target with magical air, granting them the ability to breathe underwater for 1 hour.",Alt,30,Enduring Breath,Shaman
 12,Enfeeblement,"Enfeeble your target, decreasing their Strength, Dexterity, and Agility by 6 for 2 minutes.",Alt,15,Stat Debuff | +STR | +DEX | +AGI,Shaman
 12,Infectious Disease,"Infects your target with a fever, dealing 8 Disease Damage every 6 seconds for 1 minute.",Con,45,Damage Over Time | Disease,Shaman
@@ -975,7 +976,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 20,Lesser Regeneration,"Lightly regenerate your target, increasing their Health Regeneration by 5 for 30 minutes.",Alt,50,Health Regen,Shaman
 20,Salutary Spores,"Shower salutary spores on a friendly target, healing them 75 Health every 6 seconds for 24 seconds.",Alt,150,Heal Over Time,Shaman
 20,Shrink,"Shrink a target group member, reducing their overall size by 20% for 1 hour.",Alt,40,Misc.,Shaman
-24,Adrenaline,"Fill your target with adrenaline, increasing their Attack Speed by 30% (L16) to 40% (L32) for 1 hour.",Alt,75,Melee Haste,Shaman
+24,Adrenaline,"Haste your target, increasing their Melee and Ranged Attack Speed by 20% (L16) to 25% (L32) for 1 hour.",Alt,75,Melee Haste,Shaman
 24,Cleanse Diseases,"Cleanse your target, removing two Disease effects.",Alt,50,Cure | Disease,Shaman
 24,Cleanse Poisons,"Cleanse your target, removing two Poison effects.",Alt,50,Cure | Poison,Shaman
 24,Disease Resistance,"Greatly wards your target from sickness, increasing their Disease Resistance by 15.",Abj,,Resist | Disease,Shaman
@@ -987,7 +988,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 24,Shuddering Sickness,"Infects your target with a fever, dealing 30 Disease Damage every 6 seconds for 1 minute.",Con,130,Damage Over Time | Disease,Shaman
 24,Susceptibility III,"Makes your target more susceptible to ailments, decreasing their Disease, Poison, and Magic Resistance by 5 (L24) to 6 (L28). This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,40,Lower Resistance | Disease | Poison | Magic,Shaman
 24,Speed of Predator,"Infuse yourself with bestial speed, increasing your Movement Speed by 100% for 1 minute.",Alt,25,Movement Speed,Shaman
-28,Consume II,"Consume your flesh, granting 25 Mana at the cost of 50 Health.",Con,0,Mana Regen | (self only),Shaman
+28,Consume II,"Consume your flesh, granting 100 Mana at the cost of 200 Health.",Con,0,Mana Regen | (self only),Shaman
 28,Restorative Spores,"Shower restorative spores on a friendly target, healing them 115 Health every 6 seconds for 24 seconds.",Alt,200,Heal Over Time,Shaman
 28,Tainted Fumes,"Smother your target with tainted fumes, dealing 70 Poison Damage and an additional 35 Poison Damage every 6 seconds for 30 seconds.",Con,,Direct Damage | Damage Over Time | Poison,Shaman
 32,Afflicting Ailment,"Infects your target with a fever, dealing 55 Disease Damage every 6 seconds for 1 minute.",Con,,Damage Over Time | Disease,Shaman
@@ -1002,7 +1003,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 36,Wolf Spirit Pet Tier 2,Summons a Wolf Spirit to serve you. Persists until death of pet or master.,Con,,Pet,Shaman
 40,Abolish Magic,Removes two harmful magical effects from your current target.,Alt,,Cure | Magic,Shaman
 40,Irking Illness,"Infects your target with a fever, dealing 80 Disease Damage every 6 seconds for 1 minute.",Con,,Damage Over Time | Disease,Shaman
-40,Rapidity,"Haste your target, increasing their Attack Speed by 50% (L32) to 55% (L48) for 30 minutes.",Alt,,Melee Haste,Shaman
+40,Rapidity,"Haste your target, increasing their Attack Speed by 30% (L32) to 35% (L48) for 30 minutes.",Alt,,Melee Haste,Shaman
 40,Regenerative Spores,"Shower regenerative spores on a friendly target, healing them 160 Health every 6 seocnds for 24 seconds.",Alt,245,Health Regen,Shaman
 40,Susceptibility IV,"Makes your target more susceptible to ailments, decreasing their Disease, Poison, and Magic Resistance by 7 (L40) to 8 (L44). This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,,Lower Resistance | Disease | Poison | Magic,Shaman
 40,Wolf Spirit Pet Tier 3,Summons a Wolf Spirit to serve you. Persists until death of pet or master.,Con,,Pet,Shaman
