@@ -1384,6 +1384,10 @@ tr.cls-shadowknight:hover { background: color-mix(in srgb, var(--cls-shadowknigh
   line-height: 1.5;
 }
 
+.footnote-muted:first-of-type {
+  margin-top: 14px;
+}
+
 @media (max-width: 900px) {
   #tag-grid {
     grid-template-columns: 1fr 1fr;
