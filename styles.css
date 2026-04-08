@@ -227,7 +227,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Left column: party images stacked above class selection */
