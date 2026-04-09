@@ -724,7 +724,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 4,Divine Aegis,"Surround yourself with a divine aegis, granting you immunity to all damage for 15 seconds. Inflicts Exhausted Soul, preventing the application of immunity effects for 30 seconds. Can be used while stunned, mesmerized, or feared.",Abj,15,Damage Reduction | Absorb Damage Shield | (self only),Cleric
 4,Gate,Conjure a magical gate returning you to your bind location.,Alt,55,Gate | (self only),Cleric
 4,Holy Strike,"Strike down your target with holy energy, dealing 50% (L1) to 100% (L60) Weapon Damage plus 1 (L1) to 15 (L60) Holy Damage, and 1 (L1) to 15 (L60) Physical Damage.",Evo,0,Direct Damage | Physical | Holy,Cleric
-4,Impart Blessing,"Impart a blessing on your target, restoring 40 Health after 6 seconds.",Alt,20,Heal Over Time | Direct Heal,Cleric
+4,Impart Blessing,"Impart a blessing on your target, restoring 40 Health after 6 seconds.",Alt,20,Direct Heal,Cleric
 4,Lesser Heal,"Lightly heal your target, restoring 25 Health.",Alt,20,Direct Heal,Cleric
 4,Soulbind,"Bind the soul of a target group member to their current location, causing them to respawn there upon death. Has no effect in certain areas.",Alt,75,Bind,Cleric
 4,Summon Food,"Summon a small amount of bread, providing you with sustenance.",Con,10,Conjure Food & Water,Cleric
@@ -740,7 +740,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 8,Sense Magic,"Glaze the eyes of your target with a magical coating, granting them the ability to see magical effects when considering targets for 1 hour.",Div,20,Misc.,Cleric
 8,Snare the Dead,"Bind a target undead with holy chains, decreasing their Movement Speed by 35% for 30 seconds.",Alt,10,Snare | (undead only),Cleric
 12,Hallowed Barrier,"Calls forth a hallowed barrier to shield your target, absorbing 60 damage received for 15 seconds.",Abj,50,Absorb Damage Shield,Cleric
-12,Impart Prayer,"Impart a prayer on your target, restoring 140 Health after 6 seconds.",Alt,60,Heal Over Time | Direct Heal,Cleric
+12,Impart Prayer,"Impart a prayer on your target, restoring 140 Health after 6 seconds.",Alt,60,Direct Heal,Cleric
 12,Summon Drink,"Summons a small smount of water, providing you with sustenance.",Con,10,Conjure Food & Water,Cleric
 16,Beset the Dead,"Beset a target undead with a blast of energy, dealing 90 Holy Damage.",Evo,50,Direct Damage | Holy | (undead only),Cleric
 16,Summon Hammer of the Pious,"Summon a Hammer of the Pious, granting you a chance to activate Holy Smite on melee hits while equipped.",Con,30,Direct Damage | Holy | (self only),Cleric
@@ -752,7 +752,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 20,Cleanse Poisons,"Cleanse your target, removing two Poison effects.",Alt,50,Cure | Poison,Cleric
 20,Conciliate,"Conciliate your target, reducing their Aggro Radius for 4 minutes. This spell has a very slight chance to end early.",Alt,45,Pacify,Cleric
 20,Holy Valor,"Bestow holy valor upon your target, increasing their maximum Health by 125 for 30 minutes.",Abj,75,+HP,Cleric
-20,Impart Devotion,"Impart devotion on your target, healing them for 300 Health after 6 seconds.",Alt,115,Heal Over Time | Direct Heal,Cleric
+20,Impart Devotion,"Impart devotion on your target, healing them for 300 Health after 6 seconds.",Alt,115,Direct Heal,Cleric
 20,Inhibit Pain,"Inhibits the pain of a friendly target, reducing all damage received by 40% for 8 seconds.",Abj,30,Damage Reduction,Cleric
 20,Supplication II,"Cry out in prayer, increasing your Strength by 15 (L20) to 25 (L40) and Mana Regeneration by 2 for 1 minute.",Abj,6,+STR | Mana Regen,Cleric
 24,Consecrated Barrier,"Call forth a consecrated barrier to shield your target, absorbing 250 damage received for 15 seconds.",Abj,165,Absorb Damage Shield,Cleric
@@ -762,7 +762,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 24,Poison Resistance,"Greatly ward your target against toxins, increasing their Poison Resistance by 15 for 1 hour.",Abj,10,Resist | Poison,Cleric
 24,Rebuke,"Rebuke your target with divine energy, dealing 135 Holy Damage.",Evo,90,Direct Damage | Holy,Cleric
 24,Resuscitation,"Resuscitate a target corpse, restoring 35% Experience. Inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,200,Resurrection,Cleric
-28,Impart Faith,"Impart faith on your target, restoring 600 Health after 6 seconds.",Alt,195,Heal Over Time | Direct Heal,Cleric
+28,Impart Faith,"Impart faith on your target, restoring 600 Health after 6 seconds.",Alt,195,Direct Heal,Cleric
 28,Rebuff the Dead,"Rebuff a target undead with a blast of energy, dealing 150 Holy Damage.",Evo,70,Direct Damage | Holy | (undead only),Cleric
 32,Atonement,"Submit your target to holy judgment, granting them a chance to forget past transgressions. This spell has a chance to critically fail.",Alt,50,Aggro Reduction | Aggro Gen,Cleric
 32,Conjure Drink,"Conjure a large amount of water, providing you with sustenance.",Con,20,Conjure Food & Water,Cleric
@@ -788,7 +788,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 48,Sacred Barrier,"Call forth a sacred barrier to shield your target, absorbing 800 damage received for 15 seconds.",Abj,255,Absorb Damage Shield,Cleric
 50,Supplication IV,"Cry out in prayer, increasing your Strength by 50 and Mana Regeneration by 4 for 1 minute.",Abj,12,+STR | Mana Regen,Cleric
 52,Assail the Dead,"Assail a target undead with a blast of energy, dealing 525 Holy Damage.",Evo,165,Direct Damage | Holy | (undead only),Cleric
-52,Impart Sanctity,"Impart sanctity on your target, restoring 1800 Health after 6 seconds.",Alt,500,Heal Over Time | Direct Heal,Cleric
+52,Impart Sanctity,"Impart sanctity on your target, restoring 1800 Health after 6 seconds.",Alt,500,Direct Heal,Cleric
 55,Resurrection,"Resurrect a target corpse, restoring 95% Experience. Inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,,Resurrection,Cleric
 56,Healing Radiance,"Shine a radiant light on targets in a frontal cone, restoring 950 Health.",Alt,,AoE | Direct Heal,Cleric
 56,Holy Resolution,"Bestow holy resolution upon your target, increasing their maximum Health by 500 for 1 hour.",Abj,,+HP,Cleric
@@ -958,7 +958,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 8,See Invisibility,"Glaze the eyes of your target with a magical coating, granting them the ability to see invisible entities for 1 hour.",Div,20,Misc.,Shaman
 8,Sense Magic,"Glaze the eyes of your target with a magical coating, granting them the ability to see magical effects when considering targets for 1h.",Div,20,Misc.,Shaman
 8,Speed of the Wild,"Infuse your target with bestial speed, increasing their Movement Speed by 40% (L8) to 60% (L60) for 1 hour.",Alt,20,Movement Speed,Shaman
-8,Spore Discharge,"Envelop your group in healing spores, healing them for 10 Health (L4) to 225 health (L52) every 6 seconds, for 24 seconds. Stacks with the Healing Spores line of spells.",Alt,20,Heal Over Time,Shaman
+8,Spore Discharge,"Envelop your group in healing spores, healing them for 10 Health (L4) to 225 health (L52) every 6 seconds, for 24 seconds. Stacks with the Healing Spores line of spells.",Alt,20,AoE | Heal Over Time,Shaman
 8,Summon Drink,"Summon a small amount of water, providing you with sustenance.",Con,10,Conjure Food & Water,Shaman
 8,Summon Food,"Summon a small amount of bread, providing you with sustenance.",Con,10,Conjure Food & Water,Shaman
 12,Consume,"Consume your own flesh, restoring 48 Mana at the cost of 100 Health.",Con,0,Mana Regen | (self only),Shaman
