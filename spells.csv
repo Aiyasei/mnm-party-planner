@@ -716,7 +716,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Poison Protection,"Ward your target against toxins, increasing their Poison Resistance by 5 for 1 hour.",Abj,10,Resist | Poison,Cleric
 1,Shock,"Shock your target with divine energy, dealing 3 (L1) to 5 (L4) Holy Damage.",Evo,9,Direct Damage | Holy,Cleric
 1,Stun,"Shocks your target into a daze, stunning them for 4 seconds.",Evo,15,Stun,Cleric
-1,Supplication,"Cry out in prayer, increasing your Strength by 2 (L1) to 10 (L20) and mana regeneration by 1 for 1 minute.",Abj,3,+STR | Mana Regen,Cleric
+1,Supplication,"Cry out in prayer, increasing your Strength by 2 (L1) to 10 (L20) and mana regeneration by 1 for 1 minute.",Abj,3,+STR | Mana Regen | (self only),Cleric
 4,Blessed Barrier,"Call forth a blessed barrier to shield your target, absorbing 25 damage received for 15 seconds.",Abj,20,Absorb Damage Shield,Cleric
 4,Blind,"Shroud the vision of your target, blinding them for 12 seconds.",Alt,15,Blind,Cleric
 4,Chasten,"Chasten your target with divine energy, dealing 11 (L4) to 14 (L7) Holy Damage.",Evo,10,Direct Damage | Holy,Cleric
@@ -754,7 +754,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 20,Holy Valor,"Bestow holy valor upon your target, increasing their maximum Health by 125 for 30 minutes.",Abj,75,+HP,Cleric
 20,Impart Devotion,"Impart devotion on your target, healing them for 300 Health after 6 seconds.",Alt,115,Direct Heal,Cleric
 20,Inhibit Pain,"Inhibits the pain of a friendly target, reducing all damage received by 40% for 8 seconds.",Abj,30,Damage Reduction,Cleric
-20,Supplication II,"Cry out in prayer, increasing your Strength by 15 (L20) to 25 (L40) and Mana Regeneration by 2 for 1 minute.",Abj,6,+STR | Mana Regen,Cleric
+20,Supplication II,"Cry out in prayer, increasing your Strength by 15 (L20) to 25 (L40) and Mana Regeneration by 2 for 1 minute.",Abj,6,+STR | Mana Regen | (self only),Cleric
 24,Consecrated Barrier,"Call forth a consecrated barrier to shield your target, absorbing 250 damage received for 15 seconds.",Abj,165,Absorb Damage Shield,Cleric
 24,Corruption Resistance,"Greatly ward your target against subversion, increasing their Corruption Resistance by 15 for 1 hour.",Abj,40,Resist | Corruption,Cleric
 24,Disease Resistance,"Greatly ward your target against subversion, increasing their Disease Resistance by 15 for 1 hour.",Abj,40,Resist | Disease,Cleric
@@ -779,14 +779,14 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 40,Impart Favor,"Impart favor on your target, restoring 1200 Health after 6 seconds.",Alt,330,Direct Heal,Cleric
 40,Propitiate,"Propitiate your target, reducing their Aggro Radius for 5 minutes. This spell has a very slight chance to end early.",Alt,90,Pacify,Cleric
 40,Smite,"Smite your target with divine energy, dealing 250 Holy Damage.",Evo,125,Direct Damage | Holy,Cleric
-40,Supplication III,"Cry out in prayer, increasing your Strength by 30 (L40) to 40 (L60) and Mana Regeneration by 3 for 1 minute.",Abj,9,+STR | Mana Regen,Cleric
+40,Supplication III,"Cry out in prayer, increasing your Strength by 30 (L40) to 40 (L60) and Mana Regeneration by 3 for 1 minute.",Abj,9,+STR | Mana Regen | (self only),Cleric
 44,Holy Resolve,"Bestow holy resolve upon your target, increasing their maximum Health by 250 for 1 hour.",Abj,150,+HP,Cleric
 48,Healing Brilliance,"Shine a brilliant light on targets in a frontal cone, restoring 600 Health.",Alt,780,AoE | Direct Heal,Cleric
 48,Summon Hammer of the Divine,"Summon a Hammer of the Divine, granting you a chance to activate Holy Smite on melee hits while equipped.",Con,125,Direct Damage | Holy | (self only),Cleric
 48,Reckoning,"Condemn your target with divine energy, dealing 325 Holy Damage.",Evo,150,Direct Damage | Holy,Cleric
 48,Revival,"Revive a target corpse, restoring 75% Experience. Inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,350,Resurrection,Cleric
 48,Sacred Barrier,"Call forth a sacred barrier to shield your target, absorbing 800 damage received for 15 seconds.",Abj,255,Absorb Damage Shield,Cleric
-50,Supplication IV,"Cry out in prayer, increasing your Strength by 50 and Mana Regeneration by 4 for 1 minute.",Abj,12,+STR | Mana Regen,Cleric
+50,Supplication IV,"Cry out in prayer, increasing your Strength by 50 and Mana Regeneration by 4 for 1 minute.",Abj,12,+STR | Mana Regen | (self only),Cleric
 52,Assail the Dead,"Assail a target undead with a blast of energy, dealing 525 Holy Damage.",Evo,165,Direct Damage | Holy | (undead only),Cleric
 52,Impart Sanctity,"Impart sanctity on your target, restoring 1800 Health after 6 seconds.",Alt,500,Direct Heal,Cleric
 55,Resurrection,"Resurrect a target corpse, restoring 95% Experience. Inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,,Resurrection,Cleric
@@ -1334,7 +1334,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Shoot,Shoot your target with a bow. (requires bow & arrows),Mar,Innate,Direct Damage | Physical,Paladin
 1,Slam,"Forcefully slam your target, dealing 100% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing your Threat by 20 (L1) to 200 (L60). Has a chance to stun from behind the target.",Mit,Innate,Direct Damage | Physical | Aggro Gen | Stun,Paladin
 1,Weak Heal,"Weakly heals the wounds of a friendly target, healing them for 6 Health.",Alt,7,Direct Heal,Paladin
-2,Supplication,"Cry out in prayer, increasing your Strength by 2 (L1) to 10 (L20) and Mana Regeneration by 1 for 1 minute.",Abj,3,+STR | Mana Regen,Paladin
+2,Supplication,"Cry out in prayer, increasing your Strength by 2 (L1) to 10 (L20) and Mana Regeneration by 1 for 1 minute.",Abj,3,+STR | Mana Regen | (self only),Paladin
 3,Cure Disease,Cures target of disease effects,Alt,10,Cure | Disease,Paladin
 4,Kick,"Interrupting target cast, locking them out of that school of magic for 4 seconds.",Acr,Innate,Interrupt,Paladin
 4,Minor Heal,"Slightly heals the wounds of a friendly target, healing them for 10 Health.",Alt,8,Direct Heal,Paladin
@@ -1372,7 +1372,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 24,Stun,"Shocks your target, applying a Stun for 4 seconds.",Evo,15,Stun,Paladin
 28,Holy Valor,Increases the maximum health of a friendly target by 125 for 30 minutes.,Abj,75,+HP,Paladin
 29,Greater Heal,"Greatly heals the wounds of a friendly target, healing them for 325 Health.",Alt,150,Direct Heal,Paladin
-30,Supplication II,"Cry out in prayer, increasing your Strength by 15 (L20) to 25 (L40) and Mana Regeneration by 2 for 1 minute.",Abj,6,+STR | Mana Regen,Paladin
+30,Supplication II,"Cry out in prayer, increasing your Strength by 15 (L20) to 25 (L40) and Mana Regeneration by 2 for 1 minute.",Abj,6,+STR | Mana Regen | (self only),Paladin
 32,Conciliate,"Conciliate your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,15,Pacify,Paladin
 36,Conciliate the Masses,"Conciliate your target, reducing their Body Aggro Radius for 4 minutes.",Alt,,Pacify,Paladin
 36,Rebuff the Dead,Wards an undead target with holy energy for 150 points of Holy Damage.,Evo,,Direct Damage | Holy | (undead only),Paladin
@@ -1383,7 +1383,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 44,Poison Resistance,"Greatly wards your target from toxins, increasing their Poison Resistance by 15.",Abj,10,Resist | Poison,Paladin
 48,Beleaguer the Dead,Wards an undead target with holy energy for 245 points of Holy Damage.,Evo,,Direct Damage | Holy | (undead only),Paladin
 50,Exceptional Heal,"Exceptionally heals the wounds of a friendly target, healing them for 600 Health.",Alt,230,Direct Heal,Paladin
-50,Supplication III,"Cry out in prayer, increasing your Strength by 30 (L40) to 40 (L60) and Mana Regeneration by 3 for 1 minute.",Abj,,+STR | Mana Regen,Paladin
+50,Supplication III,"Cry out in prayer, increasing your Strength by 30 (L40) to 40 (L60) and Mana Regeneration by 3 for 1 minute.",Abj,,+STR | Mana Regen | (self only),Paladin
 51,Propitiate,"Propitiate your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,15,Pacify,Paladin
 52,Holy Resolve,Increases the maximum Health of a friendly target by 500 for 30 minutes.,Abj,150,+HP,Paladin
 55,Abolish Magic,Removes two harmful magical effects from your current target.,Alt,100,Cure | Magic,Paladin
@@ -1391,7 +1391,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 56,Reawaken,"Reawaken a target corpse, restoring 50% experience. This spell inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,,Resurrection,Paladin
 60,Assail the Dead,Wards an undead target with holy energy for 525 points of Holy Damage.,Evo,,Direct Damage | Holy | (undead only),Paladin
 60,Divine Spark,"Grants Divine Spark to your target, increasing their maximum Health by 250 for 30 minutes.",Abj,,+HP,Paladin
-60,Supplication IV,"Cry out in prayer, increasing your Strength by 50 and Mana Regeneration by 4 for 1 minute.",Abj,,+STR | Mana Regen,Paladin
+60,Supplication IV,"Cry out in prayer, increasing your Strength by 50 and Mana Regeneration by 4 for 1 minute.",Abj,,+STR | Mana Regen | (self only),Paladin
 1,Aura of Vampirism,"An aura which causes the Melee and Ranged attacks of your group to have a chance to drain life from your enemies, dealing 1 (L1) to 30 (L60) damage and healing.",Alt,Innate,Lifesteal | AURA,Shadow Knight
 1,Draw Strength,"Draws the Strength of an enemy target, reducing their Strength by 2 and increasing your own Strength by 2 for 5 minutes.",Alt,5,Stat Debuff | +STR | (self only),Shadow Knight
 1,Locate Corpse,Locates a target player's nearest corpse.,Div,5,Misc.,Shadow Knight
