@@ -157,6 +157,12 @@ nav a.nav-highlight {
   padding: 6px 14px;
   border-radius: 3px;
   transition: background 0.2s, box-shadow 0.2s;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(232,123,30,0.3), 0 0 0px rgba(232,123,30,0); border-color: var(--orange-dim); }
+  50%       { box-shadow: 0 0 14px rgba(232,123,30,0.9), 0 0 28px rgba(232,123,30,0.4); border-color: var(--orange); }
 }
 
 nav a.nav-highlight:hover {
