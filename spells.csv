@@ -250,61 +250,61 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 16,Life Siphon,"Siphons your target's life force, dealing 100 damage and healing you for the same amount.",Evo,60,Direct Damage | Corruption | Lifetap,Necromancer
 16,Raise the Departed,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of pet or master. Requires Bone Chips.",Con,130,Pet,Necromancer
 16,Spellshield,"A magical shield encircles you, increasing your HP by 50, AC by 15, and Magic Resistance by 15.",Abj,50,+HP | +AC | Resist | Magic | (self only),Necromancer
-16,Steal Strength,"Steal power from your target, decreasing their Strength by 5 and increasing yours by the same amount for 5 minutes.",Alt,,Stat Debuff | +STR,Necromancer
+16,Steal Strength,"Steal power from your target, decreasing their Strength by 5 and increasing yours by the same amount for 5 minutes.",Alt,10,Stat Debuff | +STR,Necromancer
 16,Summon Lesser Lifestone,"Summon a Lesser Lifestone, restoring 75 Health when consumed at the cost of 100 Health. This item can be traded to other players. This item does not persist after logging out.",Con,80,Summon Lifestone,Necromancer
 16,Venomous Deluge,"Showers your target in a venomous deluge, dealing 40 Poison Damage and an additional 20 Poison Damage every 6 seconds for 30 seconds.",Con,70,Direct Damage | Damage Over Time | Poison,Necromancer
 16,Zombie Pet Tier 5,"Reanimates flesh from the dead, creating a zombie minion to serve you. This pet uses Unnerving Wail. Persists until death of pet or master. Requires Zombie Skin.",Con,130,Pet,Necromancer
 20,Beset the Dead,Wards off an undead target with holy energy for 90 points of Holy Damage.,Evo,,MISSING INFO TAG NEEDED,Necromancer
-20,Covenant of Life,"Form a covenant of life with your target, restoring 20 Health every 6 seconds and draining yours by the same amount for 24 seconds.",Alt,,Transfer Health,Necromancer
-20,Death Pact,"Form a blood pact with the dead, increasing your Mana Regeneration by 6 Mana per 6 second tick, but also damaging you over time for 6 Damage every 6 seconds for 30 minutes.",Alt,,Mana Regen | (self only),Necromancer
+20,Covenant of Life,"Form a covenant of life with your target, restoring 20 Health every 6 seconds and draining yours by the same amount for 24 seconds.",Alt,10,Transfer Health,Necromancer
+20,Death Pact,"Form a blood pact with the dead, increasing your Mana Regeneration by 6 Mana per 6 second tick, but also damaging you over time for 6 Damage every 6 seconds for 30 minutes.",Alt,5,Mana Regen | (self only),Necromancer
 20,Ghoul Pet Tier 6,"Reanimates a corrupted being from the dead, creating a ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,170,Pet | Snare,Necromancer
-20,Mental Surge,"Fills your target's mind with a mental surge, granting them 50 Mana at the cost of 75 Mana.",Alt,,Transfer Mana,Necromancer
+20,Mental Surge,"Fills your target's mind with a mental surge, granting them 50 Mana at the cost of 75 Mana.",Alt,75,Transfer Mana,Necromancer
 20,Reanimate Ally,"Reanimates the corpse of a player character, returning the character to their corpse and restoring 100% of experience lost. The reanimated player will die after 1 minute.",,,Resurrection,Necromancer
 20,Root,"Roots emerge from the ground and cling to your target's feet, applying an immobilize effect for 30 seconds. This effect has a change to be removed by Damage or end early. Limit one.",Alt,15,Root,Necromancer
 20,Skeleton Pet Tier 6,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of pet or master. Requires Bone Chips.",Con,170,Pet,Necromancer
-20,Unrelenting Dead,"Infuse your pet with unrelenting might, increasing their Attack Speed by 20% and Strength by 5.",Alt,,+STR | Melee Haste | (pet only),Necromancer
+20,Unrelenting Dead,"Infuse your pet with unrelenting might, increasing their Attack Speed by 20% and Strength by 5.",Alt,60,+STR | Melee Haste | (pet only),Necromancer
 20,Whirling Shadows,"Conjures whirling shadows, slowing your targets movement speed by 50% and inflicting 9 Corruption Damage every 6 seconds for 48 seconds.",Alt,80,Damage Over Time | Corruption | Snare,Necromancer
 20,Zombie Pet Tier 6,"Reanimates flesh from the dead, creating a zombie minion to serve you. This pet uses Unnerving Wail. Persists until death of pet or master. Requires Zombie Skin.",Con,170,Pet,Necromancer
 24,Beguile Dead,"Charm a target undead, forcing them to fight alongside you.",Con,,Charm | (undead only),Necromancer
 24,Cold Resistance,"Greatly wards your target from frost, increasing their Cold Resistance by 15.",Abj,,Resist | Cold,Necromancer
-24,Ghoul Pet Tier 7,"Reanimates bodies from the dead, creating a Ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,,Pet | Snare,Necromancer
-24,Greater Spellshield,"A magical shield encircles you, increasing your HP by 75, AC by 20, and Magic Resistance by 20.",Abj,,+HP | +AC | Resist | Magic | (self only),Necromancer
+24,Ghoul Pet Tier 7,"Reanimates bodies from the dead, creating a Ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,210,Pet | Snare,Necromancer
+24,Greater Spellshield,"A magical shield encircles you, increasing your HP by 75, AC by 20, and Magic Resistance by 20.",Abj,75,+HP | +AC | Resist | Magic | (self only),Necromancer
 24,Holy Resistance,"Greatly wards your target from frost, increasing their Holy Resistance by 15.",Abj,,Resist | Holy,Necromancer
-24,Leech Essence,"Leech the essence of your target, dealing 20 Corruption Damage every 6 seconds and restoring your Health by the same amount for 1 minute.",Evo,,Damage Over Time | Corruption | Lifetap,Necromancer
+24,Leech Essence,"Leech the essence of your target, dealing 20 Corruption Damage every 6 seconds and restoring your Health by the same amount for 1 minute.",Evo,125,Damage Over Time | Corruption | Lifetap,Necromancer
 24,Life Leech,"Leeches your target's life force, dealing 165 damage and healing you for the same amount.",Evo,115,Direct Damage | Corruption | Lifetap,Necromancer
-24,Sacrificial Embrace,"Embrace your target with looming shadows, restoring 80 Health and draining yours by the same amount.",Alt,,Transfer Health,Necromancer
-24,Skeleton Pet Tier 7,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of master. Requires Bone Chips.",Con,,Pet,Necromancer
-24,Spirit Crack,"Crack the spiritual defenses of your target, decreasing their Corruption, Holy, and Magic Resistance by 5 (L24) to 6 (L28). This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,,Lower Resistance | Corruption | Holy | Magic,Necromancer
-24,Stitch the Dead,"Stitch the body of an undead pet, restoring 180 Health.",Alt,,Direct Heal | (pet only),Necromancer
+24,Sacrificial Embrace,"Embrace your target with looming shadows, restoring 80 Health and draining yours by the same amount.",Alt,45,Transfer Health,Necromancer
+24,Skeleton Pet Tier 7,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of master. Requires Bone Chips.",Con,210,Pet,Necromancer
+24,Spirit Crack,"Crack the spiritual defenses of your target, decreasing their Corruption, Holy, and Magic Resistance by 5 (L24) to 6 (L28). This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,40,Lower Resistance | Corruption | Holy | Magic,Necromancer
+24,Stitch the Dead,"Stitch the body of an undead pet, restoring 180 Health.",Alt,85,Direct Heal | (pet only),Necromancer
 24,Summon Corpse,Summons corpse.,Div,,Misc.,Necromancer
-24,Toxic Deluge,"Showers your target in a toxic deluge, dealing 90 damage and an additional 45 damage every 6 seconds for 30 seconds.",Con,,Direct Damage | Damage Over Time | Poison,Necromancer
-24,Zombie Pet Tier 7,"Reanimates bodies from the dead, creating a Zombie minion to serve you. This pet uses Unnerving Wail. Persists until death of pet or master. Requires Zombie Skin.",Con,,Pet,Necromancer
+24,Toxic Deluge,"Showers your target in a toxic deluge, dealing 90 damage and an additional 45 damage every 6 seconds for 30 seconds.",Con,135,Direct Damage | Damage Over Time | Poison,Necromancer
+24,Zombie Pet Tier 7,"Reanimates bodies from the dead, creating a Zombie minion to serve you. This pet uses Unnerving Wail. Persists until death of pet or master. Requires Zombie Skin.",Con,210,Pet,Necromancer
 28,Arcane Surge,Grants your target 90 Mana at the cost of 130 Mana,Alt,130,Transfer Mana,Necromancer
-28,Ghoul Pet Tier 8,"Reanimates bodies from the dead, creating a Ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,,Pet | Snare,Necromancer
-28,Shuddering Sickness,"Infect your target with sickness, dealing 30 Disease Damage every 6 seconds for 1 minute.",Con,,Damage Over Time | Disease,Necromancer
-28,Skeleton Pet Tier 8,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of master. Requires Bone Chips.",Con,,Pet,Necromancer
+28,Ghoul Pet Tier 8,"Reanimates bodies from the dead, creating a Ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,260,Pet | Snare,Necromancer
+28,Shuddering Sickness,"Infect your target with sickness, dealing 30 Disease Damage every 6 seconds for 1 minute.",Con,105,Damage Over Time | Disease,Necromancer
+28,Skeleton Pet Tier 8,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of master. Requires Bone Chips.",Con,260,Pet,Necromancer
 28,Summon Lifestone,"Summon a Lifestone, restoring 390 Health when consumed at the cost of 520 Health. This item can be traded to other players. This item does not persist after logging out.",Con,200,Summon Lifestone,Necromancer
-28,Twisting Shadows,"Conjures twisting shadows, slowing your targets movement speed by 55% and inflicting 15 Corruption Damage every 6 seconds for 60 seconds.",Alt,,Damage Over Time | Corruption | Snare,Necromancer
-28,Zombie Pet Tier 8,"Reanimates bodies from the dead, creating a Zombie minion to serve you. This pet uses Unnerving Wail. Persists until death of pet or master. Requires Zombie Skin.",Con,170,Pet,Necromancer
-32,Abolish Magic,Removes two harmful magical effects from your current target.,Alt,,Cure | Magic,Necromancer
-32,Exceptional Spellshield,"A magical shield encircles you, increasing your HP by 100, AC by 25, and Magic Resistance by 25.",Abj,,+HP | +AC | Resist | Magic | (self only),Necromancer
-32,Extract Strength,"Extract power from your target, decreasing their Strength by 10 and increasing yours by the same amount for 5 minutes.",Alt,,Stat Debuff | +STR,Necromancer
-32,Ghoul Pet Tier 9,"Reanimates bodies from the dead, creating a Ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,130,Pet | Snare,Necromancer
-32,Pernicious Deluge,"Showers your target in a pernicious deluge, dealing 150 damage and an additional 75 damage every 6 seconds for 30 seconds.",Con,,Direct Damage | Damage Over Time | Poison,Necromancer
-32,Rebuff the Dead,Wards an Undead target with holy energy for 150 points of Holy Damage.,Evo,,Direct Damage | Holy | (undead only),Necromancer
-32,Shed Bones,"Shed away your bones, increasing your Mana Regeneration by 8 at the cost of 10 Health every 6 seconds.",Alt,,Mana Regen | Shapeshift | (self only),Necromancer
-32,Skeleton Pet Tier 9,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of master. Requires Bone Chips.",Con,,Pet,Necromancer
-32,Zombie Pet Tier 9,"Reanimates bodies from the dead, creating a Zombie minion to serve you. This pet uses Unnerving Wail. Persists until death of pet or master. Requires Zombie Skin.",Con,,Pet,Necromancer
-36,Afflicting Ailment,"Infect your target with an ailment, dealing 55 Disease Damage every 6 seconds for 1 minute.",Con,,Damage Over Time | Disease,Necromancer
-36,Coax Undead,"Charm a target undead, forcing them to fight alongside you.",Con,,Charm | (undead only),Necromancer
-36,Ghoul Pet Tier 10,"Reanimates bodies from the dead, creating a Ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,,Pet | Snare,Necromancer
-36,Leech Spirit,"Leech the spirit of your target, dealing 40 Corruption Damage every 6 seconds and restoring your Health by the same amount for 1 minute.",Evo,,Damage Over Time | Corruption | Lifetap,Necromancer
-36,Life Tap,"Taps your target's life force, dealing 270 damage and healing you for the same amount.",Evo,110,Direct Damage | Corruption | Lifetap,Necromancer
-36,Reconstruct the Dead,"Reconstruct the body of an undead pet, restoring 420 Health.",Alt,,Direct Heal | (pet only),Necromancer
-36,Skeleton Pet Tier 10,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of master. Requires Bone Chips.",Con,,Pet,Necromancer
-36,Spiraling Shadows,"Conjures spiraling shadows, slowing your targets movement speed by 60% and inflicting 25 Corruption Damage every 6 seconds for 72 seconds.",Alt,,Damage Over Time | Corruption | Snare,Necromancer
-36,Unyielding Dead,"Infuse your pet with unyielding might, increasing their Attack Speed by 30% and Strength by 10.",Alt,,+STR | Melee Haste | (pet only),Necromancer
-36,Zombie Pet Tier 10,"Reanimates bodies from the dead, creating a Zombie minion to serve you. This pet uses Unnerving Wail. Persists until death of pet or master. Requires Zombie Skin.",Con,,Pet,Necromancer
+28,Twisting Shadows,"Conjures twisting shadows, slowing your targets movement speed by 55% and inflicting 15 Corruption Damage every 6 seconds for 60 seconds.",Alt,70,Damage Over Time | Corruption | Snare,Necromancer
+28,Zombie Pet Tier 8,"Reanimates bodies from the dead, creating a Zombie minion to serve you. This pet uses Unnerving Wail. Persists until death of pet or master. Requires Zombie Skin.",Con,260,Pet,Necromancer
+32,Abolish Magic,Removes two harmful magical effects from your current target.,Alt,100,Cure | Magic,Necromancer
+32,Exceptional Spellshield,"A magical shield encircles you, increasing your HP by 100, AC by 25, and Magic Resistance by 25.",Abj,125,+HP | +AC | Resist | Magic | (self only),Necromancer
+32,Extract Strength,"Extract power from your target, decreasing their Strength by 10 and increasing yours by the same amount for 5 minutes.",Alt,15,Stat Debuff | +STR,Necromancer
+32,Ghoul Pet Tier 9,"Reanimates bodies from the dead, creating a Ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,310,Pet | Snare,Necromancer
+32,Pernicious Deluge,"Showers your target in a pernicious deluge, dealing 150 damage and an additional 75 damage every 6 seconds for 30 seconds.",Con,185,Direct Damage | Damage Over Time | Poison,Necromancer
+32,Rebuff the Dead,Wards an Undead target with holy energy for 150 points of Holy Damage.,Evo,70,Direct Damage | Holy | (undead only),Necromancer
+32,Shed Bones,"Shed away your bones, increasing your Mana Regeneration by 8 at the cost of 10 Health every 6 seconds.",Alt,5,Mana Regen | Shapeshift | (self only),Necromancer
+32,Skeleton Pet Tier 9,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of master. Requires Bone Chips.",Con,310,Pet,Necromancer
+32,Zombie Pet Tier 9,"Reanimates bodies from the dead, creating a Zombie minion to serve you. This pet uses Unnerving Wail. Persists until death of pet or master. Requires Zombie Skin.",Con,310,Pet,Necromancer
+36,Afflicting Ailment,"Infect your target with an ailment, dealing 55 Disease Damage every 6 seconds for 1 minute.",Con,155,Damage Over Time | Disease,Necromancer
+36,Coax Undead,"Charm a target undead, forcing them to fight alongside you.",Con,175,Charm | (undead only),Necromancer
+36,Ghoul Pet Tier 10,"Reanimates bodies from the dead, creating a Ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,360,Pet | Snare,Necromancer
+36,Leech Spirit,"Leech the spirit of your target, dealing 40 Corruption Damage every 6 seconds and restoring your Health by the same amount for 1 minute.",Evo,200,Damage Over Time | Corruption | Lifetap,Necromancer
+36,Life Tap,"Taps your target's life force, dealing 270 damage and healing you for the same amount.",Evo,160,Direct Damage | Corruption | Lifetap,Necromancer
+36,Reconstruct the Dead,"Reconstruct the body of an undead pet, restoring 420 Health.",Alt,145,Direct Heal | (pet only),Necromancer
+36,Skeleton Pet Tier 10,"Reanimates bones from the dead, creating a skeleton minion to serve you. This pet uses Strike. Persists until death of master. Requires Bone Chips.",Con,360,Pet,Necromancer
+36,Spiraling Shadows,"Conjures spiraling shadows, slowing your targets movement speed by 60% and inflicting 25 Corruption Damage every 6 seconds for 72 seconds.",Alt,120,Damage Over Time | Corruption | Snare,Necromancer
+36,Unyielding Dead,"Infuse your pet with unyielding might, increasing their Attack Speed by 30% and Strength by 10.",Alt,125,+STR | Melee Haste | (pet only),Necromancer
+36,Zombie Pet Tier 10,"Reanimates bodies from the dead, creating a Zombie minion to serve you. This pet uses Unnerving Wail. Persists until death of pet or master. Requires Zombie Skin.",Con,360,Pet,Necromancer
 40,Arch Spellshield,"A magical shield encircles you, increasing your HP by 150, AC by 30, and Magic Resistance by 30.",Abj,,+HP | +AC | Resist | Magic | (self only),Necromancer
 40,Covenant of Darkness,"Form a covenant of darkness with your target, restoring 90 Health every 6 seconds and draining yours by the same amount for 24 seconds.",Alt,,Transfer Health,Necromancer
 40,Ghoul Pet Tier 11,"Reanimates bodies from the dead, creating a Ghoul minion to serve you. This pet uses Ghoul Tendrils. Persists until death of pet or master. Requires Ghoul Skin.",Con,,Pet | Snare,Necromancer
@@ -398,19 +398,20 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 20,Arcane Invocation,"Invoke the arcane, restoring 55 (L20) to 165 (L60) Mana as you channel every 2 seconds for 10 seconds.",Alt,0,Mana Regen | (self only),Wizard
 20,Electric Wave,"Zap your target with an electric wave, dealing 165 Electricity Damage and stunning them for 0.1 second.",Evo,90,Direct Damage | Electricity | Stun,Wizard
 20,Greater Purge,"Purge an enemy and up to 5 additional nearby targets, dispelling a magical effect, as well as all songs and immunities.",Alt,150,AoE | Purge | Magic,Wizard
+20,Mana Arrows,"Launch arrows of pure mana at your target, dealing 8 (L20) to 12 (L28) Magic Damage four times.",Evo,0,Direct Damage | Magic,Wizard
 20,Invert Gravity,"Blast your target with an anti-gravity wave, launching them into the air.",Evo,9999,Direct Damage | Misc.,Wizard
 24,Arcane Bonds,"Summon Arcane Bonds, that cling to the feet of your target and three other targets within 8 meters, applying a 50% Snare effect for 2 minutes.",Alt,70,AoE | Snare,Wizard
 24,Blanket of Magma,"Engulf your target and those around it in a blanket of magma, dealing 135 Fire Damage.",Evo,125,Direct Damage | Fire,Wizard
 24,Blaze,Engulfs your target with a blaze for 200 points of Fire Damage.,Evo,105,Direct Damage | Fire,Wizard
 24,Electricity Resistance,"Greatly wards your target from shock, increasing their Electricity Resistance by 15.",Abj,40,Resist | Electricity,Wizard
-24,Glass Flats Gate,"Teleport yourself, relocating to Glass Flats.",Alt,125,Teleport | (self only),Wizard
 24,Greater Spellshield,"A magical shield encircles you, increasing your HP by 75, AC by 20, and Magic Resistance by 20.",Abj,75,+HP | +AC | Resist | Magic | (self only),Wizard
 24,Lesser Lure of Freezing,"Unleash hard to resist, icy magic upon your target for 125 points of Cold Damage.",Evo,,Direct Damage | Cold,Wizard
 24,Lesser Lure of Magma,"Unleash hard to resist, fiery magic upon your target for 125 points of Fire Damage.",Evo,105,Direct Damage | Fire,Wizard
 24,Magic Resistance,"Greatly wards your target from the arcane, increasing their Magic Resistance by 15.",Abj,40,Resist | Magic,Wizard
-24,Shaded Dunes Portal,Send your group through a portal to Shaded Dunes.,Alt,,Teleport,Wizard
+24,Glass Flats Gate,"Teleport yourself, relocating to Glass Flats.",Alt,125,Teleport | (self only),Wizard
 24,Vale of Zintar Gate,"Teleport yourself, relocating to Vale of Zintar.",Alt,125,Teleport | (self only),Wizard
-24,Evershade Weald Portal,Send your group through a portal to Evershade Weald.,Alt,,Teleport,Wizard
+24,Shaded Dunes Portal,Send your group through a portal to Shaded Dunes.,Alt,300,Teleport,Wizard
+24,Evershade Weald Portal,Send your group through a portal to Evershade Weald.,Alt,300,Teleport,Wizard
 28,Electric Current,"Zap your target with electric current, dealing 270 Electricity Damage and stunning them for 0.1 second.",Alt,,Direct Damage | Electricity | Stun,Wizard
 32,Abolish Magic,Removes two magical effects from your current target.,Alt,,Cure | Purge | Magic,Wizard
 32,Blanket of Lava,Unleashes a blanket of lava hitting your target and up to 3 nearby targets for 225 points of Fire Damage.,Evo,,AoE | Direct Damage | Fire,Wizard
@@ -479,10 +480,11 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 9,Twisting Roots,"Large roots emerge from the ground and cling to your target's feet, applying an immobilize effect for 30 seconds. This effect has a chance to be removed by Damage.",Alt,15,Root,Ranger
 10,Whistling Shot,"Fire a whistling shot at your target, dealing 90% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing Threat by 25 (L1) to 250 (L60).",Mit,Innate,Direct Damage | Physical | Aggro Gen,Ranger
 11,Fire Arrows,"Imbue your arrows with fire, increasing your Ranged Damage dealt by 1 (L1) to 7 (L60) Fire Damage. Additionally, each ranged attack grants you a chance to activate Fire Arrow Advantage reducing cast time of your next Flameburst or Burning Embers line by 100% for 10 seconds.",Alt,Innate,Fire | Spell Haste | (self only),Ranger
+11,Imbue Weapon: Fire,"Imbued your weapon with fire, granting you a chance to activate Fire Attack on melee attacks for 15 minutes. Fire Attack: Unleash a fire attack, dealing 7 (L1) to 75 (L60) Fire Damage.",Alt,25,Direct Damage | Fire | (self only),Ranger
 11,Poison Protection,"Wards your target from toxins, increasing their Poison Resistance by 5.",Abj,10,Resist | Poison,Ranger
 12,Cold Protection,"Wards your target from frost, increasing their Cold Resistance by 5.",Abj,10,Resist | Cold,Ranger
 12,Lesser Heal,"Lightly heals the wounds of a friendly target, healing them for 25 Health.",Alt,20,Direct Heal,Ranger
-12,Lull Beast,"Placates an aggressive beast target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Pacify | (animals only),Ranger
+12,Lull Beasts,"Placates an aggressive beast target, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Pacify | (animals only),Ranger
 13,Sneak,"Begin to sneak, causing you to be hidden from enemies while behind them.",Sub,Innate,Stealth / Hide | (self only),Ranger
 14,Truestrike,"Make your attacks strike true, increasing your Archery and Offense by 10 and Physical Damage dealt by 100% for 30 seconds.",Alt,Innate,Increase Physical Damage | (self only),Ranger
 15,Camouflage,"Camouflage a target group member in nature's shroud, rendering them unseen by the living.",Div,20,Invisibility,Ranger
@@ -506,10 +508,14 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 24,Wolf Form,"Shapeshift into a Wolf, increasing your Movement Speed by 40% (L8) to 60% (L60) for 30 minutes.",Alt,50,Movement Speed | Shapeshift | (self only),Ranger
 24,Stoneskin,"Solidifies the skin of a friendly target, increasing their Armor Class by 10 for 30 minutes.",Abj,30,+AC,Ranger
 26,Hearth of the Ranger,"Place a Hearth of the Ranger at your feet, providing warmth, comfort, and a place to cook. This ability lasts 50% longer than a normal campfire, and each log adds 50% more burn time. This ability requires 8 Wood.",Con,,Misc. | (self only),Ranger
+28,Unification,"Placate your target, reducing their Proximity Aggro for 2 minutes. This spell can only be used outdoors. This spell cannot be resisted. This spell has a very slight chance to end early. This spell has no effect on Social Aggro. This spell is limited to one target.",Alt,15,Pacify,Ranger
 30,Stinging Swarm,"Engulf your target with a stinging swarm, dealing 20 Poison Damage every 6 seconds for 60 seconds.",Con,,Damage Over Time | Poison,Ranger
+31,Imbue Weapon: Nature,"Imbue your weapon with nature, granting you a chance to activate Nature Attack on melee attacks for 15 minutes. Nature Attack: Unleash a nature attack, dealing 7 (L1) to 75 (L60) Magic Damage.",Alt,25,Direct Damage | Magic | (self only),Ranger
 31,Nature Arrows,"Imbue your arrows with nature, increasing your Ranged Damage dealt by 1 (L1) to 7 (L60) Magic Damage. Additionally, each ranged attack grants you a chance to activate Nature Arrow Advantage reducing cast time of your next spell in the Root or Snare line by 100%.",Alt,Innate,Magic | Spell Haste | (self only),Ranger
 32,Bristly Barrier,"Surounds your target with a bristly barrier, providing a Damage Shield with 10 Damage Per Hit for 10 minutes.",Abj,,Damage Shield,Ranger
+32,Bristly Tunic,"Wrap yourself in a bristly tunic, increasing your Armor Class by 15 and granting you a Damage Shield that deals 3 damage when hit for 1 hour.",Abj,30,+AC | Damage Shield | (self only),Ranger
 32,Heal,"Moderately heals the wounds of a friendly target, healing them for 60 Health.",Alt,40,Direct Heal,Ranger
+32,Lesser Regeneration,"Lightly regenerate your target, increasing their Health Regeneration by 5 for 30 minutes.",Alt,50,Health Regen,Ranger
 35,Flaming Embers,"Burns your target for 60 seconds, dealing 15 Fire Damage every 6 seconds and decreasing AC by 13. Max 3 Stacks. This spell does not stack with itself or any others in the same line. Requires Fire Beetle Eye.",Evo,,Damage Over Time | Fire | Physical Damage Vulnerability,Ranger
 36,Summon: Cureberries,"Summon a handful of cureberries, removing one Disease and one Poison effect when consumed.",Con,,Cure | Disease | Poison,Ranger
 38,Winged Swarm,"Engulf your target with a winged swarm, dealing 30 Poison Damage every 6 seconds for 60 seconds.",Con,,Damage Over Time | Poison,Ranger
@@ -543,7 +549,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Fear Beast,"Fear a target beast, causing them to flee for 18 seconds. Has a slight chance to be removed by damage.",Alt,20,Fear | (animals only),Beastmaster
 1,Invisibility versus Animals,"Shroud a target group member in a cloak of invisibility, rendering them unseen by beasts for 10 minutes. This spell has a slight chance to end early.",Div,10,Invisibility | (animals only),Beastmaster
 1,Jackal Swarm Pet Tier 1,"Entreat the wild, calling forth a pack of jackals to temporarily fight alongside you.",Con,3,Pet,Beastmaster
-1,Lull Beast,"Lull a target beast, reducing their Aggro Radius for 2 minutes. Has a very slight chance to end early.",Alt,10,Pacify | (animals only),Beastmaster
+1,Lull Beasts,"Lull a target beast, reducing their Aggro Radius for 2 minutes. Has a very slight chance to end early.",Alt,10,,Beastmaster
 1,Polar Align: North,"Magically align yourself, orienting you toward the North Pole.",Div,5,Misc. | (self only),Beastmaster
 1,Rat Swarm Pet Tier 1,"Entreat the wild, calling forth a swarm of rats to temporarily fight alongside you.",Con,3,Pet,Beastmaster
 1,Revive Companion,"Rally your pet, returning it to life and restoring 20% Health.",Alt,25,Pet | Resurrection | (pet only),Beastmaster
@@ -671,11 +677,11 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 6,Magic Protection,"Wards your target from the arcane, increasing their Magic Resistance by 5.",Abj,10,Resist | Magic,Spellblade
 7,Shadowrift,"Step into a shadowy rift, teleporting you behind your enemy target.",Alt,15,Teleport | (self only),Spellblade
 8,Infuse Weapon: Chilling Embrace,"Infuse your weapon with ice, giving a chance on each hit to proc Chilling Embrace, slowing your enemies Attack Speed by 2% per application, stacking up to 5 times for 30 seconds. Secondary slow. Does not stack with other secondary slows.",Alt,5,Slow,Spellblade
-8,Infuse Weapon: Flameburst,"Infuse your weapon with fire, giving a chance each hit to proc Flameburst.",Alt,10,Direct Damage | Fire,Spellblade
+8,Flameburst,Bursts your target with flame for 4(L1) to 7(L4) points of Fire Damage.,Evo,15,Direct Damage | Fire,Spellblade
 9,Electricity Protection,"Wards your target from shock, increasing their Electricity Resistance by 5.",Abj,10,Resist | Electricity,Spellblade
 10,Invisibility,Shrouds your target with invisibility.,Div,20,Invisibility,Spellblade
 11,Lesser Spellshield,"A magical shield encircles you, increasing your HP by 25, AC by 10, and Magic Resistance by 10.",Abj,25,+HP | +AC | Resist | Magic | (self only),Spellblade
-12,Flameburst,Bursts your target with flame for 4(L1) to 7(L4) points of Fire Damage.,Evo,15,Direct Damage | Fire,Spellblade
+12,Infuse Weapon: Flameburst,"Infuse your weapon with fire, giving a chance each hit to proc Flameburst.",Alt,10,Direct Damage | Fire,Spellblade
 12,Unstable Barrier II,"Construct an unstable barrier, absorbing 30 damage received and granting you a chance to gain up to five stacks of Unstable Energy when hit for 15 seconds. Unstable Energy grants 2% Melee and Spell Damage per stack to the caster, and fades after 15 seconds..",Abj,25,Absorb Damage Shield | (self only),Spellblade
 13,Infuse Weapon: Illumination,"Infuse your weapons with light, granting you a light source at the cost of 5 (L1) to 100 (L60) Mana every 6 seconds.",Abj,,Misc. | (self only),Spellblade
 14,Root,"Roots emerge from the ground and cling to your target's feet, applying an Immobilize effect for up to 30 seconds. This effect has a chance to be removed by damage.",Alt,,Root,Spellblade
@@ -716,7 +722,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Poison Protection,"Ward your target against toxins, increasing their Poison Resistance by 5 for 1 hour.",Abj,10,Resist | Poison,Cleric
 1,Shock,"Shock your target with divine energy, dealing 3 (L1) to 5 (L4) Holy Damage.",Evo,9,Direct Damage | Holy,Cleric
 1,Stun,"Shocks your target into a daze, stunning them for 4 seconds.",Evo,15,Stun,Cleric
-1,Supplication,"Cry out in prayer, increasing your Strength by 2 (L1) to 10 (L20) and mana regeneration by 1 for 1 minute.",Abj,3,+STR | Mana Regen | (self only),Cleric
+1,Supplication,"Cry out in prayer, increasing your Strength by 2 (L1) to 10 (L20) and mana regeneration by 1 for 1 minute.",Abj,3,+STR | Mana Regen,Cleric
 4,Blessed Barrier,"Call forth a blessed barrier to shield your target, absorbing 25 damage received for 15 seconds.",Abj,20,Absorb Damage Shield,Cleric
 4,Blind,"Shroud the vision of your target, blinding them for 12 seconds.",Alt,15,Blind,Cleric
 4,Chasten,"Chasten your target with divine energy, dealing 11 (L4) to 14 (L7) Holy Damage.",Evo,10,Direct Damage | Holy,Cleric
@@ -724,7 +730,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 4,Divine Aegis,"Surround yourself with a divine aegis, granting you immunity to all damage for 15 seconds. Inflicts Exhausted Soul, preventing the application of immunity effects for 30 seconds. Can be used while stunned, mesmerized, or feared.",Abj,15,Damage Reduction | Absorb Damage Shield | (self only),Cleric
 4,Gate,Conjure a magical gate returning you to your bind location.,Alt,55,Gate | (self only),Cleric
 4,Holy Strike,"Strike down your target with holy energy, dealing 50% (L1) to 100% (L60) Weapon Damage plus 1 (L1) to 15 (L60) Holy Damage, and 1 (L1) to 15 (L60) Physical Damage.",Evo,0,Direct Damage | Physical | Holy,Cleric
-4,Impart Blessing,"Impart a blessing on your target, restoring 40 Health after 6 seconds.",Alt,20,Direct Heal,Cleric
+4,Impart Blessing,"Impart a blessing on your target, restoring 40 Health after 6 seconds.",Alt,20,Heal Over Time | Direct Heal,Cleric
 4,Lesser Heal,"Lightly heal your target, restoring 25 Health.",Alt,20,Direct Heal,Cleric
 4,Soulbind,"Bind the soul of a target group member to their current location, causing them to respawn there upon death. Has no effect in certain areas.",Alt,75,Bind,Cleric
 4,Summon Food,"Summon a small amount of bread, providing you with sustenance.",Con,10,Conjure Food & Water,Cleric
@@ -740,7 +746,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 8,Sense Magic,"Glaze the eyes of your target with a magical coating, granting them the ability to see magical effects when considering targets for 1 hour.",Div,20,Misc.,Cleric
 8,Snare the Dead,"Bind a target undead with holy chains, decreasing their Movement Speed by 35% for 30 seconds.",Alt,10,Snare | (undead only),Cleric
 12,Hallowed Barrier,"Calls forth a hallowed barrier to shield your target, absorbing 60 damage received for 15 seconds.",Abj,50,Absorb Damage Shield,Cleric
-12,Impart Prayer,"Impart a prayer on your target, restoring 140 Health after 6 seconds.",Alt,60,Direct Heal,Cleric
+12,Impart Prayer,"Impart a prayer on your target, restoring 140 Health after 6 seconds.",Alt,60,Heal Over Time | Direct Heal,Cleric
 12,Summon Drink,"Summons a small smount of water, providing you with sustenance.",Con,10,Conjure Food & Water,Cleric
 16,Beset the Dead,"Beset a target undead with a blast of energy, dealing 90 Holy Damage.",Evo,50,Direct Damage | Holy | (undead only),Cleric
 16,Summon Hammer of the Pious,"Summon a Hammer of the Pious, granting you a chance to activate Holy Smite on melee hits while equipped.",Con,30,Direct Damage | Holy | (self only),Cleric
@@ -752,9 +758,9 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 20,Cleanse Poisons,"Cleanse your target, removing two Poison effects.",Alt,50,Cure | Poison,Cleric
 20,Conciliate,"Conciliate your target, reducing their Aggro Radius for 4 minutes. This spell has a very slight chance to end early.",Alt,45,Pacify,Cleric
 20,Holy Valor,"Bestow holy valor upon your target, increasing their maximum Health by 125 for 30 minutes.",Abj,75,+HP,Cleric
-20,Impart Devotion,"Impart devotion on your target, healing them for 300 Health after 6 seconds.",Alt,115,Direct Heal,Cleric
+20,Impart Devotion,"Impart devotion on your target, healing them for 300 Health after 6 seconds.",Alt,115,Heal Over Time | Direct Heal,Cleric
 20,Inhibit Pain,"Inhibits the pain of a friendly target, reducing all damage received by 40% for 8 seconds.",Abj,30,Damage Reduction,Cleric
-20,Supplication II,"Cry out in prayer, increasing your Strength by 15 (L20) to 25 (L40) and Mana Regeneration by 2 for 1 minute.",Abj,6,+STR | Mana Regen | (self only),Cleric
+20,Supplication II,"Cry out in prayer, increasing your Strength by 15 (L20) to 25 (L40) and Mana Regeneration by 2 for 1 minute.",Abj,6,+STR | Mana Regen,Cleric
 24,Consecrated Barrier,"Call forth a consecrated barrier to shield your target, absorbing 250 damage received for 15 seconds.",Abj,165,Absorb Damage Shield,Cleric
 24,Corruption Resistance,"Greatly ward your target against subversion, increasing their Corruption Resistance by 15 for 1 hour.",Abj,40,Resist | Corruption,Cleric
 24,Disease Resistance,"Greatly ward your target against subversion, increasing their Disease Resistance by 15 for 1 hour.",Abj,40,Resist | Disease,Cleric
@@ -762,7 +768,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 24,Poison Resistance,"Greatly ward your target against toxins, increasing their Poison Resistance by 15 for 1 hour.",Abj,10,Resist | Poison,Cleric
 24,Rebuke,"Rebuke your target with divine energy, dealing 135 Holy Damage.",Evo,90,Direct Damage | Holy,Cleric
 24,Resuscitation,"Resuscitate a target corpse, restoring 35% Experience. Inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,200,Resurrection,Cleric
-28,Impart Faith,"Impart faith on your target, restoring 600 Health after 6 seconds.",Alt,195,Direct Heal,Cleric
+28,Impart Faith,"Impart faith on your target, restoring 600 Health after 6 seconds.",Alt,195,Heal Over Time | Direct Heal,Cleric
 28,Rebuff the Dead,"Rebuff a target undead with a blast of energy, dealing 150 Holy Damage.",Evo,70,Direct Damage | Holy | (undead only),Cleric
 32,Atonement,"Submit your target to holy judgment, granting them a chance to forget past transgressions. This spell has a chance to critically fail.",Alt,50,Aggro Reduction | Aggro Gen,Cleric
 32,Conjure Drink,"Conjure a large amount of water, providing you with sustenance.",Con,20,Conjure Food & Water,Cleric
@@ -779,16 +785,16 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 40,Impart Favor,"Impart favor on your target, restoring 1200 Health after 6 seconds.",Alt,330,Direct Heal,Cleric
 40,Propitiate,"Propitiate your target, reducing their Aggro Radius for 5 minutes. This spell has a very slight chance to end early.",Alt,90,Pacify,Cleric
 40,Smite,"Smite your target with divine energy, dealing 250 Holy Damage.",Evo,125,Direct Damage | Holy,Cleric
-40,Supplication III,"Cry out in prayer, increasing your Strength by 30 (L40) to 40 (L60) and Mana Regeneration by 3 for 1 minute.",Abj,9,+STR | Mana Regen | (self only),Cleric
+40,Supplication III,"Cry out in prayer, increasing your Strength by 30 (L40) to 40 (L60) and Mana Regeneration by 3 for 1 minute.",Abj,9,+STR | Mana Regen,Cleric
 44,Holy Resolve,"Bestow holy resolve upon your target, increasing their maximum Health by 250 for 1 hour.",Abj,150,+HP,Cleric
 48,Healing Brilliance,"Shine a brilliant light on targets in a frontal cone, restoring 600 Health.",Alt,780,AoE | Direct Heal,Cleric
 48,Summon Hammer of the Divine,"Summon a Hammer of the Divine, granting you a chance to activate Holy Smite on melee hits while equipped.",Con,125,Direct Damage | Holy | (self only),Cleric
 48,Reckoning,"Condemn your target with divine energy, dealing 325 Holy Damage.",Evo,150,Direct Damage | Holy,Cleric
 48,Revival,"Revive a target corpse, restoring 75% Experience. Inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,350,Resurrection,Cleric
 48,Sacred Barrier,"Call forth a sacred barrier to shield your target, absorbing 800 damage received for 15 seconds.",Abj,255,Absorb Damage Shield,Cleric
-50,Supplication IV,"Cry out in prayer, increasing your Strength by 50 and Mana Regeneration by 4 for 1 minute.",Abj,12,+STR | Mana Regen | (self only),Cleric
+50,Supplication IV,"Cry out in prayer, increasing your Strength by 50 and Mana Regeneration by 4 for 1 minute.",Abj,12,+STR | Mana Regen,Cleric
 52,Assail the Dead,"Assail a target undead with a blast of energy, dealing 525 Holy Damage.",Evo,165,Direct Damage | Holy | (undead only),Cleric
-52,Impart Sanctity,"Impart sanctity on your target, restoring 1800 Health after 6 seconds.",Alt,500,Direct Heal,Cleric
+52,Impart Sanctity,"Impart sanctity on your target, restoring 1800 Health after 6 seconds.",Alt,500,Heal Over Time | Direct Heal,Cleric
 55,Resurrection,"Resurrect a target corpse, restoring 95% Experience. Inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,,Resurrection,Cleric
 56,Healing Radiance,"Shine a radiant light on targets in a frontal cone, restoring 950 Health.",Alt,,AoE | Direct Heal,Cleric
 56,Holy Resolution,"Bestow holy resolution upon your target, increasing their maximum Health by 500 for 1 hour.",Abj,,+HP,Cleric
@@ -813,7 +819,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 4,Element Break,"Breaks your target's resistance to the elements, decreasing their Cold, Electricity, Fire and Magic Resistance by 1 (L1) to 2 (L8). This spell is unresistable if the target is not immune to magic or it can otherwise be landed normally.",Alt,10,Lower Resistance | Cold | Electricity | Fire | Magic,Druid
 4,Gate,Teleport yourself to your bind location.,Alt,55,Gate | (self only),Druid
 4,Lesser Heal,"Lightly heals the wounds of a friendly target, healing them for 25 Health.",Alt,20,Direct Heal,Druid
-4,Lull Beast,"Placates an aggressive beast, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Pacify | (animals only),Druid
+4,Lull Beasts,"Placates an aggressive beast, greatly reducing the range of their social and proximity aggro for 2 minutes. Has no effect on an already aggroed target. This ability has a slight chance to fail and cause primary and social aggro. It also has a slight chance of ending early.",Alt,10,Pacify | (animals only),Druid
 4,Moon Fire,"Unleash moon fire upon your target, dealing 11 (L4) to 14 (L7) points of Fire Damage.",Evo,8,Direct Damage | Fire,Druid
 4,Poison Protection,"Wards your target from toxins, increasing their Poison Resistance by 5.",Abj,10,Resist | Poison,Druid
 4,Snare,"Several small roots emerge from the ground and cling to your target's feet, decreasing their Movement Speed by 35% for 30 seconds.",Alt,10,Snare,Druid
@@ -958,7 +964,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 8,See Invisibility,"Glaze the eyes of your target with a magical coating, granting them the ability to see invisible entities for 1 hour.",Div,20,Misc.,Shaman
 8,Sense Magic,"Glaze the eyes of your target with a magical coating, granting them the ability to see magical effects when considering targets for 1h.",Div,20,Misc.,Shaman
 8,Speed of the Wild,"Infuse your target with bestial speed, increasing their Movement Speed by 40% (L8) to 60% (L60) for 1 hour.",Alt,20,Movement Speed,Shaman
-8,Spore Discharge,"Envelop your group in healing spores, healing them for 10 Health (L4) to 225 health (L52) every 6 seconds, for 24 seconds. Stacks with the Healing Spores line of spells.",Alt,20,AoE | Heal Over Time,Shaman
+8,Spore Discharge,"Envelop your group in healing spores, healing them for 10 Health (L4) to 225 health (L52) every 6 seconds, for 24 seconds. Stacks with the Healing Spores line of spells.",Alt,20,Heal Over Time,Shaman
 8,Summon Drink,"Summon a small amount of water, providing you with sustenance.",Con,10,Conjure Food & Water,Shaman
 8,Summon Food,"Summon a small amount of bread, providing you with sustenance.",Con,10,Conjure Food & Water,Shaman
 12,Consume,"Consume your own flesh, restoring 48 Mana at the cost of 100 Health.",Con,0,Mana Regen | (self only),Shaman
@@ -996,11 +1002,11 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 32,Regeneration,"Causes your target to regenerate, increasing their Health Regeneration by 7 for 40 minutes.",Alt,,Health Regen,Shaman
 32,Wolf Spirit Pet Tier 1,Summons a Wolf Spirit to serve you. Persists until death of pet or master.,Con,,Pet,Shaman
 36,Bear Form,"Veil yourself in the guise of a bear, transforming your appearance.",Alt,50,Shapeshift | (self only),Shaman
-36,Billow of Blight,"Smother your target with a billow of blight, dealing 115 Poison Damage and an additional 55 Poison Damage every 6 seconds for 30 seconds.",Con,,Direct Damage | Damage Over Time | Poison,Shaman
+36,Billow of Blight,"Smother your target with a billow of blight, dealing 115 Poison Damage and an additional 55 Poison Damage every 6 seconds for 30 seconds.",Con,185,Direct Damage | Damage Over Time | Poison,Shaman
 36,Exceptional Heal,"Exceptionally heals the wounds of a friendly target, healing them for 600 Health.",Alt,260,Direct Heal,Shaman
-36,Frailty,"Weaken your target, decreasing their Strength, Dexterity, and Agility by 10 for 4 minutes.",Alt,,Stat Debuff | +STR | +DEX | +AGI,Shaman
-36,Lethargy,"Lethargize your target, slowing their Attack Speed by 40% for 4 minutes.",Alt,,Slow,Shaman
-36,Wolf Spirit Pet Tier 2,Summons a Wolf Spirit to serve you. Persists until death of pet or master.,Con,,Pet,Shaman
+36,Frailty,"Weaken your target, decreasing their Strength, Dexterity, and Agility by 10 for 4 minutes.",Alt,50,Stat Debuff | +STR | +DEX | +AGI,Shaman
+36,Lethargy,"Lethargize your target, slowing their Attack Speed by 40% for 4 minutes.",Alt,150,Slow,Shaman
+36,Wolf Spirit Pet Tier 2,Summons a Wolf Spirit to serve you. Persists until death of pet or master.,Con,360,Pet,Shaman
 40,Abolish Magic,Removes two harmful magical effects from your current target.,Alt,,Cure | Magic,Shaman
 40,Irking Illness,"Infects your target with a fever, dealing 80 Disease Damage every 6 seconds for 1 minute.",Con,,Damage Over Time | Disease,Shaman
 40,Rapidity,"Haste your target, increasing their Attack Speed by 30% (L32) to 35% (L48) for 30 minutes.",Alt,,Melee Haste,Shaman
@@ -1334,7 +1340,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 1,Shoot,Shoot your target with a bow. (requires bow & arrows),Mar,Innate,Direct Damage | Physical,Paladin
 1,Slam,"Forcefully slam your target, dealing 100% Weapon Damage plus 1 (L1) to 20 (L60) Physical Damage, and increasing your Threat by 20 (L1) to 200 (L60). Has a chance to stun from behind the target.",Mit,Innate,Direct Damage | Physical | Aggro Gen | Stun,Paladin
 1,Weak Heal,"Weakly heals the wounds of a friendly target, healing them for 6 Health.",Alt,7,Direct Heal,Paladin
-2,Supplication,"Cry out in prayer, increasing your Strength by 2 (L1) to 10 (L20) and Mana Regeneration by 1 for 1 minute.",Abj,3,+STR | Mana Regen | (self only),Paladin
+2,Supplication,"Cry out in prayer, increasing your Strength by 2 (L1) to 10 (L20) and Mana Regeneration by 1 for 1 minute.",Abj,3,+STR | Mana Regen,Paladin
 3,Cure Disease,Cures target of disease effects,Alt,10,Cure | Disease,Paladin
 4,Kick,"Interrupting target cast, locking them out of that school of magic for 4 seconds.",Acr,Innate,Interrupt,Paladin
 4,Minor Heal,"Slightly heals the wounds of a friendly target, healing them for 10 Health.",Alt,8,Direct Heal,Paladin
@@ -1372,7 +1378,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 24,Stun,"Shocks your target, applying a Stun for 4 seconds.",Evo,15,Stun,Paladin
 28,Holy Valor,Increases the maximum health of a friendly target by 125 for 30 minutes.,Abj,75,+HP,Paladin
 29,Greater Heal,"Greatly heals the wounds of a friendly target, healing them for 325 Health.",Alt,150,Direct Heal,Paladin
-30,Supplication II,"Cry out in prayer, increasing your Strength by 15 (L20) to 25 (L40) and Mana Regeneration by 2 for 1 minute.",Abj,6,+STR | Mana Regen | (self only),Paladin
+30,Supplication II,"Cry out in prayer, increasing your Strength by 15 (L20) to 25 (L40) and Mana Regeneration by 2 for 1 minute.",Abj,6,+STR | Mana Regen,Paladin
 32,Conciliate,"Conciliate your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,15,Pacify,Paladin
 36,Conciliate the Masses,"Conciliate your target, reducing their Body Aggro Radius for 4 minutes.",Alt,,Pacify,Paladin
 36,Rebuff the Dead,Wards an undead target with holy energy for 150 points of Holy Damage.,Evo,,Direct Damage | Holy | (undead only),Paladin
@@ -1383,7 +1389,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 44,Poison Resistance,"Greatly wards your target from toxins, increasing their Poison Resistance by 15.",Abj,10,Resist | Poison,Paladin
 48,Beleaguer the Dead,Wards an undead target with holy energy for 245 points of Holy Damage.,Evo,,Direct Damage | Holy | (undead only),Paladin
 50,Exceptional Heal,"Exceptionally heals the wounds of a friendly target, healing them for 600 Health.",Alt,230,Direct Heal,Paladin
-50,Supplication III,"Cry out in prayer, increasing your Strength by 30 (L40) to 40 (L60) and Mana Regeneration by 3 for 1 minute.",Abj,,+STR | Mana Regen | (self only),Paladin
+50,Supplication III,"Cry out in prayer, increasing your Strength by 30 (L40) to 40 (L60) and Mana Regeneration by 3 for 1 minute.",Abj,,+STR | Mana Regen,Paladin
 51,Propitiate,"Propitiate your target, reducing their Aggro Radius for 2 minutes. This spell has a very slight chance to end early.",Alt,15,Pacify,Paladin
 52,Holy Resolve,Increases the maximum Health of a friendly target by 500 for 30 minutes.,Abj,150,+HP,Paladin
 55,Abolish Magic,Removes two harmful magical effects from your current target.,Alt,100,Cure | Magic,Paladin
@@ -1391,7 +1397,7 @@ Level,Spell Name,Spell Description,Skill,Mana,Tag,Class
 56,Reawaken,"Reawaken a target corpse, restoring 50% experience. This spell inflicts Resurrection Illness on the target, reducing all of their stats for 3 minutes.",Alt,,Resurrection,Paladin
 60,Assail the Dead,Wards an undead target with holy energy for 525 points of Holy Damage.,Evo,,Direct Damage | Holy | (undead only),Paladin
 60,Divine Spark,"Grants Divine Spark to your target, increasing their maximum Health by 250 for 30 minutes.",Abj,,+HP,Paladin
-60,Supplication IV,"Cry out in prayer, increasing your Strength by 50 and Mana Regeneration by 4 for 1 minute.",Abj,,+STR | Mana Regen | (self only),Paladin
+60,Supplication IV,"Cry out in prayer, increasing your Strength by 50 and Mana Regeneration by 4 for 1 minute.",Abj,,+STR | Mana Regen,Paladin
 1,Aura of Vampirism,"An aura which causes the Melee and Ranged attacks of your group to have a chance to drain life from your enemies, dealing 1 (L1) to 30 (L60) damage and healing.",Alt,Innate,Lifesteal | AURA,Shadow Knight
 1,Draw Strength,"Draws the Strength of an enemy target, reducing their Strength by 2 and increasing your own Strength by 2 for 5 minutes.",Alt,5,Stat Debuff | +STR | (self only),Shadow Knight
 1,Locate Corpse,Locates a target player's nearest corpse.,Div,5,Misc.,Shadow Knight
